@@ -15,6 +15,9 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
+#ifndef MU9_ALGORITHM_H
+#define MU9_ALGORITHM_H 1
+
 #include <mu9/mu9_algorithm/mu9_apply.h>
 #include <mu9/mu9_algorithm/mu9_copy.h>
 #include <mu9/mu9_algorithm/mu9_count.h>
@@ -28,9 +31,6 @@
 #include <mu9/mu9_algorithm/mu9_search.h>
 #include <mu9/mu9_algorithm/mu9_swap.h>
 #include <mu9/mu9_algorithm/mu9_transform.h>
-
-#ifndef MU9_ALGORITHM_H
-#define MU9_ALGORITHM_H 1
 
 MU0_BEGIN_CDECL
 
