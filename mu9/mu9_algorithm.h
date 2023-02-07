@@ -32,7 +32,7 @@
 #ifndef MU9_ALGORITHM_H
 #define MU9_ALGORITHM_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 //#!
 //#! macro<_Tp, _Bool>(_Tp &* __first, _Tp &* __last, __unary_pred, _Bool<return> & __d_result) : void
@@ -79,7 +79,7 @@ mu9_scope_begin                                                  \
 	__d_result = ___mu9_none_of__x__;                             \
 mu9_scope_end
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_ALGORITHM_H */
 

@@ -15,12 +15,12 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_definition.h>
+#include <mu0/mu0_definition.h>
 
 #ifndef MU9_COPY_H
 #define MU9_COPY_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 #	define mu9_copy(_Tp, __first, __last, __d_first)                  \
 mu9_scope_begin                                                      \
@@ -39,7 +39,7 @@ mu9_scope_begin                                                      \
 	}                                                                 \
 mu9_scope_end
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_COPY_H */
 

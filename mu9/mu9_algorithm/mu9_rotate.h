@@ -21,7 +21,7 @@
 #ifndef MU9_ROTATE_H
 #define MU9_ROTATE_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 #	define mu9_rotate(_Tp, __first, __n_first, __last, __d_result) \
 mu9_scope_begin                                                   \
@@ -70,7 +70,7 @@ mu9_scope_begin                                                                 
 	__d_result              = ___mu9_rotate_copy__i__;                              \
 mu9_scope_end
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_ROTATE_H */
 

@@ -15,12 +15,12 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_definition.h>
+#include <mu0/mu0_definition.h>
 
 #ifndef MU9_SWAP_H
 #define MU9_SWAP_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 //#!
 //#! macro<_Tp>(_Tp & a, _Tp & b) : void
@@ -47,7 +47,7 @@ mu9_scope_end
 //#!
 #	define mu9_iter_swap(_Tp, __a, __b) mu9_swap_pointer(_Tp, &(__a), &(__b))
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_SWAP_H */
 

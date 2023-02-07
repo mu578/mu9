@@ -20,7 +20,7 @@
 #ifndef MU9_APPLY_H
 #define MU9_APPLY_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 #	define mu9_apply1(_Tp, __first1, __last1, __unary_op)                         \
 mu9_scope_begin                                                                  \
@@ -34,7 +34,7 @@ mu9_scope_begin                                                                 
 	mu9_transform2(_Tp, __first1, __last1, ___mu9_apply2__d_first__, __binary_op); \
 mu9_scope_end
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_APPLY_H */
 

@@ -15,12 +15,12 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_definition.h>
+#include <mu0/mu0_definition.h>
 
 #ifndef MU9_FIND_H
 #define MU9_FIND_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 //#!
 //#! macro<_Tp>(_Tp &* __first, _Tp &* __last, const _Tp & __value, _Tp<return> &* __d_result) : void
@@ -120,7 +120,7 @@ mu9_scope_begin                                                                 
 	}                                                                                               \
 mu9_scope_end
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_FIND_H */
 

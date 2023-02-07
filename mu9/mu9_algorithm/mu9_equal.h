@@ -15,12 +15,12 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_definition.h>
+#include <mu0/mu0_definition.h>
 
 #ifndef MU9_EQUAL_H
 #define MU9_EQUAL_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 //#!
 //#! macro<_Tp, _Bool>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Bool<return> & __d_result) : void
@@ -52,7 +52,7 @@ mu9_scope_begin                                                                 
 	__d_result = ___mu9_equal2__x__;                                                \
 mu9_scope_end
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_EQUAL_H */
 

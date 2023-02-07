@@ -15,12 +15,12 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_definition.h>
+#include <mu0/mu0_definition.h>
 
 #ifndef MU9_MISMATCH_H
 #define MU9_MISMATCH_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 #	define mu9_mismatch1(_Tp, __first1, __last1, __first2, __d_result1, __d_result2) \
 mu9_scope_begin                                                                     \
@@ -60,7 +60,7 @@ mu9_scope_begin                                                                 
 	__d_result2 = __first2;                                                                                  \
 mu9_scope_end
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_MISMATCH_H */
 

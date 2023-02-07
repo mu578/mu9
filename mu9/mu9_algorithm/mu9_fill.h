@@ -15,12 +15,12 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_definition.h>
+#include <mu0/mu0_integer.h>
 
 #ifndef MU9_FILL_H
 #define MU9_FILL_H 1
 
-MU9_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 //#!
 //#! macro<_Tp>(_Tp &* __first, _Tp &* __last, const _Tp & __value) : void
@@ -37,13 +37,13 @@ mu9_scope_end
 //#!
 #	define mu9_fill_n(_Tp, __first, __n, __value)                                 \
 mu9_scope_begin                                                                  \
-	mu9_uinteger_t ___mu9_fill_n__i__ = 0;                                        \
-	for (; ___mu9_fill_n__i__ < mu9_uinteger(__n); (void) ++___mu9_fill_n__i__) { \
+	mu0_uinteger_t ___mu9_fill_n__i__ = 0;                                        \
+	for (; ___mu9_fill_n__i__ < mu0_uinteger(__n); (void) ++___mu9_fill_n__i__) { \
 		*__first++ = __value;                                                      \
 	}                                                                             \
 mu9_scope_end
 
-MU9_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU9_FILL_H */
 
