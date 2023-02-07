@@ -25,39 +25,40 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<>(& __a, & __b) : _Tp
 //#!
-#	define mu9_plus(_Tp, __a, __b)                  ((__a) + (__b))
-#	define mu9_minus(_Tp, __a, __b)                 ((__a) - (__b))
-#	define mu9_multiplies(_Tp, __a, __b)            ((__a) * (__b))
-#	define mu9_divides(_Tp, __a, __b)               ((__a) / (__b))
-#	define mu9_modulus(_Tp, __a, __b)               ((__a) % (__b))
-#	define mu9_negate(_Tp, __a)                     -(__a)
+#	define mu9_plus(___a, __b)                         ((__a) + (__b))
+#	define mu9_minus(___a, __b)                        ((__a) - (__b))
+#	define mu9_multiplies(___a, __b)                   ((__a) * (__b))
+#	define mu9_divides(___a, __b)                      ((__a) / (__b))
+#	define mu9_modulus(___a, __b)                      ((__a) % (__b))
+#	define mu9_negate(___a)                            -(__a)
 
 //#!
 //#! macro<>(& __a, & __b) : bool
 //#!
-#	define mu9_logical_and(_Tp, __a, __b)           ( ((__a) && (__b)) ? mu9_true : mu9_false)
-#	define mu9_logical_not_and(_Tp, __a, __b)       (!((__a) && (__b)) ? mu9_true : mu9_false)
-#	define mu9_logical_or(_Tp, __a, __b)            ( ((__a) || (__b)) ? mu9_true : mu9_false)
-#	define mu9_logical_not_or(_Tp, __a, __b)        (!((__a) || (__b)) ? mu9_true : mu9_false)
-#	define mu9_negate(_Tp, __a)                     !(__a)
+#	define mu9_logical_and(___a, __b)                  ( ((__a) && (__b)) ? mu9_true : mu9_false)
+#	define mu9_logical_not_and(___a, __b)              (!((__a) && (__b)) ? mu9_true : mu9_false)
+#	define mu9_logical_or(___a, __b)                   ( ((__a) || (__b)) ? mu9_true : mu9_false)
+#	define mu9_logical_not_or(___a, __b)               (!((__a) || (__b)) ? mu9_true : mu9_false)
+#	define mu9_negate(___a)                            !(__a)
 
 //#!
 //#! macro<>(& __a, & __b) : _Tp
 //#!
-#	define mu9_bit_and(_Tp, __a, __b)               ((__a) & (__b))
-#	define mu9_bit_or(_Tp, __a, __b)                ((__a) | (__b))
-#	define mu9_bit_xor(_Tp, __a, __b)               ((__a) ^ (__b))
-#	define mu9_bit_not(_Tp, __a)                     ~(__a)
+#	define mu9_bit_and(___a, __b)                      ((__a) & (__b))
+#	define mu9_bit_or(___a, __b)                       ((__a) | (__b))
+#	define mu9_bit_xor(___a, __b)                      ((__a) ^ (__b))
+#	define mu9_bit_not(___a)                            ~(__a)
 
 //#!
 //#! macro<>(& __a, & __b) : bool
 //#!
-#	define mu9_less_than(_Tp, __a, __b)             (((__a) <  (__b)) ? mu9_true : mu9_false)
-#	define mu9_less_than_or_equal(_Tp, __a, __b)    (((__a) <= (__b)) ? mu9_true : mu9_false)
-#	define mu9_greater_than(_Tp, __a, __b)          (((__a) >  (__b)) ? mu9_true : mu9_false)
-#	define mu9_greater_than_or_equal(_Tp, __a, __b) (((__a) >= (__b)) ? mu9_true : mu9_false)
-#	define mu9_equal_to(_Tp, __a, __b)              (((__a) == (__b)) ? mu9_true : mu9_false)
-#	define mu9_not_equal_to(_Tp, __a, __b)          (((__a) != (__b)) ? mu9_true : mu9_false)
+#	define mu9_less_than(___a, __b)                    (((__a) <  (__b)) ? mu9_true : mu9_false)
+#	define mu9_less_than_or_equal(___a, __b)           (((__a) <= (__b)) ? mu9_true : mu9_false)
+#	define mu9_greater_than(___a, __b)                 (((__a) >  (__b)) ? mu9_true : mu9_false)
+#	define mu9_greater_than_or_equal(___a, __b)        (((__a) >= (__b)) ? mu9_true : mu9_false)
+#	define mu9_equal_to(___a, __b)                     (((__a) == (__b)) ? mu9_true : mu9_false)
+#	define mu9_not_equal_to(___a, __b)                 (((__a) != (__b)) ? mu9_true : mu9_false)
+#	define mu9_cmp(___a, __b)                          (mu9_less_than(___a, __b)) ? -1 : (mu9_equal_to(___a, __b) ? 0 : 1)
 
 //#!
 //#! macro<_Tp1, _Tp2, __binary_pred>(_Tp1 & __a, _Tp2 & __b, __binary_pred) : bool
