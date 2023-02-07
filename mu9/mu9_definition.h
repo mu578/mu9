@@ -49,8 +49,8 @@ MU9_BEGIN_CDECL
 #	define mu9_is_nullptr(__x)     mu8_is_nullptr(__x)
 #	define mu9_not_nullptr(__x)    mu8_not_nullptr(__x)
 
-#	define m9_cast(_Tp, __x)       m8_cast(_Tp, __x)
-#	define m9_const_cast(_Tp, __x) m8_const_cast(_Tp, __x)
+#	define mu9_cast(_Tp, __x)       m8_cast(_Tp, __x)
+#	define mu9_const_cast(_Tp, __x) m8_const_cast(_Tp, __x)
 #	else
 #	define mu9_scope_begin         do     {
 #	define mu9_scope_end           break; } while (0)
@@ -59,8 +59,8 @@ MU9_BEGIN_CDECL
 #	define mu9_is_nullptr(__x)     ((__x) == NULL ? 1 : 0)
 #	define mu9_not_nullptr(__x)    ((__x) != NULL ? 1 : 0)
 
-#	define m9_cast(_Tp, __x)       (_Tp)(__x)
-#	define m9_const_cast(_Tp, __x) (const _Tp)(__x)
+#	define mu9_cast(_Tp, __x)       (_Tp)(__x)
+#	define mu9_const_cast(_Tp, __x) (const _Tp)(__x)
 #	endif
 
 MU9_END_CDECL

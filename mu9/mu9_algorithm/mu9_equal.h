@@ -27,10 +27,10 @@ MU9_BEGIN_CDECL
 //#!
 #	define mu9_equal1(_Tp, __first1, __last1,  __first2, __d_result) \
 mu9_scope_begin                                                     \
-	mu9_bool_t ___mu9_equal1__x__ = m9_true;                         \
+	mu9_bool_t ___mu9_equal1__x__ = mu9_true;                        \
 	for (; __first1 != __last1; ++__first1, ++__first2) {            \
 		if (!(*__first1 == *__first2)) {                              \
-			___mu9_equal1__x__ = m9_false;                             \
+			___mu9_equal1__x__ = mu9_false;                            \
 			break;                                                     \
 		}                                                             \
 	}                                                                \
@@ -42,14 +42,14 @@ mu9_scope_end
 //#!
 #	define mu9_equal2(_Tp, __first1, __last1,  __first2, __binary_pred, __d_result) \
 mu9_scope_begin                                                                    \
-	mu9_bool_t ___mu9_equal2__x__ = m9_true;                                        \
+	mu9_bool_t ___mu9_equal2__x__ = mu9_true;                                       \
 	for (; __first1 != __last1; ++__first1, ++__first2) {                           \
-		if (!__binary_pred(*__first1, *__first2)) {                                 \
-			___mu9_equal2__x__ = m9_false;                                           \
-			break;                                                                   \
-		}                                                                           \
-	}                                                                              \
-	__d_result = ___mu9_equal2__x__;                                               \
+		if (!__binary_pred(*__first1, *__first2)) {                                  \
+			___mu9_equal2__x__ = mu9_false;                                           \
+			break;                                                                    \
+		}                                                                            \
+	}                                                                               \
+	__d_result = ___mu9_equal2__x__;                                                \
 mu9_scope_end
 
 MU9_END_CDECL

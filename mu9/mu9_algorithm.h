@@ -39,10 +39,10 @@ MU9_BEGIN_CDECL
 //#!
 #	define mu9_all_of(__first, __last, __unary_pred, __d_result) \
 mu9_scope_begin                                                 \
-	mu9_bool_t ___mu9_all_of__x__ = m9_true;                     \
+	mu9_bool_t ___mu9_all_of__x__ = mu9_true;                    \
 	for (; __first != __last; ++__first) {                       \
 		if (!__unary_pred(*__first)) {                            \
-			___mu9_all_of__x__ = m9_false;                         \
+			___mu9_all_of__x__ = mu9_false;                        \
 			break;                                                 \
 		}                                                         \
 	}                                                            \
@@ -54,10 +54,10 @@ mu9_scope_end
 //#!
 #	define mu9_any_of(__first, __last, __unary_pred, __d_result) \
 mu9_scope_begin                                                 \
-	mu9_bool_t ___mu9_any_of__x__ = m9_false;                    \
+	mu9_bool_t ___mu9_any_of__x__ = mu9_false;                   \
 	for (; __first != __last; ++__first) {                       \
 		if (__unary_pred(*__first)) {                             \
-			___mu9_any_of__x__ = m9_true;                          \
+			___mu9_any_of__x__ = mu9_true;                         \
 			break;                                                 \
 		}                                                         \
 	}                                                            \
@@ -69,10 +69,10 @@ mu9_scope_end
 //#!
 #	define mu9_none_of(__first, __last, __unary_pred, __d_result) \
 mu9_scope_begin                                                  \
-	mu9_bool_t ___mu9_none_of__x__ = m9_true;                     \
+	mu9_bool_t ___mu9_none_of__x__ = mu9_true;                    \
 	for (; __first != __last; ++__first) {                        \
 		if (__unary_pred(*__first)) {                              \
-			___mu9_none_of__x__ = m9_false;                         \
+			___mu9_none_of__x__ = mu9_false;                        \
 			break;                                                  \
 		}                                                          \
 	}                                                             \
