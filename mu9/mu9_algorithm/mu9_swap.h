@@ -26,21 +26,21 @@ MU0_BEGIN_CDECL
 //#! macro<_Tp>(_Tp & a, _Tp & b) : void
 //#!
 #	define mu9_swap(_Tp, __a, __b)         \
-mu9_scope_begin                           \
+mu0_scope_begin                           \
 	_Tp __mu9_swap__c__ = (__a);           \
 	(__a)               = (__b);           \
 	(__b)               = __mu9_swap__c__; \
-mu9_scope_end
+mu0_scope_end
 
 //#!
 //#! macro<_Tp>(_Tp &** a, _Tp &** b) : void
 //#!
 #	define mu9_swap_pointer(_Tp, __a, __b)           \
-mu9_scope_begin                                     \
+mu0_scope_begin                                     \
 	_Tp * __mu9_swap_pointer__c__ = *(__a);          \
 	*(__a)                        = *(__b);          \
 	*(__b)                        = __mu9_swap__c__; \
-mu9_scope_end
+mu0_scope_end
 
 //#!
 //#! macro<_Tp>(_Tp &* a, _Tp &* b) : void

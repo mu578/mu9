@@ -23,16 +23,16 @@
 MU0_BEGIN_CDECL
 
 #	define mu9_mismatch1(_Tp, __first1, __last1, __first2, __d_result1, __d_result2) \
-mu9_scope_begin                                                                     \
+mu0_scope_begin                                                                     \
 	while (__first1 != __last1 && *__first1 == *__first2) {                          \
 		++__first1, ++__first2;                                                       \
 	}                                                                                \
 	__d_result1 = __first1;                                                          \
 	__d_result2 = __first2;                                                          \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_mismatch2(_Tp, __first1, __last1, __first2, __binary_pred, __d_result1, __d_result2) \
-mu9_scope_begin                                                                                    \
+mu0_scope_begin                                                                                    \
 	for (; __first1 != __last1; ++__first1, (void) ++__first2) {                                    \
 		if (!__binary_pred(*__first1, *__first2)) {                                                  \
 			break;                                                                                    \
@@ -40,25 +40,25 @@ mu9_scope_begin                                                                 
 	}                                                                                               \
 	__d_result1 = __first1;                                                                         \
 	__d_result2 = __first2;                                                                         \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_mismatch3(_Tp, __first1, __last1, __first2, __last2, __d_result1, __d_result2) \
-mu9_scope_begin                                                                              \
+mu0_scope_begin                                                                              \
 	while (__first1 != __last1 && __first2 != __last2 && *__first1 == *__first2) {            \
 		++__first1, ++__first2;                                                                \
 	}                                                                                         \
 	__d_result1 = __first1;                                                                   \
 	__d_result2 = __first2;                                                                   \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_mismatch4(_Tp, __first1, __last1, __first2, __last2, __binary_pred, __d_result1, __d_result2) \
-mu9_scope_begin                                                                                             \
+mu0_scope_begin                                                                                             \
 	while (__first1 != __last1 && __first2 != __last2 && __binary_predp(*__first1, *__first2)) {             \
 		++__first1, ++__first2;                                                                               \
 	}                                                                                                        \
 	__d_result1 = __first1;                                                                                  \
 	__d_result2 = __first2;                                                                                  \
-mu9_scope_end
+mu0_scope_end
 
 MU0_END_CDECL
 

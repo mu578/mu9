@@ -23,18 +23,18 @@
 MU0_BEGIN_CDECL
 
 #	define mu9_transform1(_Tp, __first1, __last1, __d_first, __unary_op) \
-mu9_scope_begin                                                         \
+mu0_scope_begin                                                         \
 	while(__first1 != __last1) {                                         \
 		*__d_first++ = __unary_op(*__first1++);                           \
 	}                                                                    \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_transform2(_Tp, __first1, __last1, __first2, __d_first, __binary_op) \
-mu9_scope_begin                                                                    \
+mu0_scope_begin                                                                    \
 	while(__first1 != __last1) {                                                    \
 		*__d_first++ = __binary_op(*__first1++, *__first2++);                        \
 	}                                                                               \
-mu9_scope_end
+mu0_scope_end
 
 MU0_END_CDECL
 

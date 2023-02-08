@@ -24,7 +24,7 @@
 MU0_BEGIN_CDECL
 
 #	define mu9_partition1(_Tp, __first, __last, __unary_pred, __d_result)          \
-mu9_scope_begin                                                                   \
+mu0_scope_begin                                                                   \
 	_Tp * __mu9_partition1__i__;                                                   \
 	mu9_bool_t __mu9_partition1__x__ = mu9_false;                                  \
 	__d_result                       = __first;                                    \
@@ -49,10 +49,10 @@ mu9_scope_begin                                                                 
 			}                                                                        \
 		}                                                                           \
 	}                                                                              \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_partition2(_Tp, __first, __last, __unary_pred, __swap_op, __d_result) \
-mu9_scope_begin                                                                     \
+mu0_scope_begin                                                                     \
 	_Tp * __mu9_partition2__i__;                                                     \
 	mu9_bool_t __mu9_partition2__x__ = mu9_false;                                    \
 	__d_result                       = __first;                                      \
@@ -77,10 +77,10 @@ mu9_scope_begin                                                                 
 			}                                                                          \
 		}                                                                             \
 	}                                                                                \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_partition3(_Tp, __first, __last, __unary_pred, __d_result) \
-mu9_scope_begin                                                          \
+mu0_scope_begin                                                          \
 	mu9_bool_t __mu9_partition3__x__ = mu9_false;                         \
 	__d_result                       = __first;                           \
 	while (1) {                                                           \
@@ -113,10 +113,10 @@ mu9_scope_begin                                                          \
 		++__first;                                                         \
 		__d_result = __first;                                              \
 	}                                                                     \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_partition4(_Tp, __first, __last, __unary_pred, __swap_op, __d_result) \
-mu9_scope_begin                                                                     \
+mu0_scope_begin                                                                     \
 	mu9_bool_t __mu9_partition4__x__ = mu9_false;                                    \
 	__d_result                       = __first;                                      \
 	while (1) {                                                                      \
@@ -149,10 +149,10 @@ mu9_scope_begin                                                                 
 		++__first;                                                                    \
 		__d_result = __first;                                                         \
 	}                                                                                \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_partition5(_Tp,__first, __last, __unary_pred, __d_result)                                   \
-mu9_scope_begin                                                                                           \
+mu0_scope_begin                                                                                           \
 	_Tp * __mu9_partition5__i__;                                                                           \
 	mu9_bool_t __mu9_partition5__x__ = mu9_false;                                                          \
 	__d_result                       = __first;                                                            \
@@ -171,7 +171,7 @@ mu9_scope_begin                                                                 
 			}                                                                                                \
 		}                                                                                                   \
 	}                                                                                                      \
-mu9_scope_end
+mu0_scope_end
 
 MU0_END_CDECL
 

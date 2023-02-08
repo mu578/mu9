@@ -23,21 +23,21 @@
 MU0_BEGIN_CDECL
 
 #	define mu9_copy(_Tp, __first, __last, __d_first)                  \
-mu9_scope_begin                                                      \
+mu0_scope_begin                                                      \
 	for (; __first != __last; (void) ++__first, (void) ++__d_first) { \
 		*__d_first = *__first;                                         \
 	}                                                                 \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_copy_if(_Tp, __first, __last, __d_first, __unary_pred) \
-mu9_scope_begin                                                      \
+mu0_scope_begin                                                      \
 	for (; __first != __last; ++__first) {                            \
 		if (__unary_pred(*__first)) {                                  \
 			*__d_first = *__first;                                      \
 			++__d_first;                                                \
 		}                                                              \
 	}                                                                 \
-mu9_scope_end
+mu0_scope_end
 
 MU0_END_CDECL
 

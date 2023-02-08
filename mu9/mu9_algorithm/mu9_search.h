@@ -23,7 +23,7 @@
 MU0_BEGIN_CDECL
 
 #	define mu9_search1(_Tp, __first, __last, __s_first, __s_last, __d_result) \
-mu9_scope_begin                                                              \
+mu0_scope_begin                                                              \
 	_Tp * __mu9_search1__i__;                                                 \
 	_Tp * __mu9_search1__j__;                                                 \
 	__d_result = __first;                                                     \
@@ -46,10 +46,10 @@ mu9_scope_begin                                                              \
 		}                                                                      \
 		++__first;                                                             \
 	}                                                                         \
-mu9_scope_end
+mu0_scope_end
 
 #	define mu9_search2(_Tp, __first, __last, __s_first, __s_last, __binary_pred, __d_result) \
-mu9_scope_begin                                                                             \
+mu0_scope_begin                                                                             \
 	_Tp * __mu9_search2__i__;                                                                \
 	_Tp * __mu9_search2__j__;                                                                \
 	__d_result = __first;                                                                    \
@@ -72,7 +72,7 @@ mu9_scope_begin                                                                 
 		}                                                                                     \
 		++__first;                                                                            \
 	}                                                                                        \
-mu9_scope_end
+mu0_scope_end
 
 MU0_END_CDECL
 

@@ -26,22 +26,22 @@ MU0_BEGIN_CDECL
 //#! macro<_Tp>(_Tp &* __first, _Tp &* __last, __unary_fn) : void
 //#!
 #	define mu9_for_each(_Tp, __first, __last, __unary_fn) \
-mu9_scope_begin                                          \
+mu0_scope_begin                                          \
 	for (; __first != __last; ++__first) {                \
 		__unary_fn(*__first);                              \
 	}                                                     \
-mu9_scope_end
+mu0_scope_end
 
 //#!
 //#! macro<_Tp, _Uint>(_Tp &* __first, _Uint & __n, __unary_fn) : void
 //#!
 #	define mu9_for_each_n(_Tp, __first, __n, __unary_fn)                                           \
-mu9_scope_begin                                                                                   \
+mu0_scope_begin                                                                                   \
 	mu0_uinteger_t __mu9_for_each_n__i__ = 0;                                                      \
 	for (; __mu9_for_each_n__i__ < mu0_uinteger(__n); ++__first, (void) ++__mu9_for_each_n__i__) { \
 		__unary_fn(*__first);                                                                       \
 	}                                                                                              \
-mu9_scope_end
+mu0_scope_end
 
 MU0_END_CDECL
 

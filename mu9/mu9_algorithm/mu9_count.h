@@ -26,7 +26,7 @@ MU0_BEGIN_CDECL
 //#! macro<_Tp, _Dist>(_Tp &* __first, _Tp &* __last, const _Tp & __value, _Dist<return> & __d_result) : void
 //#!
 #	define mu9_count(_Tp, __first,  __last, __value, __d_result) \
-mu9_scope_begin                                                 \
+mu0_scope_begin                                                 \
 	mu0_difference_t __mu9_count__c__ = mu0_difference(0);       \
 	for (; __first != __last; ++__first) {                       \
 		if (*__first == __value) {                                \
@@ -34,13 +34,13 @@ mu9_scope_begin                                                 \
 		}                                                         \
 	}                                                            \
 	__d_result = __mu9_count__c__;                               \
-mu9_scope_end
+mu0_scope_end
 
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __first, _Tp &* __last, const _Tp & __value, _Dist<return> & __d_result) : void
 //#!
 #	define mu9_count_not(_Tp, __first,  __last, __value, __d_result) \
-mu9_scope_begin                                                     \
+mu0_scope_begin                                                     \
 	mu0_difference_t __mu9_count_not__c__ = mu0_difference(0);       \
 	for (; __first != __last; ++__first) {                           \
 		if (*__first != __value) {                                    \
@@ -48,13 +48,13 @@ mu9_scope_begin                                                     \
 		}                                                             \
 	}                                                                \
 	__d_result = __mu9_count_not__c__;                               \
-mu9_scope_end
+mu0_scope_end
 
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __first, _Tp &* __last, __unary_pred, _Dist<return> & __d_result) : void
 //#!
 #	define mu9_count_if(_Tp, __first,  __last, __unary_pred, __d_result) \
-mu9_scope_begin                                                         \
+mu0_scope_begin                                                         \
 	mu0_difference_t __mu9_count_if__c__ = mu0_difference(0);            \
 	for (; __first != __last; ++__first) {                               \
 		if (__unary_pred(*__first)) {                                     \
@@ -62,13 +62,13 @@ mu9_scope_begin                                                         \
 		}                                                                 \
 	}                                                                    \
 	__d_result = __mu9_count_if__c__;                                    \
-mu9_scope_end
+mu0_scope_end
 
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __first, _Tp &* __last, __unary_pred, _Dist<return> & __d_result) : void
 //#!
 #	define mu9_count_if_not(_Tp, __first,  __last, __unary_pred, __d_result) \
-mu9_scope_begin                                                             \
+mu0_scope_begin                                                             \
 	mu0_difference_t __mu9_count_if_not__c__ = mu0_difference(0);            \
 	for (; __first != __last; ++__first) {                                   \
 		if (!__unary_pred(*__first)) {                                        \
@@ -76,7 +76,7 @@ mu9_scope_begin                                                             \
 		}                                                                     \
 	}                                                                        \
 	__d_result = __mu9_count_if_not__c__;                                    \
-mu9_scope_end
+mu0_scope_end
 
 MU0_END_CDECL
 

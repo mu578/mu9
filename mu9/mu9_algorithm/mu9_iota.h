@@ -26,13 +26,13 @@ MU0_BEGIN_CDECL
 //#! macro<_Tp>(_Tp &* __first, _Tp &* __last, _Tp & __value) : void
 //#!
 #	define mu9_iota(_Tp, __first, __last, __value)      \
-mu9_scope_begin                                        \
+mu0_scope_begin                                        \
 	_Tp __mu9_iota__v__ = mu9_const_cast(_Tp, __value); \
 	while(__first != __last) {                          \
 		*__first++ = __mu9_iota__v__;                    \
 		++__value;                                       \
 	}                                                   \
-mu9_scope_end
+mu0_scope_end
 
 MU0_END_CDECL
 
