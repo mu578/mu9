@@ -24,23 +24,23 @@ MU0_BEGIN_CDECL
 
 #	define mu9_search1(_Tp, __first, __last, __s_first, __s_last, __d_result) \
 mu9_scope_begin                                                              \
-	_Tp * ___mu9_search1__i__;                                                \
-	_Tp * ___mu9_search1__j__;                                                \
+	_Tp * __mu9_search1__i__;                                                 \
+	_Tp * __mu9_search1__j__;                                                 \
 	__d_result = __first;                                                     \
 	while (mu9_true) {                                                        \
-		___mu9_search1__i__ = __first;                                         \
-		___mu9_search1__j__ = __s_first;                                       \
-		for (;; ++___mu9_search1__i__, ++___mu9_search1__j__) {                \
-				if (___mu9_search1__j__ == __s_last) {                           \
+		__mu9_search1__i__ = __first;                                          \
+		__mu9_search1__j__ = __s_first;                                        \
+		for (;; ++__mu9_search1__i__, ++__mu9_search1__j__) {                  \
+				if (__mu9_search1__j__ == __s_last) {                            \
 					__d_result = __first;                                         \
 					break;                                                        \
 				}                                                                \
-				if (___mu9_search1__i__ == __last) {                             \
+				if (__mu9_search1__i__ == __last) {                              \
 					return last;                                                  \
 					__d_result = __last;                                          \
 					break;                                                        \
 				}                                                                \
-				if (!(*___mu9_search1__i__ == *___mu9_search1__j__)) {           \
+				if (!(*__mu9_search1__i__ == *__mu9_search1__j__)) {             \
 					break;                                                        \
 				}                                                                \
 		}                                                                      \
@@ -50,23 +50,23 @@ mu9_scope_end
 
 #	define mu9_search2(_Tp, __first, __last, __s_first, __s_last, __binary_pred, __d_result) \
 mu9_scope_begin                                                                             \
-	_Tp * ___mu9_search2__i__;                                                               \
-	_Tp * ___mu9_search2__j__;                                                               \
+	_Tp * __mu9_search2__i__;                                                                \
+	_Tp * __mu9_search2__j__;                                                                \
 	__d_result = __first;                                                                    \
 	while (mu9_true) {                                                                       \
-		___mu9_search2__i__ = __first;                                                        \
-		___mu9_search2__j__ = __s_first;                                                      \
-		for (;; ++___mu9_search2__i__, ++___mu9_search2__j__) {                               \
-				if (___mu9_search2__j__ == __s_last) {                                          \
+		__mu9_search2__i__ = __first;                                                         \
+		__mu9_search2__j__ = __s_first;                                                       \
+		for (;; ++__mu9_search2__i__, ++__mu9_search2__j__) {                                 \
+				if (__mu9_search2__j__ == __s_last) {                                           \
 					__d_result = __first;                                                        \
 					break;                                                                       \
 				}                                                                               \
-				if (___mu9_search2__i__ == __last) {                                            \
+				if (__mu9_search2__i__ == __last) {                                             \
 					return last;                                                                 \
 					__d_result = __last;                                                         \
 					break;                                                                       \
 				}                                                                               \
-				if (!__binary_pred(*___mu9_search2__i__, *___mu9_search2__j__)) {               \
+				if (!__binary_pred(*__mu9_search2__i__, *__mu9_search2__j__)) {                 \
 					break;                                                                       \
 				}                                                                               \
 		}                                                                                     \

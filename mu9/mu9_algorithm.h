@@ -18,6 +18,7 @@
 #ifndef MU9_ALGORITHM_H
 #define MU9_ALGORITHM_H 1
 
+#include <mu9/mu9_algorithm/mu9_adjacent_find.h>
 #include <mu9/mu9_algorithm/mu9_apply.h>
 #include <mu9/mu9_algorithm/mu9_copy.h>
 #include <mu9/mu9_algorithm/mu9_count.h>
@@ -27,6 +28,7 @@
 #include <mu9/mu9_algorithm/mu9_for_each.h>
 #include <mu9/mu9_algorithm/mu9_iota.h>
 #include <mu9/mu9_algorithm/mu9_mismatch.h>
+#include <mu9/mu9_algorithm/mu9_partition.h>
 #include <mu9/mu9_algorithm/mu9_rotate.h>
 #include <mu9/mu9_algorithm/mu9_search.h>
 #include <mu9/mu9_algorithm/mu9_swap.h>
@@ -39,14 +41,14 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_all_of(__first, __last, __unary_pred, __d_result) \
 mu9_scope_begin                                                 \
-	mu9_bool_t ___mu9_all_of__x__ = mu9_true;                    \
+	mu9_bool_t __mu9_all_of__x__ = mu9_true;                     \
 	for (; __first != __last; ++__first) {                       \
 		if (!__unary_pred(*__first)) {                            \
-			___mu9_all_of__x__ = mu9_false;                        \
+			__mu9_all_of__x__ = mu9_false;                         \
 			break;                                                 \
 		}                                                         \
 	}                                                            \
-	__d_result = ___mu9_all_of__x__;                             \
+	__d_result = __mu9_all_of__x__;                              \
 mu9_scope_end
 
 //#!
@@ -54,14 +56,14 @@ mu9_scope_end
 //#!
 #	define mu9_any_of(__first, __last, __unary_pred, __d_result) \
 mu9_scope_begin                                                 \
-	mu9_bool_t ___mu9_any_of__x__ = mu9_false;                   \
+	mu9_bool_t __mu9_any_of__x__ = mu9_false;                    \
 	for (; __first != __last; ++__first) {                       \
 		if (__unary_pred(*__first)) {                             \
-			___mu9_any_of__x__ = mu9_true;                         \
+			__mu9_any_of__x__ = mu9_true;                          \
 			break;                                                 \
 		}                                                         \
 	}                                                            \
-	__d_result = ___mu9_any_of__x__;                             \
+	__d_result = __mu9_any_of__x__;                              \
 mu9_scope_end
 
 //#!
@@ -69,14 +71,14 @@ mu9_scope_end
 //#!
 #	define mu9_none_of(__first, __last, __unary_pred, __d_result) \
 mu9_scope_begin                                                  \
-	mu9_bool_t ___mu9_none_of__x__ = mu9_true;                    \
+	mu9_bool_t __mu9_none_of__x__ = mu9_true;                     \
 	for (; __first != __last; ++__first) {                        \
 		if (__unary_pred(*__first)) {                              \
-			___mu9_none_of__x__ = mu9_false;                        \
+			__mu9_none_of__x__ = mu9_false;                         \
 			break;                                                  \
 		}                                                          \
 	}                                                             \
-	__d_result = ___mu9_none_of__x__;                             \
+	__d_result = __mu9_none_of__x__;                              \
 mu9_scope_end
 
 MU0_END_CDECL

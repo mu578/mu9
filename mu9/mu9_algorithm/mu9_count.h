@@ -27,13 +27,13 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_count(_Tp, __first,  __last, __value, __d_result) \
 mu9_scope_begin                                                 \
-	mu0_difference_t ___mu9_count__c__ = mu0_difference(0);      \
+	mu0_difference_t __mu9_count__c__ = mu0_difference(0);       \
 	for (; __first != __last; ++__first) {                       \
 		if (*__first == __value) {                                \
-			++___mu9_count__c__;                                   \
+			++__mu9_count__c__;                                    \
 		}                                                         \
 	}                                                            \
-	__d_result = ___mu9_count__c__;                              \
+	__d_result = __mu9_count__c__;                               \
 mu9_scope_end
 
 //#!
@@ -41,13 +41,13 @@ mu9_scope_end
 //#!
 #	define mu9_count_not(_Tp, __first,  __last, __value, __d_result) \
 mu9_scope_begin                                                     \
-	mu0_difference_t ___mu9_count_not__c__ = mu0_difference(0);      \
+	mu0_difference_t __mu9_count_not__c__ = mu0_difference(0);       \
 	for (; __first != __last; ++__first) {                           \
 		if (*__first != __value) {                                    \
-			++___mu9_count_not__c__;                                   \
+			++__mu9_count_not__c__;                                    \
 		}                                                             \
 	}                                                                \
-	__d_result = ___mu9_count_not__c__;                              \
+	__d_result = __mu9_count_not__c__;                               \
 mu9_scope_end
 
 //#!
@@ -55,13 +55,13 @@ mu9_scope_end
 //#!
 #	define mu9_count_if(_Tp, __first,  __last, __unary_pred, __d_result) \
 mu9_scope_begin                                                         \
-	mu0_difference_t ___mu9_count_if__c__ = mu0_difference(0);           \
+	mu0_difference_t __mu9_count_if__c__ = mu0_difference(0);            \
 	for (; __first != __last; ++__first) {                               \
 		if (__unary_pred(*__first)) {                                     \
-			++___mu9_count_if__c__;                                        \
+			++__mu9_count_if__c__;                                         \
 		}                                                                 \
 	}                                                                    \
-	__d_result = ___mu9_count_if__c__;                                   \
+	__d_result = __mu9_count_if__c__;                                    \
 mu9_scope_end
 
 //#!
@@ -69,13 +69,13 @@ mu9_scope_end
 //#!
 #	define mu9_count_if_not(_Tp, __first,  __last, __unary_pred, __d_result) \
 mu9_scope_begin                                                             \
-	mu0_difference_t ___mu9_count_if_not__c__ = mu0_difference(0);           \
+	mu0_difference_t __mu9_count_if_not__c__ = mu0_difference(0);            \
 	for (; __first != __last; ++__first) {                                   \
 		if (!__unary_pred(*__first)) {                                        \
-			++___mu9_count_if_not__c__;                                        \
+			++__mu9_count_if_not__c__;                                         \
 		}                                                                     \
 	}                                                                        \
-	__d_result = ___mu9_count_if_not__c__;                                   \
+	__d_result = __mu9_count_if_not__c__;                                    \
 mu9_scope_end
 
 MU0_END_CDECL

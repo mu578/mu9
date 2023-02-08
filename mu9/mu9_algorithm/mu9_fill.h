@@ -35,12 +35,12 @@ mu9_scope_end
 //#!
 //#! macro<_Tp, _Uint>(_Tp &* __first, _Uint & __n, const _Tp & __value) : void
 //#!
-#	define mu9_fill_n(_Tp, __first, __n, __value)                                 \
-mu9_scope_begin                                                                  \
-	mu0_uinteger_t ___mu9_fill_n__i__ = 0;                                        \
-	for (; ___mu9_fill_n__i__ < mu0_uinteger(__n); (void) ++___mu9_fill_n__i__) { \
-		*__first++ = __value;                                                      \
-	}                                                                             \
+#	define mu9_fill_n(_Tp, __first, __n, __value)                               \
+mu9_scope_begin                                                                \
+	mu0_uinteger_t __mu9_fill_n__i__ = 0;                                       \
+	for (; __mu9_fill_n__i__ < mu0_uinteger(__n); (void) ++__mu9_fill_n__i__) { \
+		*__first++ = __value;                                                    \
+	}                                                                           \
 mu9_scope_end
 
 MU0_END_CDECL

@@ -25,36 +25,36 @@ MU0_BEGIN_CDECL
 
 #	define mu9_rotate(_Tp, __first, __n_first, __last, __d_result) \
 mu9_scope_begin                                                   \
-	_Tp * ___mu9_rotate__i__;                                      \
-	if ((__first) == (__n_first)) {                                \
-			(__d_result) = (__last);                                 \
-	} else if ((__n_first) == (__last)) {                          \
-			(__d_result) = (__first);                                \
+	_Tp * __mu9_rotate__i__;                                       \
+	if (__first == __n_first) {                                    \
+		__d_result = (__last);                                      \
+	} else if (__n_first == (__last)) {                            \
+		__d_result = __first;                                       \
 	} else {                                                       \
-			___mu9_rotate__i__ = (__n_first);                        \
+			__mu9_rotate__i__ = __n_first;                           \
 			while (1) {                                              \
-				mu9_swap(_Tp, *(__first), *___mu9_rotate__i__);       \
-				++(__first);                                          \
-				if (++___mu9_rotate__i__ == __last) {                 \
+				mu9_swap(_Tp, *__first, *__mu9_rotate__i__);          \
+				++__first;                                            \
+				if (++__mu9_rotate__i__ == __last) {                  \
 					break;                                             \
 				}                                                     \
-				if ((__first) == (__n_first)) {                       \
-					(__n_first) = ___mu9_rotate__i__;                  \
+				if (__first == __n_first) {                           \
+					__n_first = __mu9_rotate__i__;                     \
 				}                                                     \
 			}                                                        \
-			(__d_result) = (__first);                                \
-			if ((__first) != (__n_first)) {                          \
-				___mu9_rotate__i__ = (__n_first);                     \
+			__d_result = __first;                                    \
+			if (__first != __n_first) {                              \
+				__mu9_rotate__i__ = __n_first;                        \
 				while (1) {                                           \
-					mu9_swap(_Tp, *(__first), *___mu9_rotate__i__);    \
-					++(__first);                                       \
-					if (++___mu9_rotate__i__ == __last) {              \
-							if ((__first) == (__n_first)) {              \
+					mu9_swap(_Tp, *__first, *__mu9_rotate__i__);       \
+					++__first;                                         \
+					if (++__mu9_rotate__i__ == __last) {               \
+							if (__first == __n_first) {                  \
 								break;                                    \
 							}                                            \
-							___mu9_rotate__i__ = (__n_first);            \
-					} else if ((__first) == (__n_first)) {             \
-							(__n_first) = ___mu9_rotate__i__;            \
+							__mu9_rotate__i__ = __n_first;               \
+					} else if (__first == __n_first) {                 \
+							__n_first = __mu9_rotate__i__;               \
 					}                                                  \
 				}                                                     \
 			}                                                        \
@@ -63,11 +63,11 @@ mu9_scope_end
 
 #	define mu9_rotate_copy(_Tp, __first, __n_first, __last, __d_first , __d_result) \
 mu9_scope_begin                                                                    \
-	_Tp * ___mu9_rotate_copy__i__;                                                  \
+	_Tp * __mu9_rotate_copy__i__;                                                   \
 	mu9_copy(__n_first, __last, __d_first);                                         \
-	___mu9_rotate_copy__i__ = __d_first;                                            \
-	mu9_copy(__first, __n_first, ___mu9_rotate_copy__i__);                          \
-	__d_result              = ___mu9_rotate_copy__i__;                              \
+	__mu9_rotate_copy__i__ = __d_first;                                             \
+	mu9_copy(__first, __n_first, __mu9_rotate_copy__i__);                           \
+	__d_result              = __mu9_rotate_copy__i__;                               \
 mu9_scope_end
 
 MU0_END_CDECL
