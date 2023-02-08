@@ -23,42 +23,80 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_rotate(_Tp, __first, __n_first, __last, __d_result) \
-mu9_scope_begin                                                   \
-	_Tp * __mu9_rotate__i__;                                       \
-	if (__first == __n_first) {                                    \
-		__d_result = (__last);                                      \
-	} else if (__n_first == (__last)) {                            \
-		__d_result = __first;                                       \
-	} else {                                                       \
-			__mu9_rotate__i__ = __n_first;                           \
-			while (1) {                                              \
-				mu9_swap(_Tp, *__first, *__mu9_rotate__i__);          \
-				++__first;                                            \
-				if (++__mu9_rotate__i__ == __last) {                  \
-					break;                                             \
-				}                                                     \
-				if (__first == __n_first) {                           \
-					__n_first = __mu9_rotate__i__;                     \
-				}                                                     \
-			}                                                        \
-			__d_result = __first;                                    \
-			if (__first != __n_first) {                              \
-				__mu9_rotate__i__ = __n_first;                        \
-				while (1) {                                           \
-					mu9_swap(_Tp, *__first, *__mu9_rotate__i__);       \
-					++__first;                                         \
-					if (++__mu9_rotate__i__ == __last) {               \
-							if (__first == __n_first) {                  \
-								break;                                    \
-							}                                            \
-							__mu9_rotate__i__ = __n_first;               \
-					} else if (__first == __n_first) {                 \
-							__n_first = __mu9_rotate__i__;               \
-					}                                                  \
-				}                                                     \
-			}                                                        \
-	}                                                              \
+#	define mu9_rotate1(_Tp, __first, __n_first, __last, __d_result) \
+mu9_scope_begin                                                    \
+	_Tp * __mu9_rotate1__i__;                                       \
+	if (__first == __n_first) {                                     \
+		__d_result = (__last);                                       \
+	} else if (__n_first == (__last)) {                             \
+		__d_result = __first;                                        \
+	} else {                                                        \
+			__mu9_rotate1__i__ = __n_first;                           \
+			while (1) {                                               \
+				mu9_swap(_Tp, *__first, *__mu9_rotate1__i__);          \
+				++__first;                                             \
+				if (++__mu9_rotate1__i__ == __last) {                  \
+					break;                                              \
+				}                                                      \
+				if (__first == __n_first) {                            \
+					__n_first = __mu9_rotate1__i__;                     \
+				}                                                      \
+			}                                                         \
+			__d_result = __first;                                     \
+			if (__first != __n_first) {                               \
+				__mu9_rotate1__i__ = __n_first;                        \
+				while (1) {                                            \
+					mu9_swap(_Tp, *__first, *__mu9_rotate1__i__);       \
+					++__first;                                          \
+					if (++__mu9_rotate1__i__ == __last) {               \
+							if (__first == __n_first) {                   \
+								break;                                     \
+							}                                             \
+							__mu9_rotate1__i__ = __n_first;               \
+					} else if (__first == __n_first) {                  \
+							__n_first = __mu9_rotate1__i__;               \
+					}                                                   \
+				}                                                      \
+			}                                                         \
+	}                                                               \
+mu9_scope_end
+
+#	define mu9_rotate2(_Tp, __first, __n_first, __last, , __swap_op, __d_result) \
+mu9_scope_begin                                                                 \
+	_Tp * __mu9_rotate2__i__;                                                    \
+	if (__first == __n_first) {                                                  \
+		__d_result = (__last);                                                    \
+	} else if (__n_first == (__last)) {                                          \
+		__d_result = __first;                                                     \
+	} else {                                                                     \
+			__mu9_rotate2__i__ = __n_first;                                        \
+			while (1) {                                                            \
+				__swap_op(_Tp, *__first, *__mu9_rotate2__i__);                      \
+				++__first;                                                          \
+				if (++__mu9_rotate2__i__ == __last) {                               \
+					break;                                                           \
+				}                                                                   \
+				if (__first == __n_first) {                                         \
+					__n_first = __mu9_rotate2__i__;                                  \
+				}                                                                   \
+			}                                                                      \
+			__d_result = __first;                                                  \
+			if (__first != __n_first) {                                            \
+				__mu9_rotate2__i__ = __n_first;                                     \
+				while (1) {                                                         \
+					__swap_op(_Tp, *__first, *__mu9_rotate2__i__);                   \
+					++__first;                                                       \
+					if (++__mu9_rotate2__i__ == __last) {                            \
+							if (__first == __n_first) {                                \
+								break;                                                  \
+							}                                                          \
+							__mu9_rotate2__i__ = __n_first;                            \
+					} else if (__first == __n_first) {                               \
+							__n_first = __mu9_rotate2__i__;                            \
+					}                                                                \
+				}                                                                   \
+			}                                                                      \
+	}                                                                            \
 mu9_scope_end
 
 #	define mu9_rotate_copy(_Tp, __first, __n_first, __last, __d_first , __d_result) \
