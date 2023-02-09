@@ -151,12 +151,12 @@ mu0_scope_begin                                                                 
 	}                                                                                \
 mu0_scope_end
 
-#	define mu9_partition5(_Tp,__first, __last, __unary_pred, __d_result)                                   \
+#	define mu9_partition5(_Tp, __first, __last, __unary_pred, __d_result)                                  \
 mu0_scope_begin                                                                                           \
 	_Tp * __mu9_partition5__i__;                                                                           \
 	mu9_bool_t __mu9_partition5__x__ = mu9_false;                                                          \
 	__d_result                       = __first;                                                            \
-	mu9_find_if_not(__first, __last, __unary_pred, __d_result);                                            \
+	mu9_find_if_not(_Tp, __first, __last, __unary_pred, __d_result);                                       \
 	__first                          = __d_result;                                                         \
 	if (__first == __last) {                                                                               \
 		__d_result            = __first;                                                                    \
@@ -165,7 +165,7 @@ mu0_scope_begin                                                                 
 	if (!__mu9_partition4__x__) {                                                                          \
 		for (__mu9_partition5__i__ = __first++; __mu9_partition5__i__ != __last; ++__mu9_partition5__i__) { \
 			if (__unary_pred(*i__mu9_partition5__i__)) {                                                     \
-				mu9_iter_swap(__mu9_partition5__i__, first);                                                  \
+				mu9_iter_swap(_Tp, __mu9_partition5__i__, first);                                             \
 				++__first;                                                                                    \
 				__d_result = __first;                                                                         \
 			}                                                                                                \
