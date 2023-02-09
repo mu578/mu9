@@ -25,14 +25,14 @@ MU0_BEGIN_CDECL
 #	define mu9_adjacent_find1(_Tp, __first, __last, __d_result)                              \
 mu0_scope_begin                                                                             \
 	_Tp * __mu9_adjacent_find1__i__;                                                         \
-	mu9_bool_t __mu9_adjacent_find1__x__ = mu9_false;                                        \
+	mu9_bool_t __mu9_adjacent_find1__x__ = mu0_false;                                        \
 	if (__first != __last) {                                                                 \
 		__mu9_adjacent_find1__i__ = __first;                                                  \
 		++__mu9_adjacent_find1__i__;                                                          \
 		for (; __mu9_adjacent_find1__i__ != __last; ++__mu9_adjacent_find1__i__, ++__first) { \
 			if (*__first == *__mu9_adjacent_find1__i__) {                                      \
 					__d_result                 = __first;                                        \
-					__mu9_adjacent_find1__x__ = mu9_true;                                        \
+					__mu9_adjacent_find1__x__ = mu0_true;                                        \
 					break;                                                                       \
 			}                                                                                  \
 		}                                                                                     \
@@ -45,14 +45,14 @@ mu0_scope_end
 #	define mu9_adjacent_find2(_Tp, __first, __last, __binary_pred, __d_result)               \
 mu0_scope_begin                                                                             \
 	_Tp * __mu9_adjacent_find2__i__;                                                         \
-	mu9_bool_t __mu9_adjacent_find2__x__ = mu9_false;                                        \
+	mu9_bool_t __mu9_adjacent_find2__x__ = mu0_false;                                        \
 	if (__first != __last) {                                                                 \
 		__mu9_adjacent_find2__i__ = __first;                                                  \
 		++__mu9_adjacent_find2__i__;                                                          \
 		for (; __mu9_adjacent_find2__i__ != __last; ++__mu9_adjacent_find2__i__, ++__first) { \
 			if (__binary_pred(*__first, *__mu9_adjacent_find2__i__)) {                         \
 					__d_result                 = __first;                                        \
-					__mu9_adjacent_find2__x__ = mu9_true;                                        \
+					__mu9_adjacent_find2__x__ = mu0_true;                                        \
 					break;                                                                       \
 			}                                                                                  \
 		}                                                                                     \

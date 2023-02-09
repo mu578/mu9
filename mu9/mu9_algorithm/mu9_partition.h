@@ -26,12 +26,12 @@ MU0_BEGIN_CDECL
 #	define mu9_partition1(_Tp, __first, __last, __unary_pred, __d_result)          \
 mu0_scope_begin                                                                   \
 	_Tp * __mu9_partition1__i__;                                                   \
-	mu9_bool_t __mu9_partition1__x__ = mu9_false;                                  \
+	mu9_bool_t __mu9_partition1__x__ = mu0_false;                                  \
 	__d_result                       = __first;                                    \
 	while (1) {                                                                    \
 		if (__first == __last) {                                                    \
 			__d_result            = __first;                                         \
-			__mu9_partition1__x__ = mu9_true;                                        \
+			__mu9_partition1__x__ = mu0_true;                                        \
 			break;                                                                   \
 		}                                                                           \
 		if (!__unary_pred(*__first)) {                                              \
@@ -54,12 +54,12 @@ mu0_scope_end
 #	define mu9_partition2(_Tp, __first, __last, __unary_pred, __swap_op, __d_result) \
 mu0_scope_begin                                                                     \
 	_Tp * __mu9_partition2__i__;                                                     \
-	mu9_bool_t __mu9_partition2__x__ = mu9_false;                                    \
+	mu9_bool_t __mu9_partition2__x__ = mu0_false;                                    \
 	__d_result                       = __first;                                      \
 	while (1) {                                                                      \
 		if (__first == __last) {                                                      \
 			__d_result            = __first;                                           \
-			__mu9_partition2__x__ = mu9_true;                                          \
+			__mu9_partition2__x__ = mu0_true;                                          \
 			break;                                                                     \
 		}                                                                             \
 		if (!__unary_pred(*__first)) {                                                \
@@ -81,13 +81,13 @@ mu0_scope_end
 
 #	define mu9_partition3(_Tp, __first, __last, __unary_pred, __d_result) \
 mu0_scope_begin                                                          \
-	mu9_bool_t __mu9_partition3__x__ = mu9_false;                         \
+	mu9_bool_t __mu9_partition3__x__ = mu0_false;                         \
 	__d_result                       = __first;                           \
 	while (1) {                                                           \
 		while (1) {                                                        \
 				if (__first == __last) {                                     \
 					__d_result            = __first;                          \
-					__mu9_partition3__x__ = mu9_true;                         \
+					__mu9_partition3__x__ = mu0_true;                         \
 					break;                                                    \
 				}                                                            \
 				if (!__unary_pred(*__first)) {                               \
@@ -102,7 +102,7 @@ mu0_scope_begin                                                          \
 		do {                                                               \
 			if (__first == --__last) {                                      \
 				__d_result            = __first;                             \
-				__mu9_partition3__x__ = mu9_true;                            \
+				__mu9_partition3__x__ = mu0_true;                            \
 				break;                                                       \
 			}                                                               \
 		} while (!__unary_pred(*__last));                                  \
@@ -117,13 +117,13 @@ mu0_scope_end
 
 #	define mu9_partition4(_Tp, __first, __last, __unary_pred, __swap_op, __d_result) \
 mu0_scope_begin                                                                     \
-	mu9_bool_t __mu9_partition4__x__ = mu9_false;                                    \
+	mu9_bool_t __mu9_partition4__x__ = mu0_false;                                    \
 	__d_result                       = __first;                                      \
 	while (1) {                                                                      \
 		while (1) {                                                                   \
 				if (__first == __last) {                                                \
 					__d_result            = __first;                                     \
-					__mu9_partition4__x__ = mu9_true;                                    \
+					__mu9_partition4__x__ = mu0_true;                                    \
 					break;                                                               \
 				}                                                                       \
 				if (!__unary_pred(*__first)) {                                          \
@@ -138,7 +138,7 @@ mu0_scope_begin                                                                 
 		do {                                                                          \
 			if (__first == --__last) {                                                 \
 				__d_result            = __first;                                        \
-				__mu9_partition4__x__ = mu9_true;                                       \
+				__mu9_partition4__x__ = mu0_true;                                       \
 				break;                                                                  \
 			}                                                                          \
 		} while (!__unary_pred(*__last));                                             \
@@ -154,13 +154,13 @@ mu0_scope_end
 #	define mu9_partition5(_Tp, __first, __last, __unary_pred, __d_result)                                  \
 mu0_scope_begin                                                                                           \
 	_Tp * __mu9_partition5__i__;                                                                           \
-	mu9_bool_t __mu9_partition5__x__ = mu9_false;                                                          \
+	mu9_bool_t __mu9_partition5__x__ = mu0_false;                                                          \
 	__d_result                       = __first;                                                            \
 	mu9_find_if_not(_Tp, __first, __last, __unary_pred, __d_result);                                       \
 	__first                          = __d_result;                                                         \
 	if (__first == __last) {                                                                               \
 		__d_result            = __first;                                                                    \
-		__mu9_partition5__x__ = mu9_true;                                                                   \
+		__mu9_partition5__x__ = mu0_true;                                                                   \
 	}                                                                                                      \
 	if (!__mu9_partition4__x__) {                                                                          \
 		for (__mu9_partition5__i__ = __first++; __mu9_partition5__i__ != __last; ++__mu9_partition5__i__) { \

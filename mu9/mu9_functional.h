@@ -15,8 +15,6 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_definition.h>
-
 #ifndef MU9_FUNCTIONAL_H
 #define MU9_FUNCTIONAL_H 1
 
@@ -35,10 +33,10 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<>(& __a, & __b) : bool
 //#!
-#	define mu9_logical_and(___a, __b)                  ( ((__a) && (__b)) ? mu9_true : mu9_false)
-#	define mu9_logical_not_and(___a, __b)              (!((__a) && (__b)) ? mu9_true : mu9_false)
-#	define mu9_logical_or(___a, __b)                   ( ((__a) || (__b)) ? mu9_true : mu9_false)
-#	define mu9_logical_not_or(___a, __b)               (!((__a) || (__b)) ? mu9_true : mu9_false)
+#	define mu9_logical_and(___a, __b)                  ( ((__a) && (__b)) ? mu0_true : mu0_false)
+#	define mu9_logical_not_and(___a, __b)              (!((__a) && (__b)) ? mu0_true : mu0_false)
+#	define mu9_logical_or(___a, __b)                   ( ((__a) || (__b)) ? mu0_true : mu0_false)
+#	define mu9_logical_not_or(___a, __b)               (!((__a) || (__b)) ? mu0_true : mu0_false)
 #	define mu9_negate(___a)                            !(__a)
 
 //#!
@@ -52,12 +50,12 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<>(& __a, & __b) : bool
 //#!
-#	define mu9_less_than(___a, __b)                    (((__a) <  (__b)) ? mu9_true : mu9_false)
-#	define mu9_less_than_or_equal(___a, __b)           (((__a) <= (__b)) ? mu9_true : mu9_false)
-#	define mu9_greater_than(___a, __b)                 (((__a) >  (__b)) ? mu9_true : mu9_false)
-#	define mu9_greater_than_or_equal(___a, __b)        (((__a) >= (__b)) ? mu9_true : mu9_false)
-#	define mu9_equal_to(___a, __b)                     (((__a) == (__b)) ? mu9_true : mu9_false)
-#	define mu9_not_equal_to(___a, __b)                 (((__a) != (__b)) ? mu9_true : mu9_false)
+#	define mu9_less_than(___a, __b)                    (((__a) <  (__b)) ? mu0_true : mu0_false)
+#	define mu9_less_than_or_equal(___a, __b)           (((__a) <= (__b)) ? mu0_true : mu0_false)
+#	define mu9_greater_than(___a, __b)                 (((__a) >  (__b)) ? mu0_true : mu0_false)
+#	define mu9_greater_than_or_equal(___a, __b)        (((__a) >= (__b)) ? mu0_true : mu0_false)
+#	define mu9_equal_to(___a, __b)                     (((__a) == (__b)) ? mu0_true : mu0_false)
+#	define mu9_not_equal_to(___a, __b)                 (((__a) != (__b)) ? mu0_true : mu0_false)
 #	define mu9_cmp(___a, __b)                          (mu9_less_than(___a, __b)) ? -1 : (mu9_equal_to(___a, __b) ? 0 : 1)
 
 //#!

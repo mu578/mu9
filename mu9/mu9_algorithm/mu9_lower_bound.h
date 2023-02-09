@@ -35,7 +35,7 @@ mu0_scope_begin                                                                \
 				__first                  = ++__mu9_lower_bound1__i__;              \
 				__mu9_lower_bound1__c__ -= __mu9_lower_bound1__n__ + 1;            \
 		} else {                                                                 \
-				__mu9_lower_bound1__c__ = __mu9_lower_bound1__n__;                 \
+				__mu9_lower_bound1__c__  = __mu9_lower_bound1__n__;                \
 		}                                                                        \
 	}                                                                           \
 	__d_result = __first;                                                       \
@@ -54,7 +54,7 @@ mu0_scope_begin                                                                 
 				__first                  = ++__mu9_lower_bound1__i__;                \
 				__mu9_lower_bound1__c__ -= __mu9_lower_bound1__n__ + 1;              \
 		} else {                                                                   \
-				__mu9_lower_bound1__c__ = __mu9_lower_bound1__n__;                   \
+				__mu9_lower_bound1__c__  = __mu9_lower_bound1__n__;                  \
 		}                                                                          \
 	}                                                                             \
 	__d_result = __first;                                                         \

@@ -41,10 +41,10 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_all_of(_Tp, __first, __last, __unary_pred, __d_result) \
 mu0_scope_begin                                                      \
-	mu9_bool_t __mu9_all_of__x__ = mu9_true;                          \
+	mu9_bool_t __mu9_all_of__x__ = mu0_true;                          \
 	for (; __first != __last; ++__first) {                            \
 		if (!__unary_pred(*__first)) {                                 \
-			__mu9_all_of__x__ = mu9_false;                              \
+			__mu9_all_of__x__ = mu0_false;                              \
 			break;                                                      \
 		}                                                              \
 	}                                                                 \
@@ -56,10 +56,10 @@ mu0_scope_end
 //#!
 #	define mu9_any_of(_Tp, __first, __last, __unary_pred, __d_result) \
 mu0_scope_begin                                                      \
-	mu9_bool_t __mu9_any_of__x__ = mu9_false;                         \
+	mu9_bool_t __mu9_any_of__x__ = mu0_false;                         \
 	for (; __first != __last; ++__first) {                            \
 		if (__unary_pred(*__first)) {                                  \
-			__mu9_any_of__x__ = mu9_true;                               \
+			__mu9_any_of__x__ = mu0_true;                               \
 			break;                                                      \
 		}                                                              \
 	}                                                                 \
@@ -71,10 +71,10 @@ mu0_scope_end
 //#!
 #	define mu9_none_of(_Tp, __first, __last, __unary_pred, __d_result) \
 mu0_scope_begin                                                       \
-	mu9_bool_t __mu9_none_of__x__ = mu9_true;                          \
+	mu9_bool_t __mu9_none_of__x__ = mu0_true;                          \
 	for (; __first != __last; ++__first) {                             \
 		if (__unary_pred(*__first)) {                                   \
-			__mu9_none_of__x__ = mu9_false;                              \
+			__mu9_none_of__x__ = mu0_false;                              \
 			break;                                                       \
 		}                                                               \
 	}                                                                  \

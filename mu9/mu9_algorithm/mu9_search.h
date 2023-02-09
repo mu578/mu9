@@ -27,7 +27,7 @@ mu0_scope_begin                                                              \
 	_Tp * __mu9_search1__i__;                                                 \
 	_Tp * __mu9_search1__j__;                                                 \
 	__d_result = __first;                                                     \
-	while (mu9_true) {                                                        \
+	while (mu0_true) {                                                        \
 		__mu9_search1__i__ = __first;                                          \
 		__mu9_search1__j__ = __s_first;                                        \
 		for (;; ++__mu9_search1__i__, ++__mu9_search1__j__) {                  \
@@ -53,7 +53,7 @@ mu0_scope_begin                                                                 
 	_Tp * __mu9_search2__i__;                                                                \
 	_Tp * __mu9_search2__j__;                                                                \
 	__d_result = __first;                                                                    \
-	while (mu9_true) {                                                                       \
+	while (mu0_true) {                                                                       \
 		__mu9_search2__i__ = __first;                                                         \
 		__mu9_search2__j__ = __s_first;                                                       \
 		for (;; ++__mu9_search2__i__, ++__mu9_search2__j__) {                                 \
