@@ -47,6 +47,17 @@ mu0_scope_end
 //#!
 #	define mu9_iter_swap(_Tp, __a, __b) mu9_swap_pointer(_Tp, &(__a), &(__b))
 
+//#!
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2 __first2, _Tp<return> &* __d_result) : void
+//#!
+#	define mu9_swap_ranges(_Tp, __first1, __last1, __first2, __d_result) \
+mu0_scope_begin                                                         \
+	for (; __first1 != __last1; ++__first1, ++__first2) {                \
+		mu9_iter_swap(_Tp, __first1, __first2);                           \
+	}                                                                    \
+	__d_result = __first2;                                               \
+mu0_scope_end
+
 MU0_END_CDECL
 
 #endif /* !MU9_SWAP_H */

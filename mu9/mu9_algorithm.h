@@ -20,6 +20,7 @@
 
 #include <mu9/mu9_algorithm/mu9_adjacent_find.h>
 #include <mu9/mu9_algorithm/mu9_apply.h>
+#include <mu9/mu9_algorithm/mu9_binary_search.h>
 #include <mu9/mu9_algorithm/mu9_copy.h>
 #include <mu9/mu9_algorithm/mu9_count.h>
 #include <mu9/mu9_algorithm/mu9_equal.h>
@@ -27,12 +28,18 @@
 #include <mu9/mu9_algorithm/mu9_find.h>
 #include <mu9/mu9_algorithm/mu9_for_each.h>
 #include <mu9/mu9_algorithm/mu9_iota.h>
+#include <mu9/mu9_algorithm/mu9_lower_bound.h>
+#include <mu9/mu9_algorithm/mu9_max_element.h>
+#include <mu9/mu9_algorithm/mu9_merge.h>
+#include <mu9/mu9_algorithm/mu9_min_element.h>
 #include <mu9/mu9_algorithm/mu9_mismatch.h>
 #include <mu9/mu9_algorithm/mu9_partition.h>
+#include <mu9/mu9_algorithm/mu9_reverse.h>
 #include <mu9/mu9_algorithm/mu9_rotate.h>
 #include <mu9/mu9_algorithm/mu9_search.h>
 #include <mu9/mu9_algorithm/mu9_swap.h>
 #include <mu9/mu9_algorithm/mu9_transform.h>
+#include <mu9/mu9_algorithm/mu9_upper_bound.h>
 
 MU0_BEGIN_CDECL
 
