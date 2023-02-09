@@ -27,7 +27,7 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_fill(_Tp, __first, __last, __value) \
 mu0_scope_begin                                   \
-	while(__first != __last) {                     \
+	while (__first != __last) {                    \
 		*__first++ = __value;                       \
 	}                                              \
 mu0_scope_end

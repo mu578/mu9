@@ -82,6 +82,7 @@ MU0_BEGIN_CDECL
 #	define mu9_iterator_prev(_Tp, __it)                      mu9_iterator_advance(_Tp, __it, -1)
 
 #	define mu9_distance(_Tp, __first, __last)                mu9_iterator_distance(_Tp, __first, __last)
+#	define mu9_const_distance(_Tp, __first, __last)          mu9_const_iterator_distance(_Tp, __first, __last)
 #	define mu9_advance_n(_Tp, __it, __n)                     mu9_iterator_advance_n(_Tp, __it, __n)
 #	define mu9_advance(_Tp, __it)                            mu9_iterator_advance(_Tp, __it)
 #	define mu9_next_n(_Tp, __it, __n)                        mu9_iterator_next_n(_Tp, __it, __n)
