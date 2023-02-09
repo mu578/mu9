@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_definition.h>
+#include <mu9/mu9_algorithm/mu9_search.h>
 
 #ifndef MU9_FIND_H
 #define MU9_FIND_H 1
@@ -84,7 +84,7 @@ mu0_scope_begin                                                                 
 	mu9_bool_t __mu9_find_first_of1__x__ = mu0_false;                                 \
 	_Tp * __mu9_find_first_of1__i__;                                                  \
 	for (; __first != __last && !__mu9_find_first_of1__x__; ++__first) {              \
-		__mu9_find_first_of1__i__ = s_first;                                           \
+		__mu9_find_first_of1__i__ = __s_first;                                         \
 		for (; __mu9_find_first_of1__i__ != __s_last; ++__mu9_find_first_of1__i__) {   \
 			if (*__first == *__mu9_find_first_of1__i__) {                               \
 				__d_result                 = __first;                                    \
@@ -106,7 +106,7 @@ mu0_scope_begin                                                                 
 	mu9_bool_t __mu9_find_first_of2__x__ = mu0_false;                                               \
 	_Tp * __mu9_find_first_of2__i__;                                                                \
 	for (; __first != __last && !__mu9_find_first_of2__x__; ++__first) {                            \
-		__mu9_find_first_of2__i__ = s_first;                                                         \
+		__mu9_find_first_of2__i__ = __s_first;                                                       \
 		for (; __mu9_find_first_of2__i__ != __s_last; ++__mu9_find_first_of2__i__) {                 \
 			if (p(*__first, *__mu9_find_first_of2__i__)) {                                            \
 				__d_result                 = __first;                                                  \
@@ -118,6 +118,44 @@ mu0_scope_begin                                                                 
 	if (!__mu9_find_first_of2__x__) {                                                               \
 		__d_result = __last;                                                                         \
 	}                                                                                               \
+mu0_scope_end
+
+#	define mu9_find_end1(__first, __last, __s_first, __s_last, __d_result)             \
+mu0_scope_begin                                                                       \
+	_Tp * __mu9_find_end1_i__ = __last;                                                \
+	_Tp * __mu9_find_end1_j__;                                                         \
+	if (!(__s_first == __s_last)) {                                                    \
+		while (1) {                                                                     \
+			mu9_search1(_Tp, __first, __last, __s_first, __s_last, __mu9_find_end1_j__); \
+			if (__mu9_find_end1_j__ == __last) {                                         \
+				break;                                                                    \
+			} else {                                                                     \
+				__mu9_find_end1_i__ = __mu9_find_end1_j__;                                \
+				__first             = __mu9_find_end1_i__;                                \
+				++__first;                                                                \
+			}                                                                            \
+		}                                                                               \
+	}                                                                                  \
+	__d_result = __mu9_find_end1_i__;                                                  \
+mu0_scope_end
+
+#	define mu9_find_end1(__first, __last, __s_first, __s_last, __binary_pred, __d_result)             \
+mu0_scope_begin                                                                                      \
+	_Tp * __mu9_find_end1_i__ = __last;                                                               \
+	_Tp * __mu9_find_end1_j__;                                                                        \
+	if (!(__s_first == __s_last)) {                                                                   \
+		while (1) {                                                                                    \
+			mu9_search2(_Tp, __first, __last, __s_first, __s_last, __binary_pred, __mu9_find_end1_j__); \
+			if (__mu9_find_end1_j__ == __last) {                                                        \
+				break;                                                                                   \
+			} else {                                                                                    \
+				__mu9_find_end1_i__ = __mu9_find_end1_j__;                                               \
+				__first             = __mu9_find_end1_i__;                                               \
+				++__first;                                                                               \
+			}                                                                                           \
+		}                                                                                              \
+	}                                                                                                 \
+	__d_result = __mu9_find_end1_i__;                                                                 \
 mu0_scope_end
 
 MU0_END_CDECL
