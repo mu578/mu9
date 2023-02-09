@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_/algorithm/mu9_lower_bound.h>
+#include <mu9/mu9_algorithm/mu9_lower_bound.h>
 
 #ifndef MU9_BINARY_SEARCH_H
 #define MU9_BINARY_SEARCH_H 1
