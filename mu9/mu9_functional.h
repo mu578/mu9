@@ -62,13 +62,13 @@ MU0_BEGIN_CDECL
 //#! macro<_Tp1, _Tp2, __binary_pred>(_Tp1 & __a, _Tp2 & __b, __binary_pred) : bool
 //#!
 #	define mu9_cmp_to(_Tp1, _Tp2, __a, __b, __binary_pred)                             \
-		(__binary_pred(mu9_const_cast(_Tp1, __a), mu9_const_cast(_Tp1, __b))            \
+		(__binary_pred(mu0_const_cast(_Tp1, __a), mu0_const_cast(_Tp1, __b))            \
 			? edomu_true                                                                 \
-			: (__binary_pred(mu9_const_cast(_Tp2, __a), mu9_const_cast(_Tp2, __b))       \
+			: (__binary_pred(mu0_const_cast(_Tp2, __a), mu0_const_cast(_Tp2, __b))       \
 				? edomu_true                                                              \
-				: (__binary_pred(mu9_const_cast(_Tp2, __a), mu9_const_cast(_Tp1, __b))    \
+				: (__binary_pred(mu0_const_cast(_Tp2, __a), mu0_const_cast(_Tp1, __b))    \
 					? edomu_true                                                           \
-					: (__binary_pred(mu9_const_cast(_Tp1, __a), mu9_const_cast(_Tp2, __b)) \
+					: (__binary_pred(mu0_const_cast(_Tp1, __a), mu0_const_cast(_Tp2, __b)) \
 							? edomu_true                                                     \
 							: edomu_false                                                    \
 						)                                                                   \

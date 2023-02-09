@@ -16,7 +16,7 @@
 //
 
 #include <mu9/mu9_iterator.h>
-#include <mu9/mu9_algorithm/mu9_min_swap.h>
+#include <mu9/mu9_algorithm/mu9_swap.h>
 
 #ifndef MU9_SHELL_SORT_H
 #define MU9_SHELL_SORT_H 1

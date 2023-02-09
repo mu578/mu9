@@ -15,8 +15,8 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_find.h>
-#include <mu0/mu0_swap.h>
+#include <mu9/mu9_algorithm/mu9_find.h>
+#include <mu9/mu9_algorithm/mu9_swap.h>
 
 #ifndef MU9_PARTITION_H
 #define MU9_PARTITION_H 1
