@@ -139,23 +139,23 @@ mu0_scope_begin                                                                 
 	__d_result = __mu9_find_end1_i__;                                                  \
 mu0_scope_end
 
-#	define mu9_find_end1(__first, __last, __s_first, __s_last, __binary_pred, __d_result)             \
+#	define mu9_find_end2(__first, __last, __s_first, __s_last, __binary_pred, __d_result)             \
 mu0_scope_begin                                                                                      \
-	_Tp * __mu9_find_end1_i__ = __last;                                                               \
-	_Tp * __mu9_find_end1_j__;                                                                        \
+	_Tp * __mu9_find_end2_i__ = __last;                                                               \
+	_Tp * __mu9_find_end2_j__;                                                                        \
 	if (!(__s_first == __s_last)) {                                                                   \
 		while (1) {                                                                                    \
-			mu9_search2(_Tp, __first, __last, __s_first, __s_last, __binary_pred, __mu9_find_end1_j__); \
-			if (__mu9_find_end1_j__ == __last) {                                                        \
+			mu9_search2(_Tp, __first, __last, __s_first, __s_last, __binary_pred, __mu9_find_end2_j__); \
+			if (__mu9_find_end2_j__ == __last) {                                                        \
 				break;                                                                                   \
 			} else {                                                                                    \
-				__mu9_find_end1_i__ = __mu9_find_end1_j__;                                               \
-				__first             = __mu9_find_end1_i__;                                               \
+				__mu9_find_end2_i__ = __mu9_find_end2_j__;                                               \
+				__first             = __mu9_find_end2_i__;                                               \
 				++__first;                                                                               \
 			}                                                                                           \
 		}                                                                                              \
 	}                                                                                                 \
-	__d_result = __mu9_find_end1_i__;                                                                 \
+	__d_result = __mu9_find_end2_i__;                                                                 \
 mu0_scope_end
 
 MU0_END_CDECL
