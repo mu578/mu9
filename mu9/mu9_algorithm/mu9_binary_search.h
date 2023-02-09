@@ -22,24 +22,25 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_binary_search1(_Tp, __first, __last, __value, __d_result)       \
-mu0_scope_begin                                                               \
-	_Tp * __mu9_lower_bound1__d__;                                             \
-	mu9_lower_bound1(__Tp, _first, __last, __value, __mu9_lower_bound1__d__);  \
-	__d_result = ((__mu9_lower_bound1__d__ != __last && !(__value < *__first)) \
-		? mu0_true                                                              \
-		: mu0_false                                                             \
-	);                                                                         \
+#	define mu9_binary_search1(_Tp, __first, __last, __value, __d_result)            \
+mu0_scope_begin                                                                    \
+	_Tp * __mu9_lower_bound1__d__;                                                  \
+	mu9_lower_bound1(__Tp, __first, __last, __value, __mu9_lower_bound1__d__);      \
+	__d_result = (                                                                  \
+		(__mu9_lower_bound1__d__ != __last && !(__value < *__mu9_lower_bound1__d__)) \
+			? mu0_true                                                                \
+			: mu0_false                                                               \
+	);                                                                              \
 mu0_scope_end
 
-#	define mu9_binary_search2(_Tp, __first, __last, __value, __comp_fn, __d_result)      \
-mu0_scope_begin                                                                         \
-	_Tp * __mu9_lower_bound1__d__;                                                       \
-	mu9_lower_bound2(__Tp, _first, __last, __value, __comp_fn, __mu9_lower_bound1__d__); \
-	__d_result = ((__mu9_lower_bound1__d__ != __last && !__comp_fn(__value, *__first))   \
-		? mu0_true                                                                        \
-		: mu0_false                                                                       \
-	);                                                                                   \
+#	define mu9_binary_search2(_Tp, __first, __last, __value, __comp_fn, __d_result)                    \
+mu0_scope_begin                                                                                       \
+	_Tp * __mu9_lower_bound2__d__;                                                                     \
+	mu9_lower_bound2(__Tp, __first, __last, __value, __comp_fn, __mu9_lower_bound2__d__);              \
+	__d_result = ((__mu9_lower_bound2__d__ != __last && !__comp_fn(__value, *__mu9_lower_bound2__d__)) \
+		? mu0_true                                                                                      \
+		: mu0_false                                                                                     \
+	);                                                                                                 \
 mu0_scope_end
 
 MU0_END_CDECL
