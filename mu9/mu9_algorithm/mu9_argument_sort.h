@@ -15,6 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
+#include <mu9/functional.h>
 #include <mu9/mu9_algorithm/mu9_iota.h>
 #include <mu9/mu9_algorithm/mu9_shell_sort.h>
 
@@ -22,12 +23,6 @@
 #define MU9_ARGUMENT_SORT_H 1
 
 MU0_BEGIN_CDECL
-
-#	define __mu9_argument_sort_compare__(__a,  __b, __ctx) \
-	mu9_less_than(                                         \
-		  __ctx[mu0_uinteger(__a)]                          \
-		, __ctx[mu0_uinteger(__b)]                          \
-	)
 
 #	define mu9_argument_sort(_Tp, _UInt, __first, __last, __s_first) \
 mu0_scope_begin                                                     \
@@ -42,7 +37,7 @@ mu0_scope_begin                                                     \
 	mu9_shell_sort3(_UInt                                            \
 		, __first                                                     \
 		, __last                                                      \
-		, __mu9_argument_sort_compare__                               \
+		, mu9_sort_ascending                                          \
 		, __mu9_argument_sort__k__                                    \
 	);
 mu0_scope_end

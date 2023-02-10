@@ -68,14 +68,14 @@ mu0_scope_begin                                                                 
 	}                                                                                \
 mu0_scope_end
 
-#	define mu9_insertion_sort3(_Tp, __first, __last, __comp_fn, __ctx)               \
+#	define mu9_insertion_sort3(_Tp, __first, __last, __sort_fn, __ctx)               \
 mu0_scope_begin                                                                     \
 	_Tp * __mu9_insertion_sort3__i__ = __first;                                      \
 	_Tp * __mu9_insertion_sort3__j__;                                                \
 	for (; __mu9_insertion_sort3__i__ != __last; __mu9_insertion_sort3__i__++) {     \
 		__mu9_insertion_sort3__j__ = __mu9_insertion_sort3__i__;                      \
 		for (; __mu9_insertion_sort3__j__ != __first; __mu9_insertion_sort3__j__--) { \
-			if (__comp_fn(                                                             \
+			if (__sort_fn(                                                             \
 				   *__mu9_insertion_sort3__j__                                          \
 				, *(__mu9_insertion_sort3__j__ - m0_const_distance(1))                  \
 				, __ctx                                                                 \
@@ -164,7 +164,7 @@ mu0_scope_begin                                                                 
 	}                                                                            \
 mu0_scope_end
 
-#	define mu9_insertion_sort6(_Tp, __first, __last, __comp_fn, __ctx)           \
+#	define mu9_insertion_sort6(_Tp, __first, __last, __sort_fn, __ctx)           \
 mu0_scope_begin                                                                 \
 	_Tp * __mu9_insertion_sort6__i__ = __first;                                  \
 	_Tp * __mu9_insertion_sort6__j__;                                            \
@@ -175,7 +175,7 @@ mu0_scope_begin                                                                 
 			,  __first                                                             \
 			,  __mu9_insertion_sort6__i__                                          \
 			, *__mu9_insertion_sort6__i__                                          \
-			,  __comp_fn                                                           \
+			,  __sort_fn                                                           \
 			, __ctx                                                                \
 			,  __mu9_insertion_sort6__d__                                          \
 		);                                                                        \

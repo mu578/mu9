@@ -73,7 +73,7 @@ mu0_scope_begin                                                                 
 	}                                                                                                   \
 mu0_scope_end
 
-#	define mu9_shell_sort3(_Tp, __first, __last, __comp_fn, __ctx)                                             \
+#	define mu9_shell_sort3(_Tp, __first, __last, __sort_fn, __ctx)                                             \
 mu0_scope_begin                                                                                               \
 	_Tp * __mu9_shell_sort3__i__;                                                                              \
 	_Tp * __mu9_shell_sort3__j__;                                                                              \
@@ -88,7 +88,7 @@ mu0_scope_begin                                                                 
 		for (; __mu9_shell_sort3__i__ != __last; __mu9_shell_sort3__i__++ ) {                                   \
 			__mu9_shell_sort3__j__ = __mu9_shell_sort3__i__;                                                     \
 			for (; (__mu9_shell_sort3__j__ - __first) >= __mu9_shell_sort3__h__                                  \
-				&& __comp_fn(*__mu9_shell_sort3__j__, *(__mu9_shell_sort3__j__ - __mu9_shell_sort3__h__), __ctx); \
+				&& __sort_fn(*__mu9_shell_sort3__j__, *(__mu9_shell_sort3__j__ - __mu9_shell_sort3__h__), __ctx); \
 				__mu9_shell_sort3__j__ -= __mu9_shell_sort3__h__                                                  \
 			) {                                                                                                  \
 				mu9_swap(*__mu9_shell_sort3__j__, *(__mu9_shell_sort3__j__ - __mu9_shell_sort3__h__));            \
