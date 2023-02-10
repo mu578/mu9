@@ -29,28 +29,28 @@ MU0_BEGIN_CDECL
 		, __ctx[mu0_uinteger(__b)]                          \
 	)
 
-#	define mu9_argument_sort(_UInt, __first, __last, __s_first) \
-mu0_scope_begin                                                \
-	_UInt * __mu9_argument_sort__i__ = __first;                 \
-	_UInt * __mu9_argument_sort__j__ = __last;                  \
-	_UInt * __mu9_argument_sort__k__ = __s_first;               \
-	mu9_iota(_UInt                                              \
-		, __mu9_argument_sort__i__                               \
-		, __mu9_argument_sort__j__                               \
-		, 0                                                      \
-	);                                                          \
-	mu9_shell_sort3(_UInt                                       \
-		, __first                                                \
-		, __last                                                 \
-		, __mu9_argument_sort_compare__                          \
-		, __mu9_argument_sort__k__                               \
+#	define mu9_argument_sort(_Tp, _UInt, __first, __last, __s_first) \
+mu0_scope_begin                                                     \
+	_UInt * __mu9_argument_sort__i__ = __first;                      \
+	_UInt * __mu9_argument_sort__j__ = __last;                       \
+	_Tp   * __mu9_argument_sort__k__ = __s_first;                    \
+	mu9_iota(_UInt                                                   \
+		, __mu9_argument_sort__i__                                    \
+		, __mu9_argument_sort__j__                                    \
+		, 0                                                           \
+	);                                                               \
+	mu9_shell_sort3(_UInt                                            \
+		, __first                                                     \
+		, __last                                                      \
+		, __mu9_argument_sort_compare__                               \
+		, __mu9_argument_sort__k__                                    \
 	);
 mu0_scope_end
 
-#	define mu9_argument_sort_n(_UInt, __first, __s_first, __n)                \
-mu0_scope_begin                                                              \
-	_UInt * __mu9_argument_sort_n__l__ = __first + m0_const_distance(__n);    \
-	mu9_argument_sort(_UInt, __first, __mu9_argument_sort_n__l__, __s_first); \
+#	define mu9_argument_sort_n(_Tp, _UInt, __first, __s_first, __n)                \
+mu0_scope_begin                                                                   \
+	_UInt * __mu9_argument_sort_n__l__ = __first + m0_const_distance(__n);         \
+	mu9_argument_sort(_Tp, _UInt, __first, __mu9_argument_sort_n__l__, __s_first); \
 mu0_scope_end
 
 #endif /* !MU9_ARGUMENT_SORT_H */
