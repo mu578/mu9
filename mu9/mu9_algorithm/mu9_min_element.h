@@ -39,17 +39,32 @@ mu0_scope_end
 
 #	define mu9_min_element2(_Tp, __first, __last, __comp_fn, __d_result) \
 mu0_scope_begin                                                         \
-	_Tp * __mu9_min_element1_i__ = __last;                               \
+	_Tp * __mu9_min_element2_i__ = __last;                               \
 	if (__first != __last) {                                             \
-		__mu9_min_element1_i__ = __first;                                 \
+		__mu9_min_element2_i__ = __first;                                 \
 		++__first;                                                        \
 		for (; __first != __last; ++__first) {                            \
-			if (__comp_fn(*__first,  *__mu9_min_element1_i__)) {           \
-				__mu9_min_element1_i__ = __first;                           \
+			if (__comp_fn(*__first,  *__mu9_min_element2_i__)) {           \
+				__mu9_min_element2_i__ = __first;                           \
 			}                                                              \
 		}                                                                 \
 	}                                                                    \
-	__d_result = __mu9_min_element1_i__;                                 \
+	__d_result = __mu9_min_element2_i__;                                 \
+mu0_scope_end
+
+#	define mu9_min_element3(_Tp, __first, __last, __comp_fn, __ctx, __d_result) \
+mu0_scope_begin                                                                \
+	_Tp * __mu9_min_element3_i__ = __last;                                      \
+	if (__first != __last) {                                                    \
+		__mu9_min_element3_i__ = __first;                                        \
+		++__first;                                                               \
+		for (; __first != __last; ++__first) {                                   \
+			if (__comp_fn(*__first,  *__mu9_min_element3_i__, __ctx)) {           \
+				__mu9_min_element3_i__ = __first;                                  \
+			}                                                                     \
+		}                                                                        \
+	}                                                                           \
+	__d_result = __mu9_min_element3_i__;                                        \
 mu0_scope_end
 
 MU0_END_CDECL

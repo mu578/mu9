@@ -20,6 +20,7 @@
 
 #	include <mu9/mu9_algorithm/mu9_adjacent_find.h>
 #	include <mu9/mu9_algorithm/mu9_apply.h>
+#	include <mu9/mu9_algorithm/mu9_argument_sort.h>
 #	include <mu9/mu9_algorithm/mu9_binary_search.h>
 #	include <mu9/mu9_algorithm/mu9_bubble_sort.h>
 #	include <mu9/mu9_algorithm/mu9_copy.h>
