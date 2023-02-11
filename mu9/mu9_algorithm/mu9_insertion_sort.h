@@ -91,28 +91,6 @@ mu0_scope_begin                                                                 
 	}                                                                                \
 mu0_scope_end
 
-#	define mu9_insertion_sort2(_Tp, __first, __last, __comp_fn)                      \
-mu0_scope_begin                                                                     \
-	_Tp * __mu9_insertion_sort2__i__ = __first;                                      \
-	_Tp * __mu9_insertion_sort2__j__;                                                \
-	for (; __mu9_insertion_sort2__i__ != __last; __mu9_insertion_sort2__i__++) {     \
-		__mu9_insertion_sort2__j__ = __mu9_insertion_sort2__i__;                      \
-		for (; __mu9_insertion_sort2__j__ != __first; __mu9_insertion_sort2__j__--) { \
-			if (__comp_fn(                                                             \
-				   *__mu9_insertion_sort2__j__                                          \
-				, *(__mu9_insertion_sort2__j__ - m0_const_distance(1))                  \
-			)) {                                                                       \
-				mu9_swap(                                                               \
-					   *__mu9_insertion_sort2__j__                                       \
-					, *(__mu9_insertion_sort2__j__ - m0_const_distance(1))               \
-				);                                                                      \
-			} else {                                                                   \
-				break;                                                                  \
-			}                                                                          \
-		}                                                                             \
-	}                                                                                \
-mu0_scope_end
-
 #	define mu9_insertion_sort4(_Tp, __first, __last)                             \
 mu0_scope_begin                                                                 \
 	_Tp * __mu9_insertion_sort4__i__ = __first;                                  \
