@@ -21,4 +21,6 @@ insert_final_newline = false
 indent_style         = tab
 indent_size          = 3
 
+c_include_path       = ../mu0:../mu8:../mu9
+
 # EOF

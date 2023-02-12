@@ -22,18 +22,18 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_lower_bound1(_Tp, __first, __last, __value, __d_result)          \
-mu0_scope_begin                                                                \
-	_Tp * __mu9_lower_bound1__i__;                                              \
-	mu0_distance_t __mu9_lower_bound1__c__= mu9_distance(_Tp, __first, __last); \
-	mu0_distance_t __mu9_lower_bound1__n__;                                     \
-	while (__mu9_lower_bound1__c__ > 0) {                                       \
-		__mu9_lower_bound1__i__ = __first;                                       \
-		__mu9_lower_bound1__n__ = __mu9_lower_bound1__c__ / 2;                   \
-		mu9_advance_n(_Tp, __mu9_lower_bound1__i__, __mu9_lower_bound1__n__);    \
-		if (*__mu9_lower_bound1__i__ < __value) {                                \
-				__first                  = ++__mu9_lower_bound1__i__;              \
-				__mu9_lower_bound1__c__ -= __mu9_lower_bound1__n__ + 1;            \
+#	define mu9_lower_bound1(_Tp, __first, __last, __value, __d_result)             \
+mu0_scope_begin                                                                   \
+	_Tp * __mu9_lower_bound1__i__;                                                 \
+	mu0_distance_t __mu9_lower_bound1__c__= mu9_distance(_Tp, __first, __last);    \
+	mu0_distance_t __mu9_lower_bound1__n__;                                        \
+	while (__mu9_lower_bound1__c__ > mu0_distance(0)) {                            \
+		__mu9_lower_bound1__i__ = __first;                                          \
+		__mu9_lower_bound1__n__ = __mu9_lower_bound1__c__ / mu0_distance(2);        \
+		mu9_advance_n(_Tp, __mu9_lower_bound1__i__, __mu9_lower_bound1__n__);       \
+		if (*__mu9_lower_bound1__i__ < __value) {                                   \
+				__first                  = ++__mu9_lower_bound1__i__;                 \
+				__mu9_lower_bound1__c__ -= __mu9_lower_bound1__n__ + mu0_distance(1); \
 		} else {                                                                 \
 				__mu9_lower_bound1__c__  = __mu9_lower_bound1__n__;                \
 		}                                                                        \
@@ -41,23 +41,23 @@ mu0_scope_begin                                                                \
 	__d_result = __first;                                                       \
 mu0_scope_end
 
-#	define mu9_lower_bound2(_Tp, __first, __last, __value, __comp_fn, __d_result) \
-mu0_scope_begin                                                                  \
-	_Tp * __mu9_lower_bound2__i__;                                                \
-	mu0_distance_t __mu9_lower_bound2__c__= mu9_distance(_Tp, __first, __last);   \
-	mu0_distance_t __mu9_lower_bound2__n__;                                       \
-	while (__mu9_lower_bound2__c__ > 0) {                                         \
-		__mu9_lower_bound2__i__ = __first;                                         \
-		__mu9_lower_bound2__n__ = __mu9_lower_bound2__c__ / 2;                     \
-		mu9_advance_n(_Tp, __mu9_lower_bound2__i__, __mu9_lower_bound2__n__);      \
-		if (__comp_fn(*__mu9_lower_bound2__i__, __value)) {                        \
-				__first                  = ++__mu9_lower_bound2__i__;                \
-				__mu9_lower_bound2__c__ -= __mu9_lower_bound2__n__ + 1;              \
-		} else {                                                                   \
-				__mu9_lower_bound2__c__  = __mu9_lower_bound2__n__;                  \
-		}                                                                          \
-	}                                                                             \
-	__d_result = __first;                                                         \
+#	define mu9_lower_bound2(_Tp, __first, __last, __value, __comp_fn, __d_result)  \
+mu0_scope_begin                                                                   \
+	_Tp * __mu9_lower_bound2__i__;                                                 \
+	mu0_distance_t __mu9_lower_bound2__c__= mu9_distance(_Tp, __first, __last);    \
+	mu0_distance_t __mu9_lower_bound2__n__;                                        \
+	while (__mu9_lower_bound2__c__ > mu0_distance(0)) {                            \
+		__mu9_lower_bound2__i__ = __first;                                          \
+		__mu9_lower_bound2__n__ = __mu9_lower_bound2__c__ / mu0_distance(2);        \
+		mu9_advance_n(_Tp, __mu9_lower_bound2__i__, __mu9_lower_bound2__n__);       \
+		if (__comp_fn(*__mu9_lower_bound2__i__, __value)) {                         \
+				__first                  = ++__mu9_lower_bound2__i__;                 \
+				__mu9_lower_bound2__c__ -= __mu9_lower_bound2__n__ + mu0_distance(1); \
+		} else {                                                                    \
+				__mu9_lower_bound2__c__  = __mu9_lower_bound2__n__;                   \
+		}                                                                           \
+	}                                                                              \
+	__d_result = __first;                                                          \
 mu0_scope_end
 
 #	define mu9_lower_bound3(_Tp, __first, __last, __value, __sort_fn, __ctx, __d_result) \
@@ -65,13 +65,13 @@ mu0_scope_begin                                                                 
 	_Tp * __mu9_lower_bound3__i__;                                                       \
 	mu0_distance_t __mu9_lower_bound3__c__= mu9_distance(_Tp, __first, __last);          \
 	mu0_distance_t __mu9_lower_bound3__n__;                                              \
-	while (__mu9_lower_bound3__c__ > 0) {                                                \
+	while (__mu9_lower_bound3__c__ > mu0_distance(0)) {                                  \
 		__mu9_lower_bound3__i__ = __first;                                                \
-		__mu9_lower_bound3__n__ = __mu9_lower_bound3__c__ / 2;                            \
+		__mu9_lower_bound3__n__ = __mu9_lower_bound3__c__ / mu0_distance(2);              \
 		mu9_advance_n(_Tp, __mu9_lower_bound3__i__, __mu9_lower_bound3__n__);             \
 		if (__sort_fn(*__mu9_lower_bound3__i__, __value, __ctx)) {                        \
 				__first                  = ++__mu9_lower_bound3__i__;                       \
-				__mu9_lower_bound3__c__ -= __mu9_lower_bound3__n__ + 1;                     \
+				__mu9_lower_bound3__c__ -= __mu9_lower_bound3__n__ + mu0_distance(1);       \
 		} else {                                                                          \
 				__mu9_lower_bound3__c__  = __mu9_lower_bound3__n__;                         \
 		}                                                                                 \
