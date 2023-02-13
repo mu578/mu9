@@ -39,7 +39,7 @@ mu0_scope_begin                                                      \
 	}                                                                 \
 mu0_scope_end
 
-#	define mu9_copy_top(_Tp, __first, __last, __d_first, __dresult)   \
+#	define mu9_copy_to(_Tp, __first, __last, __d_first, __dresult)    \
 mu0_scope_begin                                                      \
 	for (; __first != __last; (void) ++__first, (void) ++__d_first) { \
 		*__d_first = *__first;                                         \
