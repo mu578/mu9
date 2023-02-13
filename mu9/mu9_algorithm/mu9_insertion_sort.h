@@ -169,6 +169,87 @@ mu0_scope_begin                                                                 
 	}                                                                            \
 mu0_scope_end
 
+#	define mu9_insertion_sort7(_Tp, __first, __last, __swap_op)                  \
+mu0_scope_begin                                                                 \
+	_Tp * __mu9_insertion_sort7__i__ = __first;                                  \
+	_Tp * __mu9_insertion_sort7__j__;                                            \
+	_Tp * __mu9_insertion_sort7__k__;                                            \
+	_Tp * __mu9_insertion_sort7__d__;                                            \
+	for (; __mu9_insertion_sort7__i__ != __last; ++__mu9_insertion_sort7__i__) { \
+		mu9_upper_bound1(_Tp                                                      \
+			,  __first                                                             \
+			,  __mu9_insertion_sort7__i__                                          \
+			, *__mu9_insertion_sort7__i__                                          \
+			,  __mu9_insertion_sort7__d__                                          \
+		);                                                                        \
+		__mu9_insertion_sort7__j__ = __mu9_insertion_sort7__d__;                  \
+		__mu9_insertion_sort7__k__ = __mu9_insertion_sort7__i__;                  \
+		++__mu9_insertion_sort7__k__;                                             \
+		mu9_rotate2(_Tp                                                           \
+			, __mu9_insertion_sort7__j__                                           \
+			, __mu9_insertion_sort7__i__                                           \
+			, __mu9_insertion_sort7__k__                                           \
+			, __swap_op                                                            \
+			, __mu9_insertion_sort7__d__                                           \
+		);                                                                        \
+	}                                                                            \
+mu0_scope_end
+
+#	define mu9_insertion_sort8(_Tp, __first, __last, __comp_fn, __swap_op)       \
+mu0_scope_begin                                                                 \
+	_Tp * __mu9_insertion_sort8__i__ = __first;                                  \
+	_Tp * __mu9_insertion_sort8__j__;                                            \
+	_Tp * __mu9_insertion_sort8__k__;                                            \
+	_Tp * __mu9_insertion_sort8__d__;                                            \
+	for (; __mu9_insertion_sort8__i__ != __last; ++__mu9_insertion_sort8__i__) { \
+		mu9_upper_bound2(_Tp                                                      \
+			,  __first                                                             \
+			,  __mu9_insertion_sort8__i__                                          \
+			, *__mu9_insertion_sort8__i__                                          \
+			,  __comp_fn                                                           \
+			,  __mu9_insertion_sort8__d__                                          \
+		);                                                                        \
+		__mu9_insertion_sort8__j__ = __mu9_insertion_sort8__d__;                  \
+		__mu9_insertion_sort8__k__ = __mu9_insertion_sort8__i__;                  \
+		++__mu9_insertion_sort8__k__;                                             \
+		mu9_rotate2(_Tp                                                           \
+			, __mu9_insertion_sort8__j__                                           \
+			, __mu9_insertion_sort8__i__                                           \
+			, __mu9_insertion_sort8__k__                                           \
+			, __swap_op                                                            \
+			, __mu9_insertion_sort8__d__                                           \
+		);                                                                        \
+	}                                                                            \
+mu0_scope_end
+
+#	define mu9_insertion_sort9(_Tp, __first, __last, __sort_fn, __ctx, __swap_op) \
+mu0_scope_begin                                                                  \
+	_Tp * __mu9_insertion_sort9__i__ = __first;                                   \
+	_Tp * __mu9_insertion_sort9__j__;                                             \
+	_Tp * __mu9_insertion_sort9__k__;                                             \
+	_Tp * __mu9_insertion_sort9__d__;                                             \
+	for (; __mu9_insertion_sort9__i__ != __last; ++__mu9_insertion_sort9__i__) {  \
+		mu9_upper_bound3(_Tp                                                       \
+			,  __first                                                              \
+			,  __mu9_insertion_sort9__i__                                           \
+			, *__mu9_insertion_sort9__i__                                           \
+			,  __sort_fn                                                            \
+			, __ctx                                                                 \
+			,  __mu9_insertion_sort9__d__                                           \
+		);                                                                         \
+		__mu9_insertion_sort9__j__ = __mu9_insertion_sort9__d__;                   \
+		__mu9_insertion_sort9__k__ = __mu9_insertion_sort9__i__;                   \
+		++__mu9_insertion_sort9__k__;                                              \
+		mu9_rotate2(_Tp                                                            \
+			, __mu9_insertion_sort9__j__                                            \
+			, __mu9_insertion_sort9__i__                                            \
+			, __mu9_insertion_sort9__k__                                            \
+			, __swap_op                                                             \
+			, __mu9_insertion_sort9__d__                                            \
+		);                                                                         \
+	}                                                                             \
+mu0_scope_end
+
 MU0_END_CDECL
 
 #endif /* !MU9_INSERTION_SORT_H */
