@@ -87,18 +87,6 @@ MU0_BEGIN_CDECL
 #	define mu9_cmp_less_equal(_Tp1, _Tp2, __a, __b)    (!mu9_cmp_greater(_Tp1, _Tp2, __a, __b))
 #	define mu9_cmp_greater_equal(_Tp1, _Tp2, __a, __b) (!cmp_less(_Tp1, _Tp2, __a, __b))
 
-#	define mu9_sort_ascending(__a,  __b, __ctx) \
-	mu9_less_than(                              \
-		  __ctx[mu0_uinteger(__a)]               \
-		, __ctx[mu0_uinteger(__b)]               \
-	)
-
-#	define mu9_sort_descending(__a,  __b, __ctx) \
-	mu9_greater_than(                            \
-		  __ctx[mu0_uinteger(__a)]                \
-		, __ctx[mu0_uinteger(__b)]                \
-	)
-
 MU0_END_CDECL
 
 #endif /* !MU9_FUNCTIONAL_H */
