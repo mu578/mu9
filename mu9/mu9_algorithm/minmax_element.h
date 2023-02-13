@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_algorithm/mu9_swap.h>
+#include <mu0/mu0_definition.h>
 
 #ifndef MU9_MINMAX_ELEMENT_H
 #define MU9_MINMAX_ELEMENT_H 1
