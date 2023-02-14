@@ -74,10 +74,10 @@ mu0_scope_begin                                                                 
 	mu9_argument_sort1(_Tp, _UInt, __first, __mu9_argument_sort_n1__i__, __start, __s_first); \
 mu0_scope_end
 
-#	define mu9_argument_sort_n2(_Tp, _UInt, __first, __start, __s_first, __n, __sort_fn)      \
-mu0_scope_begin                                                                              \
-	_UInt * __mu9_argument_sort_n2__i__ = __first + m0_const_distance(__n);                   \
-	mu9_argument_sort1(_Tp, _UInt, __first, __mu9_argument_sort_n2__i__, __start, __s_first); \
+#	define mu9_argument_sort_n2(_Tp, _UInt, __first, __start, __s_first, __n, __sort_fn)                 \
+mu0_scope_begin                                                                                         \
+	_UInt * __mu9_argument_sort_n2__i__ = __first + m0_const_distance(__n);                              \
+	mu9_argument_sort2(_Tp, _UInt, __first, __mu9_argument_sort_n2__i__, __start, __s_first, __sort_fn); \
 mu0_scope_end
 
 #endif /* !MU9_ARGUMENT_SORT_H */
