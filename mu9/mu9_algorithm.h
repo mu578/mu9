@@ -48,6 +48,7 @@
 #	include <mu9/mu9_algorithm/mu9_search.h>
 #	include <mu9/mu9_algorithm/mu9_selection_sort.h>
 #	include <mu9/mu9_algorithm/mu9_shell_sort.h>
+#	include <mu9/mu9_algorithm/mu9_shuffle.h>
 #	include <mu9/mu9_algorithm/mu9_stable_sort.h>
 #	include <mu9/mu9_algorithm/mu9_swap.h>
 #	include <mu9/mu9_algorithm/mu9_transform.h>

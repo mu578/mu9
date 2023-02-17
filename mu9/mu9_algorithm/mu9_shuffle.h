@@ -29,7 +29,7 @@ mu0_scope_begin                                                                 
 	mu0_distance_t __mu9_shuffle1__i__ = mu9_distance(__first, __last) - mu0_distance(1); \
 	mu0_distance_t __mu9_shuffle1__j__;                                                   \
 	for (; __mu9_shuffle1__i__ > 0; --__mu9_shuffle1__i__) {                              \
-		__mu9_shuffle1__j__ = mu0_distance(mu0_bounded_random_u64(__mu9_shuffle1__i__));   \
+		__mu9_shuffle1__j__ = mu0_distance(mu0_ranged_random_i64(0, __mu9_shuffle1__i__));  \
 		mu9_swap(_Tp, *(__first + __mu9_shuffle1__i__), *(__first + __mu9_shuffle1__j__)); \
 	}                                                                                     \
 mu0_scope_end
@@ -49,7 +49,7 @@ mu0_scope_begin                                                                 
 	mu0_distance_t __mu9_shuffle3__i__ = mu9_distance(__first, __last) - mu0_distance(1);  \
 	mu0_distance_t __mu9_shuffle3__j__;                                                    \
 	for (; __mu9_shuffle3__i__ > 0; --__mu9_shuffle3__i__) {                               \
-		__mu9_shuffle3__j__ = mu0_distance(mu0_bounded_random_u64(__mu9_shuffle1__i__));    \
+		__mu9_shuffle3__j__ = mu0_distance(mu0_ranged_random_i64(0, __mu9_shuffle1__i__));  \
 		__swap_op(_Tp, *(__first + __mu9_shuffle3__i__), *(__first + __mu9_shuffle3__j__)); \
 	}                                                                                      \
 mu0_scope_end
