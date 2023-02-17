@@ -15,17 +15,17 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
+#include <mu9/mu9_iterator.h>
 #include <mu9/mu9_algorithm/mu9_swap.h>
 #include <mu0/mu0_random.h>
 
-#ifndef MU9_EQUAL_H
-#define MU9_EQUAL_H 1
+#ifndef MU9_RANDOM_SHUFFLE_H
+#define MU9_RANDOM_SHUFFLE_H 1
 
 MU0_BEGIN_CDECL
 
 #	define mu9_random_shuffle1(_Tp, __first, __last)                                                    \
 mu0_scope_begin                                                                                        \
-	typedef typename std::iterator_traits<RandomIt>::difference_type difference_t;                      \
 	mu0_distance_t __mu9_random_shuffle1__i__ = mu9_distance(__first, __last) - mu0_distance(1);        \
 	mu0_distance_t __mu9_random_shuffle1__j__;                                                          \
 	for (; __mu9_random_shuffle1__i__ > 0; --__mu9_random_shuffle1__i__) {                              \
@@ -36,7 +36,6 @@ mu0_scope_end
 
 #	define mu9_random_shuffle2(_Tp, __first, __last, __rand_fn)                                         \
 mu0_scope_begin                                                                                        \
-	typedef typename std::iterator_traits<RandomIt>::difference_type difference_t;                      \
 	mu0_distance_t __mu9_random_shuffle2__i__ = mu9_distance(__first, __last) - mu0_distance(1);        \
 	mu0_distance_t __mu9_random_shuffle2__j__;                                                          \
 	for (; __mu9_random_shuffle2__i__ > 0; --__mu9_random_shuffle2__i__) {                              \
@@ -47,7 +46,6 @@ mu0_scope_end
 
 #	define mu9_random_shuffle3(_Tp, __first, __last, __swap_op)                                          \
 mu0_scope_begin                                                                                         \
-	typedef typename std::iterator_traits<RandomIt>::difference_type difference_t;                       \
 	mu0_distance_t __mu9_random_shuffle3__i__ = mu9_distance(__first, __last) - mu0_distance(1);         \
 	mu0_distance_t __mu9_random_shuffle3__j__;                                                           \
 	for (; __mu9_random_shuffle3__i__ > 0; --__mu9_random_shuffle3__i__) {                               \
@@ -58,7 +56,6 @@ mu0_scope_end
 
 #	define mu9_random_shuffle4(_Tp, __first, __last, __rand_fn, __swap_op)                               \
 mu0_scope_begin                                                                                         \
-	typedef typename std::iterator_traits<RandomIt>::difference_type difference_t;                       \
 	mu0_distance_t __mu9_random_shuffle4__i__ = mu9_distance(__first, __last) - mu0_distance(1);         \
 	mu0_distance_t __mu9_random_shuffle4__j__;                                                           \
 	for (; __mu9_random_shuffle4__i__ > 0; --__mu9_random_shuffle4__i__) {                               \
@@ -69,6 +66,6 @@ mu0_scope_end
 
 MU0_END_CDECL
 
-#endif /* !MU9_EQUAL_H */
+#endif /* !MU9_RANDOM_SHUFFLE_H */
 
 /* EOF */
