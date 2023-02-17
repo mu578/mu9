@@ -36,7 +36,7 @@ mu0_scope_begin                                                                 
 				< *(__mu9_insertion_sort1__j__ - m0_const_distance(1))                  \
 			) {                                                                        \
 				mu9_swap(                                                               \
-					   *__mu9_insertion_sort1__j__                                       \
+					  *__mu9_insertion_sort1__j__                                        \
 					, *(__mu9_insertion_sort1__j__ - m0_const_distance(1))               \
 				);                                                                      \
 			} else {                                                                   \
@@ -54,11 +54,11 @@ mu0_scope_begin                                                                 
 		__mu9_insertion_sort2__j__ = __mu9_insertion_sort2__i__;                      \
 		for (; __mu9_insertion_sort2__j__ != __first; __mu9_insertion_sort2__j__--) { \
 			if (__comp_fn(                                                             \
-				   *__mu9_insertion_sort2__j__                                          \
+				  *__mu9_insertion_sort2__j__                                           \
 				, *(__mu9_insertion_sort2__j__ - m0_const_distance(1))                  \
 			)) {                                                                       \
 				mu9_swap(                                                               \
-					   *__mu9_insertion_sort2__j__                                       \
+					  *__mu9_insertion_sort2__j__                                        \
 					, *(__mu9_insertion_sort2__j__ - m0_const_distance(1))               \
 				);                                                                      \
 			} else {                                                                   \
@@ -76,7 +76,7 @@ mu0_scope_begin                                                                 
 		__mu9_insertion_sort3__j__ = __mu9_insertion_sort3__i__;                      \
 		for (; __mu9_insertion_sort3__j__ != __first; __mu9_insertion_sort3__j__--) { \
 			if (__sort_fn(                                                             \
-				   *__mu9_insertion_sort3__j__                                          \
+				  *__mu9_insertion_sort3__j__                                           \
 				, *(__mu9_insertion_sort3__j__ - m0_const_distance(1))                  \
 				, __ctx                                                                 \
 			)) {                                                                       \
@@ -154,7 +154,7 @@ mu0_scope_begin                                                                 
 			,  __mu9_insertion_sort6__i__                                          \
 			, *__mu9_insertion_sort6__i__                                          \
 			,  __sort_fn                                                           \
-			, __ctx                                                                \
+			,  __ctx                                                               \
 			,  __mu9_insertion_sort6__d__                                          \
 		);                                                                        \
 		__mu9_insertion_sort6__j__ = __mu9_insertion_sort6__d__;                  \
@@ -234,7 +234,7 @@ mu0_scope_begin                                                                 
 			,  __mu9_insertion_sort9__i__                                           \
 			, *__mu9_insertion_sort9__i__                                           \
 			,  __sort_fn                                                            \
-			, __ctx                                                                 \
+			,  __ctx                                                                \
 			,  __mu9_insertion_sort9__d__                                           \
 		);                                                                         \
 		__mu9_insertion_sort9__j__ = __mu9_insertion_sort9__d__;                   \
