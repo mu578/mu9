@@ -123,7 +123,7 @@ mu0_scope_begin                                                                 
 	}                                                                                                   \
 mu0_scope_end
 
-#	define mu9_shell_sort5(_Tp, __first, __last, __comp_fn, __swap_o)                                   \
+#	define mu9_shell_sort5(_Tp, __first, __last, __comp_fn, __swap_op)                                  \
 mu0_scope_begin                                                                                        \
 	_Tp * __mu9_shell_sort5__i__;                                                                       \
 	_Tp * __mu9_shell_sort5__j__;                                                                       \
@@ -148,7 +148,7 @@ mu0_scope_begin                                                                 
 	}                                                                                                   \
 mu0_scope_end
 
-#	define mu9_shell_sort6(_Tp, __first, __last, __sort_fn, __ctx, __swap_o)                                   \
+#	define mu9_shell_sort6(_Tp, __first, __last, __sort_fn, __ctx, __swap_op)                                  \
 mu0_scope_begin                                                                                               \
 	_Tp * __mu9_shell_sort6__i__;                                                                              \
 	_Tp * __mu9_shell_sort6__j__;                                                                              \
