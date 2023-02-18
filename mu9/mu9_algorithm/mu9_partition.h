@@ -71,7 +71,7 @@ mu0_scope_begin                                                                 
 	if (!__mu9_partition2__x__) {                                                    \
 		for (__mu9_partition2__i__ = __first; ++__mu9_partition2__i__ != __last;) {   \
 			if (__unary_pred(*__mu9_partition2__i__)) {                                \
-					__swap_op(*__first, *__mu9_partition2__i__);                         \
+					__swap_op(_Tp, *__first, *__mu9_partition2__i__);                    \
 					++__first;                                                           \
 					__d_resul = __first;                                                 \
 			}                                                                          \
@@ -145,7 +145,7 @@ mu0_scope_begin                                                                 
 		if (__mu9_partition4__x__) {                                                  \
 			break;                                                                     \
 		}                                                                             \
-		__swap_op(*__first, *__last);                                                 \
+		__swap_op(_Tp, *__first, *__last);                                            \
 		++__first;                                                                    \
 		__d_result = __first;                                                         \
 	}                                                                                \
