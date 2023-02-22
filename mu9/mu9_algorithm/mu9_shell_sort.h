@@ -41,7 +41,10 @@ mu0_scope_begin                                                                 
 				&& (*__mu9_shell_sort1__j__ < *(__mu9_shell_sort1__j__ - __mu9_shell_sort1__h__));         \
 				__mu9_shell_sort1__j__ -= __mu9_shell_sort1__h__                                           \
 			) {                                                                                           \
-				mu9_swap(*__mu9_shell_sort1__j__, *(__mu9_shell_sort1__j__ - __mu9_shell_sort1__h__));     \
+				mu9_swap(_Tp                                                                               \
+					, *__mu9_shell_sort1__j__                                                               \
+					, *(__mu9_shell_sort1__j__ - __mu9_shell_sort1__h__)                                    \
+				);                                                                                         \
 			}                                                                                             \
 		}                                                                                                \
 		__mu9_shell_sort1__h__ = __mu9_shell_sort1__h__ / __mu9_shell_sort1__k__;                        \
@@ -66,7 +69,10 @@ mu0_scope_begin                                                                 
 				&& __comp_fn(*__mu9_shell_sort2__j__, *(__mu9_shell_sort2__j__ - __mu9_shell_sort2__h__)); \
 				__mu9_shell_sort2__j__ -= __mu9_shell_sort2__h__                                           \
 			) {                                                                                           \
-				mu9_swap(*__mu9_shell_sort2__j__, *(__mu9_shell_sort2__j__ - __mu9_shell_sort2__h__));     \
+				mu9_swap(_Tp                                                                               \
+					, *__mu9_shell_sort2__j__                                                               \
+					, *(__mu9_shell_sort2__j__ - __mu9_shell_sort2__h__)                                    \
+				);                                                                                         \
 			}                                                                                             \
 		}                                                                                                \
 		__mu9_shell_sort2__h__ = __mu9_shell_sort2__h__ / __mu9_shell_sort2__k__;                        \
@@ -91,7 +97,10 @@ mu0_scope_begin                                                                 
 				&& __sort_fn(*__mu9_shell_sort3__j__, *(__mu9_shell_sort3__j__ - __mu9_shell_sort3__h__), __ctx); \
 				__mu9_shell_sort3__j__ -= __mu9_shell_sort3__h__                                                  \
 			) {                                                                                                  \
-				mu9_swap(*__mu9_shell_sort3__j__, *(__mu9_shell_sort3__j__ - __mu9_shell_sort3__h__));            \
+				mu9_swap(_Tp                                                                                      \
+					, *__mu9_shell_sort3__j__                                                                      \
+					, *(__mu9_shell_sort3__j__ - __mu9_shell_sort3__h__)                                           \
+				);                                                                                                \
 			}                                                                                                    \
 		}                                                                                                       \
 		__mu9_shell_sort3__h__ = __mu9_shell_sort3__h__ / __mu9_shell_sort3__k__;                               \

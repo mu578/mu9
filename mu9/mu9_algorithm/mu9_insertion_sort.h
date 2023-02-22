@@ -35,8 +35,8 @@ mu0_scope_begin                                                                 
 				   *__mu9_insertion_sort1__j__                                          \
 				< *(__mu9_insertion_sort1__j__ - m0_const_distance(1))                  \
 			) {                                                                        \
-				mu9_swap(                                                               \
-					  *__mu9_insertion_sort1__j__                                        \
+				mu9_swap(_Tp                                                            \
+					, *__mu9_insertion_sort1__j__                                        \
 					, *(__mu9_insertion_sort1__j__ - m0_const_distance(1))               \
 				);                                                                      \
 			} else {                                                                   \
@@ -57,8 +57,8 @@ mu0_scope_begin                                                                 
 				  *__mu9_insertion_sort2__j__                                           \
 				, *(__mu9_insertion_sort2__j__ - m0_const_distance(1))                  \
 			)) {                                                                       \
-				mu9_swap(                                                               \
-					  *__mu9_insertion_sort2__j__                                        \
+				mu9_swap(_Tp                                                            \
+					, *__mu9_insertion_sort2__j__                                        \
 					, *(__mu9_insertion_sort2__j__ - m0_const_distance(1))               \
 				);                                                                      \
 			} else {                                                                   \
@@ -80,8 +80,8 @@ mu0_scope_begin                                                                 
 				, *(__mu9_insertion_sort3__j__ - m0_const_distance(1))                  \
 				, __ctx                                                                 \
 			)) {                                                                       \
-				mu9_swap(                                                               \
-					   *__mu9_insertion_sort3__j__                                       \
+				mu9_swap(_Tp                                                            \
+					,  *__mu9_insertion_sort3__j__                                       \
 					, *(__mu9_insertion_sort3__j__ - m0_const_distance(1))               \
 				);                                                                      \
 			} else {                                                                   \
