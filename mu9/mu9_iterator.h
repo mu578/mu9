@@ -25,12 +25,12 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __ptr, _Dist & __n) : _Tp *
 //#!
-#	define mu9_iterator_set(_Tp, __ptr, __n)                (mu0_cast(_Tp *, __ptr) + (mu0_distance(__n)))
+#	define mu9_iterator_set(_Tp, __ptr, __n)                (mu0_cast(_Tp *, __ptr) + (mu0_const_distance(__n)))
 
 //#!
 //#! macro<_Tp, _Dist>(const _Tp &* __ptr, _Dist & __n) : const _Tp *
 //#!
-#	define mu9_const_iterator_set(_Tp, __ptr, __n)          (mu0_const_cast(_Tp *, __ptr) + (mu0_distance(__n)))
+#	define mu9_const_iterator_set(_Tp, __ptr, __n)          (mu0_cast(_Tp *, __ptr) + (mu0_const_distance(__n)))
 
 //#!
 //#! macro<_Tp>(_Tp &* __ptr) : _Tp *
@@ -67,7 +67,7 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_iterator_advance_n(_Tp, __it, __n) \
 mu0_scope_begin                                  \
-	(__it) += mu0_distance(__n);                  \
+	(__it) += mu0_const_distance(__n);            \
 mu0_scope_end
 
 //#!
@@ -84,14 +84,14 @@ mu0_scope_end
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __it, _Dist & __n = +1) : _Tp *
 //#!
-#	define mu9_iterator_next_n(_Tp, __it, __n)               ((__it) + mu0_distance((__n) < 0 ? -(__n) : (__n)))
-#	define mu9_iterator_next(_Tp, __it)                      ((__it) + mu0_distance(+1)) 
+#	define mu9_iterator_next_n(_Tp, __it, __n)               ((__it) + mu0_const_distance((__n) < 0 ? -(__n) : (__n)))
+#	define mu9_iterator_next(_Tp, __it)                      ((__it) + mu0_const_distance(+1)) 
 
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __it, _Dist & __n = -1) : _Tp *
 //#!
-#	define mu9_iterator_prev_n(_Tp, __it, __n)               ((__it) + mu0_distance((__n) < 0 ? (__n) : -(__n)))
-#	define mu9_iterator_prev(_Tp, __it)                      ((__it) + mu0_distance(-1))
+#	define mu9_iterator_prev_n(_Tp, __it, __n)               ((__it) + mu0_const_distance((__n) < 0 ? (__n) : -(__n)))
+#	define mu9_iterator_prev(_Tp, __it)                      ((__it) + mu0_const_distance(-1))
 
 #	define mu9_begin(_Tp, __it)                              mu9_iterator_begin(_Tp, __it)
 #	define mu9_begin_n(_Tp, __it, __n)                       mu9_iterator_set(_Tp, __it, __n)
