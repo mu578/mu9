@@ -32,8 +32,8 @@ MU0_BEGIN_CDECL
 
 #	define mu9_argument_sort_descending(_Tp, __i1,  __i2, __ctx) \
 	mu9_gt(_Tp                                                   \
-		, __ctx[mu0_uinteger(__i1)]                             \
-		, __ctx[mu0_uinteger(__i2)]                             \
+		, __ctx[mu0_uinteger(__i1)]                               \
+		, __ctx[mu0_uinteger(__i2)]                               \
 	)
 
 #	define mu9_argument_sort1(_Tp, _UInt, __first, __last, __start, __s_first) \
