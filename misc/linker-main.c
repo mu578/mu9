@@ -17,18 +17,18 @@ int main(int argc, const char * argv[])
 
 	mu0_distance_t i;
 
-	mu0_sint32_t v1[10] = { 0 };
+	mu0_uint32_t v1[10] = { 0 };
 	mu0_fp32_t   v2[10] = { 3, 4, 5 , 8, 9 , 8, 1, 4, 2, 1 };
 
-	mu0_vsint32_t v1_first;
-	mu0_vsint32_t v1_last;
+	mu0_vuint32_t v1_first;
+	mu0_vuint32_t v1_last;
 	mu0_vfp32_t   v2_first;
 
-	v1_first = mu9_begin(mu0_sint32_t, v1);
-	v1_last  = mu9_end(mu0_sint32_t, v1, 10);
+	v1_first = mu9_begin(mu0_uint32_t, v1);
+	v1_last  = mu9_end(mu0_uint32_t, v1, 10);
 	v2_first = mu9_begin(mu0_fp32_t, v2);
 
-	mu9_argument_sort1(mu0_sint32_t
+	mu9_argument_sort1(mu0_uint32_t
 		, v1_first
 		, v1_last
 		, 0
@@ -37,7 +37,7 @@ int main(int argc, const char * argv[])
 
 	mu0_console_log("\n");
 
-	v1_first = mu9_begin(mu0_sint32_t, v1);
+	v1_first = mu9_begin(mu0_uint32_t, v1);
 	for (i = 0; i < 10; ++i) {
 		mu0_console_log("%f ", *(v2_first + *(v1_first + i)));
 	}
