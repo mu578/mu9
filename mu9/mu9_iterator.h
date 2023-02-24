@@ -93,6 +93,14 @@ mu0_scope_end
 #	define mu9_iterator_prev_n(_Tp, __it, __n)               ((__it) + mu0_distance((__n) < 0 ? (__n) : -(__n)))
 #	define mu9_iterator_prev(_Tp, __it)                      ((__it) + mu0_distance(-1))
 
+#	define mu9_begin(_Tp, __it)                              mu9_iterator_begin(_Tp, __it)
+#	define mu9_begin_n(_Tp, __it, __n)                       mu9_iterator_set(_Tp, __it, __n)
+#	define mu9_end(_Tp, __it, __n)                           mu9_iterator_end(_Tp, __it, __n)
+
+#	define mu9_const_begin(_Tp, __it)                        mu9_const_iterator_begin(_Tp, __it)
+#	define mu9_const_begin_n(_Tp, __it, __n)                 mu9_const_iterator_set(_Tp, __it, __n)
+#	define mu9_const_end(_Tp, __it, __n)                     mu9_const_iterator_end(_Tp, __it, __n)
+
 #	define mu9_distance(_Tp, __first, __last)                mu9_iterator_distance(_Tp, __first, __last)
 #	define mu9_const_distance(_Tp, __first, __last)          mu9_const_iterator_distance(_Tp, __first, __last)
 

@@ -7,11 +7,11 @@ int main(int argc, const char * argv[])
 	mu0_sint32_t  v0[3] = { 3, 1, 4 };
 	mu0_vsint32_t vit; 
 	
-	vit = mu9_iterator_begin(mu0_sint32_t, v0);
+	vit = mu9_begin(mu0_sint32_t, v0);
 	mu9_advance_n(mu0_sint32_t, vit, 2);
 	mu0_console_log("%d \n", *vit);
 
-	vit = mu9_iterator_end(mu0_sint32_t, v0, 3);
+	vit = mu9_end(mu0_sint32_t, v0, 3);
 	mu9_advance_n(mu0_sint32_t, vit, -2);
 	mu0_console_log("%d \n", *vit);
 
@@ -24,11 +24,11 @@ int main(int argc, const char * argv[])
 	mu0_vsint32_t v1_last;
 	mu0_vfp32_t   v2_first;
 
-	v1_first = mu9_iterator_begin(mu0_sint32_t, v1);
-	v1_last  = mu9_iterator_end(mu0_sint32_t, v1, 10);
-	v2_first = mu9_iterator_begin(mu0_fp32_t, v2);
+	v1_first = mu9_begin(mu0_sint32_t, v1);
+	v1_last  = mu9_end(mu0_sint32_t, v1, 10);
+	v2_first = mu9_begin(mu0_fp32_t, v2);
 
-	mu9_argument_sort1(mu0_float32_t, mu0_sint32_t
+	mu9_argument_sort1(mu0_sint32_t
 		, v1_first
 		, v1_last
 		, 0
@@ -37,7 +37,7 @@ int main(int argc, const char * argv[])
 
 	mu0_console_log("\n");
 
-	v1_first = mu9_iterator_begin(mu0_sint32_t, v1);
+	v1_first = mu9_begin(mu0_sint32_t, v1);
 	for (i = 0; i < 10; ++i) {
 		mu0_console_log("%f ", *(v2_first + *(v1_first + i)));
 	}
