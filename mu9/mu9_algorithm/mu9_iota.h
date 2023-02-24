@@ -30,7 +30,7 @@ mu0_scope_begin                                        \
 	_Tp __mu9_iota__v__ = mu0_const_cast(_Tp, __value); \
 	while (__first != __last) {                         \
 		*__first++ = __mu9_iota__v__;                    \
-		++__value;                                       \
+		++__mu9_iota__v__;                               \
 	}                                                   \
 mu0_scope_end
 

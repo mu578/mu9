@@ -64,7 +64,7 @@ mu0_scope_begin                                                                 
 	}                                                                                                          \
 mu0_scope_end
 
-#	define mu9_bubble_sort3(_Tp, __first, __last, __sort_fn, __ctx)                                            \
+#	define mu9_bubble_sort3(_Tp, __first, __last, __sort_op, __ctx)                                            \
 mu0_scope_begin                                                                                               \
 	_Tp * __mu9_bubble_sort3__j__;                                                                             \
 	_Tp * __mu9_bubble_sort3__k__;                                                                             \
@@ -75,7 +75,7 @@ mu0_scope_begin                                                                 
 				__mu9_bubble_sort3__j__ = __first;                                                                \
 				__mu9_bubble_sort3__k__ = __mu9_bubble_sort3__j__++;                                              \
 				for (; __mu9_bubble_sort3__j__ != __last; ++__mu9_bubble_sort3__k__, ++__mu9_bubble_sort3__j__) { \
-					if (__sort_fn(*__mu9_bubble_sort3__j__, *__mu9_bubble_sort3__k__, __ctx)) {                    \
+					if (__sort_op(_Tp, *__mu9_bubble_sort3__j__, *__mu9_bubble_sort3__k__, __ctx)) {                    \
 						mu9_iter_swap(_Tp, __mu9_bubble_sort3__j__, __mu9_bubble_sort3__k__);                       \
 						__mu9_bubble_sort3__x__ = mu0_false;                                                        \
 					}                                                                                              \
@@ -113,14 +113,14 @@ mu0_scope_begin                                                                 
 	}                                                                                         \
 mu0_scope_end
 
-#	define mu9_bubble_sort6(_Tp, __first, __last, __sort_fn, __ctx)                           \
+#	define mu9_bubble_sort6(_Tp, __first, __last, __sort_op, __ctx)                           \
 mu0_scope_begin                                                                              \
 	_Tp * __mu9_bubble_sort6__i__ = __first;                                                  \
 	_Tp * __mu9_bubble_sort6__j__;                                                            \
 	for (; __mu9_bubble_sort6__i__ != __last; ++__mu9_bubble_sort6__i__) {                    \
 			__mu9_bubble_sort6__j__ = __first;                                                  \
 		for (; __mu9_bubble_sort6__j__ < __mu9_bubble_sort6__j__; ++__mu9_bubble_sort6__j__) { \
-			if (__sort_fn(*__mu9_bubble_sort6__i__, *__mu9_bubble_sort6__j__, __ctx)) {         \
+			if (__sort_op(_Tp, *__mu9_bubble_sort6__i__, *__mu9_bubble_sort6__j__, __ctx)) {         \
 				mu9_iter_swap(_Tp, __mu9_bubble_sort4__i__, __mu9_bubble_sort6__j__);            \
 			}                                                                                   \
 		}                                                                                      \

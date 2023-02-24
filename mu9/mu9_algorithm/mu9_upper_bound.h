@@ -60,7 +60,7 @@ mu0_scope_begin                                                                 
 	__d_result = __first;                                                          \
 mu0_scope_end
 
-#	define mu9_upper_bound3(_Tp, __first, __last, __value, __sort_fn, __ctx, __d_result) \
+#	define mu9_upper_bound3(_Tp, __first, __last, __value, __sort_op, __ctx, __d_result) \
 mu0_scope_begin                                                                         \
 	_Tp * __mu9_upper_bound3__i__;                                                       \
 	mu0_distance_t __mu9_upper_bound3__c__= mu9_distance(_Tp, __first, __last);          \
@@ -69,7 +69,7 @@ mu0_scope_begin                                                                 
 		__mu9_upper_bound3__i__ = __first;                                                \
 		__mu9_upper_bound3__n__ = __mu9_upper_bound3__c__ / mu0_distance(2);              \
 		mu9_advance_n(_Tp, __mu9_upper_bound3__i__, __mu9_upper_bound3__n__);             \
-		if (!__sort_fn(__value, *__mu9_upper_bound3__i__, __ctx)) {                       \
+		if (!__sort_op(_Tp, __value, *__mu9_upper_bound3__i__, __ctx)) {                  \
 				__first                  = ++__mu9_upper_bound3__i__;                       \
 				__mu9_upper_bound3__c__ -= __mu9_upper_bound3__n__ + mu0_distance(1);       \
 		} else {                                                                          \

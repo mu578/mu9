@@ -60,7 +60,7 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(const _Tp &* __first, const _Tp &* __last) : ptrdiff
 //#!
-#	define mu9_const_iterator_distance(_Tp, __first, __last) mu9_const_difference((mu0_const_cast(_Tp *, __last) - mu0_const_cast(_Tp *, __first)))
+#	define mu9_const_iterator_distance(_Tp, __first, __last) mu0_const_difference((mu0_const_cast(_Tp *, __last) - mu0_const_cast(_Tp *, __first)))
 
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __it, _Dist & __n) : void
@@ -84,14 +84,14 @@ mu0_scope_end
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __it, _Dist & __n = +1) : _Tp *
 //#!
-#	define mu9_iterator_next_n(_Tp, __it, __n)               ((it) + mu0_distance((__n) < 0 ? -(__n) : (__n)))
-#	define mu9_iterator_next(_Tp, __it)                      ((it) + mu0_distance(+1)) 
+#	define mu9_iterator_next_n(_Tp, __it, __n)               ((__it) + mu0_distance((__n) < 0 ? -(__n) : (__n)))
+#	define mu9_iterator_next(_Tp, __it)                      ((__it) + mu0_distance(+1)) 
 
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __it, _Dist & __n = -1) : _Tp *
 //#!
-#	define mu9_iterator_prev_n(_Tp, __it, __n)               ((it) + mu0_distance((__n) < 0 ? (__n) : -(__n)))
-#	define mu9_iterator_prev(_Tp, __it)                      ((it) + mu0_distance(-1))
+#	define mu9_iterator_prev_n(_Tp, __it, __n)               ((__it) + mu0_distance((__n) < 0 ? (__n) : -(__n)))
+#	define mu9_iterator_prev(_Tp, __it)                      ((__it) + mu0_distance(-1))
 
 #	define mu9_distance(_Tp, __first, __last)                mu9_iterator_distance(_Tp, __first, __last)
 #	define mu9_const_distance(_Tp, __first, __last)          mu9_const_iterator_distance(_Tp, __first, __last)

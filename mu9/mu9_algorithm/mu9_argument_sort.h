@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/functional.h>
+#include <mu9/mu9_functional.h>
 #include <mu9/mu9_algorithm/mu9_iota.h>
 #include <mu9/mu9_algorithm/mu9_shell_sort.h>
 
@@ -24,16 +24,16 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_argument_sort_ascending(__i1,  __i2, __ctx) \
-	mu9_less_than(                                         \
-		  __ctx[mu0_uinteger(__i1)]                         \
-		, __ctx[mu0_uinteger(__i2)]                         \
+#	define mu9_argument_sort_ascending(_Tp,__i1,  __i2, __ctx) \
+	mu9_lt(_Tp                                                 \
+		, __ctx[mu0_uinteger(__i1)]                             \
+		, __ctx[mu0_uinteger(__i2)]                             \
 	)
 
-#	define mu9_argument_sort_descending(__i1,  __i2, __ctx) \
-	mu9_greater_than(                                       \
-		  __ctx[mu0_uinteger(__i1)]                          \
-		, __ctx[mu0_uinteger(__i2)]                          \
+#	define mu9_argument_sort_descending(_Tp, __i1,  __i2, __ctx) \
+	mu9_gt(_Tp                                                   \
+		, __ctx[mu0_uinteger(__i1)]                             \
+		, __ctx[mu0_uinteger(__i2)]                             \
 	)
 
 #	define mu9_argument_sort1(_Tp, _UInt, __first, __last, __start, __s_first) \
@@ -49,10 +49,10 @@ mu0_scope_begin                                                               \
 		, __last                                                                \
 		, mu9_argument_sort_ascending                                           \
 		, __s_first                                                             \
-	);
+	);                                                                         \
 mu0_scope_end
 
-#	define mu9_argument_sort2(_Tp, _UInt, __first, __last, __start, __s_first, __sort_fn) \
+#	define mu9_argument_sort2(_Tp, _UInt, __first, __last, __start, __s_first, __sort_op) \
 mu0_scope_begin                                                                          \
 	_UInt * __mu9_argument_sort2__i__ = __first;                                          \
 	mu9_iota(_UInt                                                                        \
@@ -63,21 +63,21 @@ mu0_scope_begin                                                                 
 	mu9_shell_sort3(_UInt                                                                 \
 		, __first                                                                          \
 		, __last                                                                           \
-		, __sort_fn                                                                        \
+		, __sort_op                                                                        \
 		, __s_first                                                                        \
-	);
+	);                                                                                    \
 mu0_scope_end
 
 #	define mu9_argument_sort_n1(_Tp, _UInt, __first, __start, __s_first, __n)                 \
 mu0_scope_begin                                                                              \
-	_UInt * __mu9_argument_sort_n1__i__ = __first + m0_const_distance(__n);                   \
+	_UInt * __mu9_argument_sort_n1__i__ = __first + mu0_const_distance(__n);                  \
 	mu9_argument_sort1(_Tp, _UInt, __first, __mu9_argument_sort_n1__i__, __start, __s_first); \
 mu0_scope_end
 
-#	define mu9_argument_sort_n2(_Tp, _UInt, __first, __start, __s_first, __n, __sort_fn)                 \
+#	define mu9_argument_sort_n2(_Tp, _UInt, __first, __start, __s_first, __n, __sort_op)                 \
 mu0_scope_begin                                                                                         \
-	_UInt * __mu9_argument_sort_n2__i__ = __first + m0_const_distance(__n);                              \
-	mu9_argument_sort2(_Tp, _UInt, __first, __mu9_argument_sort_n2__i__, __start, __s_first, __sort_fn); \
+	_UInt * __mu9_argument_sort_n2__i__ = __first + mu0_const_distance(__n);                             \
+	mu9_argument_sort2(_Tp, _UInt, __first, __mu9_argument_sort_n2__i__, __start, __s_first, __sort_op); \
 mu0_scope_end
 
 #endif /* !MU9_ARGUMENT_SORT_H */

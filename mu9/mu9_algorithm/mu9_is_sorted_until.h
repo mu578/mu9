@@ -54,14 +54,14 @@ mu0_scope_begin                                                             \
 	}                                                                        \
 mu0_scope_end
 
-#	define mu9_is_sorted_until3(_Tp, __first, __last, __sort_fn, __ctx, __d_result) \
+#	define mu9_is_sorted_until3(_Tp, __first, __last, __sort_op, __ctx, __d_result) \
 mu0_scope_begin                                                                    \
 	_Tp * __mu9_is_sorted_until3__i__;                                              \
 	__d_result = __last;                                                            \
 	if (__first != __last) {                                                        \
 		__mu9_is_sorted_until3__i__ = __first;                                       \
 		while (++__mu9_is_sorted_until3__i__ != __last) {                            \
-			if (__sort_fn(*__mu9_is_sorted_until3__i__, *__first, __ctx)) {           \
+			if (__sort_op(_Tp, *__mu9_is_sorted_until3__i__, *__first, __ctx)) {      \
 				__d_result = __mu9_is_sorted_until3__i__;                              \
 				break;                                                                 \
 			}                                                                         \

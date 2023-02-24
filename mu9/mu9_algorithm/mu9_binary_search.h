@@ -43,11 +43,11 @@ mu0_scope_begin                                                                 
 	);                                                                                                 \
 mu0_scope_end
 
-#	define mu9_binary_search3(_Tp, __first, __last, __value, __sort_fn, __ctx, __d_result)                    \
+#	define mu9_binary_search3(_Tp, __first, __last, __value, __sort_op, __ctx, __d_result)                    \
 mu0_scope_begin                                                                                              \
 	_Tp * __mu9_lower_bound2__d__;                                                                            \
-	mu9_lower_bound3(__Tp, __first, __last, __value, __sort_fn, __ctx, __mu9_lower_bound2__d__);              \
-	__d_result = ((__mu9_lower_bound2__d__ != __last && !__sort_fn(__value, *__mu9_lower_bound2__d__, __ctx)) \
+	mu9_lower_bound3(__Tp, __first, __last, __value, __sort_op, __ctx, __mu9_lower_bound2__d__);              \
+	__d_result = ((__mu9_lower_bound2__d__ != __last && !__sort_op(_Tp, __value, *__mu9_lower_bound2__d__, __ctx)) \
 		? mu0_true                                                                                             \
 		: mu0_false                                                                                            \
 	);                                                                                                        \

@@ -28,8 +28,8 @@ MU0_BEGIN_CDECL
 #	define mu9_stable_sort2(_Tp, __first, __last, __comp_fn) \
 	mu9_insertion_sort5(_Tp, __first, __last, __comp_fn)
 
-#	define mu9_stable_sort3(_Tp, __first, __last, __sort_fn, __ctx) \
-	mu9_insertion_sort6(_Tp, __first, __last, __sort_fn, __ctx)
+#	define mu9_stable_sort3(_Tp, __first, __last, __sort_op, __ctx) \
+	mu9_insertion_sort6(_Tp, __first, __last, __sort_op, __ctx)
 
 #	define mu9_stable_sort4(_Tp, __first, __last, __swap_op) \
 	mu9_insertion_sort7(_Tp, __first, __last)
@@ -37,8 +37,8 @@ MU0_BEGIN_CDECL
 #	define mu9_stable_sort5(_Tp, __first, __last, __comp_fn, __swap_op) \
 	mu9_insertion_sort8(_Tp, __first, __last, __comp_fn)
 
-#	define mu9_stable_sort6(_Tp, __first, __last, __sort_fn, __ctx, __swap_op) \
-	mu9_insertion_sort9(_Tp, __first, __last, __sort_fn, __ctx)
+#	define mu9_stable_sort6(_Tp, __first, __last, __sort_op, __ctx, __swap_op) \
+	mu9_insertion_sort9(_Tp, __first, __last, __sort_op, __ctx)
 
 MU0_END_CDECL
 

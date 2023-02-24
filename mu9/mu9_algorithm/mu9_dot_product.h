@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu9_algorithm/mu9_inner_product.h>
+#include <mu9/mu9_algorithm/mu9_inner_product.h>
 
 #ifndef MU9_DOT_PRODUCT_H
 #define MU9_DOT_PRODUCT_H 1

@@ -102,9 +102,9 @@ mu0_scope_end
 #	define mu9_rotate_copy(_Tp, __first, __n_first, __last, __d_first , __d_result) \
 mu0_scope_begin                                                                    \
 	_Tp * __mu9_rotate_copy__i__;                                                   \
-	mu9_copy(__n_first, __last, __d_first);                                         \
+	mu9_copy(_Tp, __n_first, __last, __d_first);                                    \
 	__mu9_rotate_copy__i__ = __d_first;                                             \
-	mu9_copy(__first, __n_first, __mu9_rotate_copy__i__);                           \
+	mu9_copy(_Tp, __first, __n_first, __mu9_rotate_copy__i__);                      \
 	__d_result              = __mu9_rotate_copy__i__;                               \
 mu0_scope_end
 

@@ -50,7 +50,7 @@ MU0_BEGIN_CDECL
 #	define mu9_logical_not_and(__a, __b)              (!((__a) && (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_or(__a, __b)                   ( ((__a) || (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_not_or(__a, __b)               (!((__a) || (__b)) ? mu0_true : mu0_false)
-#	define mu9_negate(__a)                            !(__a)
+#	define mu9_logical_not(__a)                       !(__a)
 
 //#!
 //#! macro<>(& __a, & __b) : _Tp

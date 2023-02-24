@@ -44,12 +44,12 @@ mu0_scope_begin                                                                 
 	}                                                                                 \
 mu0_scope_end
 
-#	define mu9_selection_sort3(_Tp, __first, __last, __sort_fn, __ctx)                       \
+#	define mu9_selection_sort3(_Tp, __first, __last, __sort_op, __ctx)                       \
 mu0_scope_begin                                                                             \
 	_Tp * __mu9_selection_sort3__d__;                                                        \
 	for (; __first != __last; ++__first) {                                                   \
-		mu9_min_element3(_Tp, __first, __last, __sort_fn, __ctx, __mu9_selection_sort3__d__); \
-		if (__sort_fn(*__mu9_selection_sort3__d__, *__first, __ctx)) {                        \
+		mu9_min_element3(_Tp, __first, __last, __sort_op, __ctx, __mu9_selection_sort3__d__); \
+		if (__sort_op(_Tp, *__mu9_selection_sort3__d__, *__first, __ctx)) {                   \
 			mu9_iter_swap(_Tp, __mu9_selection_sort3__d__, __first);                           \
 		}                                                                                     \
 	}                                                                                        \
@@ -73,11 +73,11 @@ mu0_scope_begin                                                                 
 	}                                                                                 \
 mu0_scope_end
 
-#	define mu9_selection_sort6(_Tp, __first, __last, __sort_fn, __ctx)                       \
+#	define mu9_selection_sort6(_Tp, __first, __last, __sort_op, __ctx)                       \
 mu0_scope_begin                                                                             \
 	_Tp * __mu9_selection_sort6__d__;                                                        \
 	for (; __first != __last; ++__first) {                                                   \
-		mu9_min_element3(_Tp, __first, __last, __sort_fn, __ctx, __mu9_selection_sort6__d__); \
+		mu9_min_element3(_Tp, __first, __last, __sort_op, __ctx, __mu9_selection_sort6__d__); \
 		mu9_iter_swap(_Tp, __mu9_selection_sort6__d__, __first);                              \
 	}                                                                                        \
 mu0_scope_end

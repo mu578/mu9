@@ -33,11 +33,11 @@ mu0_scope_begin                                                                 
 		for (; __mu9_insertion_sort1__j__ != __first; __mu9_insertion_sort1__j__--) { \
 			if (                                                                       \
 				   *__mu9_insertion_sort1__j__                                          \
-				< *(__mu9_insertion_sort1__j__ - m0_const_distance(1))                  \
+				< *(__mu9_insertion_sort1__j__ - mu0_const_distance(1))                 \
 			) {                                                                        \
 				mu9_swap(_Tp                                                            \
 					, *__mu9_insertion_sort1__j__                                        \
-					, *(__mu9_insertion_sort1__j__ - m0_const_distance(1))               \
+					, *(__mu9_insertion_sort1__j__ - mu0_const_distance(1))              \
 				);                                                                      \
 			} else {                                                                   \
 				break;                                                                  \
@@ -55,11 +55,11 @@ mu0_scope_begin                                                                 
 		for (; __mu9_insertion_sort2__j__ != __first; __mu9_insertion_sort2__j__--) { \
 			if (__comp_fn(                                                             \
 				  *__mu9_insertion_sort2__j__                                           \
-				, *(__mu9_insertion_sort2__j__ - m0_const_distance(1))                  \
+				, *(__mu9_insertion_sort2__j__ - mu0_const_distance(1))                 \
 			)) {                                                                       \
 				mu9_swap(_Tp                                                            \
 					, *__mu9_insertion_sort2__j__                                        \
-					, *(__mu9_insertion_sort2__j__ - m0_const_distance(1))               \
+					, *(__mu9_insertion_sort2__j__ - mu0_const_distance(1))              \
 				);                                                                      \
 			} else {                                                                   \
 				break;                                                                  \
@@ -68,21 +68,21 @@ mu0_scope_begin                                                                 
 	}                                                                                \
 mu0_scope_end
 
-#	define mu9_insertion_sort3(_Tp, __first, __last, __sort_fn, __ctx)               \
+#	define mu9_insertion_sort3(_Tp, __first, __last, __sort_op, __ctx)               \
 mu0_scope_begin                                                                     \
 	_Tp * __mu9_insertion_sort3__i__ = __first;                                      \
 	_Tp * __mu9_insertion_sort3__j__;                                                \
 	for (; __mu9_insertion_sort3__i__ != __last; __mu9_insertion_sort3__i__++) {     \
 		__mu9_insertion_sort3__j__ = __mu9_insertion_sort3__i__;                      \
 		for (; __mu9_insertion_sort3__j__ != __first; __mu9_insertion_sort3__j__--) { \
-			if (__sort_fn(                                                             \
-				  *__mu9_insertion_sort3__j__                                           \
-				, *(__mu9_insertion_sort3__j__ - m0_const_distance(1))                  \
+			if (__sort_op(_Tp                                                          \
+				, *__mu9_insertion_sort3__j__                                           \
+				, *(__mu9_insertion_sort3__j__ - mu0_const_distance(1))                 \
 				, __ctx                                                                 \
 			)) {                                                                       \
 				mu9_swap(_Tp                                                            \
 					,  *__mu9_insertion_sort3__j__                                       \
-					, *(__mu9_insertion_sort3__j__ - m0_const_distance(1))               \
+					, *(__mu9_insertion_sort3__j__ - mu0_const_distance(1))              \
 				);                                                                      \
 			} else {                                                                   \
 				break;                                                                  \
@@ -142,7 +142,7 @@ mu0_scope_begin                                                                 
 	}                                                                            \
 mu0_scope_end
 
-#	define mu9_insertion_sort6(_Tp, __first, __last, __sort_fn, __ctx)           \
+#	define mu9_insertion_sort6(_Tp, __first, __last, __sort_op, __ctx)           \
 mu0_scope_begin                                                                 \
 	_Tp * __mu9_insertion_sort6__i__ = __first;                                  \
 	_Tp * __mu9_insertion_sort6__j__;                                            \
@@ -153,7 +153,7 @@ mu0_scope_begin                                                                 
 			,  __first                                                             \
 			,  __mu9_insertion_sort6__i__                                          \
 			, *__mu9_insertion_sort6__i__                                          \
-			,  __sort_fn                                                           \
+			,  __sort_op                                                           \
 			,  __ctx                                                               \
 			,  __mu9_insertion_sort6__d__                                          \
 		);                                                                        \
@@ -222,7 +222,7 @@ mu0_scope_begin                                                                 
 	}                                                                            \
 mu0_scope_end
 
-#	define mu9_insertion_sort9(_Tp, __first, __last, __sort_fn, __ctx, __swap_op) \
+#	define mu9_insertion_sort9(_Tp, __first, __last, __sort_op, __ctx, __swap_op) \
 mu0_scope_begin                                                                  \
 	_Tp * __mu9_insertion_sort9__i__ = __first;                                   \
 	_Tp * __mu9_insertion_sort9__j__;                                             \
@@ -233,7 +233,7 @@ mu0_scope_begin                                                                 
 			,  __first                                                              \
 			,  __mu9_insertion_sort9__i__                                           \
 			, *__mu9_insertion_sort9__i__                                           \
-			,  __sort_fn                                                            \
+			,  __sort_op                                                            \
 			,  __ctx                                                                \
 			,  __mu9_insertion_sort9__d__                                           \
 		);                                                                         \
