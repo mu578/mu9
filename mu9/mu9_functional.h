@@ -80,7 +80,7 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_lt(_Tp, __a, __b)                      mu9_less_than(__a, __b)
 #	define mu9_le(_Tp, __a, __b)                      mu9_less_than_or_equal(__a, __b)
-#	define mu9_gt(_Tp, (__a, __b)                     mu9_greater_than(__a, __b)
+#	define mu9_gt(_Tp, __a, __b)                      mu9_greater_than(__a, __b)
 #	define mu9_ge(_Tp, __a, __b)                      mu9_greater_than_or_equal(__a, __b)
 #	define mu9_eq(_Tp, __a, __b)                      mu9_equal_to(__a, __b)
 #	define mu9_ne(_Tp, __a, __b)                      mu9_not_equal_to(__a, __b)
