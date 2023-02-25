@@ -25,7 +25,7 @@ MU0_BEGIN_CDECL
 
 #	define mu9_merge1(_Tp, __first1, __last1, __first2, __last2, __d_first, __d_result) \
 mu0_scope_begin                                                                        \
-	mu9_bool_t __mu9_merge1__x__ = mu0_false;                                           \
+	mu0_bool_t __mu9_merge1__x__ = mu0_false;                                           \
 	for (; __first1 != __last1; ++__d_first) {                                          \
 		if (__first2 == __last2) {                                                       \
 			mu9_copy(_Tp, __first1, __last1, __d_first);                                  \
@@ -49,7 +49,7 @@ mu0_scope_end
 
 #	define mu9_merge2(_Tp, __first1, __last1, __first2, __last2, __d_first, __comp_fn, __d_result) \
 mu0_scope_begin                                                                                   \
-	mu9_bool_t __mu9_merge2__x__ = mu0_false;                                                      \
+	mu0_bool_t __mu9_merge2__x__ = mu0_false;                                                      \
 	for (; __first1 != __last1; ++__d_first) {                                                     \
 		if (__first2 == __last2) {                                                                  \
 			mu9_copy(_Tp, __first1, __last1, __d_first);                                             \
@@ -73,7 +73,7 @@ mu0_scope_end
 
 #	define mu9_merge3(_Tp, __first1, __last1, __first2, __last2, __d_first, __comp_fn, __move_op, __d_result) \
 mu0_scope_begin                                                                                              \
-	mu9_bool_t __mu9_merge3__x__ = mu0_false;                                                                 \
+	mu0_bool_t __mu9_merge3__x__ = mu0_false;                                                                 \
 	for (; __first1 != __last1; ++__d_first) {                                                                \
 		if (__first2 == __last2) {                                                                             \
 			mu9_duplicate(_Tp, __first1, __last1, __d_first, __move_op);                                        \

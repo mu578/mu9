@@ -27,7 +27,7 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_find(_Tp, __first, __last, __value, __d_result) \
 mu0_scope_begin                                               \
-	mu9_bool_t __mu9_find__x__ = mu0_false;                    \
+	mu0_bool_t __mu9_find__x__ = mu0_false;                    \
 	for (; __first != __last; ++__first) {                     \
 		if (*__first == __value) {                              \
 			__d_result       = __first;                          \
@@ -45,7 +45,7 @@ mu0_scope_end
 //#!
 #	define mu9_find_if(_Tp, __first, __last, __unary_pred, __d_result) \
 mu0_scope_begin                                                       \
-	mu9_bool_t __mu9_find_if__x__ = mu0_false;                         \
+	mu0_bool_t __mu9_find_if__x__ = mu0_false;                         \
 	for (; __first != __last; ++__first) {                             \
 		 if (__unary_pred(*__first)) {                                  \
 			__d_result          = __first;                               \
@@ -63,7 +63,7 @@ mu0_scope_end
 //#!
 #	define mu9_find_if_not(_Tp, __first, __last, __unary_pred, __d_result) \
 mu0_scope_begin                                                           \
-	mu9_bool_t __mu9_find_if_not__x__ = mu0_false;                         \
+	mu0_bool_t __mu9_find_if_not__x__ = mu0_false;                         \
 	for (; __first != __last; ++__first) {                                 \
 		 if (!__unary_pred(*__first)) {                                     \
 			__d_result              = __first;                               \
@@ -81,7 +81,7 @@ mu0_scope_end
 //#!
 #	define mu9_find_first_of1(_Tp, __first, __last, __s_first, __s_last, __d_result)  \
 mu0_scope_begin                                                                      \
-	mu9_bool_t __mu9_find_first_of1__x__ = mu0_false;                                 \
+	mu0_bool_t __mu9_find_first_of1__x__ = mu0_false;                                 \
 	_Tp * __mu9_find_first_of1__i__;                                                  \
 	for (; __first != __last && !__mu9_find_first_of1__x__; ++__first) {              \
 		__mu9_find_first_of1__i__ = __s_first;                                         \
@@ -103,7 +103,7 @@ mu0_scope_end
 //#!
 #	define mu9_find_first_of2(_Tp, __first, __last, __s_first, __s_last, __binary_pred, __d_result) \
 mu0_scope_begin                                                                                    \
-	mu9_bool_t __mu9_find_first_of2__x__ = mu0_false;                                               \
+	mu0_bool_t __mu9_find_first_of2__x__ = mu0_false;                                               \
 	_Tp * __mu9_find_first_of2__i__;                                                                \
 	for (; __first != __last && !__mu9_find_first_of2__x__; ++__first) {                            \
 		__mu9_find_first_of2__i__ = __s_first;                                                       \

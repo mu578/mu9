@@ -27,7 +27,7 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_equal1(_Tp, __first1, __last1,  __first2, __d_result) \
 mu0_scope_begin                                                     \
-	mu9_bool_t __mu9_equal1__x__ = mu0_true;                         \
+	mu0_bool_t __mu9_equal1__x__ = mu0_true;                         \
 	for (; __first1 != __last1; ++__first1, ++__first2) {            \
 		if (!(*__first1 == *__first2)) {                              \
 			__mu9_equal1__x__ = mu0_false;                             \
@@ -42,7 +42,7 @@ mu0_scope_end
 //#!
 #	define mu9_equal2(_Tp, __first1, __last1,  __first2, __binary_pred, __d_result) \
 mu0_scope_begin                                                                    \
-	mu9_bool_t __mu9_equal2__x__ = mu0_true;                                        \
+	mu0_bool_t __mu9_equal2__x__ = mu0_true;                                        \
 	for (; __first1 != __last1; ++__first1, ++__first2) {                           \
 		if (!__binary_pred(*__first1, *__first2)) {                                  \
 			__mu9_equal2__x__ = mu0_false;                                            \

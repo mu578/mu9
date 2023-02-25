@@ -26,7 +26,7 @@ MU0_BEGIN_CDECL
 mu0_scope_begin                                                                                               \
 	_Tp * __mu9_bubble_sort1__j__;                                                                             \
 	_Tp * __mu9_bubble_sort1__k__;                                                                             \
-	mu9_bool_t __mu9_bubble_sort1__x__ = mu0_false;                                                            \
+	mu0_bool_t __mu9_bubble_sort1__x__ = mu0_false;                                                            \
 	if (__first != __last) {                                                                                   \
 		while (!__mu9_bubble_sort1__x__) {                                                                      \
 				__mu9_bubble_sort1__x__ = mu0_true;                                                               \
@@ -47,7 +47,7 @@ mu0_scope_end
 mu0_scope_begin                                                                                               \
 	_Tp * __mu9_bubble_sort2__j__;                                                                             \
 	_Tp * __mu9_bubble_sort2__k__;                                                                             \
-	mu9_bool_t __mu9_bubble_sort2__x__ = mu0_false;                                                            \
+	mu0_bool_t __mu9_bubble_sort2__x__ = mu0_false;                                                            \
 	if (__first != __last) {                                                                                   \
 		while (!__mu9_bubble_sort2__x__) {                                                                      \
 				__mu9_bubble_sort2__x__ = mu0_true;                                                               \
@@ -68,14 +68,14 @@ mu0_scope_end
 mu0_scope_begin                                                                                               \
 	_Tp * __mu9_bubble_sort3__j__;                                                                             \
 	_Tp * __mu9_bubble_sort3__k__;                                                                             \
-	mu9_bool_t __mu9_bubble_sort3__x__ = mu0_false;                                                            \
+	mu0_bool_t __mu9_bubble_sort3__x__ = mu0_false;                                                            \
 	if (__first != __last) {                                                                                   \
 		while (!__mu9_bubble_sort3__x__) {                                                                      \
 				__mu9_bubble_sort3__x__ = mu0_true;                                                               \
 				__mu9_bubble_sort3__j__ = __first;                                                                \
 				__mu9_bubble_sort3__k__ = __mu9_bubble_sort3__j__++;                                              \
 				for (; __mu9_bubble_sort3__j__ != __last; ++__mu9_bubble_sort3__k__, ++__mu9_bubble_sort3__j__) { \
-					if (__sort_op(_Tp, *__mu9_bubble_sort3__j__, *__mu9_bubble_sort3__k__, __ctx)) {                    \
+					if (__sort_op(_Tp, *__mu9_bubble_sort3__j__, *__mu9_bubble_sort3__k__, __ctx)) {               \
 						mu9_iter_swap(_Tp, __mu9_bubble_sort3__j__, __mu9_bubble_sort3__k__);                       \
 						__mu9_bubble_sort3__x__ = mu0_false;                                                        \
 					}                                                                                              \
@@ -120,7 +120,7 @@ mu0_scope_begin                                                                 
 	for (; __mu9_bubble_sort6__i__ != __last; ++__mu9_bubble_sort6__i__) {                    \
 			__mu9_bubble_sort6__j__ = __first;                                                  \
 		for (; __mu9_bubble_sort6__j__ < __mu9_bubble_sort6__j__; ++__mu9_bubble_sort6__j__) { \
-			if (__sort_op(_Tp, *__mu9_bubble_sort6__i__, *__mu9_bubble_sort6__j__, __ctx)) {         \
+			if (__sort_op(_Tp, *__mu9_bubble_sort6__i__, *__mu9_bubble_sort6__j__, __ctx)) {    \
 				mu9_iter_swap(_Tp, __mu9_bubble_sort4__i__, __mu9_bubble_sort6__j__);            \
 			}                                                                                   \
 		}                                                                                      \

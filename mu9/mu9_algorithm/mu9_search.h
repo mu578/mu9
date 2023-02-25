@@ -77,7 +77,7 @@ mu0_scope_end
 #	define mu9_search_n1(_Tp, __first, __last, __n, __value, __d_result) \
 mu0_scope_begin                                                         \
 	mu0_uinteger_t __mu9_search_n1__i__;                                 \
-	mu9_bool_t     __mu9_search_n1__x__ = mu0_false;                     \
+	mu0_bool_t     __mu9_search_n1__x__ = mu0_false;                     \
 	__d_result                          = __first;                       \
 	if (__n > 0) {                                                       \
 		for (; __first != __last; ++__first) {                            \
@@ -113,7 +113,7 @@ mu0_scope_end
 #	define mu9_search_n2(_Tp, __first, __last, __n, __value, __binary_pred, __d_result) \
 mu0_scope_begin                                                                        \
 	mu0_uinteger_t __mu9_search_n2__i__;                                                \
-	mu9_bool_t     __mu9_search_n2__x__ = mu0_false;                                    \
+	mu0_bool_t     __mu9_search_n2__x__ = mu0_false;                                    \
 	__d_result                          = __first;                                      \
 	if (__n > 0) {                                                                      \
 		for (; __first != __last; ++__first) {                                           \
