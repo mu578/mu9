@@ -149,7 +149,7 @@ mu0_scope_begin                                                                 
 	_Tp * __mu9_insertion_sort6__k__;                                            \
 	_Tp * __mu9_insertion_sort6__d__;                                            \
 	for (; __mu9_insertion_sort6__i__ != __last; ++__mu9_insertion_sort6__i__) { \
-		mu9_upper_bound3(_Tp                                                      \
+		mu9_upper_bound4(_Tp                                                      \
 			,  __first                                                             \
 			,  __mu9_insertion_sort6__i__                                          \
 			, *__mu9_insertion_sort6__i__                                          \
@@ -229,7 +229,7 @@ mu0_scope_begin                                                                 
 	_Tp * __mu9_insertion_sort9__k__;                                             \
 	_Tp * __mu9_insertion_sort9__d__;                                             \
 	for (; __mu9_insertion_sort9__i__ != __last; ++__mu9_insertion_sort9__i__) {  \
-		mu9_upper_bound3(_Tp                                                       \
+		mu9_upper_bound4(_Tp                                                       \
 			,  __first                                                              \
 			,  __mu9_insertion_sort9__i__                                           \
 			, *__mu9_insertion_sort9__i__                                           \

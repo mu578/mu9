@@ -66,12 +66,12 @@ mu0_scope_begin                                                              \
 	}                                                                         \
 mu0_scope_end
 
-#	define mu9_transform7(_Tp, __first, __last, __binary_op, __arg) \
-mu0_scope_begin                                                    \
-	_Tp * __mu9_transform7__i__ = __first;                          \
-	while (__first != __last) {                                     \
-		*__mu9_transform7__i__++ = __binary_op(_Tp, *__first++);     \
-	}                                                               \
+#	define mu9_transform7(_Tp, __first, __last, __binary_op)    \
+mu0_scope_begin                                                \
+	_Tp * __mu9_transform7__i__ = __first;                      \
+	while (__first != __last) {                                 \
+		*__mu9_transform7__i__++ = __binary_op(_Tp, *__first++); \
+	}                                                           \
 mu0_scope_end
 
 #	define mu9_transform8(_Tp, __first1, __last1, __first2, __trinary_op, __arg)      \

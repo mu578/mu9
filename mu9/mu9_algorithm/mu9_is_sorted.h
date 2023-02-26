@@ -36,11 +36,11 @@ mu0_scope_begin                                                                 
 	__d_result == (__mu9_is_sorted2__d__ == __last) ? mu0_true : mu0_false;       \
 mu0_scope_end
 
-#	define mu9_is_sorted3(_Tp, __first, __last, __comp_op, __arg, __d_result)            \
-mu0_scope_begin                                                                         \
-	_Tp * __mu9_is_sorted3__d__;                                                         \
-	mu9_is_sorted_until3(_Tp, __first, __last, __comp_op, __arg, __mu9_is_sorted3__d__); \
-	__d_result == (__mu9_is_sorted3__d__ == __last) ? mu0_true : mu0_false;              \
+#	define mu9_is_sorted3(_Tp, __first, __last, __comp_op, __d_result)            \
+mu0_scope_begin                                                                  \
+	_Tp * __mu9_is_sorted3__d__;                                                  \
+	mu9_is_sorted_until3(_Tp, __first, __last, __comp_op, __mu9_is_sorted3__d__); \
+	__d_result == (__mu9_is_sorted3__d__ == __last) ? mu0_true : mu0_false;       \
 mu0_scope_end
 
 MU0_END_CDECL
