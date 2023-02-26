@@ -32,6 +32,7 @@
 #	include <mu9/mu9_algorithm/mu9_fill.h>
 #	include <mu9/mu9_algorithm/mu9_find.h>
 #	include <mu9/mu9_algorithm/mu9_for_each.h>
+#	include <mu9/mu9_algorithm/mu9_generate.h>
 #	include <mu9/mu9_algorithm/mu9_inner_product.h>
 #	include <mu9/mu9_algorithm/mu9_insertion_sort.h>
 #	include <mu9/mu9_algorithm/mu9_iota.h>
@@ -43,6 +44,7 @@
 #	include <mu9/mu9_algorithm/mu9_min_element.h>
 #	include <mu9/mu9_algorithm/mu9_minmax_element.h>
 #	include <mu9/mu9_algorithm/mu9_mismatch.h>
+#	include <mu9/mu9_algorithm/mu9_partial_sum.h>
 #	include <mu9/mu9_algorithm/mu9_partition_point.h>
 #	include <mu9/mu9_algorithm/mu9_partition.h>
 #	include <mu9/mu9_algorithm/mu9_random_shuffle.h>

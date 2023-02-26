@@ -108,13 +108,13 @@ mu0_scope_begin                                                                 
 	__d_result2 = __mu9_minmax_element2__j__;                                                     \
 mu0_scope_end
 
-#	define mu9_minmax_element3(_Tp, __first, __last, __sort_op, __ctx, __d_result1, __d_result2)              \
+#	define mu9_minmax_element3(_Tp, __first, __last, __comp_op, __arg, __d_result1, __d_result2)              \
 mu0_scope_begin                                                                                              \
 	_Tp * __mu9_minmax_element3__i__ = __first;                                                               \
 	_Tp * __mu9_minmax_element3__j__ = __first;                                                               \
 	_Tp * __mu9_minmax_element3__k__;                                                                         \
 	if (!(__first == __last || ++__first == __last)) {                                                        \
-		if (__sort_op(_Tp, *__first, *__mu9_minmax_element3__i__, __ctx)) {                                    \
+		if (__comp_op(_Tp, *__first, *__mu9_minmax_element3__i__, __arg)) {                                    \
 			__mu9_minmax_element3__i__ = __first;                                                               \
 		} else {                                                                                               \
 			__mu9_minmax_element3__j__ = __first;                                                               \
@@ -122,25 +122,25 @@ mu0_scope_begin                                                                 
 		while (++__first != __last) {                                                                          \
 			__mu9_minmax_element3__k__ = __first;                                                               \
 			if (++__first == __last) {                                                                          \
-				if (__sort_op(_Tp, *__mu9_minmax_element3__k__, *__mu9_minmax_element3__i__, __ctx)) {           \
+				if (__comp_op(_Tp, *__mu9_minmax_element3__k__, *__mu9_minmax_element3__i__, __arg)) {           \
 					__mu9_minmax_element3__i__ = __mu9_minmax_element3__k__;                                      \
-				} else if (!(__sort_op(_Tp, *__mu9_minmax_element3__k__, *__mu9_minmax_element3__j__, __ctx))) { \
+				} else if (!(__comp_op(_Tp, *__mu9_minmax_element3__k__, *__mu9_minmax_element3__j__, __arg))) { \
 					__mu9_minmax_element3__j__ = __mu9_minmax_element3__k__;                                      \
 				}                                                                                                \
 				break;                                                                                           \
 			} else {                                                                                            \
-				if (__sort_op(_Tp, *__first, *__mu9_minmax_element3__k__)) {                                     \
-					if (__sort_op(_Tp, *__first, *__mu9_minmax_element3__i__, __ctx)) {                           \
+				if (__comp_op(_Tp, *__first, *__mu9_minmax_element3__k__)) {                                     \
+					if (__comp_op(_Tp, *__first, *__mu9_minmax_element3__i__, __arg)) {                           \
 						__mu9_minmax_element3__i__ = __first;                                                      \
 					}                                                                                             \
-					if (!(__sort_op(_Tp, *__mu9_minmax_element3__k__, *__mu9_minmax_element3__j__, __ctx))) {     \
+					if (!(__comp_op(_Tp, *__mu9_minmax_element3__k__, *__mu9_minmax_element3__j__, __arg))) {     \
 						__mu9_minmax_element3__j__ = __mu9_minmax_element3__k__;                                   \
 					}                                                                                             \
 				} else {                                                                                         \
-					if (__sort_op(_Tp, *__mu9_minmax_element3__k__, *__mu9_minmax_element3__i__, __ctx)) {        \
+					if (__comp_op(_Tp, *__mu9_minmax_element3__k__, *__mu9_minmax_element3__i__, __arg)) {        \
 						__mu9_minmax_element3__i__ = __mu9_minmax_element3__k__;                                   \
 					}                                                                                             \
-					if (!(__sort_op(_Tp, *__first, *__mu9_minmax_element3__j__, __ctx))) {                        \
+					if (!(__comp_op(_Tp, *__first, *__mu9_minmax_element3__j__, __arg))) {                        \
 						__mu9_minmax_element3__j__ = __first;                                                      \
 					}                                                                                             \
 				}                                                                                                \
