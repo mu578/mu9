@@ -22,25 +22,25 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_exclusive_scan1(_Tp, __first, __last, __d_first, __init, __binary_op) \
-mu0_scope_begin                                                                     \
-	_Tp __mu9_exclusive_scan1__v__;                                                  \
-	_Tp __mu9_exclusive_scan1__w__;                                                  \
-	if (__first != __last) {                                                         \
-		__mu9_exclusive_scan1__v__ = __init;                                          \
-		__mu9_exclusive_scan1__w__ = __mu9_exclusive_scan1__v__ + *__first;           \
-		while (1) {                                                                   \
-			*__d_first = __mu9_exclusive_scan1__v__;                                   \
-			++__d_first;                                                               \
-			++__first;                                                                 \
-			if (__first != __last) {                                                   \
-				__mu9_exclusive_scan1__v__ = __mu9_exclusive_scan1__w__;                \
-				__mu9_exclusive_scan1__w__ = __mu9_exclusive_scan1__v__ + *__first;     \
-			} else {                                                                   \
-				break;                                                                  \
-			}                                                                          \
-		}                                                                             \
-	}                                                                                \
+#	define mu9_exclusive_scan1(_Tp, __first, __last, __d_first, __init)          \
+mu0_scope_begin                                                                 \
+	_Tp __mu9_exclusive_scan1__v__;                                              \
+	_Tp __mu9_exclusive_scan1__w__;                                              \
+	if (__first != __last) {                                                     \
+		__mu9_exclusive_scan1__v__ = __init;                                      \
+		__mu9_exclusive_scan1__w__ = __mu9_exclusive_scan1__v__ + *__first;       \
+		while (1) {                                                               \
+			*__d_first = __mu9_exclusive_scan1__v__;                               \
+			++__d_first;                                                           \
+			++__first;                                                             \
+			if (__first != __last) {                                               \
+				__mu9_exclusive_scan1__v__ = __mu9_exclusive_scan1__w__;            \
+				__mu9_exclusive_scan1__w__ = __mu9_exclusive_scan1__v__ + *__first; \
+			} else {                                                               \
+				break;                                                              \
+			}                                                                      \
+		}                                                                         \
+	}                                                                            \
 mu0_scope_end
 
 #	define mu9_exclusive_scan2(_Tp, __first, __last, __d_first, __init, __binary_op)              \
