@@ -10,15 +10,15 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu9_gcd.h
+// mu9_gcd_lcm.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu0/mu0_definition.h>
 
-#ifndef MU9_GCD_H
-#define MU9_GCD_H 1
+#ifndef MU9_GCD_LCM_H
+#define MU9_GCD_LCM_H 1
 
 MU0_BEGIN_CDECL
 
@@ -41,6 +41,6 @@ MU0_BEGIN_CDECL
 
 MU0_END_CDECL
 
-#endif /* !MU9_GCD_H */
+#endif /* !MU9_GCD_LCM_H */
 
 /* EOF */
