@@ -18,24 +18,19 @@
 #ifndef MU9_ALGORITHM_H
 #define MU9_ALGORITHM_H 1
 
-#	include <mu9/mu9_algorithm/mu9_accumulate.h>
 #	include <mu9/mu9_algorithm/mu9_adjacent_find.h>
-#	include <mu9/mu9_algorithm/mu9_apply.h>
 #	include <mu9/mu9_algorithm/mu9_argument_sort.h>
 #	include <mu9/mu9_algorithm/mu9_binary_search.h>
 #	include <mu9/mu9_algorithm/mu9_bubble_sort.h>
 #	include <mu9/mu9_algorithm/mu9_copy.h>
 #	include <mu9/mu9_algorithm/mu9_count.h>
-#	include <mu9/mu9_algorithm/mu9_dot_product.h>
 #	include <mu9/mu9_algorithm/mu9_duplicate.h>
 #	include <mu9/mu9_algorithm/mu9_equal.h>
 #	include <mu9/mu9_algorithm/mu9_fill.h>
 #	include <mu9/mu9_algorithm/mu9_find.h>
 #	include <mu9/mu9_algorithm/mu9_for_each.h>
 #	include <mu9/mu9_algorithm/mu9_generate.h>
-#	include <mu9/mu9_algorithm/mu9_inner_product.h>
 #	include <mu9/mu9_algorithm/mu9_insertion_sort.h>
-#	include <mu9/mu9_algorithm/mu9_iota.h>
 #	include <mu9/mu9_algorithm/mu9_is_sorted_until.h>
 #	include <mu9/mu9_algorithm/mu9_is_sorted.h>
 #	include <mu9/mu9_algorithm/mu9_lower_bound.h>
@@ -44,7 +39,6 @@
 #	include <mu9/mu9_algorithm/mu9_min_element.h>
 #	include <mu9/mu9_algorithm/mu9_minmax_element.h>
 #	include <mu9/mu9_algorithm/mu9_mismatch.h>
-#	include <mu9/mu9_algorithm/mu9_partial_sum.h>
 #	include <mu9/mu9_algorithm/mu9_partition_point.h>
 #	include <mu9/mu9_algorithm/mu9_partition.h>
 #	include <mu9/mu9_algorithm/mu9_random_shuffle.h>

@@ -16,7 +16,7 @@
 //
 
 #include <mu9/mu9_functional.h>
-#include <mu9/mu9_algorithm/mu9_iota.h>
+#include <mu9/mu9_numeric/mu9_iota.h>
 #include <mu9/mu9_algorithm/mu9_shell_sort.h>
 
 #ifndef MU9_ARGUMENT_SORT_H

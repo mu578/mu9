@@ -26,7 +26,7 @@ MU0_BEGIN_CDECL
 mu0_scope_begin                                                         \
 	_Tp __mu9_partial_sum1__v__;                                         \
 	if (__first != __last) {                                             \
-		__mu9_partial_sum1__v__ = *first;                                 \
+		__mu9_partial_sum1__v__ = *__first;                               \
 		*__d_first              = __mu9_partial_sum1__v__;                \
 		while (++__first != __last) {                                     \
 			__mu9_partial_sum1__v__ = s__mu9_partial_sum1__v__ + *__first; \
@@ -40,7 +40,7 @@ mu0_scope_end
 mu0_scope_begin                                                                         \
 	_Tp __mu9_partial_sum2__v__;                                                         \
 	if (__first != __last) {                                                             \
-		__mu9_partial_sum2__v__ = *first;                                                 \
+		__mu9_partial_sum2__v__ = *__first;                                               \
 		*__d_first              = __mu9_partial_sum2__v__;                                \
 		while (++__first != __last) {                                                     \
 			__mu9_partial_sum2__v__ = __binary_op(_Tp, __mu9_partial_sum2__v__, *__first); \
