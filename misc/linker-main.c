@@ -41,7 +41,7 @@ int main(int argc, const char * argv[])
 	}
 	mu0_console_log("\n");
 
-	mu0_console_log("%u %u\n", mu9_gcd_static(2048U,6U), mu9_gcd_large(2048U, 6U));
+	mu0_console_log("%u %u\n", mu9_gcd_const(mu0_sint32_t, 2048, 6), mu9_gcd(mu0_sint32_t, -2048, 6));
 
 	return 0;
 }

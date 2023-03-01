@@ -22,24 +22,10 @@
 
 MU0_BEGIN_CDECL
 
-#	define ___mu9_gcd_00___(__a, __b) (((__a >= __b) * ___mu9_gcd_01___(__a, __b) + (__a < __b) * ___mu9_gcd_01___(__b,__a)))
-#	define ___mu9_gcd_01___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_02___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_02___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_03___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_03___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_04___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_04___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_05___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_05___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_06___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_06___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_07___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_07___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_09___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_09___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_10___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_10___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_11___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_11___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_12___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_12___(__a, __b) ((((!(__b))) * (__a)) + (!!(__b)) * ___mu9_gcd_13___((__b), (__a) % ((__b) + !(__b))))
-#	define ___mu9_gcd_13___(__a, __b) (__a)
-
-#	define mu9_gcd_static(__a, __b) ((__a && __b) ? ___mu9_gcd_00___(__a, __b) : 0)
-#	define mu9_lcm_static(__a, __b) ((__a && __b) ? (((__a) * (__b)) / ___mu9_gcd_00___(__a, __b)) : 0)
-#	define mu9_gcd_large(__a, __b)  __mu0_gcd__(__a, __b)
-#	define mu9_lcm_large(__a, __b)  __mu0_lcm__(__a, __b)
+#	define mu9_gcd_const(_Int, __a, __b) __mu0_inline_gcd_const__(_Int, __a, __b)
+#	define mu9_lcm_const(_Int, __a, __b) __mu0_inline_lcm_const__(_Int, __a, __b)
+#	define mu9_gcd(_Int, __a, __b)       __mu0_inline_gcd__(_Int, __a, __b)
+#	define mu9_lcm(_Int, __a, __b)       __mu0_inline_lcm__(_Int, __a, __b)
 
 MU0_END_CDECL
 
