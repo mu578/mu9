@@ -15,9 +15,9 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_functional.h>
-#include <mu9/mu9_numeric/mu9_iota.h>
 #include <mu9/mu9_algorithm/mu9_shell_sort.h>
+#include <mu9/mu9_numeric/mu9_iota.h>
+#include <mu9/mu9_functional.h>
 
 #ifndef MU9_ARGUMENT_SORT_H
 #define MU9_ARGUMENT_SORT_H 1
