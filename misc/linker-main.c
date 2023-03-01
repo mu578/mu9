@@ -1,5 +1,4 @@
 #include <mu9/mu9_algorithm/mu9_argument_sort.h>
-#include <mu9/mu9_numeric/mu9_gcd_lcm.h>
 #include <mu9/mu9_iterator.h>
 #include <mu0/mu0_floating.h>
 
@@ -41,7 +40,7 @@ int main(int argc, const char * argv[])
 	}
 	mu0_console_log("\n");
 
-	mu0_console_log("%u %u\n", mu9_gcd_const(mu0_sint32_t, 2048, 6), mu9_gcd(mu0_sint32_t, -2048, 6));
+	mu0_console_log("%u %u\n", mu0_gcd_const(2048, 6), mu0_gcd(-2048, 6));
 
 	return 0;
 }

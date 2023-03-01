@@ -23,7 +23,6 @@
 #	include <mu9/mu9_numeric/mu9_apply.h>
 #	include <mu9/mu9_numeric/mu9_dot_product.h>
 #	include <mu9/mu9_numeric/mu9_exclusive_scan.h>
-#	include <mu9/mu9_numeric/mu9_gcd_lcm.h>
 #	include <mu9/mu9_numeric/mu9_inclusive_scan.h>
 #	include <mu9/mu9_numeric/mu9_inner_product.h>
 #	include <mu9/mu9_numeric/mu9_iota.h>
