@@ -10,7 +10,7 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu9_numeric.h
+// mu9_algorithm.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
@@ -18,17 +18,23 @@
 #ifndef MU9_NUMERIC_H
 #define MU9_NUMERIC_H 1
 
-#	include <mu9/mu9_numeric/mu9_accumulate.h>
-#	include <mu9/mu9_numeric/mu9_adjacent_difference.h>
-#	include <mu9/mu9_numeric/mu9_apply.h>
-#	include <mu9/mu9_numeric/mu9_dot_product.h>
-#	include <mu9/mu9_numeric/mu9_exclusive_scan.h>
-#	include <mu9/mu9_numeric/mu9_inclusive_scan.h>
-#	include <mu9/mu9_numeric/mu9_inner_product.h>
-#	include <mu9/mu9_numeric/mu9_iota.h>
-#	include <mu9/mu9_numeric/mu9_partial_sum.h>
+#	include <mu9/mu9_algorithm/mu9_accumulate.h>
+#	include <mu9/mu9_algorithm/mu9_adjacent_difference.h>
+#	include <mu9/mu9_algorithm/mu9_apply.h>
+#	include <mu9/mu9_algorithm/mu9_dot_product.h>
+#	include <mu9/mu9_algorithm/mu9_exclusive_scan.h>
+#	include <mu9/mu9_algorithm/mu9_inclusive_scan.h>
+#	include <mu9/mu9_algorithm/mu9_inner_product.h>
+#	include <mu9/mu9_algorithm/mu9_iota.h>
+#	include <mu9/mu9_algorithm/mu9_partial_sum.h>
 
 MU0_BEGIN_CDECL
+
+#	define mu9_gcd_const(__a, __b) mu0_gcd_const(__a, __b)
+#	define mu9_gcd(__a, __b)       mu0_gcd(__a, __b)
+
+#	define mu9_lcm_const(__a, __b) mu0_lcm_const(__a, __b)
+#	define mu9_lcm_(__a, __b)      mu0_lcm(__a, __b)
 
 MU0_END_CDECL
 
