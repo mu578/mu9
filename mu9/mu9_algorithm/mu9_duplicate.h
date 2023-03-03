@@ -39,23 +39,23 @@ mu0_scope_begin                                                                 
 	}                                                                                 \
 mu0_scope_end
 
-#	define mu9_duplicate_to(_Tp, __first, __last, __d_first, __move_op, __dresult) \
-mu0_scope_begin                                                                   \
-	for (; __first != __last; (void) ++__first, (void) ++__d_first) {              \
-		 __move_op(_Tp, *__d_first, *__first);                                      \
-	}                                                                              \
-	__dresult = __d_first;                                                         \
+#	define mu9_duplicate_to(_Tp, __first, __last, __d_first, __move_op, __d_result) \
+mu0_scope_begin                                                                    \
+	for (; __first != __last; (void) ++__first, (void) ++__d_first) {               \
+		 __move_op(_Tp, *__d_first, *__first);                                       \
+	}                                                                               \
+	__d_result = __d_first;                                                         \
 mu0_scope_end
 
-#	define mu9_duplicate_to_if(_Tp, __first, __last, __d_first, __unary_pred, __move_op, __dresult) \
-mu0_scope_begin                                                                                    \
-	for (; __first != __last; ++__first) {                                                          \
-		if (__unary_pred(*__first)) {                                                                \
-			__move_op(_Tp, *__d_first, *__first);                                                     \
-			++__d_first;                                                                              \
-		}                                                                                            \
-	}                                                                                               \
-	__dresult = __d_first;                                                                          \
+#	define mu9_duplicate_to_if(_Tp, __first, __last, __d_first, __unary_pred, __move_op, __d_result) \
+mu0_scope_begin                                                                                     \
+	for (; __first != __last; ++__first) {                                                           \
+		if (__unary_pred(*__first)) {                                                                 \
+			__move_op(_Tp, *__d_first, *__first);                                                      \
+			++__d_first;                                                                               \
+		}                                                                                             \
+	}                                                                                                \
+	__d_result = __d_first;                                                                          \
 mu0_scope_end
 
 MU0_END_CDECL

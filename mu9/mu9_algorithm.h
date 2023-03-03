@@ -25,6 +25,7 @@
 #	include <mu9/mu9_algorithm/mu9_copy.h>
 #	include <mu9/mu9_algorithm/mu9_count.h>
 #	include <mu9/mu9_algorithm/mu9_duplicate.h>
+#	include <mu9/mu9_algorithm/mu9_equal_range.h>
 #	include <mu9/mu9_algorithm/mu9_equal.h>
 #	include <mu9/mu9_algorithm/mu9_fill.h>
 #	include <mu9/mu9_algorithm/mu9_find.h>
@@ -42,6 +43,7 @@
 #	include <mu9/mu9_algorithm/mu9_partition_point.h>
 #	include <mu9/mu9_algorithm/mu9_partition.h>
 #	include <mu9/mu9_algorithm/mu9_random_shuffle.h>
+#	include <mu9/mu9_algorithm/mu9_remove.h>
 #	include <mu9/mu9_algorithm/mu9_reverse.h>
 #	include <mu9/mu9_algorithm/mu9_rotate.h>
 #	include <mu9/mu9_algorithm/mu9_search.h>

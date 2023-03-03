@@ -39,12 +39,12 @@ mu0_scope_begin                                                      \
 	}                                                                 \
 mu0_scope_end
 
-#	define mu9_copy_to(_Tp, __first, __last, __d_first, __dresult)    \
+#	define mu9_copy_to(_Tp, __first, __last, __d_first, __d_result)   \
 mu0_scope_begin                                                      \
 	for (; __first != __last; (void) ++__first, (void) ++__d_first) { \
 		*__d_first = *__first;                                         \
 	}                                                                 \
-	__dresult = __d_first;                                            \
+	__d_result = __d_first;                                           \
 mu0_scope_end
 
 #	define mu9_copy_to_if(_Tp, __first, __last, __d_first, __unary_pred, __dresul) \
@@ -55,7 +55,7 @@ mu0_scope_begin                                                                 
 			++__d_first;                                                             \
 		}                                                                           \
 	}                                                                              \
-	__dresult = __d_first;                                                         \
+	__d_result = __d_first;                                                        \
 mu0_scope_end
 
 MU0_END_CDECL
