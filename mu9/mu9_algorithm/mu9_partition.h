@@ -34,7 +34,7 @@ mu0_scope_begin                                                                 
 			__mu9_partition1__x__ = mu0_true;                                        \
 			break;                                                                   \
 		}                                                                           \
-		if (!__unary_pred(*__first)) {                                              \
+		if (!__unary_pred(_Tp, *__first)) {                                         \
 			break;                                                                   \
 		}                                                                           \
 		++__first;                                                                  \
@@ -42,7 +42,7 @@ mu0_scope_begin                                                                 
 	}                                                                              \
 	if (!__mu9_partition1__x__) {                                                  \
 		for (__mu9_partition1__i__ = __first; ++__mu9_partition1__i__ != __last;) { \
-			if (__unary_pred(*__mu9_partition1__i__)) {                              \
+			if (__unary_pred(_Tp, *__mu9_partition1__i__)) {                         \
 					mu9_swap(_Tp, *__first, *__mu9_partition1__i__);                   \
 					++__first;                                                         \
 					__d_resul = __first;                                               \
@@ -62,7 +62,7 @@ mu0_scope_begin                                                                 
 			__mu9_partition2__x__ = mu0_true;                                          \
 			break;                                                                     \
 		}                                                                             \
-		if (!__unary_pred(*__first)) {                                                \
+		if (!__unary_pred(_Tp, *__first)) {                                           \
 			break;                                                                     \
 		}                                                                             \
 		++__first;                                                                    \
@@ -70,7 +70,7 @@ mu0_scope_begin                                                                 
 	}                                                                                \
 	if (!__mu9_partition2__x__) {                                                    \
 		for (__mu9_partition2__i__ = __first; ++__mu9_partition2__i__ != __last;) {   \
-			if (__unary_pred(*__mu9_partition2__i__)) {                                \
+			if (__unary_pred(_Tp, *__mu9_partition2__i__)) {                           \
 					__swap_op(_Tp, *__first, *__mu9_partition2__i__);                    \
 					++__first;                                                           \
 					__d_resul = __first;                                                 \
@@ -90,7 +90,7 @@ mu0_scope_begin                                                          \
 					__mu9_partition3__x__ = mu0_true;                         \
 					break;                                                    \
 				}                                                            \
-				if (!__unary_pred(*__first)) {                               \
+				if (!__unary_pred(_Tp, *__first)) {                          \
 					break;                                                    \
 				}                                                            \
 				++__first;                                                   \
@@ -105,7 +105,7 @@ mu0_scope_begin                                                          \
 				__mu9_partition3__x__ = mu0_true;                            \
 				break;                                                       \
 			}                                                               \
-		} while (!__unary_pred(*__last));                                  \
+		} while (!__unary_pred(_Tp, *__last));                             \
 		if (__mu9_partition3__x__) {                                       \
 			break;                                                          \
 		}                                                                  \
@@ -126,7 +126,7 @@ mu0_scope_begin                                                                 
 					__mu9_partition4__x__ = mu0_true;                                    \
 					break;                                                               \
 				}                                                                       \
-				if (!__unary_pred(*__first)) {                                          \
+				if (!__unary_pred(_Tp, *__first)) {                                     \
 					break;                                                               \
 				}                                                                       \
 				++__first;                                                              \
@@ -141,7 +141,7 @@ mu0_scope_begin                                                                 
 				__mu9_partition4__x__ = mu0_true;                                       \
 				break;                                                                  \
 			}                                                                          \
-		} while (!__unary_pred(*__last));                                             \
+		} while (!__unary_pred(_Tp, *__last));                                        \
 		if (__mu9_partition4__x__) {                                                  \
 			break;                                                                     \
 		}                                                                             \
@@ -164,7 +164,7 @@ mu0_scope_begin                                                                 
 	}                                                                                                      \
 	if (!__mu9_partition4__x__) {                                                                          \
 		for (__mu9_partition5__i__ = __first++; __mu9_partition5__i__ != __last; ++__mu9_partition5__i__) { \
-			if (__unary_pred(*i__mu9_partition5__i__)) {                                                     \
+			if (__unary_pred(_Tp, *i__mu9_partition5__i__)) {                                                \
 				mu9_iter_swap(_Tp, __mu9_partition5__i__, first);                                             \
 				++__first;                                                                                    \
 				__d_result = __first;                                                                         \

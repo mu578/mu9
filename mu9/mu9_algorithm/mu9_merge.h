@@ -57,7 +57,7 @@ mu0_scope_begin                                                                 
 			__mu9_merge2__x__ = mu0_true;                                                            \
 			break;                                                                                   \
 		}                                                                                           \
-		if (__comp_fn(*__first2, *__first1)) {                                                      \
+		if (_comp_fn(_Tp, *__first2, *__first1)) {                                                  \
 			*__d_first = *__first2;                                                                  \
 			++__first2;                                                                              \
 		} else {                                                                                    \
@@ -81,7 +81,7 @@ mu0_scope_begin                                                                 
 			__mu9_merge3__x__ = mu0_true;                                                                       \
 			break;                                                                                              \
 		}                                                                                                      \
-		if (__comp_fn(*__first2, *__first1)) {                                                                 \
+		if (_comp_fn(_Tp, *__first2, *__first1)) {                                                             \
 			__move_op(_Tp, *__d_first, *__first2);                                                              \
 			++__first2;                                                                                         \
 		} else {                                                                                               \

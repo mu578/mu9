@@ -57,7 +57,7 @@ mu0_scope_end
 mu0_scope_begin                                                         \
 	mu0_difference_t __mu9_count_if__c__ = mu0_difference(0);            \
 	for (; __first != __last; ++__first) {                               \
-		if (__unary_pred(*__first)) {                                     \
+		if (__unary_pred(_Tp, *__first)) {                                \
 			++__mu9_count_if__c__;                                         \
 		}                                                                 \
 	}                                                                    \
@@ -71,7 +71,7 @@ mu0_scope_end
 mu0_scope_begin                                                             \
 	mu0_difference_t __mu9_count_if_not__c__ = mu0_difference(0);            \
 	for (; __first != __last; ++__first) {                                   \
-		if (!__unary_pred(*__first)) {                                        \
+		if (!__unary_pred(_Tp, *__first)) {                                   \
 			++__mu9_count_if_not__c__;                                         \
 		}                                                                     \
 	}                                                                        \

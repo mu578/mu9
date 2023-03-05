@@ -45,27 +45,11 @@ mu0_scope_begin                                                             \
 	if (__first != __last) {                                                 \
 		__mu9_is_sorted_until2__i__ = __first;                                \
 		while (++__mu9_is_sorted_until2__i__ != __last) {                     \
-			if (__comp_fn(*__mu9_is_sorted_until2__i__, *__first)) {           \
+			if (_comp_fn(_Tp, *__mu9_is_sorted_until2__i__, *__first)) {       \
 				__d_result = __mu9_is_sorted_until2__i__;                       \
 				break;                                                          \
 			}                                                                  \
 			__first = __mu9_is_sorted_until2__i__;                             \
-		}                                                                     \
-	}                                                                        \
-mu0_scope_end
-
-#	define mu9_is_sorted_until3(_Tp, __first, __last, __comp_op, __d_result) \
-mu0_scope_begin                                                             \
-	_Tp * __mu9_is_sorted_until3__i__;                                       \
-	__d_result = __last;                                                     \
-	if (__first != __last) {                                                 \
-		__mu9_is_sorted_until3__i__ = __first;                                \
-		while (++__mu9_is_sorted_until3__i__ != __last) {                     \
-			if (__comp_op(_Tp, *__mu9_is_sorted_until3__i__, *__first)) {      \
-				__d_result = __mu9_is_sorted_until3__i__;                       \
-				break;                                                          \
-			}                                                                  \
-			__first = __mu9_is_sorted_until3__i__;                             \
 		}                                                                     \
 	}                                                                        \
 mu0_scope_end

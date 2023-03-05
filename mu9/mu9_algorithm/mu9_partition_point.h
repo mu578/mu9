@@ -31,7 +31,7 @@ mu0_scope_begin                                                                 
 			__mu9_partition_point__h__ = __mu9_partition_point__k__ / mu0_const_distance(2);     \
 			__mu9_partition_point__i__ = __first;                                                \
 			mu9_advance(_Tp, __mu9_partition_point__i__, __mu9_partition_point__h__);            \
-			if (__unary_pred(*__mu9_partition_point__i__)) {                                     \
+			if (__unary_pred(_Tp, *__mu9_partition_point__i__)) {                                \
 				__first                     = ++__mu9_partition_point__i__;                       \
 				__mu9_partition_point__k__ -= __mu9_partition_point__h__ + mu0_const_distance(1); \
 			} else {                                                                             \

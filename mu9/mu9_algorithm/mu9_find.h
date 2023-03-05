@@ -43,34 +43,19 @@ mu0_scope_end
 //#!
 //#! macro<_Tp>(_Tp &* __first, _Tp &* __last, __unary_pred, _Tp<return> &* __d_result) : void
 //#!
-#	define mu9_find_if1(_Tp, __first, __last, __unary_pred, __d_result) \
-mu0_scope_begin                                                        \
-	mu0_bool_t __mu9_find_if1__x__ = mu0_false;                         \
-	for (; __first != __last; ++__first) {                              \
-		 if (__unary_pred(*__first)) {                                   \
-			__d_result          = __first;                                \
-			__mu9_find_if1__x__ = mu0_true;                               \
-			break;                                                        \
-		}                                                                \
-	}                                                                   \
-	if (!__mu9_find_if1__x__) {                                         \
-		__d_result = __last;                                             \
-	}                                                                   \
-mu0_scope_end
-
-#	define mu9_find_if2(_Tp, __first, __last, __unary_op, __d_result) \
-mu0_scope_begin                                                      \
-	mu0_bool_t __mu9_find_if2__x__ = mu0_false;                       \
-	for (; __first != __last; ++__first) {                            \
-		 if (__unary_pred(_Tp, *__first)) {                            \
-			__d_result          = __first;                              \
-			__mu9_find_if2__x__ = mu0_true;                             \
-			break;                                                      \
-		}                                                              \
-	}                                                                 \
-	if (!__mu9_find_if2__x__) {                                       \
-		__d_result = __last;                                           \
-	}                                                                 \
+#	define mu9_find_if(_Tp, __first, __last, __unary_pred, __d_result) \
+mu0_scope_begin                                                       \
+	mu0_bool_t __mu9_find_if__x__ = mu0_false;                         \
+	for (; __first != __last; ++__first) {                             \
+		 if (__unary_pred(_Tp, *__first)) {                             \
+			__d_result          = __first;                               \
+			__mu9_find_if__x__ = mu0_true;                               \
+			break;                                                       \
+		}                                                               \
+	}                                                                  \
+	if (!__mu9_find_if__x__) {                                         \
+		__d_result = __last;                                            \
+	}                                                                  \
 mu0_scope_end
 
 //#!
@@ -80,7 +65,7 @@ mu0_scope_end
 mu0_scope_begin                                                           \
 	mu0_bool_t __mu9_find_if_not__x__ = mu0_false;                         \
 	for (; __first != __last; ++__first) {                                 \
-		 if (!__unary_pred(*__first)) {                                     \
+		 if (!__unary_pred(_Tp, *__first)) {                                \
 			__d_result              = __first;                               \
 			__mu9_find_if_not__x__ = mu0_true;                               \
 			break;                                                           \
@@ -123,7 +108,7 @@ mu0_scope_begin                                                                 
 	for (; __first != __last && !__mu9_find_first_of2__x__; ++__first) {                            \
 		__mu9_find_first_of2__i__ = __s_first;                                                       \
 		for (; __mu9_find_first_of2__i__ != __s_last; ++__mu9_find_first_of2__i__) {                 \
-			if (p(*__first, *__mu9_find_first_of2__i__)) {                                            \
+			if (__binary_pred(_Tp,  *__first, *__mu9_find_first_of2__i__)) {                          \
 				__d_result                 = __first;                                                  \
 				__mu9_find_first_of2__x__ = mu0_true;                                                  \
 				break;                                                                                 \

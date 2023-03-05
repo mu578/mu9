@@ -44,27 +44,12 @@ mu0_scope_begin                                                         \
 		__mu9_max_element2_i__ = __first;                                 \
 		++__first;                                                        \
 		for (; __first != __last; ++__first) {                            \
-			if (__comp_fn(*__mu9_max_element2_i__, *__first)) {            \
+			if (_comp_fn(_Tp, *__mu9_max_element2_i__, *__first)) {        \
 				__mu9_max_element2_i__ = __first;                           \
 			}                                                              \
 		}                                                                 \
 	}                                                                    \
 	__d_result = __mu9_max_element2_i__;                                 \
-mu0_scope_end
-
-#	define mu9_max_element3(_Tp, __first, __last, __comp_op, __d_result) \
-mu0_scope_begin                                                         \
-	_Tp * __mu9_max_element3_i__ = __last;                               \
-	if (__first != __last) {                                             \
-		__mu9_max_element3_i__ = __first;                                 \
-		++__first;                                                        \
-		for (; __first != __last; ++__first) {                            \
-			if (__comp_op(_Tp, *__mu9_max_element3_i__, *__first)) {       \
-				__mu9_max_element3_i__ = __first;                           \
-			}                                                              \
-		}                                                                 \
-	}                                                                    \
-	__d_result = __mu9_max_element3_i__;                                 \
 mu0_scope_end
 
 MU0_END_CDECL

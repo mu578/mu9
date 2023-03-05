@@ -10,36 +10,25 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu9_algorithm.h
+// mu9_cumulative_product.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#ifndef MU9_NUMERIC_H
-#define MU9_NUMERIC_H 1
+#include <mu0/mu0_definition.h>
 
-#	include <mu9/mu9_algorithm/mu9_accumulate.h>
-#	include <mu9/mu9_algorithm/mu9_adjacent_difference.h>
-#	include <mu9/mu9_algorithm/mu9_apply.h>
-#	include <mu9/mu9_algorithm/mu9_cumulative_product.h>
-#	include <mu9/mu9_algorithm/mu9_exclusive_scan.h>
-#	include <mu9/mu9_algorithm/mu9_inclusive_scan.h>
-#	include <mu9/mu9_algorithm/mu9_inner_product.h>
-#	include <mu9/mu9_algorithm/mu9_iota.h>
-#	include <mu9/mu9_algorithm/mu9_partial_sum.h>
-#	include <mu9/mu9_algorithm/mu9_running_total.h>
-#	include <mu9/mu9_algorithm/mu9_scalar_product.h>
+#ifndef MU9_CUMULATIVE_PRODUCT_H
+#define MU9_CUMULATIVE_PRODUCT_H 1
 
 MU0_BEGIN_CDECL
 
-#	define mu9_gcd_const(__a, __b) mu0_gcd_const(__a, __b)
-#	define mu9_gcd(__a, __b)       mu0_gcd(__a, __b)
-
-#	define mu9_lcm_const(__a, __b) mu0_lcm_const(__a, __b)
-#	define mu9_lcm_(__a, __b)      mu0_lcm(__a, __b)
+#	define mu9_cumulative_product(_Tp, __first, __last, __d_result) \
+mu0_scope_begin                                                    \
+	mu9_accumulate2(_Tp, __first, __last, 1, mu9_multiplies, __d_result);  \
+mu0_scope_end
 
 MU0_END_CDECL
 
-#endif /* !MU9_NUMERIC_H */
+#endif /* !MU9_CUMULATIVE_PRODUCT_H */
 
 /* EOF */

@@ -66,7 +66,7 @@ mu0_scope_begin                                                                 
 					__d_result = __last;                                                         \
 					break;                                                                       \
 				}                                                                               \
-				if (!__binary_pred(*__mu9_search2__i__, *__mu9_search2__j__)) {                 \
+				if (!__binary_pred(_Tp, *__mu9_search2__i__, *__mu9_search2__j__)) {            \
 					break;                                                                       \
 				}                                                                               \
 		}                                                                                     \
@@ -117,7 +117,7 @@ mu0_scope_begin                                                                 
 	__d_result                          = __first;                                      \
 	if (__n > 0) {                                                                      \
 		for (; __first != __last; ++__first) {                                           \
-			if (!__binary_pred(*__first, __value)) {                                      \
+			if (!__binary_pred(_Tp, *__first, __value)) {                                 \
 				continue;                                                                  \
 			}                                                                             \
 			__d_result = __first;                                                         \
@@ -132,7 +132,7 @@ mu0_scope_begin                                                                 
 					__mu9_search_n2__x__ = mu0_true;                                        \
 					break;                                                                  \
 				}                                                                          \
-				if (!__binary_pred(*__first, __value)) {                                   \
+				if (!__binary_pred(_Tp, *__first, __value)) {                              \
 					break;                                                                  \
 				}                                                                          \
 			}                                                                             \

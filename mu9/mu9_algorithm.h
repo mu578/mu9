@@ -65,7 +65,7 @@ MU0_BEGIN_CDECL
 mu0_scope_begin                                                      \
 	mu0_bool_t __mu9_all_of__x__ = mu0_true;                          \
 	for (; __first != __last; ++__first) {                            \
-		if (!__unary_pred(*__first)) {                                 \
+		if (!__unary_pred(_Tp, *__first)) {                            \
 			__mu9_all_of__x__ = mu0_false;                              \
 			break;                                                      \
 		}                                                              \
@@ -80,7 +80,7 @@ mu0_scope_end
 mu0_scope_begin                                                      \
 	mu0_bool_t __mu9_any_of__x__ = mu0_false;                         \
 	for (; __first != __last; ++__first) {                            \
-		if (__unary_pred(*__first)) {                                  \
+		if (__unary_pred(_Tp, *__first)) {                             \
 			__mu9_any_of__x__ = mu0_true;                               \
 			break;                                                      \
 		}                                                              \
@@ -95,7 +95,7 @@ mu0_scope_end
 mu0_scope_begin                                                       \
 	mu0_bool_t __mu9_none_of__x__ = mu0_true;                          \
 	for (; __first != __last; ++__first) {                             \
-		if (__unary_pred(*__first)) {                                   \
+		if (__unary_pred(_Tp, *__first)) {                              \
 			__mu9_none_of__x__ = mu0_false;                              \
 			break;                                                       \
 		}                                                               \

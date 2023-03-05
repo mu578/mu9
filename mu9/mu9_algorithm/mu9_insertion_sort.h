@@ -53,8 +53,8 @@ mu0_scope_begin                                                                 
 	for (; __mu9_insertion_sort2__i__ != __last; __mu9_insertion_sort2__i__++) {     \
 		__mu9_insertion_sort2__j__ = __mu9_insertion_sort2__i__;                      \
 		for (; __mu9_insertion_sort2__j__ != __first; __mu9_insertion_sort2__j__--) { \
-			if (__comp_fn(                                                             \
-				  *__mu9_insertion_sort2__j__                                           \
+			if (_comp_fn(_Tp                                                           \
+				, *__mu9_insertion_sort2__j__                                           \
 				, *(__mu9_insertion_sort2__j__ - mu0_const_distance(1))                 \
 			)) {                                                                       \
 				mu9_swap(_Tp                                                            \

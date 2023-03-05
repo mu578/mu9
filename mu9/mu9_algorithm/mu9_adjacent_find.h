@@ -50,7 +50,7 @@ mu0_scope_begin                                                                 
 		__mu9_adjacent_find2__i__ = __first;                                                  \
 		++__mu9_adjacent_find2__i__;                                                          \
 		for (; __mu9_adjacent_find2__i__ != __last; ++__mu9_adjacent_find2__i__, ++__first) { \
-			if (__binary_pred(*__first, *__mu9_adjacent_find2__i__)) {                         \
+			if (__binary_pred(_Tp, *__first, *__mu9_adjacent_find2__i__)) {                    \
 					__d_result                 = __first;                                        \
 					__mu9_adjacent_find2__x__ = mu0_true;                                        \
 					break;                                                                       \

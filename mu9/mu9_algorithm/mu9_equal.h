@@ -44,7 +44,7 @@ mu0_scope_end
 mu0_scope_begin                                                                    \
 	mu0_bool_t __mu9_equal2__x__ = mu0_true;                                        \
 	for (; __first1 != __last1; ++__first1, ++__first2) {                           \
-		if (!__binary_pred(*__first1, *__first2)) {                                  \
+		if (!__binary_pred(_Tp, *__first1, *__first2)) {                             \
 			__mu9_equal2__x__ = mu0_false;                                            \
 			break;                                                                    \
 		}                                                                            \

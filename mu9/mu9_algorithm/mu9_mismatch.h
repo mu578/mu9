@@ -34,7 +34,7 @@ mu0_scope_end
 #	define mu9_mismatch2(_Tp, __first1, __last1, __first2, __binary_pred, __d_result1, __d_result2) \
 mu0_scope_begin                                                                                    \
 	for (; __first1 != __last1; ++__first1, (void) ++__first2) {                                    \
-		if (!__binary_pred(*__first1, *__first2)) {                                                  \
+		if (!__binary_pred(_Tp, *__first1, *__first2)) {                                             \
 			break;                                                                                    \
 		}                                                                                            \
 	}                                                                                               \
@@ -53,7 +53,7 @@ mu0_scope_end
 
 #	define mu9_mismatch4(_Tp, __first1, __last1, __first2, __last2, __binary_pred, __d_result1, __d_result2) \
 mu0_scope_begin                                                                                             \
-	while (__first1 != __last1 && __first2 != __last2 && __binary_predp(*__first1, *__first2)) {             \
+	while (__first1 != __last1 && __first2 != __last2 && __binary_pred(_Tp, *__first1, *__first2)) {         \
 		++__first1, ++__first2;                                                                               \
 	}                                                                                                        \
 	__d_result1 = __first1;                                                                                  \

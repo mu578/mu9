@@ -32,7 +32,7 @@ mu0_scope_end
 #	define mu9_duplicate_if(_Tp, __first, __last, __d_first, __unary_pred, __move_op) \
 mu0_scope_begin                                                                      \
 	for (; __first != __last; ++__first) {                                            \
-		if (__unary_pred(*__first)) {                                                  \
+		if (__unary_pred(_Tp, *__first)) {                                             \
 			__move_op(_Tp, *__d_first, *__first);                                       \
 			++__d_first;                                                                \
 		}                                                                              \
@@ -50,7 +50,7 @@ mu0_scope_end
 #	define mu9_duplicate_to_if(_Tp, __first, __last, __d_first, __unary_pred, __move_op, __d_result) \
 mu0_scope_begin                                                                                     \
 	for (; __first != __last; ++__first) {                                                           \
-		if (__unary_pred(*__first)) {                                                                 \
+		if (__unary_pred(_Tp, *__first)) {                                                            \
 			__move_op(_Tp, *__d_first, *__first);                                                      \
 			++__d_first;                                                                               \
 		}                                                                                             \

@@ -25,10 +25,10 @@
 MU0_BEGIN_CDECL
 
 #	define mu9_argument_sort_asc(_Uint, __i1,  __i2, __ctx) \
-	mu9_less_than(__ctx[__i1], __ctx[__i2])
+	mu9_infer_less_than(__ctx[__i1], __ctx[__i2])
 
 #	define mu9_argument_sort_desc(_Uint, __i1,  __i2, __ctx) \
-	mu9_greater_than(__ctx[__i1], __ctx[__i2])
+	mu9_infer_greater_than(__ctx[__i1], __ctx[__i2])
 
 #	define mu9_argument_sort1(_Uint, __first, __last, __start, __s_first) \
 mu0_scope_begin                                                          \

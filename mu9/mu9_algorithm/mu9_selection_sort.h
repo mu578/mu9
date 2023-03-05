@@ -38,7 +38,7 @@ mu0_scope_begin                                                                 
 	_Tp * __mu9_selection_sort2__d__;                                                 \
 	for (; __first != __last; ++__first) {                                            \
 		mu9_min_element2(_Tp, __first, __last, __comp_fn, __mu9_selection_sort2__d__); \
-		if (__comp_fn(*__mu9_selection_sort2__d__, *__first)) {                        \
+		if (_comp_fn(_Tp, *__mu9_selection_sort2__d__, *__first)) {                    \
 			mu9_iter_swap(_Tp, __mu9_selection_sort2__d__, __first);                    \
 		}                                                                              \
 	}                                                                                 \
@@ -48,7 +48,7 @@ mu0_scope_end
 mu0_scope_begin                                                                             \
 	_Tp * __mu9_selection_sort3__d__;                                                        \
 	for (; __first != __last; ++__first) {                                                   \
-		mu9_min_element4(_Tp, __first, __last, __sort_op, __ctx, __mu9_selection_sort3__d__); \
+		mu9_min_element3(_Tp, __first, __last, __sort_op, __ctx, __mu9_selection_sort3__d__); \
 		if (__sort_op(_Tp, *__mu9_selection_sort3__d__, *__first, __ctx)) {                   \
 			mu9_iter_swap(_Tp, __mu9_selection_sort3__d__, __first);                           \
 		}                                                                                     \
@@ -77,7 +77,7 @@ mu0_scope_end
 mu0_scope_begin                                                                             \
 	_Tp * __mu9_selection_sort6__d__;                                                        \
 	for (; __first != __last; ++__first) {                                                   \
-		mu9_min_element4(_Tp, __first, __last, __sort_op, __ctx, __mu9_selection_sort6__d__); \
+		mu9_min_element3(_Tp, __first, __last, __sort_op, __ctx, __mu9_selection_sort6__d__); \
 		mu9_iter_swap(_Tp, __mu9_selection_sort6__d__, __first);                              \
 	}                                                                                        \
 mu0_scope_end

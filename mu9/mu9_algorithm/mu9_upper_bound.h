@@ -50,30 +50,11 @@ mu0_scope_begin                                                                 
 		__mu9_upper_bound2__i__ = __first;                                                \
 		__mu9_upper_bound2__n__ = __mu9_upper_bound2__c__ / mu0_const_distance(2);        \
 		mu9_advance_n(_Tp, __mu9_upper_bound2__i__, __mu9_upper_bound2__n__);             \
-		if (!__comp_fn(__value, *__mu9_upper_bound2__i__)) {                              \
+		if (!_comp_fn(_Tp, __value, *__mu9_upper_bound2__i__)) {                          \
 				__first                  = ++__mu9_upper_bound2__i__;                       \
 				__mu9_upper_bound2__c__ -= __mu9_upper_bound2__n__ + mu0_const_distance(1); \
 		} else {                                                                          \
 				__mu9_upper_bound2__c__  = __mu9_upper_bound2__n__;                         \
-		}                                                                                 \
-	}                                                                                    \
-	__d_result = __first;                                                                \
-mu0_scope_end
-
-#	define mu9_upper_bound3(_Tp, __first, __last, __value, __comp_op, __d_result)        \
-mu0_scope_begin                                                                         \
-	_Tp * __mu9_upper_bound3__i__;                                                       \
-	mu0_distance_t __mu9_upper_bound3__c__= mu9_distance(_Tp, __first, __last);          \
-	mu0_distance_t __mu9_upper_bound3__n__;                                              \
-	while (__mu9_upper_bound3__c__ > mu0_const_distance(0)) {                            \
-		__mu9_upper_bound3__i__ = __first;                                                \
-		__mu9_upper_bound3__n__ = __mu9_upper_bound3__c__ / mu0_const_distance(2);        \
-		mu9_advance_n(_Tp, __mu9_upper_bound3__i__, __mu9_upper_bound3__n__);             \
-		if (!__comp_op(_Tp, __value, *__mu9_upper_bound3__i__)) {                         \
-				__first                  = ++__mu9_upper_bound3__i__;                       \
-				__mu9_upper_bound3__c__ -= __mu9_upper_bound3__n__ + mu0_const_distance(1); \
-		} else {                                                                          \
-				__mu9_upper_bound3__c__  = __mu9_upper_bound3__n__;                         \
 		}                                                                                 \
 	}                                                                                    \
 	__d_result = __first;                                                                \
