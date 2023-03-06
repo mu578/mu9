@@ -3,12 +3,26 @@
 #include <mu9/mu9_iterator.h>
 #include <mu0/mu0_floating.h>
 
+__mu0_static_inline__
+void argsort(
+	  const mu0_uint32_t n
+	, const mu0_fp32_t * x
+	, mu0_uint32_t *     indeces
+) {
+	mu9_argument_sort1(mu0_infer(*indeces)
+		, mu9_infer_begin(indeces)
+		, mu9_infer_end  (indeces, n)
+		, 0
+		, mu9_infer_begin(x)
+	);
+}
+
 int main(int argc, const char * argv[])
 {
-	mu0_sint32_t  v0[3]           = { 3, 1, 4 };
-	mu0_distance_t i              = 0;
-	mu0_uint32_t v1[10]           = { 0 };
-	mu0_fp32_t   v2[10]           = { 
+	mu0_sint32_t   v0[3]  = { 3, 1, 4 };
+	mu0_distance_t i      = 0;
+	mu0_uint32_t   v1[10] = { 0 };
+	mu0_fp32_t     v2[10] = { 
 		   3.333f, 4.300f
 		,  5.333f, 8.299f
 		, -9.300f, 8.300f
@@ -26,11 +40,11 @@ int main(int argc, const char * argv[])
 	mu0_unused(argv);
 
 	it0_first = mu9_infer_begin(v0);
-	mu9_advance_n(mu0_sint32_t, it0_first, 2);
+	mu9_infer_advance_n(it0_first, 2);
 	mu0_console_log("%d \n", *it0_first);
 
 	it0_first = mu9_infer_end(v0, 3);
-	mu9_advance_n(mu0_sint32_t, it0_first, -2);
+	mu9_infer_advance_n(it0_first, -2);
 	mu0_console_log("%d \n", *it0_first);
 
 	mu9_argument_sort1(mu0_uint32_t
@@ -39,14 +53,20 @@ int main(int argc, const char * argv[])
 		, 0
 		, it2_first
 	);
-
 	mu0_console_log("\n");
 	for (; i < 10; ++i) {
 		mu0_console_log("%0.4f, ", *(it2_first + *(it1_first + i)));
 	}
 	mu0_console_log("\n");
 
-	mu0_console_log("%u %u\n", mu9_gcd_const(2048, 6), mu9_gcd(-2048, 6));
+	argsort(10, v2, v1);
+	mu0_console_log("\n");
+	for (i = 0; i < 10; ++i) {
+		mu0_console_log("%0.4f, ", v2[v1[i]]);
+	}
+	mu0_console_log("\n");
+
+	mu0_console_log("%u %u\n", mu9_infer_gcd_const(2048, 6), mu9_infer_gcd(-2048, 6));
 
 	return 0;
 }

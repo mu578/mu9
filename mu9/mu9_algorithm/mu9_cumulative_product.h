@@ -22,9 +22,9 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_cumulative_product(_Tp, __first, __last, __d_result) \
-mu0_scope_begin                                                    \
-	mu9_accumulate2(_Tp, __first, __last, 1, mu9_multiplies, __d_result);  \
+#	define mu9_cumulative_product(_Tp, __first, __last, __d_result)       \
+mu0_scope_begin                                                          \
+	mu9_accumulate2(_Tp, __first, __last, 1, mu9_multiplies, __d_result); \
 mu0_scope_end
 
 MU0_END_CDECL

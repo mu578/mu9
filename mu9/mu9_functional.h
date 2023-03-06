@@ -86,6 +86,11 @@ MU0_BEGIN_CDECL
 #	define mu9_equal_to(_Tp, __a, __b)               (((__a) == (__b)) ? mu0_true : mu0_false)
 #	define mu9_not_equal_to(_Tp, __a, __b)           (((__a) != (__b)) ? mu0_true : mu0_false)
 
+#	define mu9_less(_Tp, __a, __b)                   mu9_less_than(_Tp, __a, __b)
+#	define mu9_greater(_Tp, __a, __b)                mu9_greater_than(_Tp, __a, __b)
+#	define mu9_less_equal(_Tp, __a, __b)             mu9_less_than_or_equal(_Tp, __a, __b)
+#	define mu9_greater_equal(_Tp, __a, __b)          mu9_greater_than_or_equal(_Tp, __a, __b)
+
 //#!
 //#! macro<>(& __a, & __b) : bool
 //#!
@@ -95,6 +100,15 @@ MU0_BEGIN_CDECL
 #	define mu9_infer_greater_than_or_equal(__a, __b) mu9_greater_than_or_equal(void, __a, __b)
 #	define mu9_infer_equal_to(__a, __b)              mu9_equal_to(void, __a, __b)
 #	define mu9_infer_not_equal_to(__a, __b)          mu9_not_equal_to(void, __a, __b)
+
+#	define mu9_infer_less(__a, __b)                  mu9_less(void, __a, __b)
+#	define mu9_infer_greater(__a, __b)               mu9_greater(void, __a, __b)
+#	define mu9_infer_less_equal(__a, __b)            mu9_less_equal(void, __a, __b)
+#	define mu9_infer_greater_equal(__a, __b)         mu9_greater_equal(void, __a, __b)
+
+#	define mu9_not_fn(__fn) \
+	!__fn
+
 
 MU0_END_CDECL
 

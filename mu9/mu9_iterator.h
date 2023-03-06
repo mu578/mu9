@@ -99,6 +99,10 @@ mu0_scope_end
 #	define mu9_advance_n(_Tp, __it, __n)                     mu9_iterator_advance_n(_Tp, __it, __n)
 #	define mu9_advance(_Tp, __it)                            mu9_iterator_advance(_Tp, __it)
 
+#	define mu9_infer_advance_n(__it, __n)                   ((__it) += (__n))
+#	define mu9_infer_advance(__it)                          ((__it) +=     1)
+
+
 #	define mu9_next_n(_Tp, __it, __n)                        mu9_iterator_next_n(_Tp, __it, __n)
 #	define mu9_next(_Tp, __it)                               mu9_iterator_next(_Tp, __it)
 #	define mu9_prev_n(_Tp, __it, __n)                        mu9_iterator_prev_n(_Tp, __it, __n)

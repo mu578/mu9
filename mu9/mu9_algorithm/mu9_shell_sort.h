@@ -51,32 +51,32 @@ mu0_scope_begin                                                                 
 	}                                                                                                    \
 mu0_scope_end
 
-#	define mu9_shell_sort2(_Tp, __first, __last, __comp_fn)                                              \
-mu0_scope_begin                                                                                         \
-	_Tp * __mu9_shell_sort2__i__;                                                                        \
-	_Tp * __mu9_shell_sort2__j__;                                                                        \
-	const mu0_distance_t __mu9_shell_sort2__n__ = mu9_const_distance(_Tp, __first, __last);              \
-	const mu0_distance_t __mu9_shell_sort2__k__ = mu0_const_distance(3);                                 \
-			mu0_distance_t __mu9_shell_sort2__h__ = mu0_const_distance(1);                                 \
-	while ( __mu9_shell_sort2__h__ < __mu9_shell_sort2__n__ / __mu9_shell_sort2__k__ ) {                 \
-		__mu9_shell_sort2__h__ = __mu9_shell_sort2__k__ * __mu9_shell_sort2__h__ + mu0_const_distance(1); \
-	}                                                                                                    \
-	while (__mu9_shell_sort2__h__ >= mu0_const_distance(1)) {                                            \
-		__mu9_shell_sort2__i__ = __first + __mu9_shell_sort2__h__;                                        \
-		for (; __mu9_shell_sort2__i__ != __last; __mu9_shell_sort2__i__++ ) {                             \
-			__mu9_shell_sort2__j__ = __mu9_shell_sort2__i__;                                               \
-			for (; mu9_distance(_Tp, __first, __mu9_shell_sort2__j__) >= __mu9_shell_sort2__h__            \
-				&& _comp_fn(_Tp, *__mu9_shell_sort2__j__, *(__mu9_shell_sort2__j__ - __mu9_shell_sort2__h__));  \
-				__mu9_shell_sort2__j__ -= __mu9_shell_sort2__h__                                            \
-			) {                                                                                            \
-				mu9_swap(_Tp                                                                                \
-					, *__mu9_shell_sort2__j__                                                                \
-					, *(__mu9_shell_sort2__j__ - __mu9_shell_sort2__h__)                                     \
-				);                                                                                          \
-			}                                                                                              \
-		}                                                                                                 \
-		__mu9_shell_sort2__h__ = __mu9_shell_sort2__h__ / __mu9_shell_sort2__k__;                         \
-	}                                                                                                    \
+#	define mu9_shell_sort2(_Tp, __first, __last, __comp_fn)                                                 \
+mu0_scope_begin                                                                                            \
+	_Tp * __mu9_shell_sort2__i__;                                                                           \
+	_Tp * __mu9_shell_sort2__j__;                                                                           \
+	const mu0_distance_t __mu9_shell_sort2__n__ = mu9_const_distance(_Tp, __first, __last);                 \
+	const mu0_distance_t __mu9_shell_sort2__k__ = mu0_const_distance(3);                                    \
+			mu0_distance_t __mu9_shell_sort2__h__ = mu0_const_distance(1);                                    \
+	while ( __mu9_shell_sort2__h__ < __mu9_shell_sort2__n__ / __mu9_shell_sort2__k__ ) {                    \
+		__mu9_shell_sort2__h__ = __mu9_shell_sort2__k__ * __mu9_shell_sort2__h__ + mu0_const_distance(1);    \
+	}                                                                                                       \
+	while (__mu9_shell_sort2__h__ >= mu0_const_distance(1)) {                                               \
+		__mu9_shell_sort2__i__ = __first + __mu9_shell_sort2__h__;                                           \
+		for (; __mu9_shell_sort2__i__ != __last; __mu9_shell_sort2__i__++ ) {                                \
+			__mu9_shell_sort2__j__ = __mu9_shell_sort2__i__;                                                  \
+			for (; mu9_distance(_Tp, __first, __mu9_shell_sort2__j__) >= __mu9_shell_sort2__h__               \
+				&& _comp_fn(_Tp, *__mu9_shell_sort2__j__, *(__mu9_shell_sort2__j__ - __mu9_shell_sort2__h__)); \
+				__mu9_shell_sort2__j__ -= __mu9_shell_sort2__h__                                               \
+			) {                                                                                               \
+				mu9_swap(_Tp                                                                                   \
+					, *__mu9_shell_sort2__j__                                                                   \
+					, *(__mu9_shell_sort2__j__ - __mu9_shell_sort2__h__)                                        \
+				);                                                                                             \
+			}                                                                                                 \
+		}                                                                                                    \
+		__mu9_shell_sort2__h__ = __mu9_shell_sort2__h__ / __mu9_shell_sort2__k__;                            \
+	}                                                                                                       \
 mu0_scope_end
 
 #	define mu9_shell_sort3(_Tp, __first, __last, __sort_op, __ctx)                                                  \

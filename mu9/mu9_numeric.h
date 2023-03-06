@@ -32,11 +32,17 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_gcd_const(__a, __b) mu0_gcd_const(__a, __b)
-#	define mu9_gcd(__a, __b)       mu0_gcd(__a, __b)
+#	define mu9_gcd_const(_Int, __a, __b) mu0_gcd_const(__a, __b)
+#	define mu9_gcd(_Int, __a, __b)       mu0_gcd(__a, __b)
 
-#	define mu9_lcm_const(__a, __b) mu0_lcm_const(__a, __b)
-#	define mu9_lcm_(__a, __b)      mu0_lcm(__a, __b)
+#	define mu9_lcm_const(_Int, __a, __b) mu0_lcm_const(__a, __b)
+#	define mu9_lcm_(_Int, __a, __b)      mu0_lcm(__a, __b)
+
+#	define mu9_infer_gcd_const(__a, __b) mu9_gcd_const(void, __a, __b)
+#	define mu9_infer_gcd(__a, __b)       mu9_gcd(void, __a, __b)
+
+#	define mu9_infer_lcm_const(__a, __b) mu9_lcm_const(void, __a, __b)
+#	define mu9_infer_lcm_(__a, __b)      mu9_lcm_(void, __a, __b)
 
 MU0_END_CDECL
 

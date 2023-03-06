@@ -41,19 +41,24 @@ mu0_scope_end
 
 #	define mu9_remove_if(_Tp, __first, __last, __unary_pred, __d_result)   \
 mu0_scope_begin                                                           \
-	_Tp * __mu9_remove_if1__i__ = __first;                                 \
-	_Tp * __mu9_remove_if1_r__;                                            \
-	mu9_find_if(_Tp, __first, __last, __unary_pred, __mu9_remove_if1_r__); \
-	if (__mu9_remove_if1_r__ != __last) {                                  \
-		__mu9_remove_if1__i__ = __mu9_remove_if1_r__;                       \
-		while (++__mu9_remove_if1__i__ != __last) {                         \
-			if (!__unary_pred(_Tp, *__mu9_remove_if1__i__)) {                \
-					*__mu9_remove_if1_r__ = *__mu9_remove_if1__i__;            \
-					++__mu9_remove_if1_r__;                                    \
+	_Tp * __mu9_remove_if__i__ = __first;                                  \
+	_Tp * __mu9_remove_if__r__;                                            \
+	mu9_find_if(_Tp, __first, __last, __unary_pred, __mu9_remove_if__r__); \
+	if (__mu9_remove_if__r__ != __last) {                                  \
+		__mu9_remove_if__i__ = __mu9_remove_if__r__;                        \
+		while (++__mu9_remove_if__i__ != __last) {                          \
+			if (!__unary_pred(_Tp, *__mu9_remove_if__i__)) {                 \
+					*__mu9_remove_if__r__ = *__mu9_remove_if__i__;             \
+					++__mu9_remove_if__r__;                                    \
 			}                                                                \
 		}                                                                   \
 	}                                                                      \
-	__d_result = __mu9_remove_if1_r__;                                     \
+	__d_result = __mu9_remove_if__r__;                                     \
+mu0_scope_end
+
+#	define mu9_remove_if_not(_Tp, __first, __last, __unary_pred, __d_result)  \
+mu0_scope_begin                                                              \
+	mu9_remove_if(_Tp, __first, __last, mu9_not_fn(__unary_pred), __d_result) \
 mu0_scope_end
 
 #	define mu9_remove_copy(_Tp, __first, __last, __d_first, __value, __d_result) \
