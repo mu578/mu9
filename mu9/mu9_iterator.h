@@ -15,6 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
+#include <mu9/mu9_algorithm/mu9_swap.h>
 #include <mu0/mu0_integer.h>
 
 #ifndef MU9_ITERATOR_H
@@ -87,6 +88,23 @@ mu0_scope_end
 #	define mu9_iterator_next_n(_Tp, __it, __n)               ((__it) + mu0_const_distance((__n) < 0 ? -(__n) : (__n)))
 #	define mu9_iterator_next(_Tp, __it)                      ((__it) + mu0_const_distance(+1)) 
 
+#	define mu9_iterator_assign(_Tp, __it, __i1, __value) \
+mu0_scope_begin                                         \
+	(*((__it) + (__i1)) = mu0_const_cast(_Tp, __value)); \
+mu0_scope_end
+
+#	define mu9_iterator_access(_Tp, __it, __i1)              (*((__it) + (__i1)))
+
+#	define mu9_iterator_switch(_Tp, __it, __i1, __i2)    \
+mu0_scope_begin                                         \
+	_Tp __mu9_iterator_switch__a__ = *((__it) + (__i1)); \
+	_Tp __mu9_iterator_switch__b__ = *((__it) + (__i2)); \
+	mu9_swap(_Tp                                         \
+		, __mu9_iterator_switch__a__                      \
+		, __mu9_iterator_switch__b__                      \
+	);                                                   \
+mu0_scope_end
+
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __it, _Dist & __n = -1) : _Tp *
 //#!
@@ -99,9 +117,8 @@ mu0_scope_end
 #	define mu9_advance_n(_Tp, __it, __n)                     mu9_iterator_advance_n(_Tp, __it, __n)
 #	define mu9_advance(_Tp, __it)                            mu9_iterator_advance(_Tp, __it)
 
-#	define mu9_infer_advance_n(__it, __n)                   ((__it) += (__n))
-#	define mu9_infer_advance(__it)                          ((__it) +=     1)
-
+#	define mu9_infer_advance_n(__it, __n)                    ((__it) += (__n))
+#	define mu9_infer_advance(__it)                           ((__it) +=     1)
 
 #	define mu9_next_n(_Tp, __it, __n)                        mu9_iterator_next_n(_Tp, __it, __n)
 #	define mu9_next(_Tp, __it)                               mu9_iterator_next(_Tp, __it)

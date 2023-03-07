@@ -31,6 +31,7 @@
 #	include <mu9/mu9_algorithm/mu9_find.h>
 #	include <mu9/mu9_algorithm/mu9_for_each.h>
 #	include <mu9/mu9_algorithm/mu9_generate.h>
+#	include <mu9/mu9_algorithm/mu9_includes.h>
 #	include <mu9/mu9_algorithm/mu9_insertion_sort.h>
 #	include <mu9/mu9_algorithm/mu9_is_sorted_until.h>
 #	include <mu9/mu9_algorithm/mu9_is_sorted.h>
@@ -48,6 +49,8 @@
 #	include <mu9/mu9_algorithm/mu9_rotate.h>
 #	include <mu9/mu9_algorithm/mu9_search.h>
 #	include <mu9/mu9_algorithm/mu9_selection_sort.h>
+#	include <mu9/mu9_algorithm/mu9_set_difference.h>
+#	include <mu9/mu9_algorithm/mu9_set_symmetric_difference.h>
 #	include <mu9/mu9_algorithm/mu9_shell_sort.h>
 #	include <mu9/mu9_algorithm/mu9_shuffle.h>
 #	include <mu9/mu9_algorithm/mu9_stable_sort.h>
