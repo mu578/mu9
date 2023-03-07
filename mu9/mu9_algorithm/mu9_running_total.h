@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_definition.h>
+#include <mu9/mu9_algorithm/mu9_partial_sum.h>
 
 #ifndef MU9_RUNNING_TOTAL_H
 #define MU9_RUNNING_TOTAL_H 1

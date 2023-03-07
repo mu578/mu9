@@ -50,7 +50,9 @@
 #	include <mu9/mu9_algorithm/mu9_search.h>
 #	include <mu9/mu9_algorithm/mu9_selection_sort.h>
 #	include <mu9/mu9_algorithm/mu9_set_difference.h>
+#	include <mu9/mu9_algorithm/mu9_set_intersection.h>
 #	include <mu9/mu9_algorithm/mu9_set_symmetric_difference.h>
+#	include <mu9/mu9_algorithm/mu9_set_union.h>
 #	include <mu9/mu9_algorithm/mu9_shell_sort.h>
 #	include <mu9/mu9_algorithm/mu9_shuffle.h>
 #	include <mu9/mu9_algorithm/mu9_stable_sort.h>
