@@ -76,6 +76,34 @@ mu0_scope_begin                                                                 
 	__d_result = __mu9_accumulate4__v__;                                                                          \
 mu0_scope_end
 
+//#!
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Tp __init, __binary_op1, __binary_op2, _Tp<return> & __d_result) : void
+//#!
+#	define mu9_accumulate5(_Tp, __first1, __last1, __first2, __init, __binary_op1, __binary_op2, __d_result)        \
+mu0_scope_begin                                                                                                    \
+	_Tp __mu9_accumulate5__v__ = mu0_const_cast(_Tp, __init);                                                       \
+	while (__first1 != __last1) {                                                                                   \
+		__mu9_accumulate5__v__ = __binary_op1(_Tp, __mu9_accumulate5__v__, __binary_op1(_Tp, *__first1, *__first2)); \
+		++__first1;                                                                                                  \
+		++__first2;                                                                                                  \
+	}                                                                                                               \
+	__d_result = __mu9_accumulate5__v__;                                                                            \
+mu0_scope_end
+
+//#!
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Tp __init, __trinary_op, _Tp<return> & __d_result) : void
+//#!
+#	define mu9_accumulate6(_Tp, __first1, __last1, __first2, __init, __trinary_op, __d_result)   \
+mu0_scope_begin                                                                                 \
+	_Tp __mu9_accumulate6__v__ = mu0_const_cast(_Tp, __init);                                    \
+	while (__first1 != __last1) {                                                                \
+		__mu9_accumulate6__v__ = __trinary_op(_Tp, __mu9_accumulate6__v__, *__first1, *__first2); \
+		++__first1;                                                                               \
+		++__first2;                                                                               \
+	}                                                                                            \
+	__d_result = __mu9_accumulate6__v__;                                                         \
+mu0_scope_end
+
 MU0_END_CDECL
 
 #endif /* !MU9_ACCUMULATE_H */

@@ -44,6 +44,7 @@
 #	include <mu9/mu9_algorithm/mu9_partition_point.h>
 #	include <mu9/mu9_algorithm/mu9_partition.h>
 #	include <mu9/mu9_algorithm/mu9_random_shuffle.h>
+#	include <mu9/mu9_algorithm/mu9_reduce.h>
 #	include <mu9/mu9_algorithm/mu9_remove.h>
 #	include <mu9/mu9_algorithm/mu9_reverse.h>
 #	include <mu9/mu9_algorithm/mu9_rotate.h>
@@ -57,6 +58,7 @@
 #	include <mu9/mu9_algorithm/mu9_shuffle.h>
 #	include <mu9/mu9_algorithm/mu9_stable_sort.h>
 #	include <mu9/mu9_algorithm/mu9_swap.h>
+#	include <mu9/mu9_algorithm/mu9_transform_reduce.h>
 #	include <mu9/mu9_algorithm/mu9_transform.h>
 #	include <mu9/mu9_algorithm/mu9_unique.h>
 #	include <mu9/mu9_algorithm/mu9_upper_bound.h>

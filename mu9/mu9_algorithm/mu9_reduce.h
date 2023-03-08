@@ -10,25 +10,38 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu9_running_total.h
+// mu9_reduce.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_algorithm/mu9_partial_sum.h>
+#include <mu0/mu0_definition.h>
 
-#ifndef MU9_RUNNING_TOTAL_H
-#define MU9_RUNNING_TOTAL_H 1
+#ifndef MU9_REDUCE_H
+#define MU9_REDUCE_H 1
 
 MU0_BEGIN_CDECL
 
-#	define mu9_running_total(_Tp, __first, __last, __d_first)    \
+#	define mu9_reduce1(_Tp, __first, __last, __init, __d_result) \
 mu0_scope_begin                                                 \
-	mu9_partial_sum2(_Tp, __first, __last, __d_first, mu9_plus); \
+	_Tp __mu9_reduce1__v__ = mu0_const_cast(_Tp, __init);        \
+	for (; __first != __last; ++__first) {                       \
+		__mu9_reduce1__v__ = __mu9_reduce1__v__ + *__first;       \
+	}                                                            \
+	__d_result = __mu9_reduce1__v__;                             \
+mu0_scope_end
+
+#	define mu9_reduce2(_Tp, __first, __last, __init, __binary_op, __d_result) \
+mu0_scope_begin                                                              \
+	_Tp __mu9_reduce2__v__ = mu0_const_cast(_Tp, __init);                     \
+	for (; __first != __last; ++__first) {                                    \
+		__mu9_reduce2__v__ = __binary_op(_Tp, __mu9_reduce2__v__, *__first);   \
+	}                                                                         \
+	__d_result = __mu9_reduce2__v__;                                          \
 mu0_scope_end
 
 MU0_END_CDECL
 
-#endif /* !MU9_RUNNING_TOTAL_H */
+#endif /* !MU9_REDUCE_H */
 
 /* EOF */

@@ -46,11 +46,27 @@ mu0_scope_begin                                                          \
 	);                                                                    \
 mu0_scope_end
 
-#	define mu9_argument_sort2(_Uint, __first, __last, __start, __s_first, __sort_op) \
+#	define mu9_argument_sort2(_Uint, __first, __last, __start, __s_first) \
+mu0_scope_begin                                                          \
+	_Uint * __mu9_argument_sort2__i__ = __first;                          \
+	mu9_iota(_Uint                                                        \
+		, __mu9_argument_sort2__i__                                        \
+		, __last                                                           \
+		, __start                                                          \
+	);                                                                    \
+	mu9_shell_sort3(_Uint                                                 \
+		, __first                                                          \
+		, __last                                                           \
+		, mu9_argument_sort_desc                                           \
+		, __s_first                                                        \
+	);                                                                    \
+mu0_scope_end
+
+#	define mu9_argument_sort3(_Uint, __first, __last, __start, __s_first, __sort_op) \
 mu0_scope_begin                                                                     \
-	_Uint * __mu9_argument_sort2__i__ = __first;                                     \
+	_Uint * __mu9_argument_sort3__i__ = __first;                                     \
 	mu9_iota(_Uint                                                                   \
-		, __mu9_argument_sort2__i__                                                   \
+		, __mu9_argument_sort3__i__                                                   \
 		, __last                                                                      \
 		, __start                                                                     \
 	);                                                                               \
@@ -62,11 +78,11 @@ mu0_scope_begin                                                                 
 	);                                                                               \
 mu0_scope_end
 
-#	define mu9_argument_sort3(_Uint, __first, __last, __start, __s_first, __sort_op, __swap_op) \
+#	define mu9_argument_sort4(_Uint, __first, __last, __start, __s_first, __sort_op, __swap_op) \
 mu0_scope_begin                                                                                \
-	_Uint * __mu9_argument_sort3__i__ = __first;                                                \
+	_Uint * __mu9_argument_sort4__i__ = __first;                                                \
 	mu9_iota(_Uint                                                                              \
-		, __mu9_argument_sort3__i__                                                              \
+		, __mu9_argument_sort4__i__                                                              \
 		, __last                                                                                 \
 		, __start                                                                                \
 	);                                                                                          \
