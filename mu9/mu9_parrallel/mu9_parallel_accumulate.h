@@ -15,6 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
+#	include <mu9/mu9_iterator.h>
 #	include <mu9/mu9_algorithm/mu9_accumulate.h>
 
 #ifndef PARALLEL_ACCUMULATE_H
@@ -35,7 +36,7 @@ MU0_BEGIN_CDECL
 #	define mu9_parallel_accumulate1(_Tp, __first, __last, __init, __d_result)                                              \
 mu0_scope_begin                                                                                                           \
 	_Tp __mu9_parallel_accumulate1__v__                  = mu0_const_cast(_Tp, __init);                                    \
-	_Tp * __mu9_parallel_accumulate1__a__                = __first + mu0_const_distance(0);                                \
+	_Tp * __mu9_parallel_accumulate1__a__                = mu9_begin(_Tp, __first);                                        \
 	const mu0_distance_t __mu9_parallel_accumulate1__n__ = mu9_const_distance(_Tp, __first, __last);                       \
 	      mu0_distance_t __mu9_parallel_accumulate1__i__ = mu0_const_distance(0);                                          \
 	__mu0_pragma__(omp parallel for)                                                                                       \
@@ -47,6 +48,26 @@ mu0_scope_end
 #	else
 #	define mu9_parallel_accumulate1(_Tp, __first, __last, __init, __d_result) \
 	mu9_sequencial_accumulate1(_Tp, __first, __last, __init, __d_result)
+#	endif
+
+#	if MU0_HAVE_PARALLELIZE
+#	define mu9_parallel_accumulate2(_Tp, __ptr, __n, __init, __d_result)                                           \
+mu0_scope_begin                                                                                                   \
+	_Tp __mu9_parallel_accumulate2__v__            = mu0_const_cast(_Tp, __init);                                  \
+	mu0_distance_t __mu9_parallel_accumulate2__i__ = mu0_const_distance(0);                                        \
+	__mu0_pragma__(omp parallel for)                                                                               \
+	for (; __mu9_parallel_accumulate2__i__ <  mu0_const_distance(__n); ++__mu9_parallel_accumulate2__i__) {        \
+		__mu9_parallel_accumulate2__v__ = __mu9_parallel_accumulate2__v__ + __ptr[__mu9_parallel_accumulate2__i__]; \
+	}                                                                                                              \
+	__d_result = __mu9_parallel_accumulate2__v__;                                                                  \
+mu0_scope_end
+#	else
+#	define mu9_parallel_accumulate2(_Tp, __ptr, __n, __init, __d_result)                                                   \
+mu0_scope_begin                                                                                                           \
+	_Tp * __mu9_parallel_accumulate2__i__ = mu9_begin(_Tp, __ptr);                                                         \
+	_Tp * __mu9_parallel_accumulate2__j__ = mu9_end(_Tp, __ptr, __n);                                                      \
+	mu9_sequencial_accumulate1(_Tp, __mu9_parallel_accumulate2__i__, __mu9_parallel_accumulate2__j__, __init, __d_result); \
+mu0_scope_end
 #	endif
 
 MU0_END_CDECL
