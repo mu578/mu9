@@ -26,12 +26,12 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __ptr, _Dist & __n) : _Tp *
 //#!
-#	define mu9_iterator_set(_Tp, __ptr, __n)                (mu0_cast(_Tp *, __ptr) + (mu0_const_distance(__n)))
+#	define mu9_iterator_set(_Tp, __ptr, __n)                 (mu0_cast(_Tp *, __ptr) + (mu0_const_distance(__n)))
 
 //#!
 //#! macro<_Tp, _Dist>(const _Tp &* __ptr, _Dist & __n) : const _Tp *
 //#!
-#	define mu9_const_iterator_set(_Tp, __ptr, __n)          (mu0_cast(_Tp *, __ptr) + (mu0_const_distance(__n)))
+#	define mu9_const_iterator_set(_Tp, __ptr, __n)           (mu0_cast(_Tp *, __ptr) + (mu0_const_distance(__n)))
 
 //#!
 //#! macro<_Tp>(_Tp &* __ptr) : _Tp *
