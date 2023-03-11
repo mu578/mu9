@@ -24,8 +24,8 @@ MU0_BEGIN_CDECL
 
 #	define mu9_heap_siftdown1(_Tp, __first, __len, __start, __comp_fn)                                        \
 mu0_scope_begin                                                                                              \
-	_Tp * __mu9_heap_siftdown1__i__;                                                                          \
-	_Tp __mu9_heap_siftdown1__v__;                                                                            \
+	_Tp *          __mu9_heap_siftdown1__i__;                                                                 \
+	_Tp            __mu9_heap_siftdown1__v__;                                                                 \
 	mu0_distance_t __mu9_heap_siftdown1__c__ = mu9_const_distance(_Tp, __first, __start);                     \
 	mu0_distance_t __mu9_heap_siftdown1__d__;                                                                 \
 	if (!(__len < 2 || (__len - 2) / 2 < __mu9_heap_siftdown1__c__)) {                                        \
@@ -58,8 +58,8 @@ mu0_scope_end
 
 #	define mu9_heap_siftdown2(_Tp, __first, __len, __start, __comp_fn, __move_op)                             \
 mu0_scope_begin                                                                                              \
-	_Tp * __mu9_heap_siftdown2__i__;                                                                          \
-	_Tp __mu9_heap_siftdown2__v__;                                                                            \
+	_Tp *          __mu9_heap_siftdown2__i__;                                                                 \
+	_Tp            __mu9_heap_siftdown2__v__;                                                                 \
 	mu0_distance_t __mu9_heap_siftdown2__c__ = mu9_const_distance(_Tp, __first, __start);                     \
 	mu0_distance_t __mu9_heap_siftdown2__d__;                                                                 \
 	if (!(__len < 2 || (__len - 2) / 2 < __mu9_heap_siftdown2__c__)) {                                        \
