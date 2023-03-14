@@ -40,53 +40,53 @@ mu0_scope_begin                                                                 
 	__d_result = __mu9_parallel_accumulate_b0__v__;                                                                                       \
 mu0_scope_end
 
-#	define mu9_parallel_accumulate_b1(_Tp, __ptr, __n, __init, __binary_op, __d_result)                                                          \
-mu0_scope_begin                                                                                                                                 \
-	_Tp             __mu9_parallel_accumulate_b1__v__ = mu0_const_cast(_Tp, __init);                                                             \
-	 mu0_distance_t __mu9_parallel_accumulate_b1__i__;                                                                                           \
-	__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_accumulate_b1__v__))                                                              \
-	for (                                                                                                                                        \
-		  __mu9_parallel_accumulate_b1__i__ = mu0_const_distance(0)                                                                               \
-		; __mu9_parallel_accumulate_b1__i__ < (mu0_const_distance(__n) - mu0_const_distance(32))                                                  \
-		; __mu9_parallel_accumulate_b1__i__ += mu0_const_distance(32)                                                                             \
-	) {                                                                                                                                          \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__     ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 1 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 2 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 3 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 4 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 5 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 6 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 7 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 8 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 9 ]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 10]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 11]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 12]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 13]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 14]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 15]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 16]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 17]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 18]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 19]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 20]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 21]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 22]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 23]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 24]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 25]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 26]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 27]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 28]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 29]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 30]);   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 31]);   \
-	}                                                                                                                                            \
-	for (; __mu9_parallel_accumulate_b1__i__ < mu0_const_distance(__n); __mu9_parallel_accumulate_b1__i__++) {                                   \
-		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__]);        \
-	}                                                                                                                                            \
-	__d_result = __mu9_parallel_accumulate_b1__v__;                                                                                              \
+#	define mu9_parallel_accumulate_b1(_Tp, __ptr, __n, __init, __binary_op, __d_result)                                                        \
+mu0_scope_begin                                                                                                                               \
+	_Tp             __mu9_parallel_accumulate_b1__v__ = mu0_const_cast(_Tp, __init);                                                           \
+	 mu0_distance_t __mu9_parallel_accumulate_b1__i__;                                                                                         \
+	__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_accumulate_b1__v__))                                                            \
+	for (                                                                                                                                      \
+		  __mu9_parallel_accumulate_b1__i__ = mu0_const_distance(0)                                                                             \
+		; __mu9_parallel_accumulate_b1__i__ < (mu0_const_distance(__n) - mu0_const_distance(32))                                                \
+		; __mu9_parallel_accumulate_b1__i__ += mu0_const_distance(32)                                                                           \
+	) {                                                                                                                                        \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__     ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 1 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 2 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 3 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 4 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 5 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 6 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 7 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 8 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 9 ]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 10]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 11]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 12]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 13]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 14]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 15]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 16]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 17]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 18]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 19]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 20]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 21]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 22]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 23]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 24]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 25]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 26]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 27]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 28]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 29]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 30]); \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__ + 31]); \
+	}                                                                                                                                          \
+	for (; __mu9_parallel_accumulate_b1__i__ < mu0_const_distance(__n); __mu9_parallel_accumulate_b1__i__++) {                                 \
+		__mu9_parallel_accumulate_b1__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b1__v__, __ptr[__mu9_parallel_accumulate_b1__i__]);      \
+	}                                                                                                                                          \
+	__d_result = __mu9_parallel_accumulate_b1__v__;                                                                                            \
 mu0_scope_end
 #	endif
 
