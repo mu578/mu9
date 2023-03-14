@@ -35,12 +35,12 @@ mu0_scope_end
 //#!
 //#! macro<_Tp, _Uint>(_Tp &* __first, _Uint & __n, __unary_fn) : void
 //#!
-#	define mu9_for_each_n(_Tp, __first, __n, __unary_fn)                                           \
-mu0_scope_begin                                                                                   \
-	mu0_uinteger_t __mu9_for_each_n__i__ = 0;                                                      \
-	for (; __mu9_for_each_n__i__ < mu0_uinteger(__n); ++__first, (void) ++__mu9_for_each_n__i__) { \
-		__unary_fn(*__first);                                                                       \
-	}                                                                                              \
+#	define mu9_for_each_n(_Tp, __first, __n, __unary_fn)                                                 \
+mu0_scope_begin                                                                                         \
+	mu0_distance_t __mu9_for_each_n__i__ = mu0_const_distance(0);                                        \
+	for (; __mu9_for_each_n__i__ < mu0_const_distance(__n); ++__first, (void) ++__mu9_for_each_n__i__) { \
+		__unary_fn(*__first);                                                                             \
+	}                                                                                                    \
 mu0_scope_end
 
 MU0_END_CDECL
