@@ -62,11 +62,11 @@ int main(int argc, const char * argv[])
 	argsort(10, v2, v1);
 	mu0_console_log("\n");
 	for (i = 0; i < 10; ++i) {
-		mu0_console_log("%0.4f, ", v2[v1[i]]);
+		mu0_console_warn("%0.4f, ", v2[v1[i]]);
 	}
 	mu0_console_log("\n");
 
-	mu0_console_log("%u %u\n", mu9_infer_gcd_const(2048, 6), mu9_infer_gcd(-2048, 6));
+	mu0_console_info("%d %u\n", mu9_gcd_const(mu0_sint32_t, 2048, 6), mu9_infer_gcd(-2048, 6));
 
 	return 0;
 }
