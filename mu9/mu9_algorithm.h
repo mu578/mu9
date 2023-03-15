@@ -38,6 +38,7 @@
 #	include <mu9/mu9_algorithm/mu9_is_sorted_until.h>
 #	include <mu9/mu9_algorithm/mu9_is_sorted.h>
 #	include <mu9/mu9_algorithm/mu9_lower_bound.h>
+#	include <mu9/mu9_algorithm/mu9_make_heap.h>
 #	include <mu9/mu9_algorithm/mu9_max_element.h>
 #	include <mu9/mu9_algorithm/mu9_merge.h>
 #	include <mu9/mu9_algorithm/mu9_min_element.h>
