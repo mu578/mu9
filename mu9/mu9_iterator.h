@@ -85,8 +85,8 @@ mu0_scope_end
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __it, _Dist & __n = +1) : _Tp *
 //#!
-#	define mu9_iterator_next_n(_Tp, __it, __n)               ((__it) + mu0_const_distance((__n) < 0 ? -(__n) : (__n)))
-#	define mu9_iterator_next(_Tp, __it)                      ((__it) + mu0_const_distance(+1)) 
+#	define mu9_iterator_next_n(_Tp, __it, __n)               ((__it) + mu0_const_distance(__n))
+#	define mu9_iterator_next(_Tp, __it)                      ((__it) + mu0_const_distance(1)) 
 
 #	define mu9_iterator_assign(_Tp, __it, __i1, __value) \
 mu0_scope_begin                                         \
