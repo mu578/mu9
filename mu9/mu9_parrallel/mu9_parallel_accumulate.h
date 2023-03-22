@@ -34,7 +34,8 @@ mu0_scope_begin                                                                 
 			mu0_distance_t __mu9_parallel_accumulate_b0__i__ = mu0_const_distance(0);                                      \
 	__mu0_pragma__(omp parallel for simd reduction(+:__mu9_parallel_accumulate_b0__v__))                                 \
 	for (; __mu9_parallel_accumulate_b0__i__ < __mu9_parallel_accumulate_b0__n__; __mu9_parallel_accumulate_b0__i__++) { \
-		__mu9_parallel_accumulate_b0__v__ = __binary_op(_Tp, __mu9_parallel_accumulate_b0__v__                            \
+		__mu9_parallel_accumulate_b0__v__ = __binary_op(_Tp                                                               \
+			, __mu9_parallel_accumulate_b0__v__                                                                            \
 			, __mu9_parallel_accumulate_b0__p__[__mu9_parallel_accumulate_b0__i__]                                         \
 		);                                                                                                                \
 	}                                                                                                                    \
