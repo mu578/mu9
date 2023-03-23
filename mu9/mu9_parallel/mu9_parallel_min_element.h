@@ -39,7 +39,7 @@ mu0_scope_begin                                                                 
 			_Tp            __mu9_parallel_min_element0__w__ = __mu9_parallel_min_element0__v__;                                            \
 			__mu0_pragma__(omp for nowait)                                                                                                 \
 			for (                                                                                                                          \
-				__mu9_parallel_min_element0__i__ = mu0_const_distance(1)                                                                    \
+				  __mu9_parallel_min_element0__i__ = mu0_const_distance(1)                                                                  \
 				; __mu9_parallel_min_element0__i__ < __mu9_parallel_min_element0__n__                                                       \
 				; __mu9_parallel_min_element0__i__++                                                                                        \
 			) {                                                                                                                            \
@@ -56,7 +56,7 @@ mu0_scope_begin                                                                 
 				}                                                                                                                           \
 			}                                                                                                                              \
 		}                                                                                                                                 \
-		__first    = mu9_next_n(_Tp, __mu9_parallel_min_element0__p__,  __mu9_parallel_min_element0__k__);                                \
+		__first    = mu9_next_n(_Tp, __mu9_parallel_min_element0__p__, __mu9_parallel_min_element0__k__);                                 \
 		__d_result = __first;                                                                                                             \
 	} else {                                                                                                                             \
 		__d_result = __last;                                                                                                              \
@@ -68,18 +68,18 @@ mu0_scope_end
 //#!
 //#! macro<_Tp, execution=sequencial>(_Tp &* __first, _Tp &* __last, _Tp<return> & __d_result) : void
 //#!
-#	define mu9_sequencial_min_element1(_Tp, __first, __last __d_result) \
-	mu9_min_element1(_Tp, __first, __last __d_result)
+#	define mu9_sequencial_min_element1(_Tp, __first, __last, __d_result) \
+	mu9_min_element1(_Tp, __first, __last, __d_result)
 
 //#!
 //#! macro<_Tp, execution=parallel>(_Tp &* __first, _Tp &* __last, _Tp<return> & __d_result) : void
 //#!
 #	if MU0_HAVE_PARALLELIZE
-#	define mu9_parallel_min_element1(_Tp, __first, __last __d_result) \
+#	define mu9_parallel_min_element1(_Tp, __first, __last, __d_result) \
 	mu9_parallel_min_element0(_Tp, __first, __last,  mu9_less, __d_result)
 #	else
-#	define mu9_parallel_min_element1(_Tp, __first, __last __d_result) \
-	mu9_sequencial_min_element1(_Tp, __first, __last __d_result)
+#	define mu9_parallel_min_element1(_Tp, __first, __last, __d_result) \
+	mu9_sequencial_min_element1(_Tp, __first, __last, __d_result)
 #	endif
 
 //#!
