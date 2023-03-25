@@ -21,6 +21,7 @@
 #	include <mu9/mu9_parallel/mu9_parallel_accumulate.h>
 #	include <mu9/mu9_parallel/mu9_parallel_max_element.h>
 #	include <mu9/mu9_parallel/mu9_parallel_min_element.h>
+#	include <mu9/mu9_parallel/mu9_parallel_minmax_element.h>
 
 MU0_BEGIN_CDECL
 

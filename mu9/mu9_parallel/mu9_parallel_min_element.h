@@ -31,7 +31,7 @@ mu0_scope_begin                                                                 
 	_Tp                  __mu9_parallel_min_element0__v__ = *__first;                                                                    \
 	_Tp *                __mu9_parallel_min_element0__p__ = mu9_begin(_Tp, __first);                                                     \
 	const mu0_distance_t __mu9_parallel_min_element0__n__ = mu9_const_distance(_Tp, __first, __last);                                    \
-	      mu0_distance_t __mu9_parallel_min_element0__k__ = 0;                                                                           \
+	      mu0_distance_t __mu9_parallel_min_element0__k__ = mu0_const_distance(0);                                                       \
 	if (__first != __last) {                                                                                                             \
 		__mu0_pragma__(omp parallel)                                                                                                      \
 		{                                                                                                                                 \
