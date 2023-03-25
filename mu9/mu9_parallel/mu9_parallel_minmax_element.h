@@ -79,37 +79,37 @@ mu0_scope_end
 #	endif
 
 //#!
-//#! macro<_Tp, execution=sequencial>(_Tp &* __first, _Tp &* __last, _Tp<return> & __d_result) : void
+//#! macro<_Tp, execution=sequencial>(_Tp &* __first, _Tp &* __last, _Tp<return> & __d_result1, _Tp<return> & __d_result2) : void
 //#!
-#	define mu9_sequencial_minmax_element1(_Tp, __first, __last, __d_result) \
-	mu9_minmax_element1(_Tp, __first, __last, __d_result)
+#	define mu9_sequencial_minmax_element1(_Tp, __first, __last, __d_result1, __d_result2) \
+	mu9_minmax_element1(_Tp, __first, __last, __d_result1, __d_result2)
 
 //#!
-//#! macro<_Tp, execution=parallel>(_Tp &* __first, _Tp &* __last, _Tp<return> & __d_result) : void
+//#! macro<_Tp, execution=parallel>(_Tp &* __first, _Tp &* __last, _Tp<return> & __d_result1, _Tp<return> & __d_result2) : void
 //#!
 #	if MU0_HAVE_PARALLELIZE
-#	define mu9_parallel_minmax_element1(_Tp, __first, __last, __d_result) \
-	mu9_parallel_minmax_element0(_Tp, __first, __last,  mu9_less, __d_result)
+#	define mu9_parallel_minmax_element1(_Tp, __first, __last, __d_result1, __d_result2) \
+	mu9_parallel_minmax_element0(_Tp, __first, __last,  mu9_less, __d_result1, __d_result2)
 #	else
-#	define mu9_parallel_minmax_element1(_Tp, __first, __last, __d_result) \
-	mu9_sequencial_minmax_element1(_Tp, __first, __last, __d_result)
+#	define mu9_parallel_minmax_element1(_Tp, __first, __last, __d_result1, __d_result2) \
+	mu9_sequencial_minmax_element1(_Tp, __first, __last, __d_result1, __d_result2)
 #	endif
 
 //#!
-//#! macro<_Tp, execution=sequencial>(_Tp &* __first, _Tp &* __last, __comp_fn, _Tp<return> & __d_result) : void
+//#! macro<_Tp, execution=sequencial>(_Tp &* __first, _Tp &* __last, __comp_fn, _Tp<return> & __d_result1, _Tp<return> & __d_result2) : void
 //#!
-#	define mu9_sequencial_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result) \
-	mu9_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result)
+#	define mu9_sequencial_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2) \
+	mu9_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)
 
 //#!
-//#! macro<_Tp, execution=parallel>(_Tp &* __first, _Tp &* __last, __comp_fn, _Tp<return> & __d_result) : void
+//#! macro<_Tp, execution=parallel>(_Tp &* __first, _Tp &* __last, __comp_fn, _Tp<return> & __d_result1, _Tp<return> & __d_result2) : void
 //#!
 #	if MU0_HAVE_PARALLELIZE
-#	define mu9_parallel_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result) \
-	mu9_parallel_minmax_element0(_Tp, __first, __last,  __comp_fn, __d_result)
+#	define mu9_parallel_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2) \
+	mu9_parallel_minmax_element0(_Tp, __first, __last,  __comp_fn, __d_result1, __d_result2)
 #	else
-#	define mu9_parallel_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result) \
-	mu9_sequencial_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result)
+#	define mu9_parallel_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2) \
+	mu9_sequencial_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)
 #	endif
 
 MU0_END_CDECL
