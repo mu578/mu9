@@ -35,6 +35,7 @@
 #	include <mu9/mu9_algorithm/mu9_heap_siftup.h>
 #	include <mu9/mu9_algorithm/mu9_includes.h>
 #	include <mu9/mu9_algorithm/mu9_insertion_sort.h>
+#	include <mu9/mu9_algorithm/mu9_is_heap_until.h>
 #	include <mu9/mu9_algorithm/mu9_is_sorted_until.h>
 #	include <mu9/mu9_algorithm/mu9_is_sorted.h>
 #	include <mu9/mu9_algorithm/mu9_lower_bound.h>
