@@ -33,14 +33,26 @@ MU0_BEGIN_CDECL
 #	define mu9_negate(_Tp, __a)                      -(__a)
 
 //#!
+//#! macro<_Tp>((_Tp& __c, _Tp& __a, _Tp& __b) : _Tp
+//#!
+#	define mu9_multiply_accumulate(_Tp, __c, __a, __b) \
+	mu9_plus(_Tp, __c, mu9_multiplies(_Tp, __a, __b))
+
+//#!
 //#! macro<>(& __a, & __b) : _Tp
 //#!
 #	define mu9_infer_plus(__a, __b)                  mu9_plus(void, __a, __b)
-#	define mu9_infer_minus_fn(__a, __b)              mu9_minus(void, __a, __b)
-#	define mu9_infer_multiplies_fn(__a, __b)         mu9_multiplies(void, __a, __b)
-#	define mu9_infer_divides_fn(__a, __b)            mu9_divides(void, __a, __b)
-#	define mu9_infer_modulus_fn(__a, __b)            mu9_modulus(void, __a, __b)
-#	define mu9_infer_negate_fn(__a)                  mu9_negate(void, __a, __b)
+#	define mu9_infer_minus(__a, __b)                 mu9_minus(void, __a, __b)
+#	define mu9_infer_multiplies(__a, __b)            mu9_multiplies(void, __a, __b)
+#	define mu9_infer_divides(__a, __b)               mu9_divides(void, __a, __b)
+#	define mu9_infer_modulus(__a, __b)               mu9_modulus(void, __a, __b)
+#	define mu9_infer_negate(__a)                     mu9_negate(void, __a, __b)
+
+//#!
+//#! macro<>(& __c, & __a, & __b) : _Tp
+//#!
+#	define mu9_infer_multiply_accumulate(__c, __a, __b) \
+	mu9_multiply_accumulate(void, __c, __a, __b)
 
 //#!
 //#! macro<_Tp>(& __a, & __b) : bool

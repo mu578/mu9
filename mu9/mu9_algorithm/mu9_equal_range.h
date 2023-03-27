@@ -35,12 +35,6 @@ mu0_scope_begin                                                                 
 	mu9_upper_bound2(__Tp, __first, __last, __value, __comp_fn, __d_result2);                   \
 mu0_scope_end
 
-#	define mu9_equal_range3(_Tp, __first, __last, __value, __comp_op, __d_result1, __d_result2) \
-mu0_scope_begin                                                                                \
-	mu9_lower_bound3(__Tp, __first, __last, __value, __comp_fn, __d_result1);                   \
-	mu9_upper_bound3(__Tp, __first, __last, __value, __comp_fn, __d_result2);                   \
-mu0_scope_end
-
 MU0_END_CDECL
 
 #endif /* !MU9_EQUAL_RANGE_H */

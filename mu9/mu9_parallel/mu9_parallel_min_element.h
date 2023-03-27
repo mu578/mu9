@@ -26,41 +26,41 @@ MU0_BEGIN_CDECL
 
 #	if MU0_HAVE_PARALLELIZE
 
-#	define mu9_parallel_min_element0(_Tp, __first, __last, __comp_fn, __d_result)                                                        \
-mu0_scope_begin                                                                                                                         \
-	_Tp                  __mu9_parallel_min_element0__v__ = *__first;                                                                    \
-	_Tp *                __mu9_parallel_min_element0__p__ = mu9_begin(_Tp, __first);                                                     \
-	const mu0_distance_t __mu9_parallel_min_element0__n__ = mu9_const_distance(_Tp, __first, __last);                                    \
-	      mu0_distance_t __mu9_parallel_min_element0__k__ = mu0_const_distance(0);                                                       \
-	if (__first != __last) {                                                                                                             \
-		__mu0_pragma__(omp parallel)                                                                                                      \
-		{                                                                                                                                 \
-			mu0_distance_t __mu9_parallel_min_element0__j__ = __mu9_parallel_min_element0__k__;                                            \
-			_Tp            __mu9_parallel_min_element0__w__ = __mu9_parallel_min_element0__v__;                                            \
-			__mu0_pragma__(omp for nowait)                                                                                                 \
-			for (                                                                                                                          \
-				  mu0_distance_t __mu9_parallel_min_element0__i__ = mu0_const_distance(1)                                                   \
-				;                __mu9_parallel_min_element0__i__ < __mu9_parallel_min_element0__n__                                        \
-				;                __mu9_parallel_min_element0__i__++                                                                         \
-			) {                                                                                                                            \
-				if (__comp_fn(_Tp, __mu9_parallel_min_element0__p__[__mu9_parallel_min_element0__i__], __mu9_parallel_min_element0__w__)) { \
-						__mu9_parallel_min_element0__w__ = __mu9_parallel_min_element0__p__[__mu9_parallel_min_element0__i__];                \
-						__mu9_parallel_min_element0__j__ = __mu9_parallel_min_element0__i__;                                                  \
-				}                                                                                                                           \
-			}                                                                                                                              \
-			__mu0_pragma__(omp critical)                                                                                                   \
-			{                                                                                                                              \
-				if (__comp_fn(_Tp, __mu9_parallel_min_element0__w__, __mu9_parallel_min_element0__v__)) {                                   \
-						__mu9_parallel_min_element0__v__ = __mu9_parallel_min_element0__w__;                                                  \
-						__mu9_parallel_min_element0__k__ = __mu9_parallel_min_element0__j__;                                                  \
-				}                                                                                                                           \
-			}                                                                                                                              \
-		}                                                                                                                                 \
-		__first    = mu9_next_n(_Tp, __mu9_parallel_min_element0__p__, __mu9_parallel_min_element0__k__);                                 \
-		__d_result = __first;                                                                                                             \
-	} else {                                                                                                                             \
-		__d_result = __last;                                                                                                              \
-	}                                                                                                                                    \
+#	define mu9_parallel_min_element00(_Tp, __first, __last, __comp_fn, __d_result)                                                          \
+mu0_scope_begin                                                                                                                            \
+	_Tp                  __mu9_parallel_min_element00__v__ = *__first;                                                                      \
+	_Tp *                __mu9_parallel_min_element00__p__ = mu9_begin(_Tp, __first);                                                       \
+	const mu0_distance_t __mu9_parallel_min_element00__n__ = mu9_const_distance(_Tp, __first, __last);                                      \
+	      mu0_distance_t __mu9_parallel_min_element00__k__ = mu0_const_distance(0);                                                         \
+	if (__first != __last) {                                                                                                                \
+		__mu0_pragma__(omp parallel)                                                                                                         \
+		{                                                                                                                                    \
+			mu0_distance_t __mu9_parallel_min_element00__j__ = __mu9_parallel_min_element00__k__;                                             \
+			_Tp            __mu9_parallel_min_element00__w__ = __mu9_parallel_min_element00__v__;                                             \
+			__mu0_pragma__(omp for nowait)                                                                                                    \
+			for (                                                                                                                             \
+				  mu0_distance_t __mu9_parallel_min_element00__i__ = mu0_const_distance(1)                                                     \
+				;                __mu9_parallel_min_element00__i__ < __mu9_parallel_min_element00__n__                                         \
+				;                __mu9_parallel_min_element00__i__++                                                                           \
+			) {                                                                                                                               \
+				if (__comp_fn(_Tp, __mu9_parallel_min_element00__p__[__mu9_parallel_min_element00__i__], __mu9_parallel_min_element00__w__)) { \
+						__mu9_parallel_min_element00__w__ = __mu9_parallel_min_element00__p__[__mu9_parallel_min_element00__i__];                \
+						__mu9_parallel_min_element00__j__ = __mu9_parallel_min_element00__i__;                                                   \
+				}                                                                                                                              \
+			}                                                                                                                                 \
+			__mu0_pragma__(omp critical)                                                                                                      \
+			{                                                                                                                                 \
+				if (__comp_fn(_Tp, __mu9_parallel_min_element00__w__, __mu9_parallel_min_element00__v__)) {                                    \
+						__mu9_parallel_min_element00__v__ = __mu9_parallel_min_element00__w__;                                                   \
+						__mu9_parallel_min_element00__k__ = __mu9_parallel_min_element00__j__;                                                   \
+				}                                                                                                                              \
+			}                                                                                                                                 \
+		}                                                                                                                                    \
+		__first    = mu9_next_n(_Tp, __mu9_parallel_min_element00__p__, __mu9_parallel_min_element00__k__);                                  \
+		__d_result = __first;                                                                                                                \
+	} else {                                                                                                                                \
+		__d_result = __last;                                                                                                                 \
+	}                                                                                                                                       \
 mu0_scope_end
 
 #	endif
@@ -76,7 +76,7 @@ mu0_scope_end
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_min_element1(_Tp, __first, __last, __d_result) \
-	mu9_parallel_min_element0(_Tp, __first, __last,  mu9_less, __d_result)
+	mu9_parallel_min_element00(_Tp, __first, __last,  mu9_less, __d_result)
 #	else
 #	define mu9_parallel_min_element1(_Tp, __first, __last, __d_result) \
 	mu9_sequencial_min_element1(_Tp, __first, __last, __d_result)
@@ -93,7 +93,7 @@ mu0_scope_end
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_min_element2(_Tp, __first, __last, __comp_fn, __d_result) \
-	mu9_parallel_min_element0(_Tp, __first, __last,  __comp_fn, __d_result)
+	mu9_parallel_min_element00(_Tp, __first, __last,  __comp_fn, __d_result)
 #	else
 #	define mu9_parallel_min_element2(_Tp, __first, __last, __comp_fn, __d_result) \
 	mu9_sequencial_min_element2(_Tp, __first, __last, __comp_fn, __d_result)
