@@ -33,6 +33,16 @@ mu0_scope_begin                           \
 mu0_scope_end
 
 //#!
+//#! macro<_Tp>(_Tp &* a, _Tp &* b) : void
+//#!
+#	define mu9_swap_value(_Tp, __a, __b)           \
+mu0_scope_begin                                   \
+	_Tp * __mu9_swap_value__c__ = *(__a);          \
+	*(__a)                      = *(__b);          \
+	*(__b)                      = __mu9_swap__c__; \
+mu0_scope_end
+
+//#!
 //#! macro<_Tp>(_Tp &** a, _Tp &** b) : void
 //#!
 #	define mu9_swap_pointer(_Tp, __a, __b)           \
@@ -45,7 +55,7 @@ mu0_scope_end
 //#!
 //#! macro<_Tp>(_Tp &* a, _Tp &* b) : void
 //#!
-#	define mu9_iter_swap(_Tp, __a, __b)             mu9_swap_pointer(_Tp, &(__a), &(__b))
+#	define mu9_iter_swap(_Tp, __a, __b) mu9_swap_value(_Tp, __a, __b)
 
 //#!
 //#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2 __first2, _Tp<return> &* __d_result) : void
