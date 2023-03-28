@@ -26,94 +26,94 @@ MU0_BEGIN_CDECL
 
 #	if MU0_HAVE_PARALLELIZE
 
-#	define mu9_parallel_bubble_sort00(_Tp, __first, __last, __comp_fn)                                                    \
-mu0_scope_begin                                                                                                          \
-	_Tp *                  __mu9_parallel_bubble_sort00__p__ = mu9_begin(_Tp, __first);                                   \
-	const mu0_distance_t   __mu9_parallel_bubble_sort00__n__ = mu9_const_distance(_Tp, __first, __last);                  \
-	      mu0_difference_t __mu9_parallel_bubble_sort00__x__ = mu0_const_difference(1);                                   \
-	while (__mu9_parallel_bubble_sort00__x__) {                                                                           \
-		__mu9_parallel_bubble_sort00__x__ = mu0_const_difference(0);                                                       \
-		__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_bubble_sort00__x__))                                    \
-		for (                                                                                                              \
-			  mu0_distance_t __mu9_parallel_bubble_sort00__i__  = mu0_const_distance(0)                                     \
-			;                __mu9_parallel_bubble_sort00__i__  < __mu9_parallel_bubble_sort00__n__ - mu0_const_distance(1) \
-			;                __mu9_parallel_bubble_sort00__i__ += mu0_const_distance(2)                                     \
-		) {                                                                                                                \
-			if (__comp_fn(_Tp                                                                                               \
-				, __mu9_parallel_bubble_sort00__p__[__mu9_parallel_bubble_sort00__i__    ]                                   \
-				, __mu9_parallel_bubble_sort00__p__[__mu9_parallel_bubble_sort00__i__ + 1]                                   \
-			)) {                                                                                                            \
-				mu9_iter_swap(_Tp                                                                                            \
-					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort00__p__, __mu9_parallel_bubble_sort00__i__)                   \
-					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort00__p__, (__mu9_parallel_bubble_sort00__i__ + 1))             \
-				);                                                                                                           \
-				++__mu9_parallel_bubble_sort00__x__;                                                                         \
-			}                                                                                                               \
-		}                                                                                                                  \
-		__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_bubble_sort00__x__))                                    \
-		for (                                                                                                              \
-			  mu0_distance_t __mu9_parallel_bubble_sort00__i__  = mu0_const_distance(1)                                     \
-			;                __mu9_parallel_bubble_sort00__i__  < __mu9_parallel_bubble_sort00__n__ - mu0_const_distance(1) \
-			;                __mu9_parallel_bubble_sort00__i__ += mu0_const_distance(2)                                     \
-		) {                                                                                                                \
-			if (__comp_fn(_Tp                                                                                               \
-				, __mu9_parallel_bubble_sort00__p__[__mu9_parallel_bubble_sort00__i__    ]                                   \
-				, __mu9_parallel_bubble_sort00__p__[__mu9_parallel_bubble_sort00__i__ + 1]                                   \
-			)) {                                                                                                            \
-				mu9_iter_swap(_Tp                                                                                            \
-					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort00__p__, __mu9_parallel_bubble_sort00__i__)                   \
-					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort00__p__, __mu9_parallel_bubble_sort00__i__ + 1)               \
-				);                                                                                                           \
-				++__mu9_parallel_bubble_sort00__x__;                                                                         \
-			}                                                                                                               \
-		}                                                                                                                  \
-	}                                                                                                                     \
+#	define mu9_parallel_bubble_sort00(_Tp, __first, __last, __comp_fn)                                                            \
+mu0_scope_begin                                                                                                                  \
+	_Tp *                  __mu9_parallel_bubble_sort00__p__ = mu9_begin(_Tp, __first);                                           \
+	const mu0_distance_t   __mu9_parallel_bubble_sort00__n__ = mu9_const_distance(_Tp, __first, __last);                          \
+	      mu0_difference_t __mu9_parallel_bubble_sort00__x__ = mu0_const_difference(1);                                           \
+	while (__mu9_parallel_bubble_sort00__x__) {                                                                                   \
+		__mu9_parallel_bubble_sort00__x__ = mu0_const_difference(0);                                                               \
+		__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_bubble_sort00__x__))                                            \
+		for (                                                                                                                      \
+			  mu0_distance_t __mu9_parallel_bubble_sort00__i__  = mu0_const_distance(0)                                             \
+			;                __mu9_parallel_bubble_sort00__i__  < __mu9_parallel_bubble_sort00__n__ - mu0_const_distance(1)         \
+			;                __mu9_parallel_bubble_sort00__i__ += mu0_const_distance(2)                                             \
+		) {                                                                                                                        \
+			if (__comp_fn(_Tp                                                                                                       \
+				, __mu9_parallel_bubble_sort00__p__[__mu9_parallel_bubble_sort00__i__    ]                                           \
+				, __mu9_parallel_bubble_sort00__p__[__mu9_parallel_bubble_sort00__i__ + 1]                                           \
+			)) {                                                                                                                    \
+				mu9_iter_swap(_Tp                                                                                                    \
+					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort00__p__, __mu9_parallel_bubble_sort00__i__)                           \
+					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort00__p__, (__mu9_parallel_bubble_sort00__i__ + mu0_const_distance(1))) \
+				);                                                                                                                   \
+				++__mu9_parallel_bubble_sort00__x__;                                                                                 \
+			}                                                                                                                       \
+		}                                                                                                                          \
+		__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_bubble_sort00__x__))                                            \
+		for (                                                                                                                      \
+			  mu0_distance_t __mu9_parallel_bubble_sort00__i__  = mu0_const_distance(1)                                             \
+			;                __mu9_parallel_bubble_sort00__i__  < __mu9_parallel_bubble_sort00__n__ - mu0_const_distance(1)         \
+			;                __mu9_parallel_bubble_sort00__i__ += mu0_const_distance(2)                                             \
+		) {                                                                                                                        \
+			if (__comp_fn(_Tp                                                                                                       \
+				, __mu9_parallel_bubble_sort00__p__[__mu9_parallel_bubble_sort00__i__    ]                                           \
+				, __mu9_parallel_bubble_sort00__p__[__mu9_parallel_bubble_sort00__i__ + 1]                                           \
+			)) {                                                                                                                    \
+				mu9_iter_swap(_Tp                                                                                                    \
+					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort00__p__, __mu9_parallel_bubble_sort00__i__)                           \
+					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort00__p__, (__mu9_parallel_bubble_sort00__i__ + mu0_const_distance(1))) \
+				);                                                                                                                   \
+				++__mu9_parallel_bubble_sort00__x__;                                                                                 \
+			}                                                                                                                       \
+		}                                                                                                                          \
+	}                                                                                                                             \
 mu0_scope_end
 
-#	define mu9_parallel_bubble_sort01(_Tp, __first, __last, __sort_op, __ctx)                                             \
-mu0_scope_begin                                                                                                          \
-	_Tp *                  __mu9_parallel_bubble_sort01__p__ = mu9_begin(_Tp, __first);                                   \
-	const mu0_distance_t   __mu9_parallel_bubble_sort01__n__ = mu9_const_distance(_Tp, __first, __last);                  \
-	      mu0_difference_t __mu9_parallel_bubble_sort01__x__ = mu0_const_difference(1);                                   \
-	while (__mu9_parallel_bubble_sort01__x__) {                                                                           \
-		__mu9_parallel_bubble_sort01__x__ = mu0_const_difference(0);                                                       \
-		__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_bubble_sort01__x__))                                    \
-		for (                                                                                                              \
-			  mu0_distance_t __mu9_parallel_bubble_sort01__i__  = mu0_const_distance(0)                                     \
-			;                __mu9_parallel_bubble_sort01__i__  < __mu9_parallel_bubble_sort01__n__ - mu0_const_distance(1) \
-			;                __mu9_parallel_bubble_sort01__i__ += mu0_const_distance(2)                                     \
-		) {                                                                                                                \
-			if (__sort_op(_Tp                                                                                               \
-				, __mu9_parallel_bubble_sort01__p__[__mu9_parallel_bubble_sort01__i__    ]                                   \
-				, __mu9_parallel_bubble_sort01__p__[__mu9_parallel_bubble_sort01__i__ + 1]                                   \
-				, __ctx                                                                                                      \
-			)) {                                                                                                            \
-				mu9_iter_swap(_Tp                                                                                            \
-					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort01__p__, __mu9_parallel_bubble_sort01__i__)                   \
-					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort01__p__, (__mu9_parallel_bubble_sort01__i__ + 1))             \
-				);                                                                                                           \
-				++__mu9_parallel_bubble_sort01__x__;                                                                         \
-			}                                                                                                               \
-		}                                                                                                                  \
-		__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_bubble_sort01__x__))                                    \
-		for (                                                                                                              \
-			  mu0_distance_t __mu9_parallel_bubble_sort01__i__  = mu0_const_distance(1)                                     \
-			;                __mu9_parallel_bubble_sort01__i__  < __mu9_parallel_bubble_sort01__n__ - mu0_const_distance(1) \
-			;                __mu9_parallel_bubble_sort01__i__ += mu0_const_distance(2)                                     \
-		) {                                                                                                                \
-			if (__sort_op(_Tp                                                                                               \
-				, __mu9_parallel_bubble_sort01__p__[__mu9_parallel_bubble_sort01__i__    ]                                   \
-				, __mu9_parallel_bubble_sort01__p__[__mu9_parallel_bubble_sort01__i__ + 1]                                   \
-				, __ctx                                                                                                      \
-			)) {                                                                                                            \
-				mu9_iter_swap(_Tp                                                                                            \
-					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort01__p__, __mu9_parallel_bubble_sort01__i__)                   \
-					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort01__p__, __mu9_parallel_bubble_sort01__i__ + 1)               \
-				);                                                                                                           \
-				++__mu9_parallel_bubble_sort01__x__;                                                                         \
-			}                                                                                                               \
-		}                                                                                                                  \
-	}                                                                                                                     \
+#	define mu9_parallel_bubble_sort01(_Tp, __first, __last, __sort_op, __ctx)                                                     \
+mu0_scope_begin                                                                                                                  \
+	_Tp *                  __mu9_parallel_bubble_sort01__p__ = mu9_begin(_Tp, __first);                                           \
+	const mu0_distance_t   __mu9_parallel_bubble_sort01__n__ = mu9_const_distance(_Tp, __first, __last);                          \
+	      mu0_difference_t __mu9_parallel_bubble_sort01__x__ = mu0_const_difference(1);                                           \
+	while (__mu9_parallel_bubble_sort01__x__) {                                                                                   \
+		__mu9_parallel_bubble_sort01__x__ = mu0_const_difference(0);                                                               \
+		__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_bubble_sort01__x__))                                            \
+		for (                                                                                                                      \
+			  mu0_distance_t __mu9_parallel_bubble_sort01__i__  = mu0_const_distance(0)                                             \
+			;                __mu9_parallel_bubble_sort01__i__  < __mu9_parallel_bubble_sort01__n__ - mu0_const_distance(1)         \
+			;                __mu9_parallel_bubble_sort01__i__ += mu0_const_distance(2)                                             \
+		) {                                                                                                                        \
+			if (__sort_op(_Tp                                                                                                       \
+				, __mu9_parallel_bubble_sort01__p__[__mu9_parallel_bubble_sort01__i__    ]                                           \
+				, __mu9_parallel_bubble_sort01__p__[__mu9_parallel_bubble_sort01__i__ + 1]                                           \
+				, __ctx                                                                                                              \
+			)) {                                                                                                                    \
+				mu9_iter_swap(_Tp                                                                                                    \
+					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort01__p__, __mu9_parallel_bubble_sort01__i__)                           \
+					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort01__p__, (__mu9_parallel_bubble_sort01__i__ + mu0_const_distance(1))) \
+				);                                                                                                                   \
+				++__mu9_parallel_bubble_sort01__x__;                                                                                 \
+			}                                                                                                                       \
+		}                                                                                                                          \
+		__mu0_pragma__(omp parallel for reduction(+:__mu9_parallel_bubble_sort01__x__))                                            \
+		for (                                                                                                                      \
+			  mu0_distance_t __mu9_parallel_bubble_sort01__i__  = mu0_const_distance(1)                                             \
+			;                __mu9_parallel_bubble_sort01__i__  < __mu9_parallel_bubble_sort01__n__ - mu0_const_distance(1)         \
+			;                __mu9_parallel_bubble_sort01__i__ += mu0_const_distance(2)                                             \
+		) {                                                                                                                        \
+			if (__sort_op(_Tp                                                                                                       \
+				, __mu9_parallel_bubble_sort01__p__[__mu9_parallel_bubble_sort01__i__    ]                                           \
+				, __mu9_parallel_bubble_sort01__p__[__mu9_parallel_bubble_sort01__i__ + 1]                                           \
+				, __ctx                                                                                                              \
+			)) {                                                                                                                    \
+				mu9_iter_swap(_Tp                                                                                                    \
+					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort01__p__, __mu9_parallel_bubble_sort01__i__)                           \
+					, mu9_next_n(_Tp, __mu9_parallel_bubble_sort01__p__, (__mu9_parallel_bubble_sort01__i__ + mu0_const_distance(1))) \
+				);                                                                                                                   \
+				++__mu9_parallel_bubble_sort01__x__;                                                                                 \
+			}                                                                                                                       \
+		}                                                                                                                          \
+	}                                                                                                                             \
 mu0_scope_end
 
 #	endif
