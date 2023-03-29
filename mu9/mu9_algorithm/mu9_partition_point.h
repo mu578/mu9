@@ -25,7 +25,7 @@ MU0_BEGIN_CDECL
 #	define mu9_partition_point(_Tp, __first, __last, __unary_pred, __d_result)                 \
 mu0_scope_begin                                                                               \
 	_Tp *          __mu9_partition_point__i__;                                                 \
-	mu0_distance_t __mu9_partition_point__k__= mu9_distance(_Tp, __first, __last);             \
+	mu0_distance_t __mu9_partition_point__k__ = mu9_distance(_Tp, __first, __last);            \
 	mu0_distance_t __mu9_partition_point__h__;                                                 \
 		while (__mu9_partition_point__k__ != mu0_const_distance(0)) {                           \
 			__mu9_partition_point__h__ = __mu9_partition_point__k__ / mu0_const_distance(2);     \
@@ -35,7 +35,7 @@ mu0_scope_begin                                                                 
 				__first                     = ++__mu9_partition_point__i__;                       \
 				__mu9_partition_point__k__ -= __mu9_partition_point__h__ + mu0_const_distance(1); \
 			} else {                                                                             \
-				__mu9_partition_point__k__ = __mu9_partition_point__h__;                          \
+				__mu9_partition_point__k__  = __mu9_partition_point__h__;                         \
 			}                                                                                    \
 		}                                                                                       \
 		__d_result = __first;                                                                   \
