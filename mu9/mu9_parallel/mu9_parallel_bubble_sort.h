@@ -152,7 +152,6 @@ mu0_scope_end
 	mu9_sequencial_bubble_sort2(_Tp, __first, __last, __comp_fn)
 #	endif
 
-
 //#!
 //#! macro<_Tp, execution=sequencial>(_Tp &* __first, _Tp &* __last, __sort_op, __ctx) : void
 //#!

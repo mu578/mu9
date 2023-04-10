@@ -86,7 +86,7 @@ mu0_scope_begin                                                                 
 				}                                                                                         \
 				break;                                                                                    \
 			} else {                                                                                     \
-				if (__comp_fn(*__first, *__mu9_minmax_element2__k__)) {                                   \
+				if (__comp_fn(_Tp, *__first, *__mu9_minmax_element2__k__)) {                              \
 					if (__comp_fn(_Tp, *__first, *__mu9_minmax_element2__i__)) {                           \
 						__mu9_minmax_element2__i__ = __first;                                               \
 					}                                                                                      \

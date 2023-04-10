@@ -25,7 +25,7 @@ MU0_BEGIN_CDECL
 #	define mu9_set_symmetric_difference1(_Tp, __first1, __last1, __first2, __last2, __d_first) \
 mu0_scope_begin                                                                               \
 	mu0_bool_t __mu9_set_symmetric_difference1__x__ = mu0_false;                               \
-	while (__first1!= __last1) {                                                               \
+	while (__first1 != __last1) {                                                              \
 		if (__first2 == __last2) {                                                              \
 			mu9_copy(_Tp, __first1, __last1, __d_first);                                         \
 			__mu9_set_symmetric_difference1__x__ = mu0_true;                                     \
@@ -50,7 +50,7 @@ mu0_scope_end
 #	define mu9_set_symmetric_difference2(_Tp, __first1, __last1, __first2, __last2, __d_first, __comp_fn) \
 mu0_scope_begin                                                                                          \
 	mu0_bool_t __mu9_set_symmetric_difference2__x__ = mu0_false;                                          \
-	while (__first1!= __last1) {                                                                          \
+	while (__first1 != __last1) {                                                                         \
 		if (__first2 == __last2) {                                                                         \
 			mu9_copy(_Tp, __first1, __last1, __d_first);                                                    \
 			__mu9_set_symmetric_difference2__x__ = mu0_true;                                                \

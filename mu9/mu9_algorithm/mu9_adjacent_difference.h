@@ -30,7 +30,7 @@ mu0_scope_begin                                                                 
 		__mu9_adjacent_difference1__v__ = *__first;                                                             \
 		*__d_first                      = __mu9_adjacent_difference1__v__;                                      \
 		while (++__first != __last) {                                                                           \
-		__mu9_adjacent_difference1__w__    = *__first;                                                          \
+			__mu9_adjacent_difference1__w__ = *__first;                                                          \
 			*++__d_first                    = __mu9_adjacent_difference1__w__ - __mu9_adjacent_difference1__v__; \
 			__mu9_adjacent_difference1__v__ = __mu9_adjacent_difference1__w__;                                   \
 		}                                                                                                       \
@@ -46,7 +46,7 @@ mu0_scope_begin                                                                 
 		__mu9_adjacent_difference2__v__ = *__first;                                \
 		*__d_first                      = __mu9_adjacent_difference2__v__;         \
 		while (++__first != __last) {                                              \
-		__mu9_adjacent_difference2__w__    = *__first;                             \
+			__mu9_adjacent_difference2__w__ = *__first;                             \
 			*++__d_first                    = __binary_op(_Tp                       \
 				, __mu9_adjacent_difference2__w__                                    \
 				, __mu9_adjacent_difference2__v__                                    \
