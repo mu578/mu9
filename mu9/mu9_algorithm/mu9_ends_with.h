@@ -28,8 +28,8 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_ends_with1__n__ = mu9_const_distance(_Tp, __first1, __last1);   \
 	const mu0_distance_t __mu9_ends_with1__k__ = mu9_const_distance(_Tp, __first2, __last2);   \
 	      mu0_distance_t __mu9_ends_with1__m__ = mu0_const_distance(0);                        \
-	const _Tp *          __mu9_ends_with1__i__;                                                \
-	const _Tp *          __mu9_ends_with1__j__;                                                \
+	      _Tp *          __mu9_ends_with1__i__;                                                \
+	      _Tp *          __mu9_ends_with1__j__;                                                \
 	if (__mu9_ends_with1__n__ && __mu9_ends_with1__k__ >= __mu9_ends_with1__n__) {             \
 		__mu9_ends_with1__i__ = __last1;                                                        \
 		__mu9_ends_with1__j__ = __last2;                                                        \
@@ -54,8 +54,8 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_ends_with2__n__ = mu9_const_distance(_Tp, __first1, __last1);    \
 	const mu0_distance_t __mu9_ends_with2__k__ = mu9_const_distance(_Tp, __first2, __last2);    \
 	      mu0_distance_t __mu9_ends_with2__m__ = mu0_const_distance(0);                         \
-	const _Tp *          __mu9_ends_with2__i__;                                                 \
-	const _Tp *          __mu9_ends_with2__j__;                                                 \
+	      _Tp *          __mu9_ends_with2__i__;                                                 \
+	      _Tp *          __mu9_ends_with2__j__;                                                 \
 	if (__mu9_ends_with2__n__ && __mu9_ends_with2__k__ >= __mu9_ends_with2__n__) {              \
 		__mu9_ends_with2__i__ = __last1;                                                         \
 		__mu9_ends_with2__j__ = __last2;                                                         \
