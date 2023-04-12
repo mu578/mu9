@@ -3,12 +3,13 @@
 #include <mu9/mu9_numeric.h>
 #include <mu9/mu9_iterator.h>
 #include <mu0/mu0_floating.h>
+#include <mu0/mu0_string.h>
 
 __mu0_static_inline__
 void argsort(
-	  const mu0_uint32_t n
-	, const mu0_fp32_t * x
-	, mu0_uint32_t *     indeces
+	  const mu0_uint32_t   n
+	, const mu0_fp32_t *   x
+	,       mu0_uint32_t * indeces
 ) {
 	      mu0_uint32_t * first   = mu9_begin      (mu0_uint32_t, indeces);
 	      mu0_uint32_t * last    = mu9_end        (mu0_uint32_t, indeces, n);
@@ -16,6 +17,22 @@ void argsort(
 	const mu0_fp32_t   * s_first = mu9_const_begin(mu0_fp32_t, x);
 
 	mu9_argument_sort1(mu0_infer(*first), first, last, start, s_first);
+}
+
+__mu0_static_inline__
+mu0_bool_t endswith(
+	  const mu0_uint32_t   n
+	, const mu0_tchar8_t * src
+	, const mu0_tchar8_t * haystack
+) {
+	const mu0_tchar8_t * first1 = mu9_const_begin(mu0_tchar8_t, haystack);
+	const mu0_tchar8_t * last1  = mu9_const_end  (mu0_tchar8_t, haystack, n);
+	const mu0_tchar8_t * first2 = mu9_const_begin(mu0_tchar8_t, src);
+	const mu0_tchar8_t * last2  = mu9_const_end  (mu0_tchar8_t, src, n);
+	      mu0_bool_t d_result;
+
+	mu9_ends_with1(mu0_infer(*first1), first1, last1, first2, last2, d_result);
+	return d_result;
 }
 
 int main(int argc, const char * argv[])
