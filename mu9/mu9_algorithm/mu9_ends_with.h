@@ -63,7 +63,7 @@ mu0_scope_begin                                                                 
 		--__mu9_ends_with2__i__;                                                                 \
 		--__mu9_ends_with2__j__;                                                                 \
 		for (; __mu9_ends_with2__m__ < __mu9_ends_with2__n__; (void) __mu9_ends_with2__m__++) {  \
-			if (!__binary_pred(_Tp, *__mu9_ends_with2__i__-- == *__mu9_ends_with2__j__--)) {      \
+			if (!__binary_pred(_Tp, *__mu9_ends_with2__i__--, *__mu9_ends_with2__j__--)) {        \
 				__mu9_ends_with2__x__ = mu0_false;                                                 \
 				break;                                                                             \
 			}                                                                                     \
