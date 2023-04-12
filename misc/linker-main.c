@@ -21,15 +21,17 @@ void argsort(
 
 __mu0_static_inline__
 mu0_bool_t endswith(
-	  const mu0_uint32_t   n
-	, const mu0_tchar8_t * src
+	  const mu0_tchar8_t * src
 	, const mu0_tchar8_t * haystack
 ) {
-	const mu0_tchar8_t * first1 = mu9_const_begin(mu0_tchar8_t, haystack);
-	const mu0_tchar8_t * last1  = mu9_const_end  (mu0_tchar8_t, haystack, n);
-	const mu0_tchar8_t * first2 = mu9_const_begin(mu0_tchar8_t, src);
-	const mu0_tchar8_t * last2  = mu9_const_end  (mu0_tchar8_t, src, n);
-	      mu0_bool_t d_result;
+	      mu0_bool_t     d_result;
+	const mu0_usize_t    n      = mu0_string8_size(src);
+	const mu0_usize_t    m      = mu0_string8_size(haystack);
+
+	const mu0_tchar8_t * first1 = mu9_const_begin (mu0_tchar8_t, haystack);
+	const mu0_tchar8_t * last1  = mu9_const_end   (mu0_tchar8_t, haystack, m);
+	const mu0_tchar8_t * first2 = mu9_const_begin (mu0_tchar8_t, src);
+	const mu0_tchar8_t * last2  = mu9_const_end   (mu0_tchar8_t, src, n);
 
 	mu9_ends_with1(mu0_infer(*first1), first1, last1, first2, last2, d_result);
 	return d_result;
