@@ -51,8 +51,6 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_ends_with2__k__ = mu9_const_distance(_Tp, __first2, __last2);    \
 	      mu0_distance_t __mu9_ends_with2__m__ = mu0_const_distance(0);                         \
 	if (__mu9_ends_with2__n__ && __mu9_ends_with2__k__ >= __mu9_ends_with2__n__) {              \
-		__last1 = __last1;                                                                       \
-		__last2 = __last2;                                                                       \
 		__mu9_ends_with2__x__ = mu0_true;                                                        \
 		--__last1;                                                                               \
 		--__last2;                                                                               \

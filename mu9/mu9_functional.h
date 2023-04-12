@@ -39,22 +39,6 @@ MU0_BEGIN_CDECL
 	mu9_plus(_Tp, __c, mu9_multiplies(_Tp, __a, __b))
 
 //#!
-//#! macro<>(& __a, & __b) : _Tp
-//#!
-#	define mu9_infer_plus(__a, __b)                  mu9_plus(void, __a, __b)
-#	define mu9_infer_minus(__a, __b)                 mu9_minus(void, __a, __b)
-#	define mu9_infer_multiplies(__a, __b)            mu9_multiplies(void, __a, __b)
-#	define mu9_infer_divides(__a, __b)               mu9_divides(void, __a, __b)
-#	define mu9_infer_modulus(__a, __b)               mu9_modulus(void, __a, __b)
-#	define mu9_infer_negate(__a)                     mu9_negate(void, __a, __b)
-
-//#!
-//#! macro<>(& __c, & __a, & __b) : _Tp
-//#!
-#	define mu9_infer_multiply_accumulate(__c, __a, __b) \
-	mu9_multiply_accumulate(void, __c, __a, __b)
-
-//#!
 //#! macro<_Tp>(& __a, & __b) : bool
 //#!
 #	define mu9_logical_and(_Tp, __a, __b)            (((__a) && (__b)) ? mu0_true : mu0_false)
@@ -64,29 +48,12 @@ MU0_BEGIN_CDECL
 #	define mu9_logical_not(_Tp, __a)                 !(__a)
 
 //#!
-//#! macro<>(& __a, & __b) : bool
-//#!
-#	define mu9_infer_logical_and(__a, __b)           mu9_logical_and(void, __a, __b)
-#	define mu9_infer_logical_not_and(__a, __b)       mu9_logical_not_and(void, __a, __b)
-#	define mu9_infer_logical_or(__a, __b)            mu9_logical_or(void, __a, __b)
-#	define mu9_infer_logical_not_or(__a, __b)        mu9_logical_not_or(void, __a, __b)
-#	define mu9_infer_logical_not(__a)                mu9_logical_not(void, __a)
-
-//#!
 //#! macro<_Tp>(& __a, & __b) : _Tp
 //#!
 #	define mu9_bit_and(_Tp, __a, __b)                ((__a) & (__b))
 #	define mu9_bit_or(_Tp, __a, __b)                 ((__a) | (__b))
 #	define mu9_bit_xor(_Tp, __a, __b)                ((__a) ^ (__b))
 #	define mu9_bit_not(_Tp, __a)                     ~(__a)
-
-//#!
-//#! macro<>(& __a, & __b) : _Tp
-//#!
-#	define mu9_infer_bit_and(__a, __b)               mu9_bit_and(void, __a, __b)
-#	define mu9_infer_bit_or(__a, __b)                mu9_bit_or(void, __a, __b)
-#	define mu9_infer_bit_xor(__a, __b)               mu9_bit_xor(void, __a, __b)
-#	define mu9_infer_bit_not(__a)                    mu9_bit_not(void, __a)
 
 //#!
 //#! macro<_Tp>(& __a, & __b) : bool
@@ -102,21 +69,6 @@ MU0_BEGIN_CDECL
 #	define mu9_greater(_Tp, __a, __b)                mu9_greater_than(_Tp, __a, __b)
 #	define mu9_less_equal(_Tp, __a, __b)             mu9_less_than_or_equal(_Tp, __a, __b)
 #	define mu9_greater_equal(_Tp, __a, __b)          mu9_greater_than_or_equal(_Tp, __a, __b)
-
-//#!
-//#! macro<>(& __a, & __b) : bool
-//#!
-#	define mu9_infer_less_than(__a, __b)             mu9_less_than(void, __a, __b)
-#	define mu9_infer_less_than_or_equal(__a, __b)    mu9_less_than_or_equal(void, __a, __b)
-#	define mu9_infer_greater_than(__a, __b)          mu9_greater_than(void, __a, __b)
-#	define mu9_infer_greater_than_or_equal(__a, __b) mu9_greater_than_or_equal(void, __a, __b)
-#	define mu9_infer_equal_to(__a, __b)              mu9_equal_to(void, __a, __b)
-#	define mu9_infer_not_equal_to(__a, __b)          mu9_not_equal_to(void, __a, __b)
-
-#	define mu9_infer_less(__a, __b)                  mu9_less(void, __a, __b)
-#	define mu9_infer_greater(__a, __b)               mu9_greater(void, __a, __b)
-#	define mu9_infer_less_equal(__a, __b)            mu9_less_equal(void, __a, __b)
-#	define mu9_infer_greater_equal(__a, __b)         mu9_greater_equal(void, __a, __b)
 
 #	define mu9_not_fn(__fn) \
 	!__fn

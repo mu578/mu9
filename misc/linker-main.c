@@ -60,12 +60,12 @@ int main(int argc, const char * argv[])
 	mu0_unused(argc);
 	mu0_unused(argv);
 
-	first0 = mu9_infer_begin(v0);
-	mu9_infer_advance_n(first0, 2);
+	first0 = mu9_begin(mu0_sint32_t, v0);
+	mu9_advance_n(mu0_sint32_t, first0, 2);
 	mu0_console_log("%d \n", *first0);
 
-	first0 = mu9_infer_end(v0, 3);
-	mu9_infer_advance_n(first0, -2);
+	first0 = mu9_end(mu0_sint32_t, v0, 3);
+	mu9_advance_n(mu0_sint32_t, first0, -2);
 	mu0_console_log("%d \n", *first0);
 
 	mu9_argument_sort1(mu0_uint32_t
@@ -87,7 +87,11 @@ int main(int argc, const char * argv[])
 	}
 	mu0_console_log("\n");
 
-	mu0_console_info("%d %u\n", mu9_gcd_const(mu0_sint32_t, 2048, 6), mu9_infer_gcd(-2048, 6));
+	mu0_console_info("%d %u\n"
+		, mu9_gcd_constexpr(mu0_sint32_t, 2048, 6)
+		, mu9_gcd(mu0_uint32_t, -2048, 6)
+	);
+
 	mu0_console_info("%d\n", endswith(haystack, needle));
 
 	return 0;
