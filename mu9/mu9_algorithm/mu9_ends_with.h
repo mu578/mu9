@@ -30,7 +30,7 @@ mu0_scope_begin                                                                 
 	      mu0_distance_t __mu9_ends_with1__m__ = mu0_const_distance(0);                        \
 	      _Tp *          __mu9_ends_with1__i__;                                                \
 	      _Tp *          __mu9_ends_with1__j__;                                                \
-	if (__mu9_ends_with1__k__ >= __mu9_ends_with1__n__) {                                      \
+	if (__mu9_ends_with1__n__ && __mu9_ends_with1__k__ >= __mu9_ends_with1__n__) {             \
 		__mu9_ends_with1__i__ = __last1;                                                        \
 		__mu9_ends_with1__j__ = __last2;                                                        \
 		__mu9_ends_with1__x__ = mu0_true;                                                       \
@@ -56,7 +56,7 @@ mu0_scope_begin                                                                 
 	      mu0_distance_t __mu9_ends_with2__m__ = mu0_const_distance(0);                         \
 	      _Tp *          __mu9_ends_with2__i__;                                                 \
 	      _Tp *          __mu9_ends_with2__j__;                                                 \
-	if (__mu9_ends_with2__k__ >= __mu9_ends_with2__n__) {                                       \
+	if (__mu9_ends_with2__n__ && __mu9_ends_with2__k__ >= __mu9_ends_with2__n__) {              \
 		__mu9_ends_with2__i__ = __last1;                                                         \
 		__mu9_ends_with2__j__ = __last2;                                                         \
 		__mu9_ends_with2__x__ = mu0_true;                                                        \

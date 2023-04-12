@@ -27,7 +27,7 @@ mu0_scope_begin                                                                 
 	      mu0_bool_t     __mu9_starts_with1__x__ = mu0_false;                                  \
 	const mu0_distance_t __mu9_starts_with1__n__ = mu9_const_distance(_Tp, __first1, __last1); \
 	const mu0_distance_t __mu9_starts_with1__k__ = mu9_const_distance(_Tp, __first2, __last2); \
-	if (__mu9_starts_with1__k__ >= __mu9_starts_with1__n__) {                                  \
+	if (__mu9_starts_with1__n__ && __mu9_starts_with1__k__ >= __mu9_starts_with1__n__) {       \
 		__mu9_starts_with1__x__ = mu0_true;                                                     \
 		while (__first1 != __last1) {                                                           \
 			if (!(*__first1++ == *__first2++)) {                                                 \
@@ -44,7 +44,7 @@ mu0_scope_begin                                                                 
 	      mu0_bool_t     __mu9_starts_with2__x__ = mu0_false;                                     \
 	const mu0_distance_t __mu9_starts_with2__n__ = mu9_const_distance(_Tp, __first1, __last1);    \
 	const mu0_distance_t __mu9_starts_with2__k__ = mu9_const_distance(_Tp, __first2, __last2);    \
-	if (__mu9_starts_with2__k__ >= __mu9_starts_with2__n__) {                                     \
+	if (__mu9_starts_with2__n__ && __mu9_starts_with2__k__ >= __mu9_starts_with2__n__) {          \
 		__mu9_starts_with2__x__ = mu0_true;                                                        \
 		while (__first1 != __last1) {                                                              \
 			if (!__binary_pred(_Tp, *__first1++, *__first2++)) {                                    \
