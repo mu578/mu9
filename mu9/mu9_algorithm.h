@@ -25,6 +25,7 @@
 #	include <mu9/mu9_algorithm/mu9_copy.h>
 #	include <mu9/mu9_algorithm/mu9_count.h>
 #	include <mu9/mu9_algorithm/mu9_duplicate.h>
+#	include <mu9/mu9_algorithm/mu9_ends_with.h>
 #	include <mu9/mu9_algorithm/mu9_equal_range.h>
 #	include <mu9/mu9_algorithm/mu9_equal.h>
 #	include <mu9/mu9_algorithm/mu9_fill.h>
