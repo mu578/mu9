@@ -62,6 +62,7 @@
 #	include <mu9/mu9_algorithm/mu9_shuffle.h>
 #	include <mu9/mu9_algorithm/mu9_sort_heap.h>
 #	include <mu9/mu9_algorithm/mu9_stable_sort.h>
+#	include <mu9/mu9_algorithm/mu9_starts_with.h>
 #	include <mu9/mu9_algorithm/mu9_swap.h>
 #	include <mu9/mu9_algorithm/mu9_transform_reduce.h>
 #	include <mu9/mu9_algorithm/mu9_transform.h>
