@@ -42,7 +42,7 @@ mu0_scope_begin                                                                 
 				break;                                                                            \
 			}                                                                                    \
 		}                                                                                       \
-		__first1 = __mu9_ends_with1__i__;                                                       \
+		__first1 = !__mu9_ends_with1__x__ ? __mu9_ends_with1__i__ : __last1;                    \
 		__first2 = __mu9_ends_with1__j__;                                                       \
 	}                                                                                          \
 	__d_result = __mu9_ends_with1__x__;                                                        \
@@ -68,7 +68,7 @@ mu0_scope_begin                                                                 
 				break;                                                                             \
 			}                                                                                     \
 		}                                                                                        \
-		__first1 = __mu9_ends_with2__i__;                                                        \
+		__first1 = !__mu9_ends_with2__x__ ? __mu9_ends_with2__i__ : __last1;                     \
 		__first2 = __mu9_ends_with2__j__;                                                        \
 	}                                                                                           \
 	__d_result = __mu9_ends_with2__x__;                                                         \
