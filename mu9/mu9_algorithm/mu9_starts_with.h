@@ -47,7 +47,7 @@ mu0_scope_begin                                                                 
 	if (__mu9_mu9_starts_with2__k__ >= __mu9_mu9_starts_with2__n__) {                              \
 		__mu9_mu9_starts_with2__x__ = mu0_true;                                                     \
 		while (__first1 != __last1) {                                                               \
-			if (!__binary_pred(*__first1++, *__first2++)) {                                          \
+			if (!__binary_pred(_Tp, *__first1++, *__first2++)) {                                     \
 				__mu9_mu9_starts_with2__x__ = mu0_false;                                              \
 				break;                                                                                \
 			}                                                                                        \
