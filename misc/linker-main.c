@@ -10,32 +10,30 @@ void argsort(
 	, const mu0_fp32_t * x
 	, mu0_uint32_t *     indeces
 ) {
-	      mu0_uint32_t * first   = mu9_infer_begin(indeces);
-	      mu0_uint32_t * last    = mu9_infer_end  (indeces, n);
+	      mu0_uint32_t * first   = mu9_begin      (mu0_uint32_t, indeces);
+	      mu0_uint32_t * last    = mu9_end        (mu0_uint32_t, indeces, n);
 	      mu0_uint32_t   start   = 0;
-	const mu0_fp32_t   * s_first = mu9_infer_begin(x);
+	const mu0_fp32_t   * s_first = mu9_const_begin(mu0_fp32_t, x);
 
 	mu9_argument_sort1(mu0_infer(*first), first, last, start, s_first);
 }
 
 int main(int argc, const char * argv[])
 {
-	mu0_sint32_t   v0[3]  = { 3, 1, 4 };
-	mu0_distance_t i      = 0;
-	mu0_uint32_t   v1[10] = { 0 };
-	mu0_fp32_t     v2[10] = {
-		   3.333f, 4.300f
-		,  5.333f, 8.299f
-		, -9.300f, 8.300f
-		,  1.333f, 4.333f
-		,  2.300f, 1.300f
-	};
-
-	mu0_sint32_t * first0;
-
-	mu0_uint32_t * const first1 = mu9_infer_begin(v1);
-	mu0_uint32_t * const last1  = mu9_infer_end  (v1, 10);
-	mu0_fp32_t   * const first2 = mu9_infer_begin(v2);
+	      mu0_sint32_t   v0[3]  = { 3, 1, 4 };
+	      mu0_distance_t i      = 0;
+	      mu0_uint32_t   v1[10] = { 0 };
+	      mu0_fp32_t     v2[10] = {
+	      	   3.333f, 4.300f
+	      	,  5.333f, 8.299f
+	      	, -9.300f, 8.300f
+	      	,  1.333f, 4.333f
+	      	,  2.300f, 1.300f
+	      };
+	      mu0_sint32_t * first0;
+	      mu0_uint32_t * first1 = mu9_begin      (mu0_uint32_t, v1);
+	      mu0_uint32_t * last1  = mu9_end        (mu0_uint32_t, v1, 10);
+	const mu0_fp32_t   * first2 = mu9_const_begin(mu0_fp32_t, v2);
 
 	mu0_unused(argc);
 	mu0_unused(argv);
