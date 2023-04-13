@@ -17,8 +17,8 @@
 
 #include <mu0/mu0_definition.h>
 
-#ifndef MU9_DUPLICATE_ELEMENT_H
-#define MU9_DUPLICATE_ELEMENT_H 1
+#ifndef MU9_DUPLICATE_H
+#define MU9_DUPLICATE_H 1
 
 MU0_BEGIN_CDECL
 
@@ -60,6 +60,6 @@ mu0_scope_end
 
 MU0_END_CDECL
 
-#endif /* !MU9_DUPLICATE_ELEMENT_H */
+#endif /* !MU9_DUPLICATE_H */
 
 /* EOF */
