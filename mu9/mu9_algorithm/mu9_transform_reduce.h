@@ -64,7 +64,7 @@ mu0_scope_end
 mu0_scope_begin                                                                                           \
 	_Tp __mu9_transform_reduce_if2__v__ = mu0_const_cast(_Tp, __init);                                     \
 	for (; __first1 != __last1; ++__first1, (void) ++__first2) {                                           \
-		if (__binary_pred(*__first1, *__first2)) {                                                          \
+		if (__binary_pred(_Tp, *__first1, *__first2)) {                                                     \
 			__mu9_transform_reduce_if2__v__ = __mu9_transform_reduce_if2__v__ + ((*__first1) * (*__first2)); \
 		}                                                                                                   \
 	}                                                                                                      \

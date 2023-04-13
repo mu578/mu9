@@ -50,7 +50,7 @@ mu0_scope_begin                                                                 
 		if (__comp_fn(_Tp, *__first1, *__first2)) {                                              \
 			*__d_first++ = *__first1++;                                                           \
 		} else {                                                                                 \
-			if (!__comp_fn(*__first2, *__first1)) {                                               \
+			if (!__comp_fn(Tp, *__first2, *__first1)) {                                           \
 				++__first1;                                                                        \
 			}                                                                                     \
 			++__first2;                                                                           \
