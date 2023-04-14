@@ -59,8 +59,8 @@ mu0_scope_end
 
 #	define mu9_heap_siftdown2(_Tp, __first, __last, __len, __start, __comp_fn, __move_op)                             \
 mu0_scope_begin                                                                                                      \
-	_Tp *                __mu9_heap_siftdown2__i__;                                                                   \
-	_Tp                  __mu9_heap_siftdown2__v__;                                                                   \
+	      _Tp *          __mu9_heap_siftdown2__i__;                                                                   \
+	      _Tp            __mu9_heap_siftdown2__v__;                                                                   \
 	      mu0_distance_t __mu9_heap_siftdown2__c__ = mu9_const_distance(_Tp, __first, __start);                       \
 	const mu0_distance_t __mu9_heap_siftdown2__l__ = mu0_const_distance(__len);                                       \
 	      mu0_distance_t __mu9_heap_siftdown2__d__;                                                                   \
