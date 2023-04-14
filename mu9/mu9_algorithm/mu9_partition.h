@@ -25,7 +25,7 @@ MU0_BEGIN_CDECL
 
 #	define mu9_partition1(_Tp, __first, __last, __unary_pred, __d_result)          \
 mu0_scope_begin                                                                   \
-	_Tp * __mu9_partition1__i__;                                                   \
+	_Tp *      __mu9_partition1__i__;                                              \
 	mu0_bool_t __mu9_partition1__x__ = mu0_false;                                  \
 	__d_result                       = __first;                                    \
 	while (1) {                                                                    \
@@ -53,7 +53,7 @@ mu0_scope_end
 
 #	define mu9_partition2(_Tp, __first, __last, __unary_pred, __swap_op, __d_result) \
 mu0_scope_begin                                                                     \
-	_Tp * __mu9_partition2__i__;                                                     \
+	_Tp *      __mu9_partition2__i__;                                                \
 	mu0_bool_t __mu9_partition2__x__ = mu0_false;                                    \
 	__d_result                       = __first;                                      \
 	while (1) {                                                                      \

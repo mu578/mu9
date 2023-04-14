@@ -24,7 +24,7 @@ MU0_BEGIN_CDECL
 
 #	define mu9_upper_bound1(_Tp, __first, __last, __value, __d_result)                   \
 mu0_scope_begin                                                                         \
-	_Tp * __mu9_upper_bound1__i__;                                                       \
+	_Tp *          __mu9_upper_bound1__i__;                                              \
 	mu0_distance_t __mu9_upper_bound1__c__= mu9_distance(_Tp, __first, __last);          \
 	mu0_distance_t __mu9_upper_bound1__n__;                                              \
 	while (__mu9_upper_bound1__c__ > mu0_const_distance(0)) {                            \
@@ -62,7 +62,7 @@ mu0_scope_end
 
 #	define mu9_upper_bound3(_Tp, __first, __last, __value, __sort_op, __ctx, __d_result) \
 mu0_scope_begin                                                                         \
-	_Tp * __mu9_upper_bound3__i__;                                                       \
+	_Tp *          __mu9_upper_bound3__i__;                                              \
 	mu0_distance_t __mu9_upper_bound3__c__= mu9_distance(_Tp, __first, __last);          \
 	mu0_distance_t __mu9_upper_bound3__n__;                                              \
 	while (__mu9_upper_bound3__c__ > mu0_const_distance(0)) {                            \

@@ -28,9 +28,9 @@ MU0_BEGIN_CDECL
 
 #	define mu9_parallel_minmax_element00(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)                                                   \
 mu0_scope_begin                                                                                                                                      \
-	_Tp                  __mu9_parallel_minmax_element00__v0__ = *__first;                                                                            \
-	_Tp                  __mu9_parallel_minmax_element00__v1__ = *__first;                                                                            \
-	_Tp *                __mu9_parallel_minmax_element00__p__  = mu9_begin(_Tp, __first);                                                             \
+	      _Tp            __mu9_parallel_minmax_element00__v0__ = *__first;                                                                            \
+	      _Tp            __mu9_parallel_minmax_element00__v1__ = *__first;                                                                            \
+	      _Tp *          __mu9_parallel_minmax_element00__p__  = mu9_begin(_Tp, __first);                                                             \
 	const mu0_distance_t __mu9_parallel_minmax_element00__n__  = mu9_const_distance(_Tp, __first, __last);                                            \
 	      mu0_distance_t __mu9_parallel_minmax_element00__k0__ = mu0_const_distance(0);                                                               \
 	      mu0_distance_t __mu9_parallel_minmax_element00__k1__ = mu0_const_distance(0);                                                               \

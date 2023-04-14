@@ -24,8 +24,8 @@ MU0_BEGIN_CDECL
 
 #	define mu9_bubble_sort1(_Tp, __first, __last)                                                              \
 mu0_scope_begin                                                                                               \
-	_Tp * __mu9_bubble_sort1__j__;                                                                             \
-	_Tp * __mu9_bubble_sort1__k__;                                                                             \
+	_Tp *      __mu9_bubble_sort1__j__;                                                                        \
+	_Tp *      __mu9_bubble_sort1__k__;                                                                        \
 	mu0_bool_t __mu9_bubble_sort1__x__ = mu0_false;                                                            \
 	if (__first != __last) {                                                                                   \
 		while (!__mu9_bubble_sort1__x__) {                                                                      \
@@ -45,8 +45,8 @@ mu0_scope_end
 
 #	define mu9_bubble_sort2(_Tp, __first, __last, __comp_fn)                                                   \
 mu0_scope_begin                                                                                               \
-	_Tp * __mu9_bubble_sort2__j__;                                                                             \
-	_Tp * __mu9_bubble_sort2__k__;                                                                             \
+	_Tp *       __mu9_bubble_sort2__j__;                                                                       \
+	_Tp *       __mu9_bubble_sort2__k__;                                                                       \
 	mu0_bool_t __mu9_bubble_sort2__x__ = mu0_false;                                                            \
 	if (__first != __last) {                                                                                   \
 		while (!__mu9_bubble_sort2__x__) {                                                                      \
@@ -66,8 +66,8 @@ mu0_scope_end
 
 #	define mu9_bubble_sort3(_Tp, __first, __last, __sort_op, __ctx)                                            \
 mu0_scope_begin                                                                                               \
-	_Tp * __mu9_bubble_sort3__j__;                                                                             \
-	_Tp * __mu9_bubble_sort3__k__;                                                                             \
+	_Tp *      __mu9_bubble_sort3__j__;                                                                        \
+	_Tp *      __mu9_bubble_sort3__k__;                                                                        \
 	mu0_bool_t __mu9_bubble_sort3__x__ = mu0_false;                                                            \
 	if (__first != __last) {                                                                                   \
 		while (!__mu9_bubble_sort3__x__) {                                                                      \

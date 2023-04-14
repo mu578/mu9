@@ -32,7 +32,7 @@ mu0_scope_begin                                                                 
 		__mu9_ends_with1__x__ = mu0_true;                                                       \
 		--__last1;                                                                              \
 		--__last2;                                                                              \
-		for (; __mu9_ends_with1__m__ < __mu9_ends_with1__n__; (void) __mu9_ends_with1__m__++) { \
+		for (; __mu9_ends_with1__m__ < __mu9_ends_with1__n__; (void) ++__mu9_ends_with1__m__) { \
 			if (!(*__last1-- == *__last2--)) {                                                   \
 				__mu9_ends_with1__x__ = mu0_false;                                                \
 				break;                                                                            \
@@ -54,7 +54,7 @@ mu0_scope_begin                                                                 
 		__mu9_ends_with2__x__ = mu0_true;                                                        \
 		--__last1;                                                                               \
 		--__last2;                                                                               \
-		for (; __mu9_ends_with2__m__ < __mu9_ends_with2__n__; (void) __mu9_ends_with2__m__++) {  \
+		for (; __mu9_ends_with2__m__ < __mu9_ends_with2__n__; (void) ++__mu9_ends_with2__m__) {  \
 			if (!__binary_pred(_Tp, *__last1--, *__last2--)) {                                    \
 				__mu9_ends_with2__x__ = mu0_false;                                                 \
 				break;                                                                             \

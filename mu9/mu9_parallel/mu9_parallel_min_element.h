@@ -28,8 +28,8 @@ MU0_BEGIN_CDECL
 
 #	define mu9_parallel_min_element00(_Tp, __first, __last, __comp_fn, __d_result)                                                          \
 mu0_scope_begin                                                                                                                            \
-	_Tp                  __mu9_parallel_min_element00__v__ = *__first;                                                                      \
-	_Tp *                __mu9_parallel_min_element00__p__ = mu9_begin(_Tp, __first);                                                       \
+	      _Tp            __mu9_parallel_min_element00__v__ = *__first;                                                                      \
+	      _Tp *          __mu9_parallel_min_element00__p__ = mu9_begin(_Tp, __first);                                                       \
 	const mu0_distance_t __mu9_parallel_min_element00__n__ = mu9_const_distance(_Tp, __first, __last);                                      \
 	      mu0_distance_t __mu9_parallel_min_element00__k__ = mu0_const_distance(0);                                                         \
 	if (__first != __last) {                                                                                                                \

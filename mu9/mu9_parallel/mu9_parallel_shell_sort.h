@@ -28,7 +28,7 @@ MU0_BEGIN_CDECL
 
 #	define mu9_parallel_shell_sort00(_Tp, __first, __last, __comp_fn)                                                                       \
 mu0_scope_begin                                                                                                                            \
-	_Tp *                __mu9_parallel_shell_sort00__p__ = mu9_begin(_Tp, __first);                                                        \
+	      _Tp *          __mu9_parallel_shell_sort00__p__ = mu9_begin(_Tp, __first);                                                        \
 	const mu0_distance_t __mu9_parallel_shell_sort00__n__ = mu9_const_distance(_Tp, __first, __last);                                       \
 	__mu0_pragma__(omp parallel)                                                                                                            \
 	{                                                                                                                                       \
@@ -62,7 +62,7 @@ mu0_scope_end
 
 #	define mu9_parallel_shell_sort01(_Tp, __first, __last, __sort_op, __ctx)                                                                \
 mu0_scope_begin                                                                                                                            \
-	_Tp *                __mu9_parallel_shell_sort01__p__ = mu9_begin(_Tp, __first);                                                        \
+	      _Tp *          __mu9_parallel_shell_sort01__p__ = mu9_begin(_Tp, __first);                                                        \
 	const mu0_distance_t __mu9_parallel_shell_sort01__n__ = mu9_const_distance(_Tp, __first, __last);                                       \
 	__mu0_pragma__(omp parallel)                                                                                                            \
 	{                                                                                                                                       \

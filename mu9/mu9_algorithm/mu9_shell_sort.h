@@ -25,8 +25,8 @@ MU0_BEGIN_CDECL
 
 #	define mu9_shell_sort1(_Tp, __first, __last)                                                         \
 mu0_scope_begin                                                                                         \
-	_Tp * __mu9_shell_sort1__i__;                                                                        \
-	_Tp * __mu9_shell_sort1__j__;                                                                        \
+	      _Tp *          __mu9_shell_sort1__i__;                                                         \
+	      _Tp *          __mu9_shell_sort1__j__;                                                         \
 	const mu0_distance_t __mu9_shell_sort1__n__ = mu9_const_distance(_Tp, __first, __last);              \
 	const mu0_distance_t __mu9_shell_sort1__k__ = mu0_const_distance(3);                                 \
 			mu0_distance_t __mu9_shell_sort1__h__ = mu0_const_distance(1);                                 \
@@ -53,8 +53,8 @@ mu0_scope_end
 
 #	define mu9_shell_sort2(_Tp, __first, __last, __comp_fn)                                                 \
 mu0_scope_begin                                                                                            \
-	_Tp * __mu9_shell_sort2__i__;                                                                           \
-	_Tp * __mu9_shell_sort2__j__;                                                                           \
+	      _Tp *          __mu9_shell_sort2__i__;                                                            \
+	      _Tp *          __mu9_shell_sort2__j__;                                                            \
 	const mu0_distance_t __mu9_shell_sort2__n__ = mu9_const_distance(_Tp, __first, __last);                 \
 	const mu0_distance_t __mu9_shell_sort2__k__ = mu0_const_distance(3);                                    \
 			mu0_distance_t __mu9_shell_sort2__h__ = mu0_const_distance(1);                                    \
@@ -81,8 +81,8 @@ mu0_scope_end
 
 #	define mu9_shell_sort3(_Tp, __first, __last, __sort_op, __ctx)                                                  \
 mu0_scope_begin                                                                                                    \
-	_Tp * __mu9_shell_sort3__i__;                                                                                   \
-	_Tp * __mu9_shell_sort3__j__;                                                                                   \
+	      _Tp *          __mu9_shell_sort3__i__;                                                                    \
+	      _Tp *          __mu9_shell_sort3__j__;                                                                    \
 	const mu0_distance_t __mu9_shell_sort3__n__ = mu9_const_distance(_Tp, __first, __last);                         \
 	const mu0_distance_t __mu9_shell_sort3__k__ = mu0_const_distance(3);                                            \
 			mu0_distance_t __mu9_shell_sort3__h__ = mu0_const_distance(1);                                            \
@@ -109,8 +109,8 @@ mu0_scope_end
 
 #	define mu9_shell_sort4(_Tp, __first, __last, __swap_op)                                               \
 mu0_scope_begin                                                                                          \
-	_Tp * __mu9_shell_sort4__i__;                                                                         \
-	_Tp * __mu9_shell_sort4__j__;                                                                         \
+	      _Tp *          __mu9_shell_sort4__i__;                                                          \
+	      _Tp *          __mu9_shell_sort4__j__;                                                          \
 	const mu0_distance_t __mu9_shell_sort4__n__ = mu9_const_distance(_Tp, __first, __last);               \
 	const mu0_distance_t __mu9_shell_sort4__k__ = mu0_const_distance(3);                                  \
 			mu0_distance_t __mu9_shell_sort4__h__ = mu0_const_distance(1);                                  \
@@ -134,8 +134,8 @@ mu0_scope_end
 
 #	define mu9_shell_sort5(_Tp, __first, __last, __comp_fn, __swap_op)                                      \
 mu0_scope_begin                                                                                            \
-	_Tp * __mu9_shell_sort5__i__;                                                                           \
-	_Tp * __mu9_shell_sort5__j__;                                                                           \
+	      _Tp *          __mu9_shell_sort5__i__;                                                            \
+	      _Tp *          __mu9_shell_sort5__j__;                                                            \
 	const mu0_distance_t __mu9_shell_sort5__n__ = mu9_const_distance(_Tp, __first, __last);                 \
 	const mu0_distance_t __mu9_shell_sort5__k__ = mu0_const_distance(3);                                    \
 			mu0_distance_t __mu9_shell_sort5__h__ = mu0_const_distance(1);                                    \
@@ -159,8 +159,8 @@ mu0_scope_end
 
 #	define mu9_shell_sort6(_Tp, __first, __last, __sort_op, __ctx, __swap_op)                                       \
 mu0_scope_begin                                                                                                    \
-	_Tp * __mu9_shell_sort6__i__;                                                                                   \
-	_Tp * __mu9_shell_sort6__j__;                                                                                   \
+	      _Tp *          __mu9_shell_sort6__i__;                                                                    \
+	      _Tp *          __mu9_shell_sort6__j__;                                                                    \
 	const mu0_distance_t __mu9_shell_sort6__n__ = mu9_const_distance(_Tp, __first, __last);                         \
 	const mu0_distance_t __mu9_shell_sort6__k__ = mu0_const_distance(3);                                            \
 			mu0_distance_t __mu9_shell_sort6__h__ = mu0_const_distance(1);                                            \
