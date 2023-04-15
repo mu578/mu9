@@ -73,6 +73,10 @@ MU0_BEGIN_CDECL
 #	define mu9_not_fn(__fn) \
 	!__fn
 
+//#!
+//#! macro<_Tp>(& __a, & __b) : lvalue
+//#!
+#	define mu9_assign(_Tp, __a, __b)                 __a = __b
 
 MU0_END_CDECL
 

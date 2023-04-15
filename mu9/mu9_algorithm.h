@@ -47,6 +47,7 @@
 #	include <mu9/mu9_algorithm/mu9_min_element.h>
 #	include <mu9/mu9_algorithm/mu9_minmax_element.h>
 #	include <mu9/mu9_algorithm/mu9_mismatch.h>
+#	include <mu9/mu9_algorithm/mu9_move.h>
 #	include <mu9/mu9_algorithm/mu9_partition_point.h>
 #	include <mu9/mu9_algorithm/mu9_partition.h>
 #	include <mu9/mu9_algorithm/mu9_random_shuffle.h>
@@ -61,6 +62,7 @@
 #	include <mu9/mu9_algorithm/mu9_set_symmetric_difference.h>
 #	include <mu9/mu9_algorithm/mu9_set_union.h>
 #	include <mu9/mu9_algorithm/mu9_shell_sort.h>
+#	include <mu9/mu9_algorithm/mu9_shift_left.h>
 #	include <mu9/mu9_algorithm/mu9_shuffle.h>
 #	include <mu9/mu9_algorithm/mu9_sort_heap.h>
 #	include <mu9/mu9_algorithm/mu9_stable_sort.h>
