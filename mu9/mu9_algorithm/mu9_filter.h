@@ -10,23 +10,32 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu9_running_total.h
+// mu9_filter.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_algorithm/mu9_partial_sum.h>
+#include <mu0/mu0_definition.h>
 
-#ifndef MU9_RUNNING_TOTAL_H
-#define MU9_RUNNING_TOTAL_H 1
+#ifndef MU9_FILTER_H
+#define MU9_FILTER_H 1
 
 MU0_BEGIN_CDECL
 
-#	define mu9_running_total(_Tp, __first, __last, __d_first) \
-	mu9_partial_sum2(_Tp, __first, __last, __d_first, mu9_plus)
+#	define mu9_filter(_Tp, __first1, __last1, __first2, __last2, __unary_pred, __d_result) \
+mu0_scope_begin                                                                           \
+	_Tp * __mu9_filter__i__ = __first2;                                                    \
+	for (; __first1 != __last1 && __first2 != __last2; ++__first1) {                       \
+		if (__unary_pred(_Tp, *__first)) {                                                  \
+			*__first2 = *__first;                                                            \
+			++__first2;                                                                      \
+		}                                                                                   \
+	}                                                                                      \
+	__d_result = mu9_const_distance(_Tp, __mu9_filter__i__, __first2);                     \
+mu0_scope_end
 
 MU0_END_CDECL
 
-#endif /* !MU9_RUNNING_TOTAL_H */
+#endif /* !MU9_FILTER_H */
 
 /* EOF */
