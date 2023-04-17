@@ -26,7 +26,7 @@ MU0_BEGIN_CDECL
 mu0_scope_begin                                                                     \
 	while (__first1 != __last1) {                                                    \
 		if (__first2 == __last2) {                                                    \
-			mu9_copy(_Tp, __first1, __last1, __d_first);                               \
+			mu9_copy1(_Tp, __first1, __last1, __d_first);                              \
 			break;                                                                     \
 		}                                                                             \
 		if (*__first1 < *__first2) {                                                  \
@@ -40,11 +40,11 @@ mu0_scope_begin                                                                 
 	}                                                                                \
 mu0_scope_end
 
-#	define mu9_set_difference2(_Tp, __first1, __last1, __first2, __last2, __comp_fn, __d_first) \
+#	define mu9_set_difference2(_Tp, __first1, __last1, __first2, __last2, __d_first, __comp_fn) \
 mu0_scope_begin                                                                                \
 	while (__first1 != __last1) {                                                               \
 		if (__first2 == __last2) {                                                               \
-			mu9_copy(_Tp, __first1, __last1, __d_first);                                          \
+			mu9_copy1(_Tp, __first1, __last1, __d_first);                                         \
 			break;                                                                                \
 		}                                                                                        \
 		if (__comp_fn(_Tp, *__first1, *__first2)) {                                              \
@@ -56,6 +56,24 @@ mu0_scope_begin                                                                 
 			++__first2;                                                                           \
 		}                                                                                        \
 	}                                                                                           \
+mu0_scope_end
+
+#	define mu9_set_difference3(_Tp, __first1, __last1, __first2, __last2, __d_first, __comp_fn, __move_op) \
+mu0_scope_begin                                                                                           \
+	while (__first1 != __last1) {                                                                          \
+		if (__first2 == __last2) {                                                                          \
+			mu9_copy2(_Tp, __first1, __last1, __d_first, __move_op);                                         \
+			break;                                                                                           \
+		}                                                                                                   \
+		if (__comp_fn(_Tp, *__first1, *__first2)) {                                                         \
+			__move_op(_Tp, *__d_first++, *__first1++);                                                       \
+		} else {                                                                                            \
+			if (!__comp_fn(Tp, *__first2, *__first1)) {                                                      \
+				++__first1;                                                                                   \
+			}                                                                                                \
+			++__first2;                                                                                      \
+		}                                                                                                   \
+	}                                                                                                      \
 mu0_scope_end
 
 MU0_END_CDECL

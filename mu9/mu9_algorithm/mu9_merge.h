@@ -15,7 +15,6 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_algorithm/mu9_duplicate.h>
 #include <mu9/mu9_algorithm/mu9_copy.h>
 
 #ifndef MU9_MERGE_H
@@ -28,7 +27,7 @@ mu0_scope_begin                                                                 
 	mu0_bool_t __mu9_merge1__x__ = mu0_false;                                           \
 	for (; __first1 != __last1; ++__d_first) {                                          \
 		if (__first2 == __last2) {                                                       \
-			mu9_copy(_Tp, __first1, __last1, __d_first);                                  \
+			mu9_copy1(_Tp, __first1, __last1, __d_first);                                 \
 			__d_result        = __d_first;                                                \
 			__mu9_merge1__x__ = mu0_true;                                                 \
 			break;                                                                        \
@@ -42,7 +41,7 @@ mu0_scope_begin                                                                 
 		}                                                                                \
 	}                                                                                   \
 	if !(__mu9_merge1__x__) {                                                           \
-		mu9_copy(_Tp, __first2, __last2, __d_first);                                     \
+		mu9_copy1(_Tp, __first2, __last2, __d_first);                                    \
 		__d_result = __d_first;                                                          \
 	}                                                                                   \
 mu0_scope_end
@@ -52,7 +51,7 @@ mu0_scope_begin                                                                 
 	mu0_bool_t __mu9_merge2__x__ = mu0_false;                                                      \
 	for (; __first1 != __last1; ++__d_first) {                                                     \
 		if (__first2 == __last2) {                                                                  \
-			mu9_copy(_Tp, __first1, __last1, __d_first);                                             \
+			mu9_copy1(_Tp, __first1, __last1, __d_first);                                            \
 			__d_result        = __d_first;                                                           \
 			__mu9_merge2__x__ = mu0_true;                                                            \
 			break;                                                                                   \
@@ -66,7 +65,7 @@ mu0_scope_begin                                                                 
 		}                                                                                           \
 	}                                                                                              \
 	if !(__mu9_merge2__x__) {                                                                      \
-		mu9_copy(_Tp, __first2, __last2, __d_first);                                                \
+		mu9_copy1(_Tp, __first2, __last2, __d_first);                                               \
 		__d_result = __d_first;                                                                     \
 	}                                                                                              \
 mu0_scope_end
@@ -76,7 +75,7 @@ mu0_scope_begin                                                                 
 	mu0_bool_t __mu9_merge3__x__ = mu0_false;                                                                 \
 	for (; __first1 != __last1; ++__d_first) {                                                                \
 		if (__first2 == __last2) {                                                                             \
-			mu9_duplicate(_Tp, __first1, __last1, __d_first, __move_op);                                        \
+			mu9_copy2(_Tp, __first1, __last1, __d_first, __move_op);                                            \
 			__d_result        = __d_first;                                                                      \
 			__mu9_merge3__x__ = mu0_true;                                                                       \
 			break;                                                                                              \
@@ -90,7 +89,7 @@ mu0_scope_begin                                                                 
 		}                                                                                                      \
 	}                                                                                                         \
 	if !(__mu9_merge3__x__) {                                                                                 \
-		mu9_duplicate(_Tp, __first2, __last2, __d_first, __move_op);                                           \
+		mu9_copy2(_Tp, __first2, __last2, __d_first, __move_op);                                               \
 		__d_result = __d_first;                                                                                \
 	}                                                                                                         \
 mu0_scope_end

@@ -27,7 +27,7 @@ mu0_scope_begin                                                                 
 	mu0_bool_t __mu9_set_symmetric_difference1__x__ = mu0_false;                               \
 	while (__first1 != __last1) {                                                              \
 		if (__first2 == __last2) {                                                              \
-			mu9_copy(_Tp, __first1, __last1, __d_first);                                         \
+			mu9_copy1(_Tp, __first1, __last1, __d_first);                                        \
 			__mu9_set_symmetric_difference1__x__ = mu0_true;                                     \
 			break;                                                                               \
 		}                                                                                       \
@@ -43,7 +43,7 @@ mu0_scope_begin                                                                 
 		}                                                                                       \
 	}                                                                                          \
 	if (!__mu9_set_symmetric_difference1__x__) {                                               \
-		mu9_copy(_Tp, __first2, __last2, __d_first);                                            \
+		mu9_copy1(_Tp, __first2, __last2, __d_first);                                           \
 	}                                                                                          \
 mu0_scope_end
 
@@ -52,7 +52,7 @@ mu0_scope_begin                                                                 
 	mu0_bool_t __mu9_set_symmetric_difference2__x__ = mu0_false;                                          \
 	while (__first1 != __last1) {                                                                         \
 		if (__first2 == __last2) {                                                                         \
-			mu9_copy(_Tp, __first1, __last1, __d_first);                                                    \
+			mu9_copy1(_Tp, __first1, __last1, __d_first);                                                   \
 			__mu9_set_symmetric_difference2__x__ = mu0_true;                                                \
 			break;                                                                                          \
 		}                                                                                                  \
@@ -68,8 +68,33 @@ mu0_scope_begin                                                                 
 		}                                                                                                  \
 	}                                                                                                     \
 	if (!__mu9_set_symmetric_difference2__x__) {                                                          \
-		mu9_copy(_Tp, __first2, __last2, __d_first);                                                       \
+		mu9_copy1(_Tp, __first2, __last2, __d_first);                                                      \
 	}                                                                                                     \
+mu0_scope_end
+
+#	define mu9_set_symmetric_difference3(_Tp, __first1, __last1, __first2, __last2, __d_first, __comp_fn, __move_op) \
+mu0_scope_begin                                                                                                     \
+	mu0_bool_t __mu9_set_symmetric_difference3__x__ = mu0_false;                                                     \
+	while (__first1 != __last1) {                                                                                    \
+		if (__first2 == __last2) {                                                                                    \
+			mu9_copy2(_Tp, __first1, __last1, __d_first, __move_op);                                                   \
+			__mu9_set_symmetric_difference3__x__ = mu0_true;                                                           \
+			break;                                                                                                     \
+		}                                                                                                             \
+		if (__comp_fn(_Tp, *__first1, *__first2)) {                                                                   \
+			__move_op(_Tp, *__d_first++, *__first1++);                                                                 \
+		} else {                                                                                                      \
+			if (__comp_fn(_Tp, *__first2, *__first1)) {                                                                \
+				__move_op(_Tp, *__d_first++, *__first2);                                                                \
+			} else {                                                                                                   \
+				++__first1;                                                                                             \
+			}                                                                                                          \
+			++__first2;                                                                                                \
+		}                                                                                                             \
+	}                                                                                                                \
+	if (!__mu9_set_symmetric_difference3__x__) {                                                                     \
+		mu9_copy2(_Tp, __first2, __last2, __d_first, __move_op);                                                      \
+	}                                                                                                                \
 mu0_scope_end
 
 MU0_END_CDECL

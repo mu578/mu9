@@ -99,13 +99,22 @@ mu0_scope_begin                                                               \
 	}                                                                          \
 mu0_scope_end
 
-#	define mu9_rotate_copy(_Tp, __first, __n_first, __last, __d_first , __d_result) \
+#	define mu9_rotate_copy1(_Tp, __first, __n_first, __last, __d_first, __d_result) \
 mu0_scope_begin                                                                    \
-	_Tp * __mu9_rotate_copy__i__;                                                   \
-	mu9_copy(_Tp, __n_first, __last, __d_first);                                    \
-	__mu9_rotate_copy__i__ = __d_first;                                             \
-	mu9_copy(_Tp, __first, __n_first, __mu9_rotate_copy__i__);                      \
-	__d_result             = __mu9_rotate_copy__i__;                                \
+	_Tp * __mu9_rotate_copy1__i__;                                                  \
+	mu9_copy1(_Tp, __n_first, __last, __d_first);                                   \
+	__mu9_rotate_copy1__i__ = __d_first;                                            \
+	mu9_copy1(_Tp, __first, __n_first, __mu9_rotate_copy1__i__);                    \
+	__d_result              = __mu9_rotate_copy1__i__;                              \
+mu0_scope_end
+
+#	define mu9_rotate_copy2(_Tp, __first, __n_first, __last, __d_first, __move_op, __d_result) \
+mu0_scope_begin                                                                               \
+	_Tp * __mu9_rotate_copy2__i__;                                                             \
+	mu9_copy2(_Tp, __n_first, __last, __d_first, __move_op);                                   \
+	__mu9_rotate_copy2__i__ = __d_first;                                                       \
+	mu9_copy2(_Tp, __first, __n_first, __mu9_rotate_copy2__i__, __move_op);                    \
+	__d_result              = __mu9_rotate_copy2__i__;                                         \
 mu0_scope_end
 
 MU0_END_CDECL
