@@ -22,11 +22,19 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_copy_backward(Tp, __first, __last, __d_first)                                             \
+#	define mu9_copy_backward1(Tp, __first, __last, __d_first)                                            \
 mu0_scope_begin                                                                                         \
 	_Tp * __mu9_copy_backward__i__ = __last;                                                             \
 	for (; __first != __mu9_copy_backward__i__; (void) --__mu9_copy_backward__i__, (void) ++__d_first) { \
 		*__d_first = *__mu9_copy_backward__i__;                                                           \
+	}                                                                                                    \
+mu0_scope_end
+
+#	define mu9_copy_backward2(Tp, __first, __last, __d_first, __move_op)                                 \
+mu0_scope_begin                                                                                         \
+	_Tp * __mu9_copy_backward__i__ = __last;                                                             \
+	for (; __first != __mu9_copy_backward__i__; (void) --__mu9_copy_backward__i__, (void) ++__d_first) { \
+		__move_op(_Tp, *__d_first, *__mu9_copy_backward__i__);                                            \
 	}                                                                                                    \
 mu0_scope_end
 
