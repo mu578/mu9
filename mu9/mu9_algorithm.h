@@ -22,6 +22,7 @@
 #	include <mu9/mu9_algorithm/mu9_argument_sort.h>
 #	include <mu9/mu9_algorithm/mu9_binary_search.h>
 #	include <mu9/mu9_algorithm/mu9_bubble_sort.h>
+#	include <mu9/mu9_algorithm/mu9_contains.h>
 #	include <mu9/mu9_algorithm/mu9_copy_backward.h>
 #	include <mu9/mu9_algorithm/mu9_copy.h>
 #	include <mu9/mu9_algorithm/mu9_count.h>
