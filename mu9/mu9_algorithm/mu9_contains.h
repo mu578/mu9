@@ -31,7 +31,7 @@ mu0_scope_begin                                                                 
 		__d_result1 = __first2;                                                                \
 	} else {                                                                                  \
 		__mu9_contains1__j__ = __first1;                                                       \
-		for ( ; __first2 != __last2; ++__first2) {                                             \
+		for (; __first2 != __last2; ++__first2) {                                              \
 			if (*__first2 != *__mu9_contains1__j__) {                                           \
 				continue;                                                                        \
 			}                                                                                   \
@@ -67,7 +67,7 @@ mu0_scope_begin                                                                 
 		__d_result1 = __first2;                                                                               \
 	} else {                                                                                                 \
 		__mu9_contains2__j__ = __first1;                                                                      \
-		for ( ; __first2 != __last2; ++__first2) {                                                            \
+		for (; __first2 != __last2; ++__first2) {                                                             \
 			if (!__binary_pred(_Tp, *__first2, *__mu9_contains2__j__)) {                                       \
 				continue;                                                                                       \
 			}                                                                                                  \
