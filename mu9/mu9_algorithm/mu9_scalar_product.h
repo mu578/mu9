@@ -23,19 +23,19 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Tp<return> & __d_result) : void
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp<return> & __d_result) : void
 //#!
 #	define mu9_scalar_product1(_Tp, __first1, __last1, __first2, __d_result) \
 	mu9_inner_product1(_Tp, __first1, __last1, __first2, 0, __d_result)
 
 //#!
-//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, __binary_op1, __binary_op2<_Tp>, _Tp<return> & __d_result) : void
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, __binary_op1, __binary_op2<_Tp>, _Tp<return> & __d_result) : void
 //#!
 #	define mu9_scalar_product2(_Tp, __first1, __last1, __first2, __binary_op1, __binary_op2, __d_result) \
 	mu9_inner_product2(_Tp, __first1, __last1, __first2, 0, __binary_op1, __binary_op2, __d_result)
 
 //#!
-//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, __trinary_op<_Tp>, _Tp<return> & __d_result) : void
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, __trinary_op<_Tp>, _Tp<return> & __d_result) : void
 //#!
 #	define mu9_scalar_product3(_Tp, __first1, __last1, __first2, __trinary_op, __d_result) \
 	mu9_inner_product3(_Tp, __first1, __last1, __first2, 0, __trinary_op, __d_result)

@@ -49,7 +49,7 @@ mu0_scope_begin                                                                 
 mu0_scope_end
 
 //#!
-//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Tp __init, _Tp<return> & __d_result) : void
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp __init, _Tp<return> & __d_result) : void
 //#!
 #	define mu9_accumulate3(_Tp, __first1, __last1, __first2, __init, __d_result)      \
 mu0_scope_begin                                                                      \
@@ -63,7 +63,7 @@ mu0_scope_begin                                                                 
 mu0_scope_end
 
 //#!
-//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Tp __init, __binary_op, _Tp<return> & __d_result) : void
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp __init, __binary_op, _Tp<return> & __d_result) : void
 //#!
 #	define mu9_accumulate4(_Tp, __first1, __last1, __first2, __init, __binary_op, __d_result)                     \
 mu0_scope_begin                                                                                                  \
@@ -77,7 +77,7 @@ mu0_scope_begin                                                                 
 mu0_scope_end
 
 //#!
-//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Tp __init, __binary_op1, __binary_op2, _Tp<return> & __d_result) : void
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp __init, __binary_op1, __binary_op2, _Tp<return> & __d_result) : void
 //#!
 #	define mu9_accumulate5(_Tp, __first1, __last1, __first2, __init, __binary_op1, __binary_op2, __d_result)        \
 mu0_scope_begin                                                                                                    \
@@ -91,7 +91,7 @@ mu0_scope_begin                                                                 
 mu0_scope_end
 
 //#!
-//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Tp __init, __trinary_op, _Tp<return> & __d_result) : void
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp __init, __trinary_op, _Tp<return> & __d_result) : void
 //#!
 #	define mu9_accumulate6(_Tp, __first1, __last1, __first2, __init, __trinary_op, __d_result)   \
 mu0_scope_begin                                                                                 \

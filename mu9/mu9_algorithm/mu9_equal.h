@@ -23,7 +23,7 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp, _Bool>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, _Bool<return> & __d_result) : void
+//#! macro<_Tp, _Bool>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Bool<return> & __d_result) : void
 //#!
 #	define mu9_equal1(_Tp, __first1, __last1,  __first2, __d_result) \
 mu0_scope_begin                                                     \
@@ -38,7 +38,7 @@ mu0_scope_begin                                                     \
 mu0_scope_end
 
 //#!
-//#! macro<_Tp, _Bool>(_Tp &* __first1, _Tp &* __last1,  _Tp &* __first2, __binary_pred, _Bool<return> & __d_result) : void
+//#! macro<_Tp, _Bool>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, __binary_pred, _Bool<return> & __d_result) : void
 //#!
 #	define mu9_equal2(_Tp, __first1, __last1,  __first2, __binary_pred, __d_result) \
 mu0_scope_begin                                                                    \

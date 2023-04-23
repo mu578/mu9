@@ -24,6 +24,7 @@
 #	include <mu9/mu9_algorithm/mu9_cumulative_product.h>
 #	include <mu9/mu9_algorithm/mu9_exclusive_scan.h>
 #	include <mu9/mu9_algorithm/mu9_inclusive_scan.h>
+#	include <mu9/mu9_algorithm/mu9_inner_accumulate.h>
 #	include <mu9/mu9_algorithm/mu9_inner_product.h>
 #	include <mu9/mu9_algorithm/mu9_iota.h>
 #	include <mu9/mu9_algorithm/mu9_partial_sum.h>
