@@ -53,6 +53,7 @@
 #	include <mu9/mu9_algorithm/mu9_move.h>
 #	include <mu9/mu9_algorithm/mu9_partition_point.h>
 #	include <mu9/mu9_algorithm/mu9_partition.h>
+#	include <mu9/mu9_algorithm/mu9_random_sample_n.h>
 #	include <mu9/mu9_algorithm/mu9_random_shuffle.h>
 #	include <mu9/mu9_algorithm/mu9_reduce.h>
 #	include <mu9/mu9_algorithm/mu9_remove.h>
