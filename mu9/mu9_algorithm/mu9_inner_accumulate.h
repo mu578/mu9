@@ -83,6 +83,7 @@ mu0_scope_begin                                                                 
 		__mu9_inner_accumulate4__w__ = __mu9_inner_accumulate4__w__ +  (*__first2);                                \
 		__mu9_inner_accumulate4__q__ = __mu9_inner_accumulate4__q__ + ((*__first1) * (*__first2));                 \
 		++__first1;                                                                                                \
+		++__first2;                                                                                                \
 	}                                                                                                             \
 	__d_result1 = __mu9_inner_accumulate4__s__;                                                                   \
 	__d_result1 = __mu9_inner_accumulate4__w__;                                                                   \
@@ -102,6 +103,7 @@ mu0_scope_begin                                                                 
 		__mu9_inner_accumulate5__w__ = __binary_op1(_Tp, __mu9_inner_accumulate5__w__, *__first2);                                             \
 		__mu9_inner_accumulate5__q__ = __binary_op1(_Tp, __mu9_inner_accumulate5__q__, __binary_op2(_Tp, *__first1, *__first2));               \
 		++__first1;                                                                                                                            \
+		++__first2;                                                                                                                            \
 	}                                                                                                                                         \
 	__d_result1 = __mu9_inner_accumulate5__s__;                                                                                               \
 	__d_result1 = __mu9_inner_accumulate5__w__;                                                                                               \
@@ -121,6 +123,7 @@ mu0_scope_begin                                                                 
 		__mu9_inner_accumulate6__w__ = __binary_op(_Tp, __mu9_inner_accumulate6__w__, *__first2);                                             \
 		__mu9_inner_accumulate6__q__ = __trinary_op(_Tp, *__first1, *__first2, __mu9_inner_accumulate6__q__);                                 \
 		++__first1;                                                                                                                           \
+		++__first2;                                                                                                                           \
 	}                                                                                                                                        \
 	__d_result1 = __mu9_inner_accumulate6__s__;                                                                                              \
 	__d_result1 = __mu9_inner_accumulate6__w__;                                                                                              \
