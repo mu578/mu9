@@ -32,7 +32,7 @@ mu0_scope_end
 #	define mu9_transform2(_Tp, __first1, __last1, __d_first, __unary_op, __move_op) \
 mu0_scope_begin                                                                    \
 	while (__first1 != __last1) {                                                   \
-		__move_op(_Tp, *__d_first++,  __unary_op(_Tp, *__first1++));                 \
+		__move_op(_Tp, *__d_first++, __unary_op(_Tp, *__first1++));                  \
 	}                                                                               \
 mu0_scope_end
 

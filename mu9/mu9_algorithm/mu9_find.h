@@ -108,7 +108,7 @@ mu0_scope_begin                                                                 
 	for (; __first != __last && !__mu9_find_first_of2__x__; ++__first) {                            \
 		__mu9_find_first_of2__i__ = __s_first;                                                       \
 		for (; __mu9_find_first_of2__i__ != __s_last; ++__mu9_find_first_of2__i__) {                 \
-			if (__binary_pred(_Tp,  *__first, *__mu9_find_first_of2__i__)) {                          \
+			if (__binary_pred(_Tp, *__first, *__mu9_find_first_of2__i__)) {                           \
 				__d_result                = __first;                                                   \
 				__mu9_find_first_of2__x__ = mu0_true;                                                  \
 				break;                                                                                 \

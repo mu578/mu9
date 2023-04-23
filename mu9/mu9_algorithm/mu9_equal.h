@@ -25,31 +25,31 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp, _Bool>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Bool<return> & __d_result) : void
 //#!
-#	define mu9_equal1(_Tp, __first1, __last1,  __first2, __d_result) \
-mu0_scope_begin                                                     \
-	mu0_bool_t __mu9_equal1__x__ = mu0_true;                         \
-	for (; __first1 != __last1; ++__first1, ++__first2) {            \
-		if (!(*__first1 == *__first2)) {                              \
-			__mu9_equal1__x__ = mu0_false;                             \
-			break;                                                     \
-		}                                                             \
-	}                                                                \
-	__d_result = __mu9_equal1__x__;                                  \
+#	define mu9_equal1(_Tp, __first1, __last1, __first2, __d_result) \
+mu0_scope_begin                                                    \
+	mu0_bool_t __mu9_equal1__x__ = mu0_true;                        \
+	for (; __first1 != __last1; ++__first1, ++__first2) {           \
+		if (!(*__first1 == *__first2)) {                             \
+			__mu9_equal1__x__ = mu0_false;                            \
+			break;                                                    \
+		}                                                            \
+	}                                                               \
+	__d_result = __mu9_equal1__x__;                                 \
 mu0_scope_end
 
 //#!
 //#! macro<_Tp, _Bool>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, __binary_pred, _Bool<return> & __d_result) : void
 //#!
-#	define mu9_equal2(_Tp, __first1, __last1,  __first2, __binary_pred, __d_result) \
-mu0_scope_begin                                                                    \
-	mu0_bool_t __mu9_equal2__x__ = mu0_true;                                        \
-	for (; __first1 != __last1; ++__first1, ++__first2) {                           \
-		if (!__binary_pred(_Tp, *__first1, *__first2)) {                             \
-			__mu9_equal2__x__ = mu0_false;                                            \
-			break;                                                                    \
-		}                                                                            \
-	}                                                                               \
-	__d_result = __mu9_equal2__x__;                                                 \
+#	define mu9_equal2(_Tp, __first1, __last1, __first2, __binary_pred, __d_result) \
+mu0_scope_begin                                                                   \
+	mu0_bool_t __mu9_equal2__x__ = mu0_true;                                       \
+	for (; __first1 != __last1; ++__first1, ++__first2) {                          \
+		if (!__binary_pred(_Tp, *__first1, *__first2)) {                            \
+			__mu9_equal2__x__ = mu0_false;                                           \
+			break;                                                                   \
+		}                                                                           \
+	}                                                                              \
+	__d_result = __mu9_equal2__x__;                                                \
 mu0_scope_end
 
 MU0_END_CDECL

@@ -40,13 +40,13 @@ mu0_scope_begin                                                                 
 	__d_result = __mu9_transform_reduce2__v__;                                                                                    \
 mu0_scope_end
 
-#	define mu9_transform_reduce3(_Tp, __first1, __last1, __first2, __init, __trinary_op, __d_result)          \
-mu0_scope_begin                                                                                              \
-	_Tp __mu9_transform_reduce3__v__ = mu0_const_cast(_Tp, __init);                                           \
-	for (; __first1 != __last1; ++__first1, (void) ++__first2) {                                              \
-		__mu9_transform_reduce3__v__ = __trinary_op(_Tp, __mu9_transform_reduce3__v__,  *__first1, *__first2); \
-	}                                                                                                         \
-	__d_result = __mu9_transform_reduce3__v__;                                                                \
+#	define mu9_transform_reduce3(_Tp, __first1, __last1, __first2, __init, __trinary_op, __d_result)         \
+mu0_scope_begin                                                                                             \
+	_Tp __mu9_transform_reduce3__v__ = mu0_const_cast(_Tp, __init);                                          \
+	for (; __first1 != __last1; ++__first1, (void) ++__first2) {                                             \
+		__mu9_transform_reduce3__v__ = __trinary_op(_Tp, __mu9_transform_reduce3__v__, *__first1, *__first2); \
+	}                                                                                                        \
+	__d_result = __mu9_transform_reduce3__v__;                                                               \
 mu0_scope_end
 
 #	define mu9_transform_reduce_if1(_Tp, __first1, __last1, __first2, __init, __unary_pred, __d_result)    \

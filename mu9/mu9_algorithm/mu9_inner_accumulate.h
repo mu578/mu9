@@ -91,7 +91,7 @@ mu0_scope_begin                                                                 
 mu0_scope_end
 
 //#!
-//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp __init,  __binary_op1, __binary_op2, _Tp<return> & __d_result1, _Tp<return> & __d_result2, _Tp<return> & __d_result3) : void
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp __init, __binary_op1, __binary_op2, _Tp<return> & __d_result1, _Tp<return> & __d_result2, _Tp<return> & __d_result3) : void
 //#!
 #	define mu9_inner_accumulate5(_Tp, __first1, __last1, __first2, __init, __binary_op1, __binary_op2, __d_result1, __d_result2, __d_result3) \
 mu0_scope_begin                                                                                                                              \

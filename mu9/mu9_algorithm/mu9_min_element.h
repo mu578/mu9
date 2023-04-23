@@ -44,7 +44,7 @@ mu0_scope_begin                                                         \
 		__mu9_min_element2_i__ = __first;                                 \
 		++__first;                                                        \
 		for (; __first != __last; ++__first) {                            \
-			if (_comp_fn(_Tp, *__first,  *__mu9_min_element2_i__)) {       \
+			if (_comp_fn(_Tp, *__first, *__mu9_min_element2_i__)) {        \
 				__mu9_min_element2_i__ = __first;                           \
 			}                                                              \
 		}                                                                 \
@@ -59,7 +59,7 @@ mu0_scope_begin                                                                \
 		__mu9_min_element3_i__ = __first;                                        \
 		++__first;                                                               \
 		for (; __first != __last; ++__first) {                                   \
-			if (__sort_op(_Tp, *__first,  *__mu9_min_element3_i__, __ctx)) {      \
+			if (__sort_op(_Tp, *__first, *__mu9_min_element3_i__, __ctx)) {       \
 				__mu9_min_element3_i__ = __first;                                  \
 			}                                                                     \
 		}                                                                        \

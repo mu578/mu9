@@ -108,7 +108,7 @@ mu0_scope_end
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_shell_sort1(_Tp, __first, __last) \
-	mu9_parallel_shell_sort00(_Tp, __first, __last,  mu9_less)
+	mu9_parallel_shell_sort00(_Tp, __first, __last, mu9_less)
 #	else
 #	define mu9_parallel_shell_sort1(_Tp, __first, __last) \
 	mu9_sequencial_shell_sort1(_Tp, __first, __last)
@@ -125,7 +125,7 @@ mu0_scope_end
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_shell_sort2(_Tp, __first, __last, __comp_fn) \
-	mu9_parallel_shell_sort00(_Tp, __first, __last,  __comp_fn)
+	mu9_parallel_shell_sort00(_Tp, __first, __last, __comp_fn)
 #	else
 #	define mu9_parallel_shell_sort2(_Tp, __first, __last, __comp_fn) \
 	mu9_sequencial_shell_sort2(_Tp, __first, __last, __comp_fn)
