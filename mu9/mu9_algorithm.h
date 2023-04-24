@@ -60,7 +60,8 @@
 #	include <mu9/mu9_algorithm/mu9_remove.h>
 #	include <mu9/mu9_algorithm/mu9_reverse.h>
 #	include <mu9/mu9_algorithm/mu9_rotate.h>
-#	include <mu9/mu9_algorithm/mu9_search_span.h>
+#	include <mu9/mu9_algorithm/mu9_search_accept.h>
+#	include <mu9/mu9_algorithm/mu9_search_accept.h>
 #	include <mu9/mu9_algorithm/mu9_search.h>
 #	include <mu9/mu9_algorithm/mu9_selection_sort.h>
 #	include <mu9/mu9_algorithm/mu9_set_difference.h>
