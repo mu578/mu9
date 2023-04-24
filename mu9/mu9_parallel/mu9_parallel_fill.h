@@ -25,6 +25,7 @@
 MU0_BEGIN_CDECL
 
 #	if MU0_HAVE_PARALLELIZE
+#	if MU0_HAVE_OPENMP
 
 #	define mu9_parallel_fill00(_Tp, __first, __last, __value)                                   \
 mu0_scope_begin                                                                                \
@@ -56,6 +57,7 @@ mu0_scope_begin                                                                 
 	}                                                                                             \
 mu0_scope_end
 
+#	endif
 #	endif
 
 //#!

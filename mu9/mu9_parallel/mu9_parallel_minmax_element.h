@@ -25,6 +25,7 @@
 MU0_BEGIN_CDECL
 
 #	if MU0_HAVE_PARALLELIZE
+#	if MU0_HAVE_OPENMP
 
 #	define mu9_parallel_minmax_element00(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)                                                   \
 mu0_scope_begin                                                                                                                                      \
@@ -76,6 +77,7 @@ mu0_scope_begin                                                                 
 	}                                                                                                                                                 \
 mu0_scope_end
 
+#	endif
 #	endif
 
 //#!

@@ -25,6 +25,7 @@
 MU0_BEGIN_CDECL
 
 #	if MU0_HAVE_PARALLELIZE
+#	if MU0_HAVE_OPENMP
 
 #	define mu9_parallel_shell_sort00(_Tp, __first, __last, __comp_fn)                                                                       \
 mu0_scope_begin                                                                                                                            \
@@ -95,6 +96,7 @@ mu0_scope_begin                                                                 
 	}                                                                                                                                       \
 mu0_scope_end
 
+#	endif
 #	endif
 
 //#!

@@ -23,7 +23,7 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp& __a, _Tp& __b) : _Tp
+//#! macro<_Tp>(_Tp & __a, _Tp & __b) : _Tp
 //#!
 #	define mu9_plus(_Tp, __a, __b)                   ((__a) + (__b))
 #	define mu9_minus(_Tp, __a, __b)                  ((__a) - (__b))
@@ -33,15 +33,15 @@ MU0_BEGIN_CDECL
 #	define mu9_negate(_Tp, __a)                      -(__a)
 
 //#!
-//#! macro<_Tp>((_Tp& __c, _Tp& __a, _Tp& __b) : _Tp
+//#! macro<_Tp>((_Tp & __c, _Tp & __a, _Tp & __b) : _Tp
 //#!
 #	define mu9_multiply_accumulate(_Tp, __c, __a, __b) \
 	mu9_plus(_Tp, __c, mu9_multiplies(_Tp, __a, __b))
 
 //#!
-//#! macro<_Tp>(& __a, & __b) : bool
+//#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
 //#!
-#	define mu9_logical_and(_Tp, __a, __b)            (((__a) && (__b)) ? mu0_true : mu0_false)
+#	define mu9_logical_and(_Tp, __a, __b)            (((__a) && (__b))  ? mu0_true : mu0_false)
 #	define mu9_logical_not_and(_Tp, __a, __b)        (!((__a) && (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_or(_Tp, __a, __b)             ( ((__a) || (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_not_or(_Tp, __a, __b)         (!((__a) || (__b)) ? mu0_true : mu0_false)
@@ -56,7 +56,7 @@ MU0_BEGIN_CDECL
 #	define mu9_bit_not(_Tp, __a)                     ~(__a)
 
 //#!
-//#! macro<_Tp>(& __a, & __b) : bool
+//#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
 //#!
 #	define mu9_less_than(_Tp, __a, __b)              (((__a) <  (__b)) ? mu0_true : mu0_false)
 #	define mu9_less_than_or_equal(_Tp, __a, __b)     (((__a) <= (__b)) ? mu0_true : mu0_false)

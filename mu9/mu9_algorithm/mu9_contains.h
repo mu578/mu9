@@ -22,6 +22,14 @@
 
 MU0_BEGIN_CDECL
 
+//#!
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp &* __last2, _Tp<return> & __d_result1, Bool<return> & __d_result2) : void
+//#!
+//#! ^input  : [__first1, __last1) the range of needle.
+//#! ^input  : [__first2, __last2) the range of haystack.
+//#! ^output : __d_result1, pointer to __first2 + __last1 or __last2.
+//#! ^output : __d_result2, boolean value `true` or `false`.
+//#!
 #	define mu9_contains1(_Tp, __first1, __last1, __first2, __last2, __d_result1, __d_result2) \
 mu0_scope_begin                                                                              \
 	mu0_bool_t __mu9_contains1__x__ = mu0_false;                                              \
@@ -58,6 +66,15 @@ mu0_scope_begin                                                                 
 	__d_result2 = __mu9_contains1__x__;                                                       \
 mu0_scope_end
 
+//#!
+//#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp &* __last2, __binary_pred, _Tp<return> & __d_result1, Bool<return> & __d_result2) : void
+//#!
+//#! ^input  : [__first1, __last1) the range of needle.
+//#! ^input  : [__first2, __last2) the range of haystack.
+//#! ^input  : __binary_pred, equality binary predicate.
+//#! ^output : __d_result1, pointer to __first2 + __last1 or __last2.
+//#! ^output : __d_result2, boolean value `true` or `false`.
+//#!
 #	define mu9_contains2(_Tp, __first1, __last1, __first2, __last2, __binary_pred, __d_result1, __d_result2) \
 mu0_scope_begin                                                                                             \
 	mu0_bool_t __mu9_contains2__x__ = mu0_false;                                                             \

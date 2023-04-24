@@ -25,6 +25,7 @@
 MU0_BEGIN_CDECL
 
 #	if MU0_HAVE_PARALLELIZE
+#	if MU0_HAVE_OPENMP
 
 #	define mu9_parallel_accumulate00(_Tp, __first, __last, __init, __binary_op, __d_result)           \
 mu0_scope_begin                                                                                      \
@@ -45,6 +46,7 @@ mu0_scope_begin                                                                 
 	__d_result = __mu9_parallel_accumulate00__v__;                                                    \
 mu0_scope_end
 
+#	endif
 #	endif
 
 //#!
