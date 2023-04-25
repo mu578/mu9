@@ -16,10 +16,11 @@
 //
 
 #include <mu0/mu0_integer.h>
-#include <mu9/mu9_algorithm/mu9_swap.h>
 
 #ifndef MU9_ITERATOR_H
 #define MU9_ITERATOR_H 1
+
+#	include <mu9/mu9_algorithm/mu9_swap.h>
 
 MU0_BEGIN_CDECL
 
