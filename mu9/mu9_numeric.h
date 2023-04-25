@@ -10,7 +10,7 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu9_algorithm.h
+// mu9_numeric.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //

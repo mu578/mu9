@@ -22,11 +22,9 @@
 #	include <mu9/mu9_algorithm/mu9_argument_sort.h>
 #	include <mu9/mu9_algorithm/mu9_binary_search.h>
 #	include <mu9/mu9_algorithm/mu9_bubble_sort.h>
-#	include <mu9/mu9_algorithm/mu9_contains.h>
 #	include <mu9/mu9_algorithm/mu9_copy_backward.h>
 #	include <mu9/mu9_algorithm/mu9_copy.h>
 #	include <mu9/mu9_algorithm/mu9_count.h>
-#	include <mu9/mu9_algorithm/mu9_ends_with.h>
 #	include <mu9/mu9_algorithm/mu9_equal_range.h>
 #	include <mu9/mu9_algorithm/mu9_equal.h>
 #	include <mu9/mu9_algorithm/mu9_fill.h>
@@ -60,8 +58,6 @@
 #	include <mu9/mu9_algorithm/mu9_remove.h>
 #	include <mu9/mu9_algorithm/mu9_reverse.h>
 #	include <mu9/mu9_algorithm/mu9_rotate.h>
-#	include <mu9/mu9_algorithm/mu9_search_accept.h>
-#	include <mu9/mu9_algorithm/mu9_search_reject.h>
 #	include <mu9/mu9_algorithm/mu9_search.h>
 #	include <mu9/mu9_algorithm/mu9_selection_sort.h>
 #	include <mu9/mu9_algorithm/mu9_set_difference.h>
@@ -73,7 +69,6 @@
 #	include <mu9/mu9_algorithm/mu9_shuffle.h>
 #	include <mu9/mu9_algorithm/mu9_sort_heap.h>
 #	include <mu9/mu9_algorithm/mu9_stable_sort.h>
-#	include <mu9/mu9_algorithm/mu9_starts_with.h>
 #	include <mu9/mu9_algorithm/mu9_swap.h>
 #	include <mu9/mu9_algorithm/mu9_transform_reduce.h>
 #	include <mu9/mu9_algorithm/mu9_transform.h>

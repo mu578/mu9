@@ -1,9 +1,10 @@
-#include <mu9/mu9_algorithm.h>
-#include <mu9/mu9_parallel.h>
-#include <mu9/mu9_numeric.h>
-#include <mu9/mu9_iterator.h>
 #include <mu0/mu0_floating.h>
 #include <mu0/mu0_string.h>
+
+#include <mu9/mu9_algorithm.h>
+#include <mu9/mu9_character.h>
+#include <mu9/mu9_numeric.h>
+#include <mu9/mu9_parallel.h>
 
 __mu0_static_inline__
 void argsort(
