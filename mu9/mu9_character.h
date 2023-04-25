@@ -15,6 +15,8 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
+#include <mu0/mu0_string.h>
+
 #ifndef MU9_CHARACTER_H
 #define MU9_CHARACTER_H 1
 

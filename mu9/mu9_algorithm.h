@@ -15,6 +15,8 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
+#include <mu0/mu0_definition.h>
+
 #ifndef MU9_ALGORITHM_H
 #define MU9_ALGORITHM_H 1
 
