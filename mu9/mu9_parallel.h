@@ -23,6 +23,7 @@
 #	include <mu9/mu9_parallel/mu9_parallel_accumulate.h>
 #	include <mu9/mu9_parallel/mu9_parallel_bubble_sort.h>
 #	include <mu9/mu9_parallel/mu9_parallel_fill.h>
+#	include <mu9/mu9_parallel/mu9_parallel_inner_accumulate.h>
 #	include <mu9/mu9_parallel/mu9_parallel_max_element.h>
 #	include <mu9/mu9_parallel/mu9_parallel_min_element.h>
 #	include <mu9/mu9_parallel/mu9_parallel_minmax_element.h>
