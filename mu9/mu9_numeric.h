@@ -23,15 +23,19 @@
 #	include <mu9/mu9_algorithm/mu9_accumulate.h>
 #	include <mu9/mu9_algorithm/mu9_adjacent_difference.h>
 #	include <mu9/mu9_algorithm/mu9_apply.h>
+#	include <mu9/mu9_algorithm/mu9_arithmetic_mean.h>
+#	include <mu9/mu9_algorithm/mu9_covariance.h>
 #	include <mu9/mu9_algorithm/mu9_cumulative_product.h>
 #	include <mu9/mu9_algorithm/mu9_exclusive_scan.h>
 #	include <mu9/mu9_algorithm/mu9_inclusive_scan.h>
 #	include <mu9/mu9_algorithm/mu9_inner_accumulate.h>
 #	include <mu9/mu9_algorithm/mu9_inner_product.h>
 #	include <mu9/mu9_algorithm/mu9_iota.h>
+#	include <mu9/mu9_algorithm/mu9_median.h>
 #	include <mu9/mu9_algorithm/mu9_partial_sum.h>
 #	include <mu9/mu9_algorithm/mu9_running_total.h>
 #	include <mu9/mu9_algorithm/mu9_scalar_product.h>
+#	include <mu9/mu9_algorithm/mu9_variance.h>
 
 MU0_BEGIN_CDECL
 

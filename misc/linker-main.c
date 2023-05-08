@@ -17,7 +17,7 @@ void argsort(
 	      mu0_uint32_t   start   = 0;
 	const mu0_fp32_t   * s_first = mu9_const_begin(mu0_fp32_t, x);
 
-	mu9_argument_sort1(mu0_infer(*first), first, last, start, s_first);
+	mu9_argument_sort1(mu0_infer(*s_first), mu0_infer(*first), first, last, start, s_first);
 }
 
 __mu0_static_inline__
@@ -69,7 +69,7 @@ int main(int argc, const char * argv[])
 	mu9_advance_n(mu0_sint32_t, first0, -2);
 	mu0_console_log("%d \n", *first0);
 
-	mu9_argument_sort1(mu0_uint32_t
+	mu9_argument_sort1(mu0_fp32_t, mu0_uint32_t
 		, first1
 		, last1
 		, 0
