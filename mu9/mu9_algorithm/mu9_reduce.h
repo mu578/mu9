@@ -40,6 +40,24 @@ mu0_scope_begin                                                              \
 	__d_result = __mu9_reduce2__v__;                                          \
 mu0_scope_end
 
+#	define mu9_reduce3(_Tp, __first, __last, __init, __unary_op, __d_result) \
+mu0_scope_begin                                                             \
+	_Tp __mu9_reduce3__v__ = mu0_const_cast(_Tp, __init);                    \
+	for (; __first != __last; ++__first) {                                   \
+		__mu9_reduce3__v__ = __mu9_reduce3__v__ + __unary_op(_Tp, *__first);  \
+	}                                                                        \
+	__d_result = __mu9_reduce3__v__;                                         \
+mu0_scope_end
+
+#	define mu9_reduce4(_Tp, __first, __last, __init, __binary_op, __unary_op, __d_result)    \
+mu0_scope_begin                                                                             \
+	_Tp __mu9_reduce4__v__ = mu0_const_cast(_Tp, __init);                                    \
+	for (; __first != __last; ++__first) {                                                   \
+		__mu9_reduce4__v__ = __binary_op(_Tp, __mu9_reduce4__v__, __unary_op(_Tp, *__first)); \
+	}                                                                                        \
+	__d_result = __mu9_reduce4__v__;                                                         \
+mu0_scope_end
+
 MU0_END_CDECL
 
 #endif /* !MU9_REDUCE_H */

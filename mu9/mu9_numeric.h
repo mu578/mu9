@@ -34,6 +34,7 @@
 #	include <mu9/mu9_algorithm/mu9_median.h>
 #	include <mu9/mu9_algorithm/mu9_partial_sum.h>
 #	include <mu9/mu9_algorithm/mu9_running_total.h>
+#	include <mu9/mu9_algorithm/mu9_sample_kurtosis.h>
 #	include <mu9/mu9_algorithm/mu9_scalar_product.h>
 #	include <mu9/mu9_algorithm/mu9_variance.h>
 

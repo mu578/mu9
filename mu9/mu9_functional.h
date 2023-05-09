@@ -39,6 +39,27 @@ MU0_BEGIN_CDECL
 	mu9_plus(_Tp, __c, mu9_multiplies(_Tp, __a, __b))
 
 //#!
+//#! macro<_Tp>(_Tp & __a) : _Tp
+//#!
+#	define mu9_twice(_Tp, __a) \
+	mu9_plus(_Tp, __a, __a)
+
+#	define mu9_square(_Tp, __a) \
+	mu9_multiplies(_Tp, __a, __a)
+
+#	define mu9_cube(_Tp, __a) \
+	mu9_multiplies(_Tp, __a, mu9_square(_Tp, __a))
+
+#	define mu9_biquadrate(_Tp, __a) \
+	mu9_multiplies(_Tp, __a, mu9_cube(_Tp, __a))
+
+//#!
+//#! macro<_Tp>((_Tp & __c, _Tp & __a) : _Tp
+//#!
+#	define mu9_square_accumulate(_Tp, __c, __a) \
+	mu9_multiply_accumulate(_Tp, __c, __a, __a)
+
+//#!
 //#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
 //#!
 #	define mu9_logical_and(_Tp, __a, __b)            (((__a) && (__b))  ? mu0_true : mu0_false)
