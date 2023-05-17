@@ -23,9 +23,9 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_median1(_Tp, _Real, __first, __last, __d_result)                                             \
+#	define mu9_median1(_Tp, _RealFp, __first, __last, __d_result)                                           \
 mu0_scope_begin                                                                                            \
-	      _Real          __mu9_median1__v__ = mu0_const_cast(_Real, 0);                                     \
+	      _RealFp        __mu9_median1__v__ = mu0_const_cast(_RealFp, 0);                                   \
 	      _Tp            __mu9_median1__w__ = mu0_const_cast(_Tp, 0);                                       \
 	const mu0_distance_t __mu9_median1__n__ = mu9_const_distance(_Tp, __first, __last);                     \
 	      mu0_distance_t __mu9_median1__k__;                                                                \
@@ -36,11 +36,11 @@ mu0_scope_begin                                                                 
 		__mu9_median1__w__ = *mu9_next_n(_Tp, __mu9_median1__i__, __mu9_median1__k__);                       \
 		__mu9_median1__k__ =  __mu9_median1__n__ / mu0_const_distance(2);                                    \
 		__mu9_median1__w__ =  __mu9_median1__w__ + *mu9_next_n(_Tp, __mu9_median1__i__, __mu9_median1__k__); \
-		__mu9_median1__v__ =  __mu9_median1__w__ / mu0_const_cast(_Real, 2);                                 \
+		__mu9_median1__v__ =  __mu9_median1__w__ / mu0_const_cast(_RealFp, 2);                               \
 	} else {                                                                                                \
 		__mu9_median1__k__ =  __mu9_median1__n__ / mu0_const_distance(2);                                    \
 		__mu9_median1__w__ = *mu9_next_n(_Tp, __mu9_median1__i__, __mu9_median1__k__);                       \
-		__mu9_median1__v__ =  mu0_const_cast(_Real, __mu9_median1__w__);                                     \
+		__mu9_median1__v__ =  mu0_const_cast(_RealFp, __mu9_median1__w__);                                   \
 	}                                                                                                       \
 	__d_result = __mu9_median1__v__;                                                                        \
 mu0_scope_end

@@ -22,16 +22,16 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_covariance1(_Tp, _Real, __first1, __last1, __first2, __d_result1, __d_result2)                \
+#	define mu9_covariance1(_Tp, _RealFp, __first1, __last1, __first2, __d_result1, __d_result2)              \
 mu0_scope_begin                                                                                             \
-	_Real            __mu9_covariance1__mi__;                                                                \
-	_Real            __mu9_covariance1__mj__;                                                                \
-	_Real            __mu9_covariance1__v__  = mu0_const_cast(_Real, 0);                                     \
-	_Real            __mu9_covariance1__wj__;                                                                \
+	_RealFp          __mu9_covariance1__mi__;                                                                \
+	_RealFp          __mu9_covariance1__mj__;                                                                \
+	_RealFp          __mu9_covariance1__v__  = mu0_const_cast(_RealFp, 0);                                   \
+	_RealFp          __mu9_covariance1__wj__;                                                                \
 	_Tp *            __mu9_covariance1__i__  = __first1;                                                     \
 	_Tp *            __mu9_covariance1__j__  = __first2;                                                     \
 	mu0_difference_t __mu9_covariance1__n__  = mu0_difference(1);                                            \
-	mu9_arithmetic_mean4(_Tp, _Real                                                                          \
+	mu9_arithmetic_mean4(_Tp, _RealFp                                                                        \
 		, __mu9_covariance1__i__                                                                              \
 		, __last1                                                                                             \
 		, __mu9_covariance1__j__                                                                              \
@@ -47,50 +47,50 @@ mu0_scope_begin                                                                 
 		++__first2;                                                                                           \
 	}                                                                                                        \
 	__d_result1 = __mu9_covariance1__n__ > mu0_difference(1)                                                 \
-		? __mu9_covariance1__v__ / mu0_const_cast(_Real, (__mu9_covariance1__n__ - mu0_const_distance(1)))    \
-		: mu0_const_cast(_Real, 0)                                                                            \
+		? __mu9_covariance1__v__ / mu0_const_cast(_RealFp, (__mu9_covariance1__n__ - mu0_const_distance(1)))  \
+		: mu0_const_cast(_RealFp, 0)                                                                          \
 	;                                                                                                        \
 	__d_result2 = __mu9_covariance1__n__ > mu0_difference(1)                                                 \
-		? __mu9_covariance1__v__ / mu0_const_cast(_Real, __mu9_covariance1__n__)                              \
-		: mu0_const_cast(_Real, 0)                                                                            \
+		? __mu9_covariance1__v__ / mu0_const_cast(_RealFp, __mu9_covariance1__n__)                            \
+		: mu0_const_cast(_RealFp, 0)                                                                          \
 	;                                                                                                        \
 mu0_scope_end
 
-#	define mu9_covariance2(_Tp, _Real, __first1, __last1, __first2, __d_result1, __d_result2, __d_result3, __d_result4, __d_result5) \
-mu0_scope_begin                                                                                                                     \
-	_Real            __mu9_covariance2__mi__;                                                                                        \
-	_Real            __mu9_covariance2__mj__;                                                                                        \
-	_Real            __mu9_covariance2__v__  = mu0_const_cast(_Real, 0);                                                             \
-	_Real            __mu9_covariance2__wj__;                                                                                        \
-	_Tp *            __mu9_covariance2__i__  = __first1;                                                                             \
-	_Tp *            __mu9_covariance2__j__  = __first2;                                                                             \
-	mu0_difference_t __mu9_covariance2__n__  = mu0_difference(1);                                                                    \
-	mu9_arithmetic_mean4(_Tp, _Real                                                                                                  \
-		, __mu9_covariance2__i__                                                                                                      \
-		, __last1                                                                                                                     \
-		, __mu9_covariance2__j__                                                                                                      \
-		, __mu9_covariance2__mi__                                                                                                     \
-		, __mu9_covariance2__mj__                                                                                                     \
-	);                                                                                                                               \
-	while(__first1 != __last1) {                                                                                                     \
-		__mu9_covariance2__wi__ = *__first1 - __mu9_covariance2__mi__;                                                                \
-		__mu9_covariance2__wj__ = *__first2 - __mu9_covariance2__mj__;                                                                \
-		__mu9_covariance2__v__  = __mu9_variance1__v__ + (__mu9_covariance2__wi__ * __mu9_covariance2__wj__);                         \
-		++__mu9_covariance2__n__                                                                                                      \
-		++__first1;                                                                                                                   \
-		++__first2;                                                                                                                   \
-	}                                                                                                                                \
-	__d_result1 = __mu9_covariance2__v__;                                                                                            \
-	__d_result2 = __mu9_covariance2__mi__;                                                                                           \
-	__d_result3 = __mu9_covariance2__mj__;                                                                                           \
-	__d_result4 = __mu9_covariance2__n__ > mu0_difference(1)                                                                         \
-		? __mu9_covariance2__v__ / mu0_const_cast(_Real, (__mu9_covariance2__n__ - mu0_const_distance(1)))                            \
-		: mu0_const_cast(_Real, 0)                                                                                                    \
-	;                                                                                                                                \
-	__d_result5 = __mu9_covariance2__n__ > mu0_difference(1)                                                                         \
-		? __mu9_covariance2__v__ / mu0_const_cast(_Real, __mu9_covariance2__n__)                                                      \
-		: mu0_const_cast(_Real, 0)                                                                                                    \
-	;                                                                                                                                \
+#	define mu9_covariance2(_Tp, _RealFp, __first1, __last1, __first2, __d_result1, __d_result2, __d_result3, __d_result4, __d_result5) \
+mu0_scope_begin                                                                                                                       \
+	_RealFp          __mu9_covariance2__mi__;                                                                                          \
+	_RealFp          __mu9_covariance2__mj__;                                                                                          \
+	_RealFp          __mu9_covariance2__v__  = mu0_const_cast(_RealFp, 0);                                                             \
+	_RealFp          __mu9_covariance2__wj__;                                                                                          \
+	_Tp *            __mu9_covariance2__i__  = __first1;                                                                               \
+	_Tp *            __mu9_covariance2__j__  = __first2;                                                                               \
+	mu0_difference_t __mu9_covariance2__n__  = mu0_difference(1);                                                                      \
+	mu9_arithmetic_mean4(_Tp, _RealFp                                                                                                  \
+		, __mu9_covariance2__i__                                                                                                        \
+		, __last1                                                                                                                       \
+		, __mu9_covariance2__j__                                                                                                        \
+		, __mu9_covariance2__mi__                                                                                                       \
+		, __mu9_covariance2__mj__                                                                                                       \
+	);                                                                                                                                 \
+	while(__first1 != __last1) {                                                                                                       \
+		__mu9_covariance2__wi__ = *__first1 - __mu9_covariance2__mi__;                                                                  \
+		__mu9_covariance2__wj__ = *__first2 - __mu9_covariance2__mj__;                                                                  \
+		__mu9_covariance2__v__  = __mu9_variance1__v__ + (__mu9_covariance2__wi__ * __mu9_covariance2__wj__);                           \
+		++__mu9_covariance2__n__                                                                                                        \
+		++__first1;                                                                                                                     \
+		++__first2;                                                                                                                     \
+	}                                                                                                                                  \
+	__d_result1 = __mu9_covariance2__v__;                                                                                              \
+	__d_result2 = __mu9_covariance2__mi__;                                                                                             \
+	__d_result3 = __mu9_covariance2__mj__;                                                                                             \
+	__d_result4 = __mu9_covariance2__n__ > mu0_difference(1)                                                                           \
+		? __mu9_covariance2__v__ / mu0_const_cast(_RealFp, (__mu9_covariance2__n__ - mu0_const_distance(1)))                            \
+		: mu0_const_cast(_RealFp, 0)                                                                                                    \
+	;                                                                                                                                  \
+	__d_result5 = __mu9_covariance2__n__ > mu0_difference(1)                                                                           \
+		? __mu9_covariance2__v__ / mu0_const_cast(_RealFp, __mu9_covariance2__n__)                                                      \
+		: mu0_const_cast(_RealFp, 0)                                                                                                    \
+	;                                                                                                                                  \
 mu0_scope_end
 
 MU0_END_CDECL
