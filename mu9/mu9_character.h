@@ -22,6 +22,7 @@
 
 #	include <mu9/mu9_algorithm/mu9_contains.h>
 #	include <mu9/mu9_algorithm/mu9_ends_with.h>
+#	include <mu9/mu9_algorithm/mu9_lexicographical_compare.h>
 #	include <mu9/mu9_algorithm/mu9_search_accept.h>
 #	include <mu9/mu9_algorithm/mu9_search_first.h>
 #	include <mu9/mu9_algorithm/mu9_search_reject.h>

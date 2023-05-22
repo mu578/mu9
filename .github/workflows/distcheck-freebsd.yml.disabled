@@ -1,0 +1,29 @@
+name: FreeBSD CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+
+    runs-on: freebsd-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: mu578/mu0
+        path: mu0
+    - uses: actions/checkout@v3
+      with:
+        path: mu8
+    - name: Run distcheck
+      run: cd mu8/mk && make -f mu8.mk distcheck
+
+# EOF
