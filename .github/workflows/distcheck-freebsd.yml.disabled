@@ -22,8 +22,12 @@ jobs:
         path: mu0
     - uses: actions/checkout@v3
       with:
+        repository: mu578/mu8
         path: mu8
+    - uses: actions/checkout@v3
+      with:
+        path: mu9
     - name: Run distcheck
-      run: cd mu8/mk && make -f mu8.mk distcheck
+      run: cd mu9/mk && make -f mu9.mk distcheck
 
 # EOF
