@@ -1,4 +1,4 @@
-name: FreeBSD CI
+name: freebsd-x86_64-ci
 
 on:
   push:
