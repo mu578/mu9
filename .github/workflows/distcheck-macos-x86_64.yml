@@ -1,4 +1,4 @@
-name: windows-x86_64-ci
+name: distcheck-macos-x86_64
 
 on:
   push:
@@ -6,14 +6,10 @@ on:
   pull_request:
     branches: [ "master" ]
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -28,6 +24,6 @@ jobs:
       with:
         path: mu9
     - name: Run distcheck
-      run: echo "PATH=$PATH:C:\msys64\mingw64\bin" >> $GITHUB_ENV && cd mu9/mk && make -f mu9.mk distcheck
+      run: cd mu9/mk && make -f mu9.mk distcheck
 
 # EOF

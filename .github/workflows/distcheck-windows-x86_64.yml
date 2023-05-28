@@ -1,4 +1,4 @@
-name: freebsd-x86_64-ci
+name: distcheck-windows-x86_64
 
 on:
   push:
@@ -13,7 +13,7 @@ defaults:
 jobs:
   build:
 
-    runs-on: freebsd-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -28,6 +28,6 @@ jobs:
       with:
         path: mu9
     - name: Run distcheck
-      run: cd mu9/mk && make -f mu9.mk distcheck
+      run: echo "PATH=$PATH:C:\msys64\mingw64\bin" >> $GITHUB_ENV && cd mu9/mk && make -f mu9.mk distcheck
 
 # EOF
