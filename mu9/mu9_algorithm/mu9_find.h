@@ -41,6 +41,42 @@ mu0_scope_begin                                               \
 mu0_scope_end
 
 //#!
+//#! macro<_Tp>(_Tp &* __first, _Tp &* __last, const _Tp & __value, __binary_pred, _Tp<return> &* __d_result) : void
+//#!
+#	define mu9_find_match(_Tp, __first, __last, __value, __binary_pred, __d_result) \
+mu0_scope_begin                                                                    \
+	mu0_bool_t __mu9_find_match__x__ = mu0_false;                                   \
+	for (; __first != __last; ++__first) {                                          \
+		 if (__binary_pred(_Tp, *__first, __value)) {                                \
+			__d_result            = __first;                                          \
+			__mu9_find_match__x__ = mu0_true;                                         \
+			break;                                                                    \
+		}                                                                            \
+	}                                                                               \
+	if (!__mu9_find_match__x__) {                                                   \
+		__d_result = __last;                                                         \
+	}                                                                               \
+mu0_scope_end
+
+//#!
+//#! macro<_Tp>(_Tp &* __first, _Tp &* __last, const _Tp & __value, _Tp<return> &* __d_result) : void
+//#!
+#	define mu9_find_not(_Tp, __first, __last, __value, __d_result) \
+mu0_scope_begin                                                   \
+	mu0_bool_t __mu9_find_not__x__ = mu0_false;                    \
+	for (; __first != __last; ++__first) {                         \
+		if (*__first != __value) {                                  \
+			__d_result          = __first;                           \
+			__mu9_find_not__x__ = mu0_true;                          \
+			break;                                                   \
+		}                                                           \
+	}                                                              \
+	if (!__mu9_find_not__x__) {                                    \
+		__d_result = __last;                                        \
+	}                                                              \
+mu0_scope_end
+
+//#!
 //#! macro<_Tp>(_Tp &* __first, _Tp &* __last, __unary_pred, _Tp<return> &* __d_result) : void
 //#!
 #	define mu9_find_if(_Tp, __first, __last, __unary_pred, __d_result) \

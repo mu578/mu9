@@ -26,8 +26,10 @@ mu0_bool_t endswith(
 	, const mu0_tchar8_t * needle
 ) {
 	      mu0_bool_t     d_result;
-	const mu0_usize_t    n      = mu0_string8_length(haystack);
-	const mu0_usize_t    m      = mu0_string8_length(needle);
+	      mu0_usize_t    n, m;
+
+	mu0_string_length(mu0_tchar8_t, haystack, n);
+	mu0_string_length(mu0_tchar8_t, needle  , m);
 
 	const mu0_tchar8_t * first1 = mu9_const_begin   (mu0_tchar8_t, needle);
 	const mu0_tchar8_t * last1  = mu9_const_end     (mu0_tchar8_t, needle, m);

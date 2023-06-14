@@ -24,8 +24,8 @@ MU0_ROOT_PATH     := $(dir $(abspath ..))mu0
 PLATFORM_VARIANT  := macos_macport.fat
 
 include $(MU9_ROOT_PATH)/mk/inc/mu9_source.mk
-include $(MU8_ROOT_PATH)/mk/inc/mu8_source.mk
-include $(MU0_ROOT_PATH)/mk/inc/mu0_source.mk
+include $(MU8_ROOT_PATH)/mk/inc/mu8_header.mk
+include $(MU0_ROOT_PATH)/mk/inc/mu0_header.mk
 include $(MU0_ROOT_PATH)/mk/inc/mu0_toolchain.mk
 include $(MU0_ROOT_PATH)/mk/inc/mu0_ruleset.mk
 
