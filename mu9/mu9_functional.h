@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_integer.h>
+#include <mu0/mu0_arithmetic.h>
 
 #ifndef MU9_FUNCTIONAL_H
 #define MU9_FUNCTIONAL_H 1
