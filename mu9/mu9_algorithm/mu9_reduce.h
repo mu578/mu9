@@ -24,7 +24,7 @@ MU0_BEGIN_CDECL
 
 #	define mu9_reduce1(_Tp, __first, __last, __init, __d_result) \
 mu0_scope_begin                                                 \
-	_Tp __mu9_reduce1__v__ = mu0_const_cast(_Tp, __init);        \
+	_Tp __mu9_reduce1__v__ = __init;                             \
 	for (; __first != __last; ++__first) {                       \
 		__mu9_reduce1__v__ = __mu9_reduce1__v__ + *__first;       \
 	}                                                            \
@@ -33,7 +33,7 @@ mu0_scope_end
 
 #	define mu9_reduce2(_Tp, __first, __last, __init, __binary_op, __d_result) \
 mu0_scope_begin                                                              \
-	_Tp __mu9_reduce2__v__ = mu0_const_cast(_Tp, __init);                     \
+	_Tp __mu9_reduce2__v__ = __init;                                          \
 	for (; __first != __last; ++__first) {                                    \
 		__mu9_reduce2__v__ = __binary_op(_Tp, __mu9_reduce2__v__, *__first);   \
 	}                                                                         \
@@ -42,7 +42,7 @@ mu0_scope_end
 
 #	define mu9_reduce3(_Tp, __first, __last, __init, __unary_op, __d_result) \
 mu0_scope_begin                                                             \
-	_Tp __mu9_reduce3__v__ = mu0_const_cast(_Tp, __init);                    \
+	_Tp __mu9_reduce3__v__ = __init;                                         \
 	for (; __first != __last; ++__first) {                                   \
 		__mu9_reduce3__v__ = __mu9_reduce3__v__ + __unary_op(_Tp, *__first);  \
 	}                                                                        \
@@ -51,7 +51,7 @@ mu0_scope_end
 
 #	define mu9_reduce4(_Tp, __first, __last, __init, __binary_op, __unary_op, __d_result)    \
 mu0_scope_begin                                                                             \
-	_Tp __mu9_reduce4__v__ = mu0_const_cast(_Tp, __init);                                    \
+	_Tp __mu9_reduce4__v__ = __init;                                                         \
 	for (; __first != __last; ++__first) {                                                   \
 		__mu9_reduce4__v__ = __binary_op(_Tp, __mu9_reduce4__v__, __unary_op(_Tp, *__first)); \
 	}                                                                                        \

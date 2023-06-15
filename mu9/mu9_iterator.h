@@ -108,7 +108,7 @@ mu0_scope_end
 
 #	define mu9_iterator_assign(_Tp, __it, __i1, __value) \
 mu0_scope_begin                                         \
-	(*((__it) + (__i1)) = mu0_const_cast(_Tp, __value)); \
+	(*((__it) + (__i1)) = __value);                      \
 mu0_scope_end
 
 #	define mu9_iterator_access(_Tp, __it, __i1)                     (*((__it) + (__i1)))

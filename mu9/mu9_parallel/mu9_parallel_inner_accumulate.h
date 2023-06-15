@@ -29,8 +29,8 @@ MU0_BEGIN_CDECL
 
 #	define mu9_parallel_inner_accumulate00(_Tp, __first, __last, __init1, __init2, __d_result1, __d_result2)                          \
 mu0_scope_begin                                                                                                                      \
-	_Tp                  __mu9_parallel_inner_accumulate00__s__ = mu0_const_cast(_Tp, __init1);                                       \
-	_Tp                  __mu9_parallel_inner_accumulate00__q__ = mu0_const_cast(_Tp, __init2);                                       \
+	_Tp                  __mu9_parallel_inner_accumulate00__s__ = __init1;                                                            \
+	_Tp                  __mu9_parallel_inner_accumulate00__q__ = __init2;                                                            \
 	_Tp *                __mu9_parallel_inner_accumulate00__p__ = mu9_begin(_Tp, __first);                                            \
 	const mu0_distance_t __mu9_parallel_inner_accumulate00__n__ = mu9_const_distance(_Tp, __first, __last);                           \
 	__mu0_pragma__(omp parallel for simd reduction(+:__mu9_parallel_inner_accumulate00__s__, __mu9_parallel_inner_accumulate00__q__)) \
@@ -52,8 +52,8 @@ mu0_scope_end
 
 #	define mu9_parallel_inner_accumulate01(_Tp, __first, __last, __init1, __init2, __binary_op1, __binary_op2, __d_result1, __d_result2) \
 mu0_scope_begin                                                                                                                         \
-	_Tp                  __mu9_parallel_inner_accumulate01__s__ = mu0_const_cast(_Tp, __init1);                                          \
-	_Tp                  __mu9_parallel_inner_accumulate01__q__ = mu0_const_cast(_Tp, __init2);                                          \
+	_Tp                  __mu9_parallel_inner_accumulate01__s__ = __init1;                                                               \
+	_Tp                  __mu9_parallel_inner_accumulate01__q__ = __init2;                                                               \
 	_Tp *                __mu9_parallel_inner_accumulate01__p__ = mu9_begin(_Tp, __first);                                               \
 	const mu0_distance_t __mu9_parallel_inner_accumulate01__n__ = mu9_const_distance(_Tp, __first, __last);                              \
 	__mu0_pragma__(omp parallel)                                                                                                         \
@@ -95,8 +95,8 @@ mu0_scope_end
 
 #	define mu9_parallel_inner_accumulate02(_Tp, __first, __last, __init1, __init2, __binary_op, __trinary_op, __d_result1, __d_result2) \
 mu0_scope_begin                                                                                                                        \
-	_Tp                  __mu9_parallel_inner_accumulate02__s__ = mu0_const_cast(_Tp, __init1);                                         \
-	_Tp                  __mu9_parallel_inner_accumulate02__q__ = mu0_const_cast(_Tp, __init2);                                         \
+	_Tp                  __mu9_parallel_inner_accumulate02__s__ = __init1;                                                              \
+	_Tp                  __mu9_parallel_inner_accumulate02__q__ = __init2;                                                              \
 	_Tp *                __mu9_parallel_inner_accumulate02__p__ = mu9_begin(_Tp, __first);                                              \
 	const mu0_distance_t __mu9_parallel_inner_accumulate02__n__ = mu9_const_distance(_Tp, __first, __last);                             \
 	__mu0_pragma__(omp parallel)                                                                                                        \

@@ -29,7 +29,7 @@ MU0_BEGIN_CDECL
 
 #	define mu9_parallel_fill00(_Tp, __first, __last, __value)                                   \
 mu0_scope_begin                                                                                \
-	const _Tp            __mu9_parallel_fill00__v__ = mu0_const_cast(_Tp, __value);             \
+	const _Tp            __mu9_parallel_fill00__v__ = __value;                                  \
 	      _Tp *          __mu9_parallel_fill00__p__ = mu9_begin(_Tp, __first);                  \
 	const mu0_distance_t __mu9_parallel_fill00__n__ = mu9_const_distance(_Tp, __first, __last); \
 	__mu0_pragma__(omp parallel for simd)                                                       \
@@ -44,7 +44,7 @@ mu0_scope_end
 
 #	define mu9_parallel_fill_n00(_Tp, __first, __n, __value)                                      \
 mu0_scope_begin                                                                                  \
-	const _Tp            __mu9_parallel_fill_n00__v__ = mu0_const_cast(_Tp, __value);             \
+	const _Tp            __mu9_parallel_fill_n00__v__ = __value;                                  \
 	      _Tp *          __mu9_parallel_fill_n00__p__ = mu9_begin(_Tp, __first);                  \
 	const mu0_distance_t __mu9_parallel_fill_n00__n__ = mu0_const_distance(__n);                  \
 	__mu0_pragma__(omp parallel for simd)                                                         \

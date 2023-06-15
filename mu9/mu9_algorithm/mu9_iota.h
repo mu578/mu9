@@ -27,7 +27,7 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_iota1(_Tp, __first, __last, __value)      \
 mu0_scope_begin                                         \
-	_Tp __mu9_iota1__v__ = mu0_const_cast(_Tp, __value); \
+	_Tp __mu9_iota1__v__ = __value;                      \
 	while (__first != __last) {                          \
 		*__first++ = __mu9_iota1__v__;                    \
 		++__mu9_iota1__v__;                               \
@@ -39,7 +39,7 @@ mu0_scope_end
 //#!
 #	define mu9_iota2(_Tp, __first1, __last1, __first2, __value) \
 mu0_scope_begin                                                \
-	_Tp __mu9_iota2__v__ = mu0_const_cast(_Tp, __value);        \
+	_Tp __mu9_iota2__v__ = __value;                             \
 	while (__first1 != __last1) {                               \
 		*__first1++ = __mu9_iota2__v__;                          \
 		*__first2++ = __mu9_iota2__v__;                          \
