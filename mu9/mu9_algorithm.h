@@ -29,6 +29,7 @@
 #	include <mu9/mu9_algorithm/mu9_count.h>
 #	include <mu9/mu9_algorithm/mu9_equal_range.h>
 #	include <mu9/mu9_algorithm/mu9_equal.h>
+#	include <mu9/mu9_algorithm/mu9_exist.h>
 #	include <mu9/mu9_algorithm/mu9_fill.h>
 #	include <mu9/mu9_algorithm/mu9_filter.h>
 #	include <mu9/mu9_algorithm/mu9_find.h>
