@@ -21,7 +21,8 @@ MU9_ROOT_PATH     := $(LOCAL_MODULE_PATH)
 MU8_ROOT_PATH     := $(dir $(abspath ..))mu8
 MU0_ROOT_PATH     := $(dir $(abspath ..))mu0
 
-PLATFORM_VARIANT  := macos_macport.fat
+# PLATFORM_VARIANT  := macos_macport.fat
+# PLATFORM_VARIANT  := macos_android
 
 include $(MU9_ROOT_PATH)/mk/inc/mu9_source.mk
 include $(MU8_ROOT_PATH)/mk/inc/mu8_header.mk
