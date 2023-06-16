@@ -30,7 +30,7 @@ mu0_scope_begin                                                                 
 	_Tp *            __mu9_variance1__i__ = __first;                                                    \
 	mu0_difference_t __mu9_variance1__n__ = mu0_difference(1);                                          \
 	mu9_arithmetic_mean2(_RealFp, __mu9_variance1__i__, __last, __mu9_variance1__m__);                  \
-	while(__first != __last) {                                                                          \
+	while (__first != __last) {                                                                         \
 		__mu9_variance1__w__ = *__first - __mu9_variance1__m__;                                          \
 		__mu9_variance1__v__ = __mu9_variance1__v__ + (__mu9_variance1__w__ * __mu9_variance1__w__);     \
 		++__mu9_variance1__n__                                                                           \
@@ -50,7 +50,7 @@ mu0_scope_begin                                                                 
 	_Tp *            __mu9_variance2__i__ = __first;                                                        \
 	mu0_difference_t __mu9_variance2__n__ = mu0_difference(1);                                              \
 	mu9_arithmetic_mean2(_RealFp, __mu9_variance2__i__, __last, __mu9_variance2__m__);                      \
-	while(__first != __last) {                                                                              \
+	while (__first != __last) {                                                                             \
 		__mu9_variance2__w__ = *__first - __mu9_variance2__m__;                                              \
 		__mu9_variance2__v__ = __mu9_variance2__v__ + (__mu9_variance2__w__ * __mu9_variance2__w__);         \
 		++__mu9_variance2__n__                                                                               \
@@ -76,7 +76,7 @@ mu0_scope_begin                                                                 
 	_RealFp          __mu9_variance3__v__ = mu0_const_cast(_RealFp, 0);                                                  \
 	_RealFp          __mu9_variance3__w__ = mu0_const_cast(_RealFp, 0);                                                  \
 	mu0_difference_t __mu9_variance3__n__ = mu0_difference(1);                                                           \
-	while(__first != __last) {                                                                                           \
+	while (__first != __last) {                                                                                          \
 		__mu9_variance3__s__ = __mu9_variance3__s__ + *__first;                                                           \
 		__mu9_variance3__q__ = __mu9_variance3__q__ + ((*__first) * (*__first));                                          \
 		++__mu9_variance3__n__                                                                                            \

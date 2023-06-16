@@ -31,7 +31,7 @@ mu0_scope_begin                                                                 
 	_RealFp          __mu9_sample_kurtosis1__s__;                                                                                 \
 	mu0_difference_t __mu9_sample_kurtosis1__n__  = mu0_difference(1);                                                            \
 	mu9_arithmetic_mean1(_Tp, _RealFp, __first, __last, __mu9_sample_kurtosis1__s__, __mu9_sample_kurtosis1__m__);                \
-	while(__first != __last) {                                                                                                    \
+	while (__first != __last) {                                                                                                   \
 		__mu9_sample_kurtosis1__v__  = *__first - __mu9_sample_kurtosis1__m__;                                                     \
 		__mu9_sample_kurtosis1__m2__ = __mu9_sample_kurtosis1__m2__ + (__mu9_sample_kurtosis1__v__ * __mu9_sample_kurtosis1__v__); \
 		__mu9_sample_kurtosis1__m4__ = __mu9_sample_kurtosis1__m4__ + (                                                            \
@@ -64,7 +64,7 @@ mu0_scope_begin                                                                 
 	_RealFp          __mu9_sample_kurtosis2__v__;                                                                                 \
 	_RealFp          __mu9_sample_kurtosis2__m__  = mu0_const_cast(_RealFp, __mean_value);                                        \
 	mu0_difference_t __mu9_sample_kurtosis2__n__  = mu0_difference(1);                                                            \
-	while(__first != __last) {                                                                                                    \
+	while (__first != __last) {                                                                                                   \
 		__mu9_sample_kurtosis2__v__  = *__first - __mu9_sample_kurtosis2__m__;                                                     \
 		__mu9_sample_kurtosis2__m2__ = __mu9_sample_kurtosis2__m2__ + (__mu9_sample_kurtosis2__v__ * __mu9_sample_kurtosis2__v__); \
 		__mu9_sample_kurtosis2__m4__ = __mu9_sample_kurtosis2__m4__ + (                                                            \

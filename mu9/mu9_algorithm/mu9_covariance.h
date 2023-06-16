@@ -38,7 +38,7 @@ mu0_scope_begin                                                                 
 		, __mu9_covariance1__mi__                                                                             \
 		, __mu9_covariance1__mj__                                                                             \
 	);                                                                                                       \
-	while(__first1 != __last1) {                                                                             \
+	while (__first1 != __last1) {                                                                            \
 		__mu9_covariance1__wi__ = *__first1 - __mu9_covariance1__mi__;                                        \
 		__mu9_covariance1__wj__ = *__first2 - __mu9_covariance1__mj__;                                        \
 		__mu9_covariance1__v__  = __mu9_variance1__v__ + (__mu9_covariance1__wi__ * __mu9_covariance1__wj__); \
@@ -72,7 +72,7 @@ mu0_scope_begin                                                                 
 		, __mu9_covariance2__mi__                                                                                                       \
 		, __mu9_covariance2__mj__                                                                                                       \
 	);                                                                                                                                 \
-	while(__first1 != __last1) {                                                                                                       \
+	while (__first1 != __last1) {                                                                                                      \
 		__mu9_covariance2__wi__ = *__first1 - __mu9_covariance2__mi__;                                                                  \
 		__mu9_covariance2__wj__ = *__first2 - __mu9_covariance2__mj__;                                                                  \
 		__mu9_covariance2__v__  = __mu9_variance1__v__ + (__mu9_covariance2__wi__ * __mu9_covariance2__wj__);                           \

@@ -26,7 +26,7 @@ MU0_BEGIN_CDECL
 mu0_scope_begin                                                                                      \
 	_Tp              __mu9_arithmetic_mean1__s__ = mu0_const_cast(_Tp, 0);                            \
 	mu0_difference_t __mu9_arithmetic_mean1__n__ = mu0_difference(1);                                 \
-	while(__first != __last) {                                                                        \
+	while (__first != __last) {                                                                       \
 		__mu9_arithmetic_mean1__s__ = __mu9_arithmetic_mean1__s__ + *__first;                          \
 		++__mu9_arithmetic_mean1__n__;                                                                 \
 		++__first;                                                                                     \
@@ -39,7 +39,7 @@ mu0_scope_end
 mu0_scope_begin                                                                      \
 	_RealFp          __mu9_arithmetic_mean2__m__ = mu0_const_cast(_RealFp, 0);        \
 	mu0_difference_t __mu9_arithmetic_mean2__c__ = mu0_difference(1);                 \
-	while(__first != __last) {                                                        \
+	while (__first != __last) {                                                       \
 		__mu9_arithmetic_mean2__m__ = __mu9_arithmetic_mean2__m__                      \
 			+ ((*__first - __mu9_arithmetic_mean2__m__) / __mu9_arithmetic_mean2__c__); \
 		++__mu9_arithmetic_mean2__c__;                                                 \
@@ -53,7 +53,7 @@ mu0_scope_begin                                                                 
 	_Tp              __mu9_arithmetic_mean3__si__ = mu0_const_cast(_Tp, 0);                                                    \
 	_Tp              __mu9_arithmetic_mean3__sj__ = mu0_const_cast(_Tp, 0);                                                    \
 	mu0_difference_t __mu9_arithmetic_mean3__n__  = mu0_difference(1);                                                         \
-	while(__first1 != __last1) {                                                                                               \
+	while (__first1 != __last1) {                                                                                              \
 		__mu9_arithmetic_mean3__si__ = __mu9_arithmetic_mean3__si__ + *__first1;                                                \
 		__mu9_arithmetic_mean3__sj__ = __mu9_arithmetic_mean3__sj__ + *__first2;                                                \
 		++__mu9_arithmetic_mean3__n__;                                                                                          \
@@ -71,7 +71,7 @@ mu0_scope_begin                                                                 
 	_RealFp          __mu9_arithmetic_mean4__mi__ = mu0_const_cast(_RealFp, 0);                      \
 	_RealFp          __mu9_arithmetic_mean4__mj__ = mu0_const_cast(_RealFp, 0);                      \
 	mu0_difference_t __mu9_arithmetic_mean4__c__  = mu0_difference(1);                               \
-	while(__first1 != __last1) {                                                                     \
+	while (__first1 != __last1) {                                                                    \
 		__mu9_arithmetic_mean4__mi__ = __mu9_arithmetic_mean4__mi__                                   \
 			+ ((*__first1 - __mu9_arithmetic_mean4__mi__) / __mu9_arithmetic_mean4__c__);              \
 		__mu9_arithmetic_mean4__mj__ = __mu9_arithmetic_mean4__mj__                                   \
@@ -90,7 +90,7 @@ mu0_scope_begin                                                                 
 	_RealFp          __mu9_arithmetic_mean5__mj__ = mu0_const_cast(_RealFp, 0);                                             \
 	_RealFp          __mu9_arithmetic_mean5__mk__ = mu0_const_cast(_RealFp, 0);                                             \
 	mu0_difference_t __mu9_arithmetic_mean5__c__  = mu0_difference(1);                                                      \
-	while(__first1 != __last1) {                                                                                            \
+	while (__first1 != __last1) {                                                                                           \
 		__mu9_arithmetic_mean5__mi__ = __mu9_arithmetic_mean5__mi__                                                          \
 			+ ((*__first1 - __mu9_arithmetic_mean5__mi__) / __mu9_arithmetic_mean5__c__);                                     \
 		__mu9_arithmetic_mean5__mj__ = __mu9_arithmetic_mean5__mj__                                                          \

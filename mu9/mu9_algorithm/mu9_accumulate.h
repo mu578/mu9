@@ -106,15 +106,15 @@ mu0_scope_end
 //#!
 //#! macro<_Tp>(_Tp &* __first1, _Tp &* __last1, _Tp &* __first2, _Tp __init, __trinary_op, __binary_op, _Tp<return> & __d_result) : void
 //#!
-#	define mu9_accumulate7(_Tp, __first1, __last1, __first2, __init, __trinary_op, __binary_op, __d_result)   \
-mu0_scope_begin                                                                                              \
-	_Tp __mu9_accumulate7__v__ = __init;                                                                      \
-	while (__first1 != __last1) {                                                                             \
-		__mu9_accumulate7__v__ = __trinary_op(_Tp, __mu9_accumulate7__v__, *__first1, *__first2);              \
-		++__first1;                                                                                            \
-		++__first2;                                                                                            \
-	}                                                                                                         \
-	__d_result = __mu9_accumulate7__v__;                                                                      \
+#	define mu9_accumulate7(_Tp, __first1, __last1, __first2, __init, __trinary_op, __binary_op, __d_result) \
+mu0_scope_begin                                                                                            \
+	_Tp __mu9_accumulate7__v__ = __init;                                                                    \
+	while (__first1 != __last1) {                                                                           \
+		__mu9_accumulate7__v__ = __trinary_op(_Tp, __mu9_accumulate7__v__, *__first1, *__first2);            \
+		++__first1;                                                                                          \
+		++__first2;                                                                                          \
+	}                                                                                                       \
+	__d_result = __mu9_accumulate7__v__;                                                                    \
 mu0_scope_end
 
 MU0_END_CDECL
