@@ -27,7 +27,7 @@ MU0_BEGIN_CDECL
 #	if MU0_HAVE_PARALLELIZE
 #	if MU0_HAVE_OPENMP
 
-#	define mu9_parallel_minmax_element00(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)                                                   \
+#	define __mu9_parallel_minmax_element00__(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)                                               \
 mu0_scope_begin                                                                                                                                      \
 	      _Tp            __mu9_parallel_minmax_element00__v0__ = *__first;                                                                            \
 	      _Tp            __mu9_parallel_minmax_element00__v1__ = *__first;                                                                            \
@@ -91,7 +91,7 @@ mu0_scope_end
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_minmax_element1(_Tp, __first, __last, __d_result1, __d_result2) \
-	mu9_parallel_minmax_element00(_Tp, __first, __last, mu9_less, __d_result1, __d_result2)
+	__mu9_parallel_minmax_element00__(_Tp, __first, __last, mu9_less, __d_result1, __d_result2)
 #	else
 #	define mu9_parallel_minmax_element1(_Tp, __first, __last, __d_result1, __d_result2) \
 	mu9_sequencial_minmax_element1(_Tp, __first, __last, __d_result1, __d_result2)
@@ -108,7 +108,7 @@ mu0_scope_end
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2) \
-	mu9_parallel_minmax_element00(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)
+	__mu9_parallel_minmax_element00__(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)
 #	else
 #	define mu9_parallel_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2) \
 	mu9_sequencial_minmax_element2(_Tp, __first, __last, __comp_fn, __d_result1, __d_result2)

@@ -27,7 +27,7 @@ MU0_BEGIN_CDECL
 #	if MU0_HAVE_PARALLELIZE
 #	if MU0_HAVE_OPENMP
 
-#	define mu9_parallel_fill00(_Tp, __first, __last, __value)                                   \
+#	define __mu9_parallel_fill00__(_Tp, __first, __last, __value)                               \
 mu0_scope_begin                                                                                \
 	const _Tp            __mu9_parallel_fill00__v__ = __value;                                  \
 	      _Tp *          __mu9_parallel_fill00__p__ = mu9_begin(_Tp, __first);                  \
@@ -42,7 +42,7 @@ mu0_scope_begin                                                                 
 	}                                                                                           \
 mu0_scope_end
 
-#	define mu9_parallel_fill_n00(_Tp, __first, __n, __value)                                      \
+#	define __mu9_parallel_fill_n00__(_Tp, __first, __n, __value)                                      \
 mu0_scope_begin                                                                                  \
 	const _Tp            __mu9_parallel_fill_n00__v__ = __value;                                  \
 	      _Tp *          __mu9_parallel_fill_n00__p__ = mu9_begin(_Tp, __first);                  \
@@ -71,7 +71,7 @@ mu0_scope_end
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_fill(_Tp, __first, __last, __value) \
-	mu9_parallel_fill00(_Tp, __first, __last, , __value)
+	__mu9_parallel_fill00__(_Tp, __first, __last, , __value)
 #	else
 #	define mu9_parallel_fill(_Tp, __first, __last, __value) \
 	mu9_sequencial_fill(_Tp, __first, __last, __value)
@@ -88,7 +88,7 @@ mu0_scope_end
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_fill_n(_Tp, __first, __n, __value) \
-	mu9_parallel_fill_n00(_Tp, __first, __n, __value)
+	__mu9_parallel_fill_n00__(_Tp, __first, __n, __value)
 #	else
 #	define mu9_parallel_fill_n(_Tp, __first, __n, __value) \
 	mu9_sequencial_fill_n(_Tp, __first, __n, __value)
