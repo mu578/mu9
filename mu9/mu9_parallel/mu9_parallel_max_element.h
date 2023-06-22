@@ -27,7 +27,7 @@ MU0_BEGIN_CDECL
 #	if MU0_HAVE_PARALLELIZE
 #	if MU0_HAVE_OPENMP
 
-#	define __mu9_parallel_max_element00__(_Tp, __first, __last, __comp_fn, __d_result)                                                          \
+#	define __mu9_parallel_max_element00__(_Tp, __first, __last, __comp_fn, __d_result)                                                      \
 mu0_scope_begin                                                                                                                            \
 	      _Tp            __mu9_parallel_max_element00__v__ = *__first;                                                                      \
 	      _Tp *          __mu9_parallel_max_element00__p__ = mu9_begin(_Tp, __first);                                                       \

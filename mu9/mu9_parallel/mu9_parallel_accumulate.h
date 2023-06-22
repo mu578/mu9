@@ -51,7 +51,7 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_parallel_accumulate01__n__ = mu9_const_distance(_Tp, __first, __last); \
 	__mu0_pragma__(omp parallel)                                                                      \
 	{                                                                                                 \
-		_Tp __mu9_parallel_accumulate01__w__ = ___mu0_arithmetic_initialize__(_Tp, 0);                 \
+		_Tp __mu9_parallel_accumulate01__w__ = mu9_initialize(_Tp, 0);                                 \
 		__mu0_pragma__(omp for simd)                                                                   \
 		for (                                                                                          \
 			  mu0_distance_t __mu9_parallel_accumulate01__i__ = mu0_const_distance(0)                   \
@@ -81,7 +81,7 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_parallel_accumulate02__n__ = mu9_const_distance(_Tp, __first, __last);         \
 	__mu0_pragma__(omp parallel)                                                                              \
 	{                                                                                                         \
-		_Tp __mu9_parallel_accumulate02__w__ = __mu0_arithmetic_initialize__(_Tp, 0);                          \
+		_Tp __mu9_parallel_accumulate02__w__ = mu9_initialize(_Tp, 0);                                         \
 		__mu0_pragma__(omp for simd)                                                                           \
 		for (                                                                                                  \
 			  mu0_distance_t __mu9_parallel_accumulate02__i__ = mu0_const_distance(0)                           \
@@ -133,7 +133,7 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_parallel_accumulate04__n__ = mu9_const_distance(_Tp, __first1, __last1);     \
 	__mu0_pragma__(omp parallel)                                                                            \
 	{                                                                                                       \
-		_Tp __mu9_parallel_accumulate04__w__ = __mu0_arithmetic_initialize__(_Tp, 0);                        \
+		_Tp __mu9_parallel_accumulate04__w__ = mu9_initialize(_Tp, 0);                                       \
 		__mu0_pragma__(omp for simd)                                                                         \
 		for (                                                                                                \
 			  mu0_distance_t __mu9_parallel_accumulate04__i__ = mu0_const_distance(0)                         \
@@ -166,7 +166,7 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_parallel_accumulate05__n__ = mu9_const_distance(_Tp, __first1, __last1);                    \
 	__mu0_pragma__(omp parallel)                                                                                           \
 	{                                                                                                                      \
-		_Tp __mu9_parallel_accumulate05__w__ = __mu0_arithmetic_initialize__(_Tp, 0);                                       \
+		_Tp __mu9_parallel_accumulate05__w__ = mu9_initialize(_Tp, 0);                                                      \
 		__mu0_pragma__(omp for simd)                                                                                        \
 		for (                                                                                                               \
 			  mu0_distance_t __mu9_parallel_accumulate05__i__ = mu0_const_distance(0)                                        \
@@ -199,7 +199,7 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_parallel_accumulate06__n__ = mu9_const_distance(_Tp, __first1, __last1);                   \
 	__mu0_pragma__(omp parallel)                                                                                          \
 	{                                                                                                                     \
-		_Tp __mu9_parallel_accumulate06__w__ = __mu0_arithmetic_initialize__(_Tp, 0);                                      \
+		_Tp __mu9_parallel_accumulate06__w__ = mu9_initialize(_Tp, 0);                                                     \
 		__mu0_pragma__(omp for simd)                                                                                       \
 		for (                                                                                                              \
 			  mu0_distance_t __mu9_parallel_accumulate06__i__ = mu0_const_distance(0)                                       \

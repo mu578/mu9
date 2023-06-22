@@ -42,7 +42,7 @@ mu0_scope_begin                                                                 
 	}                                                                                           \
 mu0_scope_end
 
-#	define __mu9_parallel_fill_n00__(_Tp, __first, __n, __value)                                      \
+#	define __mu9_parallel_fill_n00__(_Tp, __first, __n, __value)                                  \
 mu0_scope_begin                                                                                  \
 	const _Tp            __mu9_parallel_fill_n00__v__ = __value;                                  \
 	      _Tp *          __mu9_parallel_fill_n00__p__ = mu9_begin(_Tp, __first);                  \

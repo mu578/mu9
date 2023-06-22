@@ -58,8 +58,8 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_parallel_inner_accumulate01__n__ = mu9_const_distance(_Tp, __first, __last);                                  \
 	__mu0_pragma__(omp parallel)                                                                                                             \
 	{                                                                                                                                        \
-		_Tp __mu9_parallel_inner_accumulate01__v__ = __mu0_arithmetic_initialize__(_Tp, 0);                                                   \
-		_Tp __mu9_parallel_inner_accumulate01__w__ = __mu0_arithmetic_initialize__(_Tp, 0);                                                   \
+		_Tp __mu9_parallel_inner_accumulate01__v__ = mu9_initialize(_Tp, 0);                                                                  \
+		_Tp __mu9_parallel_inner_accumulate01__w__ = mu9_initialize(_Tp, 0);                                                                  \
 		__mu0_pragma__(omp for simd)                                                                                                          \
 		for (                                                                                                                                 \
 			  mu0_distance_t __mu9_parallel_inner_accumulate01__i__ = mu0_const_distance(0)                                                    \
@@ -101,8 +101,8 @@ mu0_scope_begin                                                                 
 	const mu0_distance_t __mu9_parallel_inner_accumulate02__n__ = mu9_const_distance(_Tp, __first, __last);                                 \
 	__mu0_pragma__(omp parallel)                                                                                                            \
 	{                                                                                                                                       \
-		_Tp __mu9_parallel_inner_accumulate02__v__ = __mu0_arithmetic_initialize__(_Tp, 0);                                                  \
-		_Tp __mu9_parallel_inner_accumulate02__w__ = __mu0_arithmetic_initialize__(_Tp, 0);                                                  \
+		_Tp __mu9_parallel_inner_accumulate02__v__ = mu9_initialize(_Tp, 0);                                                                 \
+		_Tp __mu9_parallel_inner_accumulate02__w__ = mu9_initialize(_Tp, 0);                                                                 \
 		__mu0_pragma__(omp for simd)                                                                                                         \
 		for (                                                                                                                                \
 			  mu0_distance_t __mu9_parallel_inner_accumulate02__i__ = mu0_const_distance(0)                                                   \

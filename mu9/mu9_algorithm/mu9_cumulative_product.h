@@ -15,15 +15,18 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_definition.h>
+#	include <mu9/mu9_functional.h>
 
 #ifndef MU9_CUMULATIVE_PRODUCT_H
 #define MU9_CUMULATIVE_PRODUCT_H 1
 
 MU0_BEGIN_CDECL
 
-#	define mu9_cumulative_product(_Tp, __first, __last, __d_result) \
-	mu9_accumulate2(_Tp, __first, __last, 1, mu9_multiplies, __d_result)
+#	define mu9_cumulative1_product(_Tp, __first, __last, __d_result) \
+	mu9_accumulate2(_Tp, __first, __last, mu9_initialize(_Tp, 1), mu9_mul, __d_result)
+
+#	define mu9_cumulative2_product(_Tp, __first, __last, __mul_op, __d_result) \
+	mu9_accumulate2(_Tp, __first, __last, mu9_initialize(_Tp, 1), __mul_op, __d_result)
 
 MU0_END_CDECL
 

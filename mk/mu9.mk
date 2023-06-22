@@ -35,6 +35,7 @@ MU0_ROOT_PATH     := ../../mu0
 # PLATFORM_VARIANT := macos_android.x86_64
 # PLATFORM_VARIANT := macos_android.all
 
+include $(MU0_ROOT_PATH)/mk/inc/mu0_function.mk
 include $(MU9_ROOT_PATH)/mk/inc/mu9_source.mk
 include $(MU8_ROOT_PATH)/mk/inc/mu8_header.mk
 include $(MU0_ROOT_PATH)/mk/inc/mu0_header.mk
