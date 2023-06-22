@@ -23,11 +23,8 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_running_total1(_Tp, __first, __last, __d_first) \
-	mu9_partial_sum2(_Tp, __first, __last, __d_first, mu9_add)
-
-#	define mu9_running_total2(_Tp, __first, __last, __d_first, __add_op) \
-	mu9_partial_sum2(_Tp, __first, __last, __d_first, __add_op)
+#	define mu9_running_total(_Tp, __first, __last, __d_first) \
+	mu9_partial_sum2(_Tp, __first, __last, __d_first, mu9_addition)
 
 MU0_END_CDECL
 

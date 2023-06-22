@@ -22,11 +22,8 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_cumulative1_product(_Tp, __first, __last, __d_result) \
-	mu9_accumulate2(_Tp, __first, __last, mu9_initialize(_Tp, 1), mu9_mul, __d_result)
-
-#	define mu9_cumulative2_product(_Tp, __first, __last, __mul_op, __d_result) \
-	mu9_accumulate2(_Tp, __first, __last, mu9_initialize(_Tp, 1), __mul_op, __d_result)
+#	define mu9_cumulative_product(_Tp, __first, __last, __d_result) \
+	mu9_accumulate2(_Tp, __first, __last, mu9_initialize(_Tp, 1), mu9_multiplication, __d_result)
 
 MU0_END_CDECL
 

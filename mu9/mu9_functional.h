@@ -50,7 +50,7 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(_Tp & __a, _Tp & __b) : _Tp
 //#!
-#	define mu9_add(_Tp, __a, __b)                 \
+#	define mu9_addition(_Tp, __a, __b)            \
 	__mu0_issame__(mu0_cfp16_t, _Tp)              \
 		? mu8_cadd_fp16(__a, __b)                  \
 		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
@@ -62,7 +62,7 @@ MU0_BEGIN_CDECL
 					: mu9_plus(_Tp, __a, __b)         \
 		)))
 
-#	define mu9_sub(_Tp, __a, __b)                 \
+#	define mu9_subtraction(_Tp, __a, __b)         \
 	__mu0_issame__(mu0_cfp16_t, _Tp)              \
 		? mu8_csub_fp16(__a, __b)                  \
 		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
@@ -74,7 +74,7 @@ MU0_BEGIN_CDECL
 					: mu9_minus(_Tp, __a, __b)        \
 		)))
 
-#	define mu9_mul(_Tp, __a, __b)                 \
+#	define mu9_multiplication(_Tp, __a, __b)      \
 	__mu0_issame__(mu0_cfp16_t, _Tp)              \
 		? mu8_cmul_fp16(__a, __b)                  \
 		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
@@ -86,7 +86,7 @@ MU0_BEGIN_CDECL
 					: mu9_multiplies(_Tp, __a, __b)   \
 		)))
 
-#	define mu9_div(_Tp, __a, __b)                 \
+#	define mu9_division(_Tp, __a, __b)            \
 	__mu0_issame__(mu0_cfp16_t, _Tp)              \
 		? mu8_cdiv_fp16(__a, __b)                  \
 		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
@@ -102,22 +102,22 @@ MU0_BEGIN_CDECL
 //#! macro<_Tp>(_Tp & __c, _Tp & __a, _Tp & __b) : _Tp
 //#!
 #	define mu9_multiply_accumulate(_Tp, __c, __a, __b) \
-	mu9_add(_Tp, __c, mu9_mul(_Tp, __a, __b))
+	mu9_addition(_Tp, __c, mu9_multiplication(_Tp, __a, __b))
 
 //#!
 //#! macro<_Tp>(_Tp & __a) : _Tp
 //#!
 #	define mu9_twice(_Tp, __a) \
-	mu9_add(_Tp, __a, __a)
+	mu9_addition(_Tp, __a, __a)
 
 #	define mu9_square(_Tp, __a) \
-	mu9_mul(_Tp, __a, __a)
+	mu9_multiplication(_Tp, __a, __a)
 
 #	define mu9_cube(_Tp, __a) \
-	mu9_mul(_Tp, __a, mu9_square(_Tp, __a))
+	mu9_multiplication(_Tp, __a, mu9_square(_Tp, __a))
 
 #	define mu9_biquadrate(_Tp, __a) \
-	mu9_mul(_Tp, __a, mu9_cube(_Tp, __a))
+	mu9_multiplication(_Tp, __a, mu9_cube(_Tp, __a))
 
 //#!
 //#! macro<_Tp>(_Tp & __c, _Tp & __a) : _Tp
