@@ -99,7 +99,7 @@ MU0_BEGIN_CDECL
 		)))
 
 //#!
-//#! macro<_Tp>((_Tp & __c, _Tp & __a, _Tp & __b) : _Tp
+//#! macro<_Tp>(_Tp & __c, _Tp & __a, _Tp & __b) : _Tp
 //#!
 #	define mu9_multiply_accumulate(_Tp, __c, __a, __b) \
 	mu9_add(_Tp, __c, mu9_mul(_Tp, __a, __b))
@@ -120,7 +120,7 @@ MU0_BEGIN_CDECL
 	mu9_mul(_Tp, __a, mu9_cube(_Tp, __a))
 
 //#!
-//#! macro<_Tp>((_Tp & __c, _Tp & __a) : _Tp
+//#! macro<_Tp>(_Tp & __c, _Tp & __a) : _Tp
 //#!
 #	define mu9_square_accumulate(_Tp, __c, __a) \
 	mu9_multiply_accumulate(_Tp, __c, __a, __a)
@@ -161,9 +161,14 @@ MU0_BEGIN_CDECL
 	!__fn
 
 //#!
-//#! macro<_Tp>(& __a, & __b) : lvalue
+//#! macro<_Tp>(_Tp & __a, _Tp & __b) : lvalue
 //#!
 #	define mu9_assign(_Tp, __a, __b)                 __a = __b
+
+//#!
+//#! macro<_Tp>(_Tp & __a, _Tp __x) : lvalue
+//#!
+#	define mu9_assign_initialize(_Tp, __a, __x)      __a = mu9_initialize(_Tp, __x)
 
 MU0_END_CDECL
 
