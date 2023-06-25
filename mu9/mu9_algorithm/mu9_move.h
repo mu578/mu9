@@ -29,6 +29,13 @@ mu0_scope_begin                                                      \
 	}                                                                 \
 mu0_scope_end
 
+#	define mu9_move_s(_Tp, __first1, __last2, __d_first, __d_last, __move_op)                  \
+mu0_scope_begin                                                                               \
+	for (; __first != __last && __d_first != __d_last; (void) ++__first, (void) ++__d_first) { \
+		__move_op(_Tp, *__d_first, *__first);                                                   \
+	}                                                                                          \
+mu0_scope_end
+
 #	define mu9_move_indirect(_Tp, __first, __last, __d_first, __move_op)                                    \
 mu0_scope_begin                                                                                            \
 	_Tp * __mu9_move_indirect__i__ = __first;                                                               \

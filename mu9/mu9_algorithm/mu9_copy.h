@@ -32,6 +32,16 @@ mu0_scope_end
 #	define mu9_copy2(_Tp, __first, __last, __d_first, __move_op) \
 	mu9_move(_Tp, __first, __last, __d_first, __move_op)
 
+#	define mu9_copy_s1(_Tp, __first, __last, __d_first, __d_last)                              \
+mu0_scope_begin                                                                               \
+	for (; __first != __last && __d_first != __d_last; (void) ++__first, (void) ++__d_first) { \
+		*__d_first = *__first;                                                                  \
+	}                                                                                          \
+mu0_scope_end
+
+#	define mu9_copy_s2(_Tp, __first, __last, __d_first, __d_last, __move_op) \
+	mu9_move_s(_Tp, __first, __last, __d_first, __d_last, __move_op)
+
 #	define mu9_copy_if1(_Tp, __first, __last, __d_first, __unary_pred) \
 mu0_scope_begin                                                       \
 	for (; __first != __last; ++__first) {                             \

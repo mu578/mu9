@@ -71,11 +71,11 @@ int main(int argc, const char * argv[])
 	      	,  2.300f, 1.300f
 	      };
 	      mu0_sint32_t * first0;
-	      mu0_uint32_t * first1   = mu9_begin           (mu0_uint32_t, v1);
-	      mu0_uint32_t * last1    = mu9_end             (mu0_uint32_t, v1, 10);
-	const mu0_fp32_t   * first2   = mu9_const_begin     (mu0_fp32_t, v2);
-	const mu0_tchar8_t * haystack = __mu0_literal_utf8__("hello world!");
-	const mu0_tchar8_t * needle   = __mu0_literal_utf8__("world!");
+	      mu0_uint32_t * first1   = mu9_begin       (mu0_uint32_t, v1);
+	      mu0_uint32_t * last1    = mu9_end         (mu0_uint32_t, v1, 10);
+	const mu0_fp32_t   * first2   = mu9_const_begin (mu0_fp32_t, v2);
+	const mu0_tchar8_t * haystack = mu0_utf8_const  ("hello world!");
+	const mu0_tchar8_t * needle   = mu0_utf8_const  ("world!");
 
 	mu0_unused(argc);
 	mu0_unused(argv);
