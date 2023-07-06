@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu8/mu8_complex_annex.h>
+#include <mu8/mu8_arithmetic.h>
 
 #ifndef MU9_FUNCTIONAL_H
 #define MU9_FUNCTIONAL_H 1
@@ -35,68 +35,15 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(_Tp __x) : _Tp
 //#!
-#	define mu9_initialize(_Tp, __x)               \
-	__mu0_issame__(mu0_cfp16_t, _Tp)              \
-		? mu0_cfp16(__x, 0)                        \
-		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
-			? mu0_cfp32(__x, 0)                     \
-			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
-				? mu0_cfp64(__x, 0)                  \
-				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
-					? mu0_cfp128(__x, 0)              \
-					: (_Tp) { __x }                   \
-		)))
+#	define mu9_initialize(_Tp, __x)                  mu8_ini(_Tp, __x)
 
 //#!
 //#! macro<_Tp>(_Tp & __a, _Tp & __b) : _Tp
 //#!
-#	define mu9_addition(_Tp, __a, __b)            \
-	__mu0_issame__(mu0_cfp16_t, _Tp)              \
-		? mu8_cadd_fp16(__a, __b)                  \
-		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
-			? mu8_cadd_fp32(__a, __b)               \
-			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
-				? mu8_cadd_fp64(__a, __b)            \
-				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
-					? mu8_cadd_fp128(__a, __b)        \
-					: mu9_plus(_Tp, __a, __b)         \
-		)))
-
-#	define mu9_subtraction(_Tp, __a, __b)         \
-	__mu0_issame__(mu0_cfp16_t, _Tp)              \
-		? mu8_csub_fp16(__a, __b)                  \
-		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
-			? mu8_csub_fp32(__a, __b)               \
-			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
-				? mu8_csub_fp64(__a, __b)            \
-				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
-					? mu8_csub_fp128(__a, __b)        \
-					: mu9_minus(_Tp, __a, __b)        \
-		)))
-
-#	define mu9_multiplication(_Tp, __a, __b)      \
-	__mu0_issame__(mu0_cfp16_t, _Tp)              \
-		? mu8_cmul_fp16(__a, __b)                  \
-		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
-			? mu8_cmul_fp32(__a, __b)               \
-			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
-				? mu8_cmul_fp64(__a, __b)            \
-				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
-					? mu8_cmul_fp128(__a, __b)        \
-					: mu9_multiplies(_Tp, __a, __b)   \
-		)))
-
-#	define mu9_division(_Tp, __a, __b)            \
-	__mu0_issame__(mu0_cfp16_t, _Tp)              \
-		? mu8_cdiv_fp16(__a, __b)                  \
-		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
-			? mu8_cdiv_fp32(__a, __b)               \
-			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
-				? mu8_cdiv_fp64(__a, __b)            \
-				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
-					? mu8_cdiv_fp128(__a, __b)        \
-					: mu9_divides(_Tp, __a, __b)      \
-		)))
+#	define mu9_addition(_Tp, __a, __b)               mu8_add(_Tp, __x)
+#	define mu9_subtraction(_Tp, __a, __b)            mu8_sub(_Tp, __x)
+#	define mu9_multiplication(_Tp, __a, __b)         mu8_mul(_Tp, __x)
+#	define mu9_division(_Tp, __a, __b)               mu8_div(_Tp, __x)
 
 //#!
 //#! macro<_Tp>(_Tp & __c, _Tp & __a, _Tp & __b) : _Tp
