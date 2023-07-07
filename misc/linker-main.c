@@ -15,10 +15,9 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_floating.h>
-#include <mu0/mu0_string.h>
-
 #include <mu9/mu9_algorithm.h>
+#include <mu9/mu9_functional.h>
+#include <mu9/mu9_iterator.h>
 #include <mu9/mu9_character.h>
 #include <mu9/mu9_numeric.h>
 #include <mu9/mu9_parallel.h>

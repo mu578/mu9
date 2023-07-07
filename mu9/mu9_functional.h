@@ -40,10 +40,10 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(_Tp & __a, _Tp & __b) : _Tp
 //#!
-#	define mu9_addition(_Tp, __a, __b)               mu8_add(_Tp, __x)
-#	define mu9_subtraction(_Tp, __a, __b)            mu8_sub(_Tp, __x)
-#	define mu9_multiplication(_Tp, __a, __b)         mu8_mul(_Tp, __x)
-#	define mu9_division(_Tp, __a, __b)               mu8_div(_Tp, __x)
+#	define mu9_addition(_Tp, __a, __b)               mu8_add(_Tp, __a, __b)
+#	define mu9_subtraction(_Tp, __a, __b)            mu8_sub(_Tp, __a, __b)
+#	define mu9_multiplication(_Tp, __a, __b)         mu8_mul(_Tp, __a, __b)
+#	define mu9_division(_Tp, __a, __b)               mu8_div(_Tp, __a, __b)
 
 //#!
 //#! macro<_Tp>(_Tp & __c, _Tp & __a, _Tp & __b) : _Tp
