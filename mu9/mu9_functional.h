@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu8/mu8_arithmetic.h>
+#include <mu8/mu8_functional.h>
 
 #ifndef MU9_FUNCTIONAL_H
 #define MU9_FUNCTIONAL_H 1
@@ -103,6 +103,7 @@ MU0_BEGIN_CDECL
 #	define mu9_greater(_Tp, __a, __b)                mu9_greater_than(_Tp, __a, __b)
 #	define mu9_less_equal(_Tp, __a, __b)             mu9_less_than_or_equal(_Tp, __a, __b)
 #	define mu9_greater_equal(_Tp, __a, __b)          mu9_greater_than_or_equal(_Tp, __a, __b)
+#	define mu9_equal(_Tp, __a, __b)                  mu8_eq(_Tp, __a, __b)
 
 #	define mu9_not_fn(__fn) \
 	!__fn
