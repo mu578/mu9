@@ -33,6 +33,7 @@
 #	include <mu9/mu9_algorithm/mu9_fill.h>
 #	include <mu9/mu9_algorithm/mu9_filter.h>
 #	include <mu9/mu9_algorithm/mu9_find.h>
+#	include <mu9/mu9_algorithm/mu9_for_each_by.h>
 #	include <mu9/mu9_algorithm/mu9_for_each.h>
 #	include <mu9/mu9_algorithm/mu9_generate.h>
 #	include <mu9/mu9_algorithm/mu9_heap_siftdown.h>

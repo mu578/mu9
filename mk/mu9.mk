@@ -27,6 +27,7 @@ MU0_ROOT_PATH     := ../../mu0
 # PLATFORM_VARIANT := macos_xcode.fat
 
 # PLATFORM_VARIANT := macos_macport
+# PLATFORM_VARIANT := macos_macport.gcc
 # PLATFORM_VARIANT := macos_macport.arm64
 # PLATFORM_VARIANT := macos_macport.x86_64
 # PLATFORM_VARIANT := macos_macport.fat

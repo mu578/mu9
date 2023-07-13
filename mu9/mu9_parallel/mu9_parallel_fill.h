@@ -78,13 +78,13 @@ mu0_scope_end
 #	endif
 
 //#!
-//#! macro<_Tp, _Uint, execution=sequencial>(_Tp &* __first, _Uint & __n, const _Tp & __value) : void
+//#! macro<_Tp, _Uint, execution=sequencial>(_Tp &* __first, const _Uint & __n, const _Tp & __value) : void
 //#!
 #	define mu9_sequencial_fill_n(_Tp, __first, __n, __value) \
 	mu9_fill_n(_Tp, __first, __n, __value)
 
 //#!
-//#! macro<_Tp, _Uint, execution=parallel>(_Tp &* __first, _Uint & __n, const _Tp & __value) : void
+//#! macro<_Tp, _Uint, execution=parallel>(_Tp &* __first, const _Uint & __n, const _Tp & __value) : void
 //#!
 #	if MU0_HAVE_PARALLELIZE
 #	define mu9_parallel_fill_n(_Tp, __first, __n, __value) \

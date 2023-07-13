@@ -33,7 +33,7 @@ mu0_scope_begin                                   \
 mu0_scope_end
 
 //#!
-//#! macro<_Tp, _Uint>(_Tp &* __first, _Uint & __n, const _Tp & __value) : void
+//#! macro<_Tp, _Uint>(_Tp &* __first, const _Uint & __n, const _Tp & __value) : void
 //#!
 #	define mu9_fill_n(_Tp, __first, __n, __value)                                     \
 mu0_scope_begin                                                                      \
