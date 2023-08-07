@@ -50,28 +50,28 @@ mu0_scope_begin                                                                 
 	}                                                                                          \
 mu0_scope_end
 
-#	define mu9_transform5(_Tp, __first1, __last1, __d_first, __binary_op, __arg) \
-mu0_scope_begin                                                                 \
-	while (__first1 != __last1) {                                                \
-		*__d_first++ = __binary_op(_Tp, *__first1++, __arg);                      \
-	}                                                                            \
+#	define mu9_transform5(_Tp, __first, __last, __arg, __d_first, __binary_op) \
+mu0_scope_begin                                                               \
+	while (__first != __last) {                                                \
+		*__d_first++ = __binary_op(_Tp, *__first++, __arg);                     \
+	}                                                                          \
 mu0_scope_end
 
-#	define mu9_transform6(_Tp, __first1, __last1, __d_first, __binary_op, __arg, __move_op) \
-mu0_scope_begin                                                                            \
-	while (__first1 != __last1) {                                                           \
-		__move_op(_Tp, *__d_first++, __binary_op(_Tp, *__first1++, __arg));                  \
-	}                                                                                       \
+#	define mu9_transform6(_Tp, __first, __last, __arg, __d_first, __binary_op, __move_op) \
+mu0_scope_begin                                                                          \
+	while (__first != __last) {                                                           \
+		__move_op(_Tp, *__d_first++, __binary_op(_Tp, *__first++, __arg));                 \
+	}                                                                                     \
 mu0_scope_end
 
-#	define mu9_transform7(_Tp, __first1, __last1, __first2, __d_first, __trinary_op, __arg) \
+#	define mu9_transform7(_Tp, __first1, __last1, __first2, __arg, __d_first, __trinary_op) \
 mu0_scope_begin                                                                            \
 	while (__first1 != __last1) {                                                           \
 		*__d_first++ = __trinary_op(_Tp, *__first1++, *__first2++, __arg);                   \
 	}                                                                                       \
 mu0_scope_end
 
-#	define mu9_transform8(_Tp, __first1, __last1, __first2, __d_first, __trinary_op, __arg, __move_op) \
+#	define mu9_transform8(_Tp, __first1, __last1, __first2, __arg, __d_first, __trinary_op, __move_op) \
 mu0_scope_begin                                                                                       \
 	while (__first1 != __last1) {                                                                      \
 		__move_op(_Tp, *__d_first++, __trinary_op(_Tp, *__first1++, *__first2++, __arg));               \
@@ -82,7 +82,7 @@ mu0_scope_end
 mu0_scope_begin                                                                                  \
 	mu0_distance_t __mu9_transform_n1__i__ = mu0_const_distance(0);                               \
 	for (; __mu9_transform_n1__i__ < mu0_const_distance(__n); (void) ++__mu9_transform_n1__i__) { \
-		*__d_first++ = __unary_op(_Tp, *__first1++);                                               \
+		*__d_first++ = __unary_op(_Tp, *__first++);                                               \
 	}                                                                                             \
 mu0_scope_end
 
