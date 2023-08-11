@@ -168,7 +168,7 @@ mu0_scope_begin                                                                 
 	}                                                                                                    \
 mu0_scope_end
 
-#	define mu9_transform_by7(_Tp, __first1, __last1, __first2, __arg, _by, __d_first, __trinary_op)      \
+#	define mu9_transform_by7(_Tp, __first1, __last1, __first2, __arg, __by, __d_first, __trinary_op)     \
 mu0_scope_begin                                                                                         \
 	mu0_bool_t     __mu9_transform_by7__x__ = mu0_false;                                                 \
 	mu0_distance_t __mu9_transform_by7__j__;                                                             \
@@ -193,35 +193,35 @@ mu0_scope_begin                                                                 
 	}                                                                                                    \
 mu0_scope_end
 
-#	define mu9_transform_by8(_Tp, __first1, __last1, __first2, __arg, _by, __d_first, __trinary_op, __move_op) \
-mu0_scope_begin                                                                                               \
-	mu0_bool_t     __mu9_transform_by8__x__ = mu0_false;                                                       \
-	mu0_distance_t __mu9_transform_by8__j__;                                                                   \
-	mu0_distance_t __mu9_transform_by8__i__ = (mu0_const_distance(__by) < mu0_const_distance(1)                \
-		? mu0_const_distance(1)                                                                                 \
-		: mu0_const_distance(__by)                                                                              \
-	);                                                                                                         \
-	while (__first1 != __last1) {                                                                              \
-		__move_op(_Tp, *__d_first++, __trinary_op(_Tp, *__first1, *__first2, __arg));                           \
-		__mu9_transform_by8__j__ = mu0_const_distance(0);                                                       \
-		for (; __mu9_transform_by8__j__ != __mu9_transform_by8__i__; (void) ++__mu9_transform_by8__j__) {       \
-			if (__first1 == __last1) {                                                                           \
-				__mu9_transform_by8__x__ = mu0_true;                                                              \
-				break;                                                                                            \
-			}                                                                                                    \
-			++__first1;                                                                                          \
-			++__first2;                                                                                          \
-		}                                                                                                       \
-		if (__mu9_transform_by8__x__) {                                                                         \
-			break;                                                                                               \
-		}                                                                                                       \
-	}                                                                                                          \
+#	define mu9_transform_by8(_Tp, __first1, __last1, __first2, __arg, __by, __d_first, __trinary_op, __move_op) \
+mu0_scope_begin                                                                                                \
+	mu0_bool_t     __mu9_transform_by8__x__ = mu0_false;                                                        \
+	mu0_distance_t __mu9_transform_by8__j__;                                                                    \
+	mu0_distance_t __mu9_transform_by8__i__ = (mu0_const_distance(__by) < mu0_const_distance(1)                 \
+		? mu0_const_distance(1)                                                                                  \
+		: mu0_const_distance(__by)                                                                               \
+	);                                                                                                          \
+	while (__first1 != __last1) {                                                                               \
+		__move_op(_Tp, *__d_first++, __trinary_op(_Tp, *__first1, *__first2, __arg));                            \
+		__mu9_transform_by8__j__ = mu0_const_distance(0);                                                        \
+		for (; __mu9_transform_by8__j__ != __mu9_transform_by8__i__; (void) ++__mu9_transform_by8__j__) {        \
+			if (__first1 == __last1) {                                                                            \
+				__mu9_transform_by8__x__ = mu0_true;                                                               \
+				break;                                                                                             \
+			}                                                                                                     \
+			++__first1;                                                                                           \
+			++__first2;                                                                                           \
+		}                                                                                                        \
+		if (__mu9_transform_by8__x__) {                                                                          \
+			break;                                                                                                \
+		}                                                                                                        \
+	}                                                                                                           \
 mu0_scope_end
 
-#	define mu9_transform_by_n1(_Tp, __first, __n, __d_first, __unary_op)                                       \
+#	define mu9_transform_by_n1(_Tp, __first, __n, __by, __d_first, __unary_op)                                 \
 mu0_scope_begin                                                                                               \
 	mu0_bool_t     __mu9_transform_by_n1__x__ = mu0_false;                                                     \
-	mu0_distance_t __mu9_transform_by_n1__i__  = mu0_const_distance(0);                                        \
+	mu0_distance_t __mu9_transform_by_n1__i__ = mu0_const_distance(0);                                         \
 	mu0_distance_t __mu9_transform_by_n1__j__;                                                                 \
 	mu0_distance_t __mu9_transform_by_n1__k__ = (mu0_const_distance(__by) < mu0_const_distance(1)              \
 		? mu0_const_distance(1)                                                                                 \
@@ -243,10 +243,10 @@ mu0_scope_begin                                                                 
 	}                                                                                                          \
 mu0_scope_end
 
-#	define mu9_transform_by_n2(_Tp, __first, __n, __d_first, __unary_op, __move_op)                            \
+#	define mu9_transform_by_n2(_Tp, __first, __n, __by, __d_first, __unary_op, __move_op)                      \
 mu0_scope_begin                                                                                               \
 	mu0_bool_t     __mu9_transform_by_n2__x__ = mu0_false;                                                     \
-	mu0_distance_t __mu9_transform_by_n2__i__  = mu0_const_distance(0);                                        \
+	mu0_distance_t __mu9_transform_by_n2__i__ = mu0_const_distance(0);                                         \
 	mu0_distance_t __mu9_transform_by_n2__j__;                                                                 \
 	mu0_distance_t __mu9_transform_by_n2__k__ = (mu0_const_distance(__by) < mu0_const_distance(1)              \
 		? mu0_const_distance(1)                                                                                 \
