@@ -21,6 +21,7 @@
 #include <mu9/mu9_character.h>
 #include <mu9/mu9_numeric.h>
 #include <mu9/mu9_parallel.h>
+#include <mu9/mu9_sequence.h>
 
 __mu0_static_inline__
 void argsort(

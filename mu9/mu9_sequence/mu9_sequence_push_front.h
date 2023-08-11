@@ -10,27 +10,32 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu9_sequence.h
+// mu9_sequence_push_front.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu0/mu0_definition.h>
 
-#ifndef MU9_SEQUENCE_H
-#define MU9_SEQUENCE_H 1
+#ifndef MU9_SEQUENCE_PUSH_FRONT_H
+#define MU9_SEQUENCE_PUSH_FRONT_H 1
 
 MU0_BEGIN_CDECL
 
-#	include <mu9/mu9_sequence/mu9_sequence_for_each.h>
-#	include <mu9/mu9_sequence/mu9_sequence_iterator.h>
-#	include <mu9/mu9_sequence/mu9_sequence_pop_back.h>
-#	include <mu9/mu9_sequence/mu9_sequence_pop_front.h>
-#	include <mu9/mu9_sequence/mu9_sequence_push_back.h>
-#	include <mu9/mu9_sequence/mu9_sequence_push_front.h>
+//#!
+//#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __seq_node, _Tp &* __node) : void
+//#!
+#	define mu9_sequence_push_front(_Tp, __seq, __seq_node, __node)           \
+mu0_scope_begin                                                             \
+	_Tp ** __mu9_sequence_push_front__f__ = &(__node);                       \
+	_Tp ** __mu9_sequence_push_front__n__ = &(__node);                       \
+	__seq_next(Tp, *__mu9_sequence_push_front__n__, __seq_node);             \
+	__mu9_sequence_push_front__n__        = &(__seq);                        \
+	__seq                                 = *__mu9_sequence_push_front__f__; \
+mu0_scope_end
 
 MU0_END_CDECL
 
-#endif /* !MU9_SEQUENCE_H */
+#endif /* !MU9_SEQUENCE_PUSH_FRONT_H */
 
 /* EOF */
