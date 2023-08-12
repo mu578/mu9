@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_definition.h>
+#include <mu9/mu9_sequence/mu9_sequence_iterator.h>
 
 #ifndef MU9_SEQUENCE_POP_FRONT_H
 #define MU9_SEQUENCE_POP_FRONT_H 1
@@ -23,13 +23,13 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __next_node, _Tp<result> &* __d_node) : void
+//#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __node_next, _Tp<result> &* __d_node) : void
 //#!
-#	define mu9_sequence_pop_front(_Tp, __seq, __next_node, __d_node)       \
+#	define mu9_sequence_pop_front(_Tp, __seq, __node_next, __d_node)       \
 mu0_scope_begin                                                           \
 	_Tp ** __mu9_sequence_pop_front__h__ = &(__seq);                       \
 	_Tp ** __mu9_sequence_pop_front__f__ = &(__seq);                       \
-	__seq_next(Tp, *__mu9_sequence_pop_front__h__, __next_node);           \
+	mu9_sequence_next(Tp, *__mu9_sequence_pop_front__h__, __node_next);    \
 	__d_node                             = *__mu9_sequence_pop_front__f__; \
 	__seq                                = *__mu9_sequence_pop_front__h__; \
 mu0_scope_end

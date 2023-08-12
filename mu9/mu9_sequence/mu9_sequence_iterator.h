@@ -23,19 +23,19 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __next_node) : _Tp *
+//#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __node_next) : _Tp *
 //#!
-#	define mu9_sequence_next(Tp, __seq, __next_node) \
-	__seq = __next_node(Tp, __seq)
+#	define mu9_sequence_next(Tp, __seq, __node_next) \
+	__seq = __node_next(Tp, __seq)
 
 //#!
-//#! macro<_Tp, _Dist>(_Tp &* __seq, _Tp<operator> * __next_node, _Dist & __n) : void
+//#! macro<_Tp, _Dist>(_Tp &* __seq, _Tp<operator> * __node_next, _Dist & __n) : void
 //#!
-#	define mu9_sequence_next_n(_Tp, __seq, __next_node, __n)                                              \
+#	define mu9_sequence_next_n(_Tp, __seq, __node_next, __n)                                              \
 mu0_scope_begin                                                                                          \
 	mu0_distance_t __mu9_sequence_advance__i__ = mu0_const_distance(0);                                   \
 	for (; __mu9_sequence_advance__i__ < mu0_const_distance(__n); (void) ++__mu9_sequence_advance__i__) { \
-		mu9_sequence_next(Tp, __seq, __next_node);                                                         \
+		mu9_sequence_next(Tp, __seq, __node_next);                                                         \
 		if (mu0_is_nullptr(__seq)) {                                                                       \
 			break;                                                                                          \
 		}                                                                                                  \
