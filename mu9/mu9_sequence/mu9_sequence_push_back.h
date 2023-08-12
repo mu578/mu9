@@ -32,8 +32,8 @@ mu0_scope_begin                                                           \
 	while (!mu0_is_nullptr(*__mu9_sequence_push_back__f__)) {              \
 		mu9_sequence_next(Tp, *__mu9_sequence_push_back__f__, __node_next); \
 	}                                                                      \
-	*__mu9_sequence_push_back__f__ = __node;                               \
-	__seq                          = *__mu9_sequence_push_back__h__;       \
+	*__mu9_sequence_push_back__f__       = __node;                         \
+	__seq                                = *__mu9_sequence_push_back__h__; \
 mu0_scope_end
 
 MU0_END_CDECL

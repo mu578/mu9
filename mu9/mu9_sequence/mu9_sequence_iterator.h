@@ -23,10 +23,12 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __node_next) : _Tp *
+//#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __node_next) : void
 //#!
 #	define mu9_sequence_next(Tp, __seq, __node_next) \
-	__seq = __node_next(Tp, __seq)
+mu0_scope_begin                                     \
+	__seq = __node_next(Tp, __seq);                  \
+mu0_scope_end
 
 //#!
 //#! macro<_Tp, _Dist>(_Tp &* __seq, _Tp<operator> * __node_next, _Dist & __n) : void
