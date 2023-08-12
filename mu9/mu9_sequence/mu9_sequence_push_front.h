@@ -29,7 +29,7 @@ MU0_BEGIN_CDECL
 mu0_scope_begin                                                             \
 	_Tp ** __mu9_sequence_push_front__h__ = &(__node);                       \
 	_Tp ** __mu9_sequence_push_front__f__ = &(__node);                       \
-	mu9_sequence_next(Tp, *__mu9_sequence_push_front__f__, __node_next);     \
+	mu9_sequence_advance(Tp, *__mu9_sequence_push_front__f__, __node_next);  \
 	__mu9_sequence_push_front__f__        = &(__seq);                        \
 	__seq                                 = *__mu9_sequence_push_front__h__; \
 mu0_scope_end

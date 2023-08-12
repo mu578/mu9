@@ -25,15 +25,15 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __node_next, _Tp &* __node) : void
 //#!
-#	define mu9_sequence_push_back(_Tp, __seq, __node_next, __node)         \
-mu0_scope_begin                                                           \
-	_Tp ** __mu9_sequence_push_back__h__ = &(__seq);                       \
-	_Tp ** __mu9_sequence_push_back__f__ = &(__seq);                       \
-	while (!mu0_is_nullptr(*__mu9_sequence_push_back__f__)) {              \
-		mu9_sequence_next(Tp, *__mu9_sequence_push_back__f__, __node_next); \
-	}                                                                      \
-	*__mu9_sequence_push_back__f__       = __node;                         \
-	__seq                                = *__mu9_sequence_push_back__h__; \
+#	define mu9_sequence_push_back(_Tp, __seq, __node_next, __node)            \
+mu0_scope_begin                                                              \
+	_Tp ** __mu9_sequence_push_back__h__ = &(__seq);                          \
+	_Tp ** __mu9_sequence_push_back__f__ = &(__seq);                          \
+	while (!mu0_is_nullptr(*__mu9_sequence_push_back__f__)) {                 \
+		mu9_sequence_advance(Tp, *__mu9_sequence_push_back__f__, __node_next); \
+	}                                                                         \
+	*__mu9_sequence_push_back__f__       = __node;                            \
+	__seq                                = *__mu9_sequence_push_back__h__;    \
 mu0_scope_end
 
 MU0_END_CDECL
