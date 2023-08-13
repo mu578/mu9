@@ -35,7 +35,7 @@ mu0_scope_begin                                                                 
 			break;                                                                                            \
 		}                                                                                                    \
 	}                                                                                                       \
-	__d_node = *((*__mu9_sequence_at_index__h__));                                                          \
+	__d_node = *__mu9_sequence_at_index__h__;                                                               \
 mu0_scope_end
 
 MU0_END_CDECL
