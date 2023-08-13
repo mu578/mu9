@@ -40,7 +40,7 @@ mu0_scope_end
 //#!
 //#! macro<_Tp, _Uint>(_Tp &* __seq, _Tp<operator> * __node_next, const _Uint & __n) : void
 //#!
-#	define mu9_sequence_for_each_n(_Tp, __seq, __node_next, __n, __unary_fn, __d_head)                          \
+#	define mu9_sequence_for_each_n(_Tp, __seq, __node_next, __n, __unary_fn)                                    \
 mu0_scope_begin                                                                                                \
 	mu0_distance_t __mu9_sequence_for_each_n__i__ = mu0_const_distance(0);                                      \
 	_Tp **         __mu9_sequence_for_each_n__h__ = &(__seq);                                                   \

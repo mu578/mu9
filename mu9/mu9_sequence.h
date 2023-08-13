@@ -22,6 +22,7 @@
 
 MU0_BEGIN_CDECL
 
+#	include <mu9/mu9_sequence/mu9_sequence_at_index.h>
 #	include <mu9/mu9_sequence/mu9_sequence_for_each.h>
 #	include <mu9/mu9_sequence/mu9_sequence_iterator.h>
 #	include <mu9/mu9_sequence/mu9_sequence_pop_back.h>
