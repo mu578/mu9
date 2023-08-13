@@ -32,7 +32,7 @@ mu0_scope_begin                                                                 
 		while (!mu0_is_nullptr(__node_next(Tp, __node_next(Tp, *__mu9_mu9_sequence_pop_back__h__)), *__mu9_mu9_sequence_pop_back__h__)) { \
 			*__mu9_mu9_sequence_pop_back__h__ = __node_next(Tp, *__mu9_mu9_sequence_pop_back__h__);                                        \
 		}                                                                                                                                 \
-		__d_node                                              = __node_next(Tp, *__mu9_mu9_sequence_pop_back__h__);                       \
+		__d_node                                           = __node_next(Tp, *__mu9_mu9_sequence_pop_back__h__);                          \
 		__node_next(Tp, *__mu9_mu9_sequence_pop_back__h__) = mu0_nullptr;                                                                 \
 	} else {                                                                                                                             \
 		__d_node = *__mu9_mu9_sequence_pop_back__h__;                                                                                     \
