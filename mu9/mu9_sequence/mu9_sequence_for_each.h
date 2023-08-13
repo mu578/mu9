@@ -29,7 +29,7 @@ MU0_BEGIN_CDECL
 mu0_scope_begin                                                             \
 	_Tp ** __mu9_sequence_for_each__h__ = &(__seq);                          \
 	while (1) {                                                              \
-		__unary_fn(Tp, *((*__mu9_sequence_for_each__h__)));                   \
+		__unary_fn(Tp, *__mu9_sequence_for_each__h__);                        \
 		mu9_sequence_advance(Tp, *__mu9_sequence_for_each__h__, __node_next); \
 		if (mu0_is_nullptr(*__mu9_sequence_for_each__h__)) {                  \
 			break;                                                             \
@@ -45,7 +45,7 @@ mu0_scope_begin                                                                 
 	mu0_distance_t __mu9_sequence_for_each_n__i__ = mu0_const_distance(0);                                      \
 	_Tp **         __mu9_sequence_for_each_n__h__ = &(__seq);                                                   \
 	for (; __mu9_sequence_for_each_n__i__ < mu0_const_distance(__n); (void) ++__mu9_sequence_for_each_n__i__) { \
-		__unary_fn(Tp, *((*__mu9_sequence_for_each_n__h__)));                                                    \
+		__unary_fn(Tp, *__mu9_sequence_for_each_n__h__);                                                         \
 		mu9_sequence_advance(Tp, *__mu9_sequence_for_each_n__h__, __node_next);                                  \
 		if (mu0_is_nullptr(*__mu9_sequence_for_each_n__h__)) {                                                   \
 			break;                                                                                                \
