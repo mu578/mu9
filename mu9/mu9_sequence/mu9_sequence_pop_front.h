@@ -25,13 +25,19 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __node_next, _Tp<result> &* __d_node) : void
 //#!
-#	define mu9_sequence_pop_front(_Tp, __seq, __node_next, __d_node)       \
-mu0_scope_begin                                                           \
-	_Tp ** __mu9_sequence_pop_front__h__ = &(__seq);                       \
-	_Tp ** __mu9_sequence_pop_front__f__ = &(__seq);                       \
-	mu9_sequence_advance(Tp, *__mu9_sequence_pop_front__h__, __node_next); \
-	__d_node                             = *__mu9_sequence_pop_front__f__; \
-	__seq                                = *__mu9_sequence_pop_front__h__; \
+#	define mu9_sequence_pop_front(_Tp, __seq, __node_next, __d_node)          \
+mu0_scope_begin                                                              \
+	_Tp ** __mu9_sequence_pop_front__h__;                                     \
+	_Tp ** __mu9_sequence_pop_front__f__;                                     \
+	if (!mu0_is_nullptr(__seq)) {                                             \
+		__mu9_sequence_pop_front__h__ = &(__seq);                              \
+		__mu9_sequence_pop_front__f__ = &(__seq);                              \
+		mu9_sequence_advance(Tp, *__mu9_sequence_pop_front__h__, __node_next); \
+		__d_node = *__mu9_sequence_pop_front__f__;                             \
+		__seq    = *__mu9_sequence_pop_front__h__;                             \
+	} else {                                                                  \
+		__d_node = mu0_nullptr;                                                \
+	}                                                                         \
 mu0_scope_end
 
 MU0_END_CDECL

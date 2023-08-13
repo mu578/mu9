@@ -25,17 +25,23 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp, _Uint>(_Tp &* __seq, _Tp<operator> * __node_next, const _Uint & __i, _Tp<result> &* __d_node) : void
 //#!
-#	define mu9_sequence_at_index(_Tp, __seq, __node_next, __i, __d_node)                                    \
-mu0_scope_begin                                                                                            \
-	mu0_distance_t __mu9_sequence_at_index__i__ = mu0_const_distance(0);                                    \
-	_Tp **         __mu9_sequence_at_index__h__ = &(__seq);                                                 \
-	for (; __mu9_sequence_at_index__i__ < mu0_const_distance(__i); (void) ++__mu9_sequence_at_index__i__) { \
-		mu9_sequence_advance(Tp, *__mu9_sequence_at_index__h__, __node_next);                                \
-		if (mu0_is_nullptr(*__mu9_sequence_at_index__h__)) {                                                 \
-			break;                                                                                            \
-		}                                                                                                    \
-	}                                                                                                       \
-	__d_node = *__mu9_sequence_at_index__h__;                                                               \
+#	define mu9_sequence_at_index(_Tp, __seq, __node_next, __i, __d_node)                                       \
+mu0_scope_begin                                                                                               \
+	mu0_distance_t __mu9_sequence_at_index__i__;                                                               \
+	_Tp **         __mu9_sequence_at_index__h__;                                                               \
+	if (!mu0_is_nullptr(__seq)) {                                                                              \
+		__mu9_sequence_at_index__i__ = mu0_const_distance(0);                                                   \
+		__mu9_sequence_at_index__h__ = &(__seq);                                                                \
+		for (; __mu9_sequence_at_index__i__ < mu0_const_distance(__i); (void) ++__mu9_sequence_at_index__i__) { \
+			mu9_sequence_advance(Tp, *__mu9_sequence_at_index__h__, __node_next);                                \
+			if (mu0_is_nullptr(*__mu9_sequence_at_index__h__)) {                                                 \
+				break;                                                                                            \
+			}                                                                                                    \
+		}                                                                                                       \
+		__d_node = *__mu9_sequence_at_index__h__;                                                               \
+	} else {                                                                                                   \
+		__d_node = mu0_nullptr;                                                                                 \
+	}                                                                                                          \
 mu0_scope_end
 
 MU0_END_CDECL
