@@ -23,12 +23,16 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp & __a, _Tp & __b) : _Tp
+//#! @deprecated macro<_Tp>(_Tp & __a, _Tp & __b) : _Tp
 //#!
 #	define mu9_plus(_Tp, __a, __b)                   ((__a) + (__b))
 #	define mu9_minus(_Tp, __a, __b)                  ((__a) - (__b))
 #	define mu9_multiplies(_Tp, __a, __b)             ((__a) * (__b))
 #	define mu9_divides(_Tp, __a, __b)                ((__a) / (__b))
+
+//#!
+//#! macro<_Tp>(_Tp & __a, _Tp & __b) : _Tp
+//#!
 #	define mu9_modulus(_Tp, __a, __b)                ((__a) % (__b))
 #	define mu9_negate(_Tp, __a)                      -(__a)
 
@@ -75,7 +79,7 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
 //#!
-#	define mu9_logical_and(_Tp, __a, __b)            (((__a) && (__b))  ? mu0_true : mu0_false)
+#	define mu9_logical_and(_Tp, __a, __b)            ( ((__a) && (__b))  ? mu0_true : mu0_false)
 #	define mu9_logical_not_and(_Tp, __a, __b)        (!((__a) && (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_or(_Tp, __a, __b)             ( ((__a) || (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_not_or(_Tp, __a, __b)         (!((__a) || (__b)) ? mu0_true : mu0_false)
@@ -90,7 +94,7 @@ MU0_BEGIN_CDECL
 #	define mu9_bit_not(_Tp, __a)                     ~(__a)
 
 //#!
-//#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
+//#! @deprecated macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
 //#!
 #	define mu9_less_than(_Tp, __a, __b)              (((__a) <  (__b)) ? mu0_true : mu0_false)
 #	define mu9_less_than_or_equal(_Tp, __a, __b)     (((__a) <= (__b)) ? mu0_true : mu0_false)
@@ -99,14 +103,16 @@ MU0_BEGIN_CDECL
 #	define mu9_equal_to(_Tp, __a, __b)               (((__a) == (__b)) ? mu0_true : mu0_false)
 #	define mu9_not_equal_to(_Tp, __a, __b)           (((__a) != (__b)) ? mu0_true : mu0_false)
 
+//#!
+//#! @todo macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
+//#!
 #	define mu9_less(_Tp, __a, __b)                   mu9_less_than(_Tp, __a, __b)
 #	define mu9_greater(_Tp, __a, __b)                mu9_greater_than(_Tp, __a, __b)
 #	define mu9_less_equal(_Tp, __a, __b)             mu9_less_than_or_equal(_Tp, __a, __b)
 #	define mu9_greater_equal(_Tp, __a, __b)          mu9_greater_than_or_equal(_Tp, __a, __b)
 #	define mu9_equal(_Tp, __a, __b)                  mu8_eq(_Tp, __a, __b)
 
-#	define mu9_not_fn(__fn) \
-	!__fn
+#	define mu9_not_fn(__fn)                         !__fn
 
 //#!
 //#! macro<_Tp>(_Tp & __a, _Tp & __b) : lvalue
