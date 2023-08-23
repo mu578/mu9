@@ -30,7 +30,7 @@ mu0_scope_begin                                                                 
 	mu0_distance_t __mu9_sample1__i__ = mu0_min(mu0_const_distance(__n), __mu9_sample1__k__);   \
 	mu0_distance_t __mu9_sample1__d__;                                                          \
 	for (; __mu9_sample1__i__ != mu0_const_distance(0); ++__first) {                            \
-		__mu9_sample1__d__ = mu0_const_distance(mu0_ranged_random_i64(0, --__mu9_sample1__k__)); \
+		__mu9_sample1__d__ = mu0_const_distance(mu0_random_ranged_i64(0, --__mu9_sample1__k__)); \
 		if (__mu9_sample1__d__ < __mu9_sample1__i__) {                                           \
 			*__d_first++ = *__first;                                                              \
 			--__mu9_sample1__i__;                                                                 \
@@ -58,7 +58,7 @@ mu0_scope_begin                                                                 
 	mu0_distance_t __mu9_sample3__i__ = mu0_min(mu0_const_distance(__n), __mu9_sample3__k__);   \
 	mu0_distance_t __mu9_sample3__d__;                                                          \
 	for (; __mu9_sample3__i__ != mu0_const_distance(0); ++__first) {                            \
-		__mu9_sample3__d__ = mu0_const_distance(mu0_ranged_random_i64(0, --__mu9_sample3__k__)); \
+		__mu9_sample3__d__ = mu0_const_distance(mu0_random_ranged_i64(0, --__mu9_sample3__k__)); \
 		if (__mu9_sample3__d__ < __mu9_sample3__i__) {                                           \
 			__move_op(_Tp, *__d_first++, *__first);                                               \
 			--__mu9_sample3__i__;                                                                 \
