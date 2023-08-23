@@ -16,7 +16,6 @@
 //
 
 #	include <mu9/mu9_functional.h>
-#	include <mu9/mu9_iterator.h>
 #	include <mu9/mu9_algorithm/mu9_shell_sort.h>
 
 #ifndef MU9_PARALLEL_SHELL_SORT_H
