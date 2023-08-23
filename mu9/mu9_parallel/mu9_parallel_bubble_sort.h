@@ -16,7 +16,6 @@
 //
 
 #	include <mu9/mu9_functional.h>
-#	include <mu9/mu9_iterator.h>
 #	include <mu9/mu9_algorithm/mu9_bubble_sort.h>
 
 #ifndef MU9_PARALLEL_BUBBLE_SORT_H

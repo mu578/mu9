@@ -16,7 +16,6 @@
 //
 
 #include <mu9/mu9_iterator.h>
-#include <mu9/mu9_algorithm/mu9_swap.h>
 #include <mu0/mu0_random.h>
 
 #ifndef MU9_SHUFFLE_H

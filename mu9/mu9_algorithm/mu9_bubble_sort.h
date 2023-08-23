@@ -15,7 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu9/mu9_algorithm/mu9_swap.h>
+#include <mu9/mu9_iterator.h>
 
 #ifndef MU9_BUBBLE_SORT_H
 #define MU9_BUBBLE_SORT_H 1
