@@ -23,17 +23,17 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp, _Uint>(_Tp &* __seq, _Tp<operator> * __node_next, const _Uint & __i, _Tp<result> &* __d_node) : void
+//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __seq), const _Uint & __i, _Tp<result> &* __d_node) : void
 //#!
-#	define mu9_sequence_at_index(_Tp, __seq, __node_next, __i, __d_node)                                       \
+#	define mu9_sequence_at_index(_Tp, __head, __head_next, __i, __d_node)                                      \
 mu0_scope_begin                                                                                               \
 	mu0_distance_t __mu9_sequence_at_index__i__;                                                               \
 	_Tp **         __mu9_sequence_at_index__h__;                                                               \
-	if (!mu0_is_nullptr(__seq)) {                                                                              \
+	if (mu0_not_nullptr(__head)) {                                                                             \
 		__mu9_sequence_at_index__i__ = mu0_const_distance(0);                                                   \
-		__mu9_sequence_at_index__h__ = &(__seq);                                                                \
+		__mu9_sequence_at_index__h__ = &(__head);                                                               \
 		for (; __mu9_sequence_at_index__i__ < mu0_const_distance(__i); (void) ++__mu9_sequence_at_index__i__) { \
-			mu9_sequence_advance(Tp, *__mu9_sequence_at_index__h__, __node_next);                                \
+			mu9_sequence_advance(Tp, *__mu9_sequence_at_index__h__, __head_next);                                \
 			if (mu0_is_nullptr(*__mu9_sequence_at_index__h__)) {                                                 \
 				break;                                                                                            \
 			}                                                                                                    \

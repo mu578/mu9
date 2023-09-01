@@ -23,16 +23,16 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __seq, _Tp<operator> * __node_next, __unary_fn) : void
+//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __seq), __unary_fn) : void
 //#!
-#	define mu9_sequence_for_each(_Tp, __seq, __node_next, __unary_fn)           \
+#	define mu9_sequence_for_each(_Tp, __head, __head_next, __unary_fn)          \
 mu0_scope_begin                                                                \
 	_Tp ** __mu9_sequence_for_each__h__;                                        \
-	if (!mu0_is_nullptr(__seq)) {                                               \
-		__mu9_sequence_for_each__h__ = &(__seq);                                 \
+	if (mu0_not_nullptr(__head)) {                                              \
+		__mu9_sequence_for_each__h__ = &(__head);                                \
 		while (1) {                                                              \
 			__unary_fn(Tp, *__mu9_sequence_for_each__h__);                        \
-			mu9_sequence_advance(Tp, *__mu9_sequence_for_each__h__, __node_next); \
+			mu9_sequence_advance(Tp, *__mu9_sequence_for_each__h__, __head_next); \
 			if (mu0_is_nullptr(*__mu9_sequence_for_each__h__)) {                  \
 				break;                                                             \
 			}                                                                     \
@@ -41,18 +41,18 @@ mu0_scope_begin                                                                \
 mu0_scope_end
 
 //#!
-//#! macro<_Tp, _Uint>(_Tp &* __seq, _Tp<operator> * __node_next, const _Uint & __n) : void
+//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __seq), const _Uint & __n) : void
 //#!
-#	define mu9_sequence_for_each_n(_Tp, __seq, __node_next, __n, __unary_fn)                                       \
+#	define mu9_sequence_for_each_n(_Tp, __head, __head_next, __n, __unary_fn)                                      \
 mu0_scope_begin                                                                                                   \
 	mu0_distance_t __mu9_sequence_for_each_n__i__;                                                                 \
 	_Tp **         __mu9_sequence_for_each_n__h__;                                                                 \
-	if (!mu0_is_nullptr(__seq)) {                                                                                  \
+	if (mu0_not_nullptr(__head)) {                                                                                 \
 		__mu9_sequence_for_each_n__i__ = mu0_const_distance(0);                                                     \
-		__mu9_sequence_for_each_n__h__ = &(__seq);                                                                  \
+		__mu9_sequence_for_each_n__h__ = &(__head);                                                                 \
 		for (; __mu9_sequence_for_each_n__i__ < mu0_const_distance(__n); (void) ++__mu9_sequence_for_each_n__i__) { \
 			__unary_fn(Tp, *__mu9_sequence_for_each_n__h__);                                                         \
-			mu9_sequence_advance(Tp, *__mu9_sequence_for_each_n__h__, __node_next);                                  \
+			mu9_sequence_advance(Tp, *__mu9_sequence_for_each_n__h__, __head_next);                                  \
 			if (mu0_is_nullptr(*__mu9_sequence_for_each_n__h__)) {                                                   \
 				break;                                                                                                \
 			}                                                                                                        \
