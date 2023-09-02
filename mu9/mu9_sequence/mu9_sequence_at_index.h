@@ -23,7 +23,7 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __seq), const _Uint & __i, _Tp<result> &* __d_node) : void
+//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __node), const _Uint & __i, _Tp<result> &* __d_node) : void
 //#!
 #	define mu9_sequence_at_index(_Tp, __head, __head_next, __i, __d_node)                                      \
 mu0_scope_begin                                                                                               \

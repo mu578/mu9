@@ -23,7 +23,7 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __seq), _Tp &* __node) : void
+//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __node), _Tp &* __node) : void
 //#!
 #	define mu9_sequence_push_front(_Tp, __head, __head_next, __node)           \
 mu0_scope_begin                                                               \

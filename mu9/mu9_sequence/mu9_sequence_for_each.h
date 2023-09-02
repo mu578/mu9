@@ -23,7 +23,7 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __seq), __unary_fn) : void
+//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __node), __unary_fn) : void
 //#!
 #	define mu9_sequence_for_each(_Tp, __head, __head_next, __unary_fn)          \
 mu0_scope_begin                                                                \
@@ -41,7 +41,7 @@ mu0_scope_begin                                                                \
 mu0_scope_end
 
 //#!
-//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __seq), const _Uint & __n) : void
+//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __node), const _Uint & __n) : void
 //#!
 #	define mu9_sequence_for_each_n(_Tp, __head, __head_next, __n, __unary_fn)                                      \
 mu0_scope_begin                                                                                                   \
