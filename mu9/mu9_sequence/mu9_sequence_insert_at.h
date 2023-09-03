@@ -52,6 +52,11 @@ mu0_scope_begin                                                                 
 			__node_next(Tp, *__mu9_sequence_insert_at__f__) = __node;                                                    \
 			__head                                          = *__mu9_sequence_insert_at__h__;                            \
 			__d_result_                                     = mu0_true;                                                  \
+		} else {                                                                                                        \
+			*mu9_sequence_insert_at__f__ = __node;                                                                       \
+			__node_next(Tp, __node)      = mu0_nullptr;                                                                  \
+			__head                       = *__mu9_sequence_insert_at__h__;                                               \
+			__d_result_                  = mu0_true;                                                                     \
 		}                                                                                                               \
 	} else {                                                                                                           \
 		__d_result_ = mu0_false;                                                                                        \
