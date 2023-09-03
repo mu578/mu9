@@ -20,6 +20,7 @@
 #ifndef MU9_SEQUENCE_H
 #define MU9_SEQUENCE_H 1
 
+#	include <mu9/mu9_sequence/mu9_circular_sequence_pop_front.h>
 #	include <mu9/mu9_sequence/mu9_circular_sequence_push_back.h>
 #	include <mu9/mu9_sequence/mu9_sequence_at_index.h>
 #	include <mu9/mu9_sequence/mu9_sequence_for_each.h>

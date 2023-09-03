@@ -27,14 +27,12 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_circular_sequence_push_back(_Tp, __head, __tail, __node_next, __node) \
 mu0_scope_begin                                                                     \
-	if (mu0_not_nullptr(__node)) {                                                   \
-		__node_next(Tp, __node) = mu0_nullptr;                                        \
-		if (mu0_is_nullptr(__head)) {                                                 \
-			__head = __tail = __node;                                                  \
-		} else {                                                                      \
-			__node_next(Tp, __tail) = __node;                                          \
-			__tail                  = __node;                                          \
-		}                                                                             \
+	__node_next(Tp, __node) = mu0_nullptr;                                           \
+	if (mu0_is_nullptr(__head)) {                                                    \
+		__head = __tail = __node;                                                     \
+	} else {                                                                         \
+		__node_next(Tp, __tail) = __node;                                             \
+		__tail                  = __node;                                             \
 	}                                                                                \
 mu0_scope_end
 

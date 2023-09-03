@@ -39,7 +39,8 @@ mu0_scope_begin                                                                 
 		__node_next(Tp, *__mu9_sequence_push_back__f__) = mu0_nullptr;                    \
 		__head                                          = *__mu9_sequence_push_back__h__; \
 	} else {                                                                             \
-		__head = __node;                                                                  \
+		__head                  = __node;                                                 \
+		__node_next(Tp, __node) = mu0_nullptr;                                            \
 	}                                                                                    \
 mu0_scope_end
 
