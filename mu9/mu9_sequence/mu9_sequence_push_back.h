@@ -43,19 +43,6 @@ mu0_scope_begin                                                                 
 	}                                                                                    \
 mu0_scope_end
 
-#	define mu9_circular_sequence_push_back(_Tp, __head, __tail, __node_next, __node) \
-mu0_scope_begin                                                                     \
-	if (mu0_not_nullptr(__node)) {                                                   \
-		__node_next(Tp, __node) = mu0_nullptr;                                        \
-		if (mu0_not_nullptr(__head)) {                                                \
-			__head = __tail = __node;                                                  \
-		} else {                                                                      \
-			__node_next(Tp, __tail) = __node;                                          \
-			__tail                  = __node;                                          \
-		}                                                                             \
-	}                                                                                \
-mu0_scope_end
-
 MU0_END_CDECL
 
 #endif /* !MU9_SEQUENCE_PUSH_BACK_H */
