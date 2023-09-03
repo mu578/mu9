@@ -37,10 +37,10 @@ mu0_scope_begin                                                                \
 				break;                                                             \
 			}                                                                     \
 			mu9_sequence_advance(Tp, *__mu9_sequence_for_each__h__, __node_next); \
+			__unary_fn(Tp, __mu9_sequence_for_each__c__);                         \
 			if (mu0_is_nullptr(*__mu9_sequence_for_each__h__)) {                  \
 				break;                                                             \
 			}                                                                     \
-			__unary_fn(Tp, __mu9_sequence_for_each__c__);                         \
 		}                                                                        \
 	}                                                                           \
 mu0_scope_end
@@ -62,10 +62,10 @@ mu0_scope_begin                                                                 
 				break;                                                                                                \
 			}                                                                                                        \
 			mu9_sequence_advance(Tp, *__mu9_sequence_for_each_n__h__, __node_next);                                  \
+			__unary_fn(Tp, __mu9_sequence_for_each_n__c__);                                                          \
 			if (mu0_is_nullptr(*__mu9_sequence_for_each_n__h__)) {                                                   \
 				break;                                                                                                \
 			}                                                                                                        \
-			__unary_fn(Tp, __mu9_sequence_for_each_n__c__);                                                          \
 		}                                                                                                           \
 	}                                                                                                              \
 mu0_scope_end
