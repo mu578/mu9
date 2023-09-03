@@ -46,7 +46,7 @@ mu0_scope_begin                                                                \
 mu0_scope_end
 
 //#!
-//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __node_next(_Tp &* __node), const _Uint & __n) : void
+//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __node_next(_Tp &* __node), const _Uint & __n, __unary_fn) : void
 //#!
 #	define mu9_sequence_for_each_n(_Tp, __head, __node_next, __n, __unary_fn)                                      \
 mu0_scope_begin                                                                                                   \
