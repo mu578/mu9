@@ -23,9 +23,9 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __node), const _Uint & __i, _Tp<result> &* __d_node) : void
+//#! macro<_Tp, _Uint>(_Tp &* __head, _Tp<operator> &* __node_next(_Tp &* __node), const _Uint & __i, _Tp<result> &* __d_node) : void
 //#!
-#	define mu9_sequence_at_index(_Tp, __head, __head_next, __i, __d_node)                                      \
+#	define mu9_sequence_at_index(_Tp, __head, __node_next, __i, __d_node)                                      \
 mu0_scope_begin                                                                                               \
 	mu0_distance_t __mu9_sequence_at_index__i__;                                                               \
 	_Tp **         __mu9_sequence_at_index__h__;                                                               \
@@ -33,7 +33,7 @@ mu0_scope_begin                                                                 
 		__mu9_sequence_at_index__i__ = mu0_const_distance(0);                                                   \
 		__mu9_sequence_at_index__h__ = &(__head);                                                               \
 		for (; __mu9_sequence_at_index__i__ < mu0_const_distance(__i); (void) ++__mu9_sequence_at_index__i__) { \
-			mu9_sequence_advance(Tp, *__mu9_sequence_at_index__h__, __head_next);                                \
+			mu9_sequence_advance(Tp, *__mu9_sequence_at_index__h__, __node_next);                                \
 			if (mu0_is_nullptr(*__mu9_sequence_at_index__h__)) {                                                 \
 				break;                                                                                            \
 			}                                                                                                    \

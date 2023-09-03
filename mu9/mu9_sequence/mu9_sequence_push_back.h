@@ -23,9 +23,9 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __node), _Tp &* __node) : void
+//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __node_next(_Tp &* __node), _Tp &* __node) : void
 //#!
-#	define mu9_sequence_push_back(_Tp, __head, __head_next, __node)                      \
+#	define mu9_sequence_push_back(_Tp, __head, __node_next, __node)                      \
 mu0_scope_begin                                                                         \
 	_Tp ** __mu9_sequence_push_back__h__;                                                \
 	_Tp ** __mu9_sequence_push_back__f__;                                                \
@@ -33,14 +33,27 @@ mu0_scope_begin                                                                 
 		__mu9_sequence_push_back__h__ = &(__head);                                        \
 		__mu9_sequence_push_back__f__ = &(__head);                                        \
 		while (mu0_not_nullptr(*__mu9_sequence_push_back__f__)) {                         \
-			mu9_sequence_advance(Tp, *__mu9_sequence_push_back__f__, __head_next);         \
+			mu9_sequence_advance(Tp, *__mu9_sequence_push_back__f__, __node_next);         \
 		}                                                                                 \
 		*__mu9_sequence_push_back__f__                  = __node;                         \
-		__head_next(Tp, *__mu9_sequence_push_back__f__) = mu0_nullptr;                    \
+		__node_next(Tp, *__mu9_sequence_push_back__f__) = mu0_nullptr;                    \
 		__head                                          = *__mu9_sequence_push_back__h__; \
 	} else {                                                                             \
 		__head = __node;                                                                  \
 	}                                                                                    \
+mu0_scope_end
+
+#	define mu9_circular_sequence_push_back(_Tp, __head, __tail, __node_next, __node) \
+mu0_scope_begin                                                                     \
+	if (mu0_not_nullptr(__node)) {                                                   \
+		__node_next(Tp, __node) = mu0_nullptr;                                        \
+		if (mu0_not_nullptr(__head)) {                                                \
+			__head = __tail = __node;                                                  \
+		} else {                                                                      \
+			__node_next(Tp, __tail) = __node;                                          \
+			__tail                  = __node;                                          \
+		}                                                                             \
+	}                                                                                \
 mu0_scope_end
 
 MU0_END_CDECL

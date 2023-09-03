@@ -23,16 +23,16 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __head_next(_Tp &* __node), _Tp<result> &* __d_node) : void
+//#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __node_next(_Tp &* __node), _Tp<result> &* __d_node) : void
 //#!
-#	define mu9_sequence_pop_front(_Tp, __head, __head_next, __d_node)         \
+#	define mu9_sequence_pop_front(_Tp, __head, __node_next, __d_node)         \
 mu0_scope_begin                                                              \
 	_Tp ** __mu9_sequence_pop_front__h__;                                     \
 	_Tp ** __mu9_sequence_pop_front__f__;                                     \
 	if (mu0_not_nullptr(__head)) {                                            \
 		__mu9_sequence_pop_front__h__ = &(__head);                             \
 		__mu9_sequence_pop_front__f__ = &(__head);                             \
-		mu9_sequence_advance(Tp, *__mu9_sequence_pop_front__h__, __head_next); \
+		mu9_sequence_advance(Tp, *__mu9_sequence_pop_front__h__, __node_next); \
 		__d_node = *__mu9_sequence_pop_front__f__;                             \
 		__head   = *__mu9_sequence_pop_front__h__;                             \
 	} else {                                                                  \
