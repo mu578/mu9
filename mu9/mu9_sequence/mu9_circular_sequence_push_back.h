@@ -22,11 +22,14 @@
 
 MU0_BEGIN_CDECL
 
+//#!
+//#! macro<_Tp>(_Tp &* __head, _Tp &* __tail, _Tp<operator> &* __node_next(_Tp &* __node), _Tp &* __node) : void
+//#!
 #	define mu9_circular_sequence_push_back(_Tp, __head, __tail, __node_next, __node) \
 mu0_scope_begin                                                                     \
 	if (mu0_not_nullptr(__node)) {                                                   \
 		__node_next(Tp, __node) = mu0_nullptr;                                        \
-		if (mu0_not_nullptr(__head)) {                                                \
+		if (mu0_is_nullptr(__head)) {                                                 \
 			__head = __tail = __node;                                                  \
 		} else {                                                                      \
 			__node_next(Tp, __tail) = __node;                                          \
