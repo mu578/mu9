@@ -22,6 +22,9 @@
 
 MU0_BEGIN_CDECL
 
+//#!
+//#! macro<_Tp>(_Tp &* __first, _Tp &* __last, __binary_op, _Tp<return> & __d_result) : void
+//#!
 #	define mu9_cumulative_product(_Tp, __first, __last, __d_result) \
 	mu9_accumulate2(_Tp, __first, __last, mu9_initialize(_Tp, 1), mu9_multiplication, __d_result)
 

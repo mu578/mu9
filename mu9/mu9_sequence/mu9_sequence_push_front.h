@@ -36,7 +36,8 @@ mu0_scope_begin                                                               \
 		__mu9_sequence_push_front__f__ = &(__head);                             \
 		__head                         = *__mu9_sequence_push_front__h__;       \
 	} else {                                                                   \
-		__head = __node;                                                        \
+		__head                  = __node;                                       \
+		__node_next(Tp, __node) = mu0_nullptr;                                  \
 	}                                                                          \
 mu0_scope_end
 

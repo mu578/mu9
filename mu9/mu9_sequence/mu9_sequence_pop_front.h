@@ -33,8 +33,9 @@ mu0_scope_begin                                                              \
 		__mu9_sequence_pop_front__h__ = &(__head);                             \
 		__mu9_sequence_pop_front__f__ = &(__head);                             \
 		mu9_sequence_advance(Tp, *__mu9_sequence_pop_front__h__, __node_next); \
-		__d_node = *__mu9_sequence_pop_front__f__;                             \
-		__head   = *__mu9_sequence_pop_front__h__;                             \
+		__d_node                  = *__mu9_sequence_pop_front__f__;            \
+		__head                    = *__mu9_sequence_pop_front__h__;            \
+		__node_next(Tp, __d_node) = mu0_nullptr;                               \
 	} else {                                                                  \
 		__d_node = mu0_nullptr;                                                \
 	}                                                                         \

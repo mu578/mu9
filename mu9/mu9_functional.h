@@ -79,7 +79,7 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
 //#!
-#	define mu9_logical_and(_Tp, __a, __b)            ( ((__a) && (__b))  ? mu0_true : mu0_false)
+#	define mu9_logical_and(_Tp, __a, __b)            ( ((__a) && (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_not_and(_Tp, __a, __b)        (!((__a) && (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_or(_Tp, __a, __b)             ( ((__a) || (__b)) ? mu0_true : mu0_false)
 #	define mu9_logical_not_or(_Tp, __a, __b)         (!((__a) || (__b)) ? mu0_true : mu0_false)

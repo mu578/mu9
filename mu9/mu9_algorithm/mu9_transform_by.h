@@ -70,17 +70,17 @@ mu0_scope_begin                                                                 
 	}                                                                                                    \
 mu0_scope_end
 
-#	define mu9_transform_by3(_Tp, __first1, __last1, __first2, __by, __d_first, __binary_op)      \
-mu0_scope_begin                                                                                  \
-	mu0_bool_t     __mu9_transform_by3__x__ = mu0_false;                                          \
-	mu0_distance_t __mu9_transform_by3__j__;                                                      \
-	mu0_distance_t __mu9_transform_by3__i__ = (mu0_const_distance(__by) < mu0_const_distance(1)   \
-		? mu0_const_distance(1)                                                                    \
-		: mu0_const_distance(__by)                                                                 \
-	);                                                                                            \
-	while (__first1 != __last1) {                                                                 \
-		*__d_first++             = __binary_op(_Tp, *__first1, *__first2);                         \
-		__mu9_transform_by3__j__ = mu0_const_distance(0);                                          \
+#	define mu9_transform_by3(_Tp, __first1, __last1, __first2, __by, __d_first, __binary_op)             \
+mu0_scope_begin                                                                                         \
+	mu0_bool_t     __mu9_transform_by3__x__ = mu0_false;                                                 \
+	mu0_distance_t __mu9_transform_by3__j__;                                                             \
+	mu0_distance_t __mu9_transform_by3__i__ = (mu0_const_distance(__by) < mu0_const_distance(1)          \
+		? mu0_const_distance(1)                                                                           \
+		: mu0_const_distance(__by)                                                                        \
+	);                                                                                                   \
+	while (__first1 != __last1) {                                                                        \
+		*__d_first++             = __binary_op(_Tp, *__first1, *__first2);                                \
+		__mu9_transform_by3__j__ = mu0_const_distance(0);                                                 \
 		for (; __mu9_transform_by3__j__ != __mu9_transform_by3__i__; (void) ++__mu9_transform_by3__j__) { \
 			if (__first1 == __last1) {                                                                     \
 				__mu9_transform_by3__x__ = mu0_true;                                                        \
