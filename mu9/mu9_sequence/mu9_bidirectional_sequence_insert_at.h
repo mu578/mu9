@@ -23,9 +23,9 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp, _Uint>( _Tp &* __head, _Tp &* __tail, _Tp<operator> &* __node_next(_Tp &* __node), const _Uint & __i, _Tp &* __node, _Bool<return> & __d_result) : void
+//#! macro<_Tp, _Uint>( _Tp &* __head, _Tp &* __tail, _Tp<operator> &* __node_prev(_Tp &* __node), _Tp<operator> &* __node_next(_Tp &* __node), const _Uint & __i, _Tp &* __node, _Bool<return> & __d_result) : void
 //#!
-#	define mu9_bidirectional_sequence_insert_at(_Tp, __head, __tail, __node_next, __i, __node, __d_result)                                                       \
+#	define mu9_bidirectional_sequence_insert_at(_Tp, __head, __tail, __node_prev, __node_next, __i, __node, __d_result)                                          \
 mu0_scope_begin                                                                                                                                                 \
 	const mu0_distance_t __mu9_bidirectional_sequence_insert_at__k__ = mu0_const_distance(__i) - mu0_const_distance(1);                                          \
 	      mu0_distance_t __mu9_bidirectional_sequence_insert_at__i__ = mu0_const_distance(0);                                                                    \
