@@ -20,6 +20,7 @@
 #ifndef MU9_SEQUENCE_H
 #define MU9_SEQUENCE_H 1
 
+#	include <mu9/mu9_sequence/mu9_bidirectional_sequence_insert_at.h>
 #	include <mu9/mu9_sequence/mu9_bidirectional_sequence_pop_back.h>
 #	include <mu9/mu9_sequence/mu9_bidirectional_sequence_pop_front.h>
 #	include <mu9/mu9_sequence/mu9_bidirectional_sequence_push_back.h>
