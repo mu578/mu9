@@ -65,7 +65,7 @@ mu0_scope_begin                                                                 
 			__d_result              = mu0_true;                                                                                                                    \
 		}                                                                                                                                                         \
 	} else {                                                                                                                                                     \
-		__d_result  = mu0_false;                                                                                                                                  \
+		__d_result = mu0_false;                                                                                                                                   \
 	}                                                                                                                                                            \
 mu0_scope_end
 

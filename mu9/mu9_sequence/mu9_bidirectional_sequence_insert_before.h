@@ -35,13 +35,13 @@ mu0_scope_begin                                                                 
 			__node_next(Tp, __node_prev(Tp, __node)) = __node;                                                                     \
 			__d_result                               = mu0_true;                                                                   \
 		} else if (mu0_is_nullptr(__head)) {                                                                                      \
-			__head      = __node;                                                                                                  \
-			__d_result  = mu0_true;                                                                                                \
+			__head     = __node;                                                                                                   \
+			__d_result = mu0_true;                                                                                                 \
 		} else {                                                                                                                  \
 			__d_result = mu0_false;                                                                                                \
 		}                                                                                                                         \
 	} else {                                                                                                                     \
-		__d_result  = mu0_false;                                                                                                  \
+		__d_result = mu0_false;                                                                                                   \
 	}                                                                                                                            \
 mu0_scope_end
 
