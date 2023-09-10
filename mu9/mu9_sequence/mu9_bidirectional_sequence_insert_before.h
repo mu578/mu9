@@ -38,7 +38,7 @@ mu0_scope_begin                                                                 
 			__head      = __node;                                                                                                  \
 			__d_result  = mu0_true;                                                                                                \
 		} else {                                                                                                                  \
-			__d_result  = mu0_false;                                                                                               \
+			__d_result = mu0_false;                                                                                                \
 		}                                                                                                                         \
 	} else {                                                                                                                     \
 		__d_result  = mu0_false;                                                                                                  \
