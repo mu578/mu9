@@ -37,6 +37,8 @@ mu0_scope_begin                                                                 
 		} else if (mu0_is_nullptr(__head)) {                                                                                      \
 			__head      = __node;                                                                                                  \
 			__d_result  = mu0_true;                                                                                                \
+		} else {                                                                                                                  \
+			__d_result  = mu0_false;                                                                                               \
 		}                                                                                                                         \
 	} else {                                                                                                                     \
 		__d_result  = mu0_false;                                                                                                  \
