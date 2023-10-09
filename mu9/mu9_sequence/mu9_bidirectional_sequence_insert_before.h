@@ -31,14 +31,9 @@ mu0_scope_begin                                                                 
 		__node_prev(Tp, __node)   = __node_prev(Tp, __cursor);                                                                    \
 		__node_prev(Tp, __cursor) = __node;                                                                                       \
 		__node_next(Tp, __node)   = __cursor;                                                                                     \
+		__d_result                = mu0_true;                                                                                     \
 		if (mu0_not_nullptr(__node_prev(Tp, __node))) {                                                                           \
 			__node_next(Tp, __node_prev(Tp, __node)) = __node;                                                                     \
-			__d_result                               = mu0_true;                                                                   \
-		} else if (mu0_is_nullptr(__head)) {                                                                                      \
-			__head     = __node;                                                                                                   \
-			__d_result = mu0_true;                                                                                                 \
-		} else {                                                                                                                  \
-			__d_result = mu0_false;                                                                                                \
 		}                                                                                                                         \
 	} else {                                                                                                                     \
 		__d_result = mu0_false;                                                                                                   \

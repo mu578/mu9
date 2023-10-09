@@ -36,7 +36,7 @@ mu0_scope_begin                                                                 
 			__node_prev(Tp, __node_next(Tp, __node)) = __node;                                                                    \
 		}                                                                                                                        \
 	} else {                                                                                                                    \
-		__d_result = mu0_false;                                                                                                 \
+		__d_result = mu0_false;                                                                                                  \
 	}                                                                                                                           \
 mu0_scope_end
 
