@@ -14,6 +14,6 @@ programming interface via operator-functional indirections and abstractions.
 Most of the type-independent algorithm front-ends are following the same design
 in mind than the STL: https://en.cppreference.com/w/cpp/algorithm for temporary
 reference. Last, for the embedded C++ community, I think it is also interesting to have
-a look at the exellent John Wellbelove's Embedded Template Library: https://github.com/ETLCPP/etl.
+a look at the excellent John Wellbelove's Embedded Template Library: https://github.com/ETLCPP/etl.
 
 # EOF
