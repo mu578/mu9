@@ -6,12 +6,9 @@ however, the library remains container agnostic.
 
 To know, the most part of the procedural programming `cross-target engine` and
 `logic` is provided by `mu0`, e.g C is an imperative procedural language by
-nature and definition.
-
-The generic programming paradigm is supported through C-macro directives
-i.e meta-programming for preprocessing and then compile time code generation,
-
-while the object-oriented programming paradigm via operator-functional
+nature and definition. The generic programming paradigm is supported through
+C-macro directives i.e meta-programming for preprocessing and then compile time
+code generation, while the object-oriented programming paradigm via operator-functional
 indirections and abstractions.
 
 Most of the type-independent algorithm front-ends are following the same design
