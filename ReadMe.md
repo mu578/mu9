@@ -5,9 +5,13 @@ procedural, object-oriented and generic programming paradigms in vanilla C, howe
 the library remains container agnostic.
 
 To know, the most part of the procedural programming `engine` and `logic` is provided
-by `mu0`. The generic programming paradigm is supported through C-macro directives
-i.e meta-programming for compile time code generation.
+by `mu0`, e.g C is an imperative procedural language by nature and definition.
 
+The generic programming paradigm is supported through C-macro directives
+i.e meta-programming for preprocessing and then compile time code generation.
+
+While the object-oriented programming paradigm via operator-functional indirections
+and abstractions.
 
 Most of the type-independent algorithm front-ends are following the same design
 in mind than the STL: https://en.cppreference.com/w/cpp/algorithm for temporary
