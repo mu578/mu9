@@ -8,9 +8,9 @@ To know, the most part of the procedural programming `engine` and `logic` is pro
 by `mu0`, e.g C is an imperative procedural language by nature and definition.
 
 The generic programming paradigm is supported through C-macro directives
-i.e meta-programming for preprocessing and then compile time code generation.
+i.e meta-programming for preprocessing and then compile time code generation,
 
-While the object-oriented programming paradigm via operator-functional indirections
+while the object-oriented programming paradigm via operator-functional indirections
 and abstractions.
 
 Most of the type-independent algorithm front-ends are following the same design
