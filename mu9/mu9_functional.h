@@ -104,12 +104,12 @@ MU0_BEGIN_CDECL
 #	define mu9_not_equal_to(_Tp, __a, __b)           (((__a) != (__b)) ? mu0_true : mu0_false)
 
 //#!
-//#! @todo macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
+//#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
 //#!
-#	define mu9_less(_Tp, __a, __b)                   mu9_less_than(_Tp, __a, __b)
-#	define mu9_greater(_Tp, __a, __b)                mu9_greater_than(_Tp, __a, __b)
-#	define mu9_less_equal(_Tp, __a, __b)             mu9_less_than_or_equal(_Tp, __a, __b)
-#	define mu9_greater_equal(_Tp, __a, __b)          mu9_greater_than_or_equal(_Tp, __a, __b)
+#	define mu9_less(_Tp, __a, __b)                   mu8_lt(_Tp, __a, __b)
+#	define mu9_greater(_Tp, __a, __b)                mu8_le(_Tp, __a, __b)
+#	define mu9_less_equal(_Tp, __a, __b)             mu8_gt(_Tp, __a, __b)
+#	define mu9_greater_equal(_Tp, __a, __b)          mu8_ge(_Tp, __a, __b)
 #	define mu9_equal(_Tp, __a, __b)                  mu8_eq(_Tp, __a, __b)
 
 #	define mu9_not_fn(__fn)                         !__fn

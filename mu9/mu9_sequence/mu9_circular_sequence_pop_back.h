@@ -25,7 +25,7 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(_Tp &* __head, _Tp &* __tail, _Tp<operator> &* __node_next(_Tp &* __node), _Tp<result> &* __d_node) : void
 //#!
-#	define mu9_circular_sequence_pop_back(Tp, __head, __tail, __node_next, __d_node) \
+#	define mu9_circular_sequence_pop_back(Tp, __head, __tail, __node_next, __d_node)                                                              \
 mu0_scope_begin                                                                                                                                  \
 	_Tp ** __mu9_circular_sequence_pop_back__h__;                                                                                                 \
 	if (mu0_not_nullptr(__head)) {                                                                                                                \
