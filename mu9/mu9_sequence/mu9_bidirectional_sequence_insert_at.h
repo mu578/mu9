@@ -35,7 +35,7 @@ mu0_scope_begin                                                                 
 		__node_next(Tp, __node) = mu0_nullptr;                                                                                                                    \
 		__head                  = __tail = __node;                                                                                                                \
 		__d_result              = mu0_true;                                                                                                                       \
-	} else if (__mu9_bidirectional_sequence_insert_at__k__ == mu0_const_distance(0)) {                                                                           \
+	} else if (__mu9_bidirectional_sequence_insert_at__k__ <= mu0_const_distance(0)) {                                                                           \
 			__node_prev(Tp, __node) = mu0_nullptr;                                                                                                                 \
 			__node_prev(Tp, __head) = __node;                                                                                                                      \
 			__node_next(Tp, __node) = __head;                                                                                                                      \

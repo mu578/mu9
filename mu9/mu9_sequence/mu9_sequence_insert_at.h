@@ -36,14 +36,14 @@ mu0_scope_begin                                                                 
 		__head                  = __node;                                                                               \
 		__node_next(Tp, __node) = mu0_nullptr;                                                                          \
 		__d_result              = mu0_true;                                                                             \
-	} else if (__mu9_sequence_insert_at__k__ >= mu0_const_distance(0)) {                                               \
+	} else if (__mu9_sequence_insert_at__k__ <= mu0_const_distance(0)) {                                               \
 		__mu9_sequence_insert_at__h__ = &(__head);                                                                      \
 		__mu9_sequence_insert_at__f__ = &(__head);                                                                      \
 		mu9_sequence_advance(Tp, *__mu9_sequence_insert_at__f__, __node_next);                                          \
 		__mu9_sequence_insert_at__f__ = &(__head);                                                                      \
 		__head                        = *__mu9_sequence_insert_at__h__;                                                 \
 		__d_result                    = mu0_true;                                                                       \
-	} else if (__mu9_sequence_insert_at__k__ >= mu0_const_distance(0)) {                                               \
+	} else if (__mu9_sequence_insert_at__k__ >= mu0_const_distance(1)) {                                               \
 		__d_result                    = mu0_false;                                                                      \
 		__mu9_sequence_insert_at__h__ = &(__head);                                                                      \
 		__mu9_sequence_insert_at__f__ = &(__head);                                                                      \
