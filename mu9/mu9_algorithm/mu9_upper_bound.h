@@ -50,7 +50,7 @@ mu0_scope_begin                                                                 
 		__mu9_upper_bound2__i__ = __first;                                                \
 		__mu9_upper_bound2__n__ = __mu9_upper_bound2__c__ / mu0_const_distance(2);        \
 		mu9_advance_n(_Tp, __mu9_upper_bound2__i__, __mu9_upper_bound2__n__);             \
-		if (!_comp_fn(_Tp, __value, *__mu9_upper_bound2__i__)) {                          \
+		if (!__comp_fn(_Tp, __value, *__mu9_upper_bound2__i__)) {                         \
 				__first                  = ++__mu9_upper_bound2__i__;                       \
 				__mu9_upper_bound2__c__ -= __mu9_upper_bound2__n__ + mu0_const_distance(1); \
 		} else {                                                                          \

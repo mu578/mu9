@@ -54,7 +54,7 @@ mu0_scope_begin                                                                 
 				__mu9_bubble_sort2__j__ = __first;                                                                \
 				__mu9_bubble_sort2__k__ = __mu9_bubble_sort2__j__++;                                              \
 				for (; __mu9_bubble_sort2__j__ != __last; ++__mu9_bubble_sort2__k__, ++__mu9_bubble_sort2__j__) { \
-					if (_comp_fn(_Tp, *__mu9_bubble_sort2__j__, *__mu9_bubble_sort2__k__)) {                       \
+					if (__comp_fn(_Tp, *__mu9_bubble_sort2__j__, *__mu9_bubble_sort2__k__)) {                      \
 						mu9_iter_swap(_Tp, __mu9_bubble_sort2__j__, __mu9_bubble_sort2__k__);                       \
 						__mu9_bubble_sort2__x__ = mu0_false;                                                        \
 					}                                                                                              \
@@ -106,7 +106,7 @@ mu0_scope_begin                                                                 
 	for (; __mu9_bubble_sort5__i__ != __last; ++__mu9_bubble_sort5__i__) {                    \
 			__mu9_bubble_sort5__j__ = __first;                                                  \
 		for (; __mu9_bubble_sort5__j__ < __mu9_bubble_sort5__j__; ++__mu9_bubble_sort5__j__) { \
-			if (_comp_fn(_Tp, *__mu9_bubble_sort5__i__, *__mu9_bubble_sort5__j__)) {            \
+			if (__comp_fn(_Tp, *__mu9_bubble_sort5__i__, *__mu9_bubble_sort5__j__)) {           \
 				mu9_iter_swap(_Tp, __mu9_bubble_sort4__i__, __mu9_bubble_sort5__j__);            \
 			}                                                                                   \
 		}                                                                                      \

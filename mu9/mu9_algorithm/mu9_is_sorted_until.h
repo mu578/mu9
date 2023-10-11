@@ -45,7 +45,7 @@ mu0_scope_begin                                                             \
 	if (__first != __last) {                                                 \
 		__mu9_is_sorted_until2__i__ = __first;                                \
 		while (++__mu9_is_sorted_until2__i__ != __last) {                     \
-			if (_comp_fn(_Tp, *__mu9_is_sorted_until2__i__, *__first)) {       \
+			if (__comp_fn(_Tp, *__mu9_is_sorted_until2__i__, *__first)) {      \
 				__d_result = __mu9_is_sorted_until2__i__;                       \
 				break;                                                          \
 			}                                                                  \

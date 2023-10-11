@@ -38,7 +38,7 @@ mu0_scope_begin                                                                 
 	_Tp * __mu9_selection_sort2__d__;                                                 \
 	for (; __first != __last; ++__first) {                                            \
 		mu9_min_element2(_Tp, __first, __last, __comp_fn, __mu9_selection_sort2__d__); \
-		if (_comp_fn(_Tp, *__mu9_selection_sort2__d__, *__first)) {                    \
+		if (__comp_fn(_Tp, *__mu9_selection_sort2__d__, *__first)) {                   \
 			mu9_iter_swap(_Tp, __mu9_selection_sort2__d__, __first);                    \
 		}                                                                              \
 	}                                                                                 \
