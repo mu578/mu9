@@ -22,16 +22,22 @@
 
 MU0_BEGIN_CDECL
 
-#	define mu9_apply1(_Tp, __first1, __last1, __unary_op)                        \
-mu0_scope_begin                                                                 \
-	_Tp * __mu9_apply1__d_first__ = __first1;                                    \
-	mu9_transform1(_Tp, __first1, __last1, __mu9_apply1__d_first__, __unary_op); \
+//#!
+//#! macro<_Tp>(_Tp &* __first, _Tp &* __last, __unary_op) : void
+//#!
+#	define mu9_apply1(_Tp, __first, __last, __unary_op)                        \
+mu0_scope_begin                                                               \
+	_Tp * __mu9_apply1__d_first__ = __first;                                   \
+	mu9_transform1(_Tp, __first, __last, __mu9_apply1__d_first__, __unary_op); \
 mu0_scope_end
 
-#	define mu9_apply2(_Tp, __first1, __last1, __binary_op)                        \
-mu0_scope_begin                                                                  \
-	_Tp * __mu9_apply2__d_first__ = __first1;                                     \
-	mu9_transform2(_Tp, __first1, __last1, __mu9_apply2__d_first__, __binary_op); \
+//#!
+//#! macro<_Tp>(_Tp &* __first, _Tp &* __last, __binary_op) : void
+//#!
+#	define mu9_apply2(_Tp, __first, __last, __binary_op)                        \
+mu0_scope_begin                                                                \
+	_Tp * __mu9_apply2__d_first__ = __first;                                    \
+	mu9_transform2(_Tp, __first, __last, __mu9_apply2__d_first__, __binary_op); \
 mu0_scope_end
 
 MU0_END_CDECL

@@ -22,6 +22,9 @@
 
 MU0_BEGIN_CDECL
 
+//#!
+//#! macro<_Tp>(_Tp &* __first, _Tp &* __last, _Tp &* __d_first) : void
+//#!
 #	define mu9_adjacent_difference1(_Tp, __first, __last, __d_first)                                           \
 mu0_scope_begin                                                                                               \
 	_Tp __mu9_adjacent_difference1__v__;                                                                       \
@@ -38,6 +41,9 @@ mu0_scope_begin                                                                 
 	}                                                                                                          \
 mu0_scope_end
 
+//#!
+//#! macro<_Tp>(_Tp &* __first, _Tp &* __last, _Tp &* __d_first, __binary_op) : void
+//#!
 #	define mu9_adjacent_difference2(_Tp, __first, __last, __d_first, __binary_op) \
 mu0_scope_begin                                                                  \
 	_Tp __mu9_adjacent_difference2__v__;                                          \
@@ -57,6 +63,9 @@ mu0_scope_begin                                                                 
 	}                                                                             \
 mu0_scope_end
 
+//#!
+//#! macro<_Tp>(_Tp &* __first, _Tp &* __last, _Tp &* __d_first, __binary_op, __move_op) : void
+//#!
 #	define mu9_adjacent_difference3(_Tp, __first, __last, __d_first, __binary_op, __move_op) \
 mu0_scope_begin                                                                             \
 	_Tp __mu9_adjacent_difference3__v__;                                                     \
