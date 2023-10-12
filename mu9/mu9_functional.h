@@ -26,6 +26,7 @@ MU0_BEGIN_CDECL
 //#! 
 //#! macro {{ unary_operation   }} <_Tp, _Ret=_Tp>(const _Tp & __x) : _Ret
 //#!
+//#! - A binary or bivariate operation is an operation that takes two arguments. An operation for combining two operands to produce a third one.
 //#! - A binary operation must accept two `read-only` arguments and return a value.
 //#! - A binary operation can define two different member types if convertible.
 //#! macro {{ binary_operation  }} <_Tp                       , _Ret=_Tp>(const _Tp & __a, const _Tp & __b) : _Ret
@@ -37,6 +38,8 @@ MU0_BEGIN_CDECL
 //#! macro {{ trinary_operation }} <convertible<_U, _T, _P> _U, _T, _P, _Ret=_U >(const _U  & __a, const _T  & __b, const _P  & __c) : _Ret
 //#!
 //#!
+//#! - A predicate is a function of a set of parameters that returns a boolean expression as an answer. A boolean expression has the value either
+//#!   `true` or `false`. The input to the function can be any set of parameters we want.
 //#! - A predicate must accept `read-only` arguments and return a value convertible to boolean.
 //#! - A predicate can define different member types if convertible types.
 //#! macro {{ predicate         }} <..., _Ret=_Bool>(...) : _Ret
@@ -55,7 +58,7 @@ MU0_BEGIN_CDECL
 //#! - A compare function must satisfy {{binary_predicate}} and evaluates to `​true` if the first argument is less than the second i.e weak ordering.
 //#! macro {{ compare_function  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
 //#!
-//#! - A sort function must satisfy {{compare_function}} + a given third user-defined context/cookie argument: usually a pointer to array.
+//#! - A sort function must satisfy {{compare_function}} + a given third user-defined context/cookie bound argument: usually a pointer to inner array.
 //#! macro {{ sort_function     }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b, <user-defined> __ctx) : _Ret
 //#!
 //#!
