@@ -51,8 +51,8 @@ MU0_BEGIN_CDECL
 //#! - A binary predicate must satisfy {{predicate}}.
 //#! - A binary predicate must accept two `read-only` arguments and return a value convertible to a boolean expression.
 //#! - A binary predicate can define two different member types if convertible types.
-//#! macro {{ binary_predicate  }} <_Tp                             , _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
-//#! macro {{ binary_predicate  }} <convertible<(_Tp, _Up>, _Tp, _Up, _Ret=_Bool>(const _Tp & __a, const _Up & __b) : _Ret
+//#! macro {{ binary_predicate  }} <_Tp                            , _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
+//#! macro {{ binary_predicate  }} <convertible<_Tp, _Up>, _Tp, _Up, _Ret=_Bool>(const _Tp & __a, const _Up & __b) : _Ret
 //#!
 //#!
 //#! - A compare function must satisfy {{binary_predicate}} and evaluates to `​true` if the first argument is less than the second i.e weak ordering.
