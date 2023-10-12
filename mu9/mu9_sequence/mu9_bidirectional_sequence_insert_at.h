@@ -32,37 +32,37 @@ mu0_scope_begin                                                                 
 	      mu0_bool_t     __mu9_bidirectional_sequence_insert_at__x__ = mu0_false;                                                                                \
 	      _Tp **         __mu9_bidirectional_sequence_insert_at__c__;                                                                                            \
 	if (mu0_is_nullptr(__head)) {                                                                                                                                \
-		__node_next(Tp, __node) = mu0_nullptr;                                                                                                                    \
-		__head                  = __tail = __node;                                                                                                                \
-		__d_result              = mu0_true;                                                                                                                       \
+		__node_next(_Tp, __node) = mu0_nullptr;                                                                                                                   \
+		__head                   = __tail = __node;                                                                                                               \
+		__d_result               = mu0_true;                                                                                                                      \
 	} else if (__mu9_bidirectional_sequence_insert_at__k__ <= mu0_const_distance(0)) {                                                                           \
-			__node_prev(Tp, __node) = mu0_nullptr;                                                                                                                 \
-			__node_prev(Tp, __head) = __node;                                                                                                                      \
-			__node_next(Tp, __node) = __head;                                                                                                                      \
-			__head                  = __node_prev(Tp, __head);                                                                                                     \
-		__d_result                 = mu0_true;                                                                                                                    \
+			__node_prev(_Tp, __node) = mu0_nullptr;                                                                                                                \
+			__node_prev(_Tp, __head) = __node;                                                                                                                     \
+			__node_next(_Tp, __node) = __head;                                                                                                                     \
+			__head                   = __node_prev(_Tp, __head);                                                                                                   \
+		__d_result                  = mu0_true;                                                                                                                   \
 	} else if (__mu9_bidirectional_sequence_insert_at__k__ >= mu0_const_distance(1)) {                                                                           \
-		__d_result                                                                        = mu0_false;                                                            \
-		__mu9_bidirectional_sequence_insert_at__c__                                       = &(__head);                                                            \
+		__d_result                                  = mu0_false;                                                                                                  \
+		__mu9_bidirectional_sequence_insert_at__c__ = &(__head);                                                                                                  \
 		for (; __mu9_bidirectional_sequence_insert_at__i__ < __mu9_bidirectional_sequence_insert_at__k__; (void) ++__mu9_bidirectional_sequence_insert_at__i__) { \
-			mu9_sequence_advance(Tp, *__mu9_bidirectional_sequence_insert_at__c__, __node_next);                                                                   \
+			mu9_sequence_advance(_Tp, *__mu9_bidirectional_sequence_insert_at__c__, __node_next);                                                                  \
 			if (mu0_is_nullptr(*__mu9_bidirectional_sequence_insert_at__c__)) {                                                                                    \
 				__mu9_bidirectional_sequence_insert_at__x__ = mu0_true;                                                                                             \
 				break;                                                                                                                                              \
 			}                                                                                                                                                      \
 		}                                                                                                                                                         \
 		if (!__mu9_bidirectional_sequence_insert_at__x__) {                                                                                                       \
-			__node_next(Tp, __node)                                                        = *__mu9_bidirectional_sequence_insert_at__c__;                         \
-			__node_prev(Tp, __node)                                                        = __node_prev(Tp, *__mu9_bidirectional_sequence_insert_at__c__);        \
-			__node_prev(Tp, __node_next(Tp, *__mu9_bidirectional_sequence_insert_at__c__)) = __node;                                                               \
-			__node_prev(Tp, *__mu9_bidirectional_sequence_insert_at__c__)                  = __node;                                                               \
-			__d_result                                                                     = mu0_true;                                                             \
+			__node_next(_Tp, __node)                                                         = *__mu9_bidirectional_sequence_insert_at__c__;                       \
+			__node_prev(_Tp, __node)                                                         = __node_prev(_Tp, *__mu9_bidirectional_sequence_insert_at__c__);     \
+			__node_prev(_Tp, __node_next(_Tp, *__mu9_bidirectional_sequence_insert_at__c__)) = __node;                                                             \
+			__node_prev(_Tp, *__mu9_bidirectional_sequence_insert_at__c__)                   = __node;                                                             \
+			__d_result                                                                       = mu0_true;                                                           \
 		} else {                                                                                                                                                  \
-			__node_next(Tp, __node) = mu0_nullptr;                                                                                                                 \
-			__node_next(Tp, __tail) = __node;                                                                                                                      \
-			__node_prev(Tp, __node) = __tail;                                                                                                                      \
-			__tail                  = __node_next(Tp, __tail);                                                                                                     \
-			__d_result              = mu0_true;                                                                                                                    \
+			__node_next(_Tp, __node) = mu0_nullptr;                                                                                                                \
+			__node_next(_Tp, __tail) = __node;                                                                                                                     \
+			__node_prev(_Tp, __node) = __tail;                                                                                                                     \
+			__tail                   = __node_next(_Tp, __tail);                                                                                                   \
+			__d_result               = mu0_true;                                                                                                                   \
 		}                                                                                                                                                         \
 	} else {                                                                                                                                                     \
 		__d_result = mu0_false;                                                                                                                                   \

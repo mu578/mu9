@@ -33,13 +33,13 @@ mu0_scope_begin                                                                 
 	      _Tp **         __mu9_sequence_insert_at__h__;                                                                \
 	      _Tp **         __mu9_sequence_insert_at__f__;                                                                \
 	if (mu0_is_nullptr(__head)) {                                                                                      \
-		__head                  = __node;                                                                               \
-		__node_next(Tp, __node) = mu0_nullptr;                                                                          \
-		__d_result              = mu0_true;                                                                             \
+		__head                   = __node;                                                                              \
+		__node_next(_Tp, __node) = mu0_nullptr;                                                                         \
+		__d_result               = mu0_true;                                                                            \
 	} else if (__mu9_sequence_insert_at__k__ <= mu0_const_distance(0)) {                                               \
 		__mu9_sequence_insert_at__h__ = &(__head);                                                                      \
 		__mu9_sequence_insert_at__f__ = &(__head);                                                                      \
-		mu9_sequence_advance(Tp, *__mu9_sequence_insert_at__f__, __node_next);                                          \
+		mu9_sequence_advance(_Tp, *__mu9_sequence_insert_at__f__, __node_next);                                         \
 		__mu9_sequence_insert_at__f__ = &(__head);                                                                      \
 		__head                        = *__mu9_sequence_insert_at__h__;                                                 \
 		__d_result                    = mu0_true;                                                                       \
@@ -48,20 +48,20 @@ mu0_scope_begin                                                                 
 		__mu9_sequence_insert_at__h__ = &(__head);                                                                      \
 		__mu9_sequence_insert_at__f__ = &(__head);                                                                      \
 		for (; __mu9_sequence_insert_at__i__ < __mu9_sequence_insert_at__k__; (void) ++__mu9_sequence_insert_at__i__) { \
-			mu9_sequence_advance(Tp, *__mu9_sequence_insert_at__f__, __node_next);                                       \
+			mu9_sequence_advance(_Tp, *__mu9_sequence_insert_at__f__, __node_next);                                      \
 			if (mu0_is_nullptr(*__mu9_sequence_insert_at__f__)) {                                                        \
 				__mu9_sequence_insert_at__x__ = mu0_true;                                                                 \
 				break;                                                                                                    \
 			}                                                                                                            \
 		}                                                                                                               \
 		if (!__mu9_sequence_insert_at__x__) {                                                                           \
-			__node_next(Tp, __node)                         = *__mu9_sequence_insert_at__f__;                            \
-			__node_next(Tp, *__mu9_sequence_insert_at__f__) = __node;                                                    \
-			__head                                          = *__mu9_sequence_insert_at__h__;                            \
-			__d_result                                      = mu0_true;                                                  \
+			__node_next(_Tp, __node)                         = *__mu9_sequence_insert_at__f__;                           \
+			__node_next(_Tp, *__mu9_sequence_insert_at__f__) = __node;                                                   \
+			__head                                           = *__mu9_sequence_insert_at__h__;                           \
+			__d_result                                       = mu0_true;                                                 \
 		} else {                                                                                                        \
 			*mu9_sequence_insert_at__f__ = __node;                                                                       \
-			__node_next(Tp, __node)      = mu0_nullptr;                                                                  \
+			__node_next(_Tp, __node)     = mu0_nullptr;                                                                  \
 			__head                       = *__mu9_sequence_insert_at__h__;                                               \
 			__d_result                   = mu0_true;                                                                     \
 		}                                                                                                               \

@@ -28,12 +28,12 @@ MU0_BEGIN_CDECL
 #	define mu9_circular_sequence_pop_front(_Tp, __head, __tail, __node_next, __d_node) \
 mu0_scope_begin                                                                       \
 	if (mu0_not_nullptr(__head)) {                                                     \
-		if (mu0_is_nullptr(__node_next(Tp, __head))) {                                  \
+		if (mu0_is_nullptr(__node_next(_Tp, __head))) {                                 \
 			__d_node = __head;                                                           \
 			__head   = __tail = mu0_nullptr;                                             \
 		} else {                                                                        \
 			__d_node = __head;                                                           \
-			__head   = __node_next(Tp, __head);                                          \
+			__head   = __node_next(_Tp, __head);                                         \
 		}                                                                               \
 	}                                                                                  \
 mu0_scope_end

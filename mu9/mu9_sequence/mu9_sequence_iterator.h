@@ -25,9 +25,9 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(_Tp &* __seq, _Tp<operator> &* __seq_next(_Tp &* __head)) : void
 //#!
-#	define mu9_sequence_advance(Tp, __seq, __seq_next) \
-mu0_scope_begin                                       \
-	__seq = __seq_next(Tp, __seq);                     \
+#	define mu9_sequence_advance(_Tp, __seq, __seq_next) \
+mu0_scope_begin                                        \
+	__seq = __seq_next(_Tp, __seq);                      \
 mu0_scope_end
 
 //#!
@@ -37,7 +37,7 @@ mu0_scope_end
 mu0_scope_begin                                                                                          \
 	mu0_distance_t __mu9_sequence_advance__i__ = mu0_const_distance(0);                                   \
 	for (; __mu9_sequence_advance__i__ < mu0_const_distance(__n); (void) ++__mu9_sequence_advance__i__) { \
-		mu9_sequence_advance(Tp, __seq, __seq_next);                                                       \
+		mu9_sequence_advance(_Tp, __seq, __seq_next);                                                      \
 		if (mu0_is_nullptr(__seq)) {                                                                       \
 			break;                                                                                          \
 		}                                                                                                  \

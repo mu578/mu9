@@ -25,21 +25,21 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro<_Tp>(_Tp &* __head, _Tp<operator> &* __node_next(_Tp &* __node), __unary_fn) : void
 //#!
-#	define mu9_sequence_for_each(_Tp, __head, __node_next, __unary_fn)          \
-mu0_scope_begin                                                                \
-	_Tp ** __mu9_sequence_for_each__h__;                                        \
-	_Tp *  __mu9_sequence_for_each__c__;                                        \
-	if (mu0_not_nullptr(__head)) {                                              \
-		__mu9_sequence_for_each__h__ = &(__head);                                \
-		while (1) {                                                              \
-			__mu9_sequence_for_each__c__ = *__mu9_sequence_for_each__h__;         \
-			if (mu0_is_nullptr(__mu9_sequence_for_each__c__)) {                   \
-				break;                                                             \
-			}                                                                     \
-			mu9_sequence_advance(Tp, *__mu9_sequence_for_each__h__, __node_next); \
-			__unary_fn(Tp, __mu9_sequence_for_each__c__);                         \
-		}                                                                        \
-	}                                                                           \
+#	define mu9_sequence_for_each(_Tp, __head, __node_next, __unary_fn)           \
+mu0_scope_begin                                                                 \
+	_Tp ** __mu9_sequence_for_each__h__;                                         \
+	_Tp *  __mu9_sequence_for_each__c__;                                         \
+	if (mu0_not_nullptr(__head)) {                                               \
+		__mu9_sequence_for_each__h__ = &(__head);                                 \
+		while (1) {                                                               \
+			__mu9_sequence_for_each__c__ = *__mu9_sequence_for_each__h__;          \
+			if (mu0_is_nullptr(__mu9_sequence_for_each__c__)) {                    \
+				break;                                                              \
+			}                                                                      \
+			mu9_sequence_advance(_Tp, *__mu9_sequence_for_each__h__, __node_next); \
+			__unary_fn(_Tp, __mu9_sequence_for_each__c__);                         \
+		}                                                                         \
+	}                                                                            \
 mu0_scope_end
 
 //#!
@@ -58,8 +58,8 @@ mu0_scope_begin                                                                 
 			if (mu0_is_nullptr(__mu9_sequence_for_each_n__c__)) {                                                    \
 				break;                                                                                                \
 			}                                                                                                        \
-			mu9_sequence_advance(Tp, *__mu9_sequence_for_each_n__h__, __node_next);                                  \
-			__unary_fn(Tp, __mu9_sequence_for_each_n__c__);                                                          \
+			mu9_sequence_advance(_Tp, *__mu9_sequence_for_each_n__h__, __node_next);                                 \
+			__unary_fn(_Tp, __mu9_sequence_for_each_n__c__);                                                         \
 		}                                                                                                           \
 	}                                                                                                              \
 mu0_scope_end

@@ -22,8 +22,34 @@
 
 MU0_BEGIN_CDECL
 
+//#! Glosssary:
+//#! 
+//#! macro {{ unary_operation   }} <_Tp, _Ret=_Tp>(const _Tp & __x) : _Ret
+//#! macro {{ binary_operation  }} <_Tp, _Ret=_Tp>(const _Tp & __a, const _Tp & __b) : _Ret
+//#! macro {{ trinary_operation }} <_Tp, _Ret=_Tp>(const _Tp & __a, const _Tp & __b, const _Tp & __c) : _Ret
 //#!
-//#! macro{{binary_operation}}<_Tp>(_Tp & __a, _Tp & __b) : _Tp
+//#! - A unary predicate must accept one `read-only` argument and return a value convertible to boolean.
+//#! macro {{ unary_predicate   }} <_Tp, _Ret=_Bool>(const _Tp & __x) : _Ret
+//#!
+//#! - A binary predicate must accept two `read-only` arguments and return a value convertible to boolean.
+//#! macro {{ binary_predicate  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
+//#!
+//#!
+//#! - A compare function must satisfy {{ binary_predicate  }} and evaluates to `​true` if the first argument is less than the second.
+//#! macro {{ compare_function  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
+//#!
+//#! - A sort function must satisfy {{ compare_function  }} + a given third user-defined context/cookie argument: usually a pointer to array.
+//#! macro {{ sort_function  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b, <user-defined> __ctx) : _Ret
+//#!
+//#! - A unary function must satisfy {{ unary_operation  }} must be voidable.
+//#! macro {{ unary_function   }} <_Tp, _Ret=void>(const _Tp & __x) : _Ret
+//#!
+//#! - A binary function must satisfy {{ binary_operation }} must be voidable.
+//#! macro {{ unary_function   }} <_Tp, _Ret=void>(const _Tp & __a, const _Tp & __b) : _Ret
+//#!
+
+//#!
+//#! macro{{binary_operation}}<_Tp>(const _Tp & __a, const _Tp & __b) : _Tp
 //#!
 #	define mu9_plus(_Tp, __a, __b)                   ((__a) + (__b))
 #	define mu9_minus(_Tp, __a, __b)                  ((__a) - (__b))
@@ -31,12 +57,12 @@ MU0_BEGIN_CDECL
 #	define mu9_divides(_Tp, __a, __b)                ((__a) / (__b))
 
 //#!
-//#! macro{{binary_operation}}<_Tp>(_Tp & __a, _Tp & __b) : _Tp
+//#! macro{{binary_operation}}<_Tp>(const _Tp & __a, const _Tp & __b) : _Tp
 //#!
 #	define mu9_modulus(_Tp, __a, __b)                ((__a) % (__b))
 
 //#!
-//#! macro{{unary_operation}}<_Tp>(_Tp & __x) : _Tp
+//#! macro{{unary_operation}}<_Tp>(const _Tp & __x) : _Tp
 //#!
 #	define mu9_negate(_Tp, __x)                      -(__x)
 

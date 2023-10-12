@@ -28,7 +28,7 @@ MU0_BEGIN_CDECL
 #	define mu9_for_each(_Tp, __first, __last, __unary_fn) \
 mu0_scope_begin                                          \
 	for (; __first != __last; ++__first) {                \
-		__unary_fn(Tp, *__first);                          \
+		__unary_fn(_Tp, *__first);                         \
 	}                                                     \
 mu0_scope_end
 
@@ -39,7 +39,7 @@ mu0_scope_end
 mu0_scope_begin                                                                                         \
 	mu0_distance_t __mu9_for_each_n__i__ = mu0_const_distance(0);                                        \
 	for (; __mu9_for_each_n__i__ < mu0_const_distance(__n); ++__first, (void) ++__mu9_for_each_n__i__) { \
-		__unary_fn(Tp, *__first);                                                                         \
+		__unary_fn(_Tp, *__first);                                                                        \
 	}                                                                                                    \
 mu0_scope_end
 

@@ -28,14 +28,14 @@ MU0_BEGIN_CDECL
 #	define mu9_bidirectional_sequence_push_front(_Tp, __head, __tail, __node_prev, __node_next, __node) \
 mu0_scope_begin                                                                                        \
 	if(mu0_is_nullptr(__tail)) {                                                                        \
-		__node_next(Tp, __node) = mu0_nullptr;                                                           \
-		__node_prev(Tp, __node) = mu0_nullptr;                                                           \
-		__head                  = __tail = __node;                                                       \
+		__node_next(_Tp, __node) = mu0_nullptr;                                                          \
+		__node_prev(_Tp, __node) = mu0_nullptr;                                                          \
+		__head                   = __tail = __node;                                                      \
 	} else {                                                                                            \
-			__node_prev(Tp, __node) = mu0_nullptr;                                                        \
-			__node_prev(Tp, __head) = __node;                                                             \
-			__node_next(Tp, __node) = __head;                                                             \
-			__head                  = __node_prev(Tp, __head);                                            \
+			__node_prev(_Tp, __node) = mu0_nullptr;                                                       \
+			__node_prev(_Tp, __head) = __node;                                                            \
+			__node_next(_Tp, __node) = __head;                                                            \
+			__head                   = __node_prev(_Tp, __head);                                          \
 	}                                                                                                   \
 mu0_scope_end
 

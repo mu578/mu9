@@ -32,11 +32,11 @@ mu0_scope_begin                                                                 
 		if(__tail == __head) {                                                                           \
 			__tail = __head = mu0_nullptr;                                                                \
 		} else {                                                                                         \
-			__tail                  = __node_prev(Tp, __tail);                                            \
-			__node_next(Tp, __tail) = mu0_nullptr;                                                        \
+			__tail                   = __node_prev(_Tp, __tail);                                          \
+			__node_next(_Tp, __tail) = mu0_nullptr;                                                       \
 		}                                                                                                \
-		__node_prev(Tp, __d_node) = mu0_nullptr;                                                         \
-		__node_next(Tp, __d_node) = mu0_nullptr;                                                         \
+		__node_prev(_Tp, __d_node) = mu0_nullptr;                                                        \
+		__node_next(_Tp, __d_node) = mu0_nullptr;                                                        \
 	} else {                                                                                            \
 		 __d_node = mu0_nullptr;                                                                         \
 	}                                                                                                   \

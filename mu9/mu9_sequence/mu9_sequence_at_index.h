@@ -33,7 +33,7 @@ mu0_scope_begin                                                                 
 		__mu9_sequence_at_index__i__ = mu0_const_distance(0);                                                   \
 		__mu9_sequence_at_index__h__ = &(__head);                                                               \
 		for (; __mu9_sequence_at_index__i__ < mu0_const_distance(__i); (void) ++__mu9_sequence_at_index__i__) { \
-			mu9_sequence_advance(Tp, *__mu9_sequence_at_index__h__, __node_next);                                \
+			mu9_sequence_advance(_Tp, *__mu9_sequence_at_index__h__, __node_next);                               \
 			if (mu0_is_nullptr(*__mu9_sequence_at_index__h__)) {                                                 \
 				break;                                                                                            \
 			}                                                                                                    \

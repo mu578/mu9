@@ -39,10 +39,10 @@ mu0_scope_end
 #	define mu9_set_intersection2(_Tp, __first1, __last1, __first2, __last2, __d_first, __comp_fn) \
 mu0_scope_begin                                                                                  \
 	while (__first1 != __last1 && __first2 != __last2) {                                          \
-		if (__comp_fn(Tp, *__first1, *__first2)) {                                                 \
+		if (__comp_fn(_Tp, *__first1, *__first2)) {                                                \
 			++__first1;                                                                             \
 		} else {                                                                                   \
-			if (!__comp_fn(Tp, *__first2, *__first1)) {                                             \
+			if (!__comp_fn(_Tp, *__first2, *__first1)) {                                            \
 				*__d_first++ = *__first1++;                                                          \
 			}                                                                                       \
 			++__first2;                                                                             \
@@ -54,11 +54,11 @@ mu0_scope_end
 #	define mu9_set_intersection3(_Tp, __first1, __last1, __first2, __last2, __d_first, __comp_fn, __move_op) \
 mu0_scope_begin                                                                                             \
 	while (__first1 != __last1 && __first2 != __last2) {                                                     \
-		if (__comp_fn(Tp, *__first1, *__first2)) {                                                            \
+		if (__comp_fn(_Tp, *__first1, *__first2)) {                                                           \
 			++__first1;                                                                                        \
 		} else {                                                                                              \
-			if (!__comp_fn(Tp, *__first2, *__first1)) {                                                        \
-				__move_op(Tp, *__d_first++, *__first1++);                                                       \
+			if (!__comp_fn(_Tp, *__first2, *__first1)) {                                                       \
+				__move_op(_Tp, *__d_first++, *__first1++);                                                      \
 			}                                                                                                  \
 			++__first2;                                                                                        \
 		}                                                                                                     \

@@ -28,12 +28,12 @@ MU0_BEGIN_CDECL
 #	define mu9_bidirectional_sequence_insert_before(_Tp, __head, __tail, __cursor, __node_prev, __node_next, __node, __d_result) \
 mu0_scope_begin                                                                                                                 \
 	if (mu0_not_nullptr(__cursor) && mu0_not_nullptr(__node)) {                                                                  \
-		__node_prev(Tp, __node)   = __node_prev(Tp, __cursor);                                                                    \
-		__node_prev(Tp, __cursor) = __node;                                                                                       \
-		__node_next(Tp, __node)   = __cursor;                                                                                     \
-		__d_result                = mu0_true;                                                                                     \
-		if (mu0_not_nullptr(__node_prev(Tp, __node))) {                                                                           \
-			__node_next(Tp, __node_prev(Tp, __node)) = __node;                                                                     \
+		__node_prev(_Tp, __node)   = __node_prev(_Tp, __cursor);                                                                  \
+		__node_prev(_Tp, __cursor) = __node;                                                                                      \
+		__node_next(_Tp, __node)   = __cursor;                                                                                    \
+		__d_result                 = mu0_true;                                                                                    \
+		if (mu0_not_nullptr(__node_prev(_Tp, __node))) {                                                                          \
+			__node_next(_Tp, __node_prev(_Tp, __node)) = __node;                                                                   \
 		}                                                                                                                         \
 	} else {                                                                                                                     \
 		__d_result = mu0_false;                                                                                                   \

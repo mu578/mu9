@@ -34,7 +34,7 @@ mu0_scope_begin                                                                 
 		: mu0_const_distance(__by)                                                                  \
 	);                                                                                             \
 	while (__first != __last) {                                                                    \
-		__unary_fn(Tp, *__first);                                                                   \
+		__unary_fn(_Tp, *__first);                                                                  \
 		__mu9_for_each_by__j__ = mu0_const_distance(0);                                             \
 		for (; __mu9_for_each_by__j__ != __mu9_for_each_by__i__; (void) ++__mu9_for_each_by__j__) { \
 			if (__first == __last) {                                                                 \
@@ -62,7 +62,7 @@ mu0_scope_begin                                                                 
 		: mu0_const_distance(__by)                                                                        \
 	);                                                                                                   \
 	for (; __mu9_for_each_by_n__i__ < mu0_const_distance(__n);) {                                        \
-		__unary_fn(Tp, *__first);                                                                         \
+		__unary_fn(_Tp, *__first);                                                                        \
 		__mu9_for_each_by_n__j__ = mu0_const_distance(0);                                                 \
 		for (; __mu9_for_each_by_n__j__ != __mu9_for_each_by_n__k__; (void) ++__mu9_for_each_by_n__j__) { \
 			if (!(__mu9_for_each_by_n__i__ < mu0_const_distance(__n))) {                                   \
