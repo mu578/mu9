@@ -33,39 +33,39 @@ MU0_BEGIN_CDECL
 //#!
 //#! - A trinary operation must accept three `read-only` arguments and return a value.
 //#! - A trinary operation can define three different member types if convertible types.
-//#! macro {{ trinary_operation }} <_Tp                                , _Ret=_Tp>(const _Tp & __a, const _Tp & __b, const _Tp & __c) : _Ret
-//#! macro {{ trinary_operation  }} <convertible<_U, _T, _P> _U, _T, _P, _Ret=_U >(const _U  & __a, const _T  & __b, const _P  & __c) : _Ret
+//#! macro {{ trinary_operation }} <_Tp                               , _Ret=_Tp>(const _Tp & __a, const _Tp & __b, const _Tp & __c) : _Ret
+//#! macro {{ trinary_operation }} <convertible<_U, _T, _P> _U, _T, _P, _Ret=_U >(const _U  & __a, const _T  & __b, const _P  & __c) : _Ret
 //#!
 //#!
 //#! - A predicate must accept `read-only` arguments and return a value convertible to boolean.
 //#! - A predicate can define different member types if convertible types.
-//#! macro {{ predicate  }} <..., _Ret=_Bool>(...) : _Ret
+//#! macro {{ predicate         }} <..., _Ret=_Bool>(...) : _Ret
 //#!
-//#! - A unary predicate must satisfy {{ predicate }}.
+//#! - A unary predicate must satisfy {{predicate}}.
 //#! - A unary predicate must accept one `read-only` argument and return a value convertible to boolean.
 //#! macro {{ unary_predicate   }} <_Tp, _Ret=_Bool>(const _Tp & __x) : _Ret
 //#!
-//#! - A binary predicate must satisfy {{ predicate }}.
+//#! - A binary predicate must satisfy {{predicate}}.
 //#! - A binary predicate must accept two `read-only` arguments and return a value convertible to boolean.
 //#! - A binary predicate can define two different member types if convertible types.
 //#! macro {{ binary_predicate  }} <_Tp                       , _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
 //#! macro {{ binary_predicate  }} <convertible<_U, _T> _U, _T, _Ret=_Bool>(const _U  & __a, const _T  & __b) : _Ret
 //#!
 //#!
-//#! - A compare function must satisfy {{ binary_predicate }} and evaluates to `​true` if the first argument is less than the second i.e weak ordering.
+//#! - A compare function must satisfy {{binary_predicate}} and evaluates to `​true` if the first argument is less than the second i.e weak ordering.
 //#! macro {{ compare_function  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
 //#!
-//#! - A sort function must satisfy {{ compare_function }} + a given third user-defined context/cookie argument: usually a pointer to array.
+//#! - A sort function must satisfy {{compare_function}} + a given third user-defined context/cookie argument: usually a pointer to array.
 //#! macro {{ sort_function     }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b, <user-defined> __ctx) : _Ret
 //#!
 //#!
-//#! - A unary function must satisfy {{ unary_operation }} but must be voidable.
+//#! - A unary function must satisfy {{unary_operation}} but must be voidable.
 //#! macro {{ unary_function    }} <_Tp, _Ret=void>(const _Tp & __x) : _Ret
 //#!
-//#! - A binary function must satisfy {{ binary_operation }} but must be voidable.
+//#! - A binary function must satisfy {{binary_operation}} but must be voidable.
 //#! macro {{ unary_function    }} <_Tp, _Ret=void>(const _Tp & __a, const _Tp & __b) : _Ret
 //#!
-//#! - A trinary function must satisfy {{ trinary_operation }} but must be voidable.
+//#! - A trinary function must satisfy {{trinary_operation}} but must be voidable.
 //#! macro {{ trinary_function  }} <_Tp, _Ret=void>(const _Tp & __a, const _Tp & __b, const _Tp & __c) : _Ret
 //#!
 //#!
