@@ -29,13 +29,13 @@ MU0_BEGIN_CDECL
 //#! - A binary or bivariate operation is an operation that takes two arguments. An operation for combining two operands to produce a third one.
 //#! - A binary operation must accept two `read-only` arguments and return a value.
 //#! - A binary operation can define two different member types if convertible.
-//#! macro {{ binary_operation  }} <_Tp                       , _Ret=_Tp>(const _Tp & __a, const _Tp & __b) : _Ret
-//#! macro {{ binary_operation  }} <convertible<_U, _T> _U, _T, _Ret=_U >(const _U  & __a, const _T  & __b) : _Ret
+//#! macro {{ binary_operation  }} <_Tp                            , _Ret=_Tp>(const _Tp & __a, const _Tp & __b) : _Ret
+//#! macro {{ binary_operation  }} <convertible<_Tp, _Up>, _Tp, _Up, _Ret=_Tp>(const _Tp & __a, const _Up & __b) : _Ret
 //#!
 //#! - A trinary operation must accept three `read-only` arguments and return a value.
 //#! - A trinary operation can define three different member types if convertible types.
-//#! macro {{ trinary_operation }} <_Tp                               , _Ret=_Tp>(const _Tp & __a, const _Tp & __b, const _Tp & __c) : _Ret
-//#! macro {{ trinary_operation }} <convertible<_U, _T, _P> _U, _T, _P, _Ret=_U >(const _U  & __a, const _T  & __b, const _P  & __c) : _Ret
+//#! macro {{ trinary_operation }} <_Tp                                      , _Ret=_Tp>(const _Tp & __a, const _Tp & __b, const _Tp & __c) : _Ret
+//#! macro {{ trinary_operation }} <convertible<_Tp, _Up, _Vp>, _Tp, _Up, _Vp, _Ret=_Tp>(const _Tp & __a, const _Up & __b, const _Vp & __c) : _Ret
 //#!
 //#!
 //#! - A predicate is a function of a set of parameters that returns a boolean expression as an answer. A boolean expression has the value either
@@ -51,8 +51,8 @@ MU0_BEGIN_CDECL
 //#! - A binary predicate must satisfy {{predicate}}.
 //#! - A binary predicate must accept two `read-only` arguments and return a value convertible to a boolean expression.
 //#! - A binary predicate can define two different member types if convertible types.
-//#! macro {{ binary_predicate  }} <_Tp                       , _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
-//#! macro {{ binary_predicate  }} <convertible<_U, _T> _U, _T, _Ret=_Bool>(const _U  & __a, const _T  & __b) : _Ret
+//#! macro {{ binary_predicate  }} <_Tp                             , _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
+//#! macro {{ binary_predicate  }} <convertible<(_Tp, _Up>, _Tp, _Up, _Ret=_Bool>(const _Tp & __a, const _Up & __b) : _Ret
 //#!
 //#!
 //#! - A compare function must satisfy {{binary_predicate}} and evaluates to `​true` if the first argument is less than the second i.e weak ordering.
