@@ -35,17 +35,17 @@ MU0_BEGIN_CDECL
 //#! macro {{ binary_predicate  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
 //#!
 //#!
-//#! - A compare function must satisfy {{ binary_predicate  }} and evaluates to `​true` if the first argument is less than the second.
+//#! - A compare function must satisfy {{ binary_predicate }} and evaluates to `​true` if the first argument is less than the second.
 //#! macro {{ compare_function  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
 //#!
-//#! - A sort function must satisfy {{ compare_function  }} + a given third user-defined context/cookie argument: usually a pointer to array.
-//#! macro {{ sort_function  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b, <user-defined> __ctx) : _Ret
+//#! - A sort function must satisfy {{ compare_function }} + a given third user-defined context/cookie argument: usually a pointer to array.
+//#! macro {{ sort_function     }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b, <user-defined> __ctx) : _Ret
 //#!
-//#! - A unary function must satisfy {{ unary_operation  }} must be voidable.
-//#! macro {{ unary_function   }} <_Tp, _Ret=void>(const _Tp & __x) : _Ret
+//#! - A unary function must satisfy {{ unary_operation }} but must be voidable.
+//#! macro {{ unary_function    }} <_Tp, _Ret=void>(const _Tp & __x) : _Ret
 //#!
-//#! - A binary function must satisfy {{ binary_operation }} must be voidable.
-//#! macro {{ unary_function   }} <_Tp, _Ret=void>(const _Tp & __a, const _Tp & __b) : _Ret
+//#! - A binary function must satisfy {{ binary_operation }} but must be voidable.
+//#! macro {{ unary_function    }} <_Tp, _Ret=void>(const _Tp & __a, const _Tp & __b) : _Ret
 //#!
 
 //#!
