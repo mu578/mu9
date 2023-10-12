@@ -41,6 +41,7 @@ MU0_BEGIN_CDECL
 //#! - A sort function must satisfy {{ compare_function }} + a given third user-defined context/cookie argument: usually a pointer to array.
 //#! macro {{ sort_function     }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b, <user-defined> __ctx) : _Ret
 //#!
+//#!
 //#! - A unary function must satisfy {{ unary_operation }} but must be voidable.
 //#! macro {{ unary_function    }} <_Tp, _Ret=void>(const _Tp & __x) : _Ret
 //#!
