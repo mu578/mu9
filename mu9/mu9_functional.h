@@ -45,11 +45,11 @@ MU0_BEGIN_CDECL
 //#! macro {{ predicate         }} <..., _Ret=_Bool>(...) : _Ret
 //#!
 //#! - A unary predicate must satisfy {{predicate}}.
-//#! - A unary predicate must accept one `read-only` argument and return a value convertible to boolean.
+//#! - A unary predicate must accept one `read-only` argument and return a value convertible to a boolean expression.
 //#! macro {{ unary_predicate   }} <_Tp, _Ret=_Bool>(const _Tp & __x) : _Ret
 //#!
 //#! - A binary predicate must satisfy {{predicate}}.
-//#! - A binary predicate must accept two `read-only` arguments and return a value convertible to boolean.
+//#! - A binary predicate must accept two `read-only` arguments and return a value convertible to a boolean expression.
 //#! - A binary predicate can define two different member types if convertible types.
 //#! macro {{ binary_predicate  }} <_Tp                       , _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
 //#! macro {{ binary_predicate  }} <convertible<_U, _T> _U, _T, _Ret=_Bool>(const _U  & __a, const _T  & __b) : _Ret
