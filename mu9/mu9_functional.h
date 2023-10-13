@@ -97,8 +97,6 @@ MU0_BEGIN_CDECL
 //#!
 #	define mu9_initialize(_Tp, __x)                  mu8_ini(_Tp, __x)
 
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_GNUCC || MU0_HAVE_CC_MSVCL || MU0_HAVE_CC_ITLCL || MU0_HAVE_CC_ITLGC
-
 //#!
 //#! macro{{binary_operation}}<_Tp>(_Tp & __a, _Tp & __b) : _Tp <compile-time-aliasing>
 //#!
@@ -106,18 +104,6 @@ MU0_BEGIN_CDECL
 #	define mu9_subtraction(_Tp, __a, __b)            mu8_sub(_Tp, __a, __b)
 #	define mu9_multiplication(_Tp, __a, __b)         mu8_mul(_Tp, __a, __b)
 #	define mu9_division(_Tp, __a, __b)               mu8_div(_Tp, __a, __b)
-
-#	else
-
-//#!
-//#! macro{{binary_operation}}<_Tp>(_Tp & __a, _Tp & __b) : _Tp <compile-time-aliasing>
-//#!
-#	define mu9_addition(_Tp, __a, __b)               mu9_plus(_Tp, __a, __b)
-#	define mu9_subtraction(_Tp, __a, __b)            mu9_minus(_Tp, __a, __b)
-#	define mu9_multiplication(_Tp, __a, __b)         mu9_multiplies(_Tp, __a, __b)
-#	define mu9_division(_Tp, __a, __b)               mu9_division(_Tp, __a, __b)
-
-#	endif
 
 //#!
 //#! macro{{trinary_operation}}<_Tp>(_Tp & __c, _Tp & __a, _Tp & __b) : _Tp
@@ -181,8 +167,6 @@ MU0_BEGIN_CDECL
 #	define mu9_greater_than(_Tp, __a, __b)           (((__a) >  (__b)) ? mu0_true : mu0_false)
 #	define mu9_greater_than_or_equal(_Tp, __a, __b)  (((__a) >= (__b)) ? mu0_true : mu0_false)
 
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_GNUCC || MU0_HAVE_CC_MSVCL || MU0_HAVE_CC_ITLCL || MU0_HAVE_CC_ITLGC
-
 //#!
 //#! macro{{binary_predicate}}<_Tp>(const _Tp & __a, const _Tp & __b) : bool <compile-time-aliasing>
 //#!
@@ -191,19 +175,6 @@ MU0_BEGIN_CDECL
 #	define mu9_greater(_Tp, __a, __b)                mu8_le(_Tp, __a, __b)
 #	define mu9_less_equal(_Tp, __a, __b)             mu8_gt(_Tp, __a, __b)
 #	define mu9_greater_equal(_Tp, __a, __b)          mu8_ge(_Tp, __a, __b)
-
-#	else
-
-//#!
-//#! macro{{binary_predicate}}<_Tp>(const _Tp & __a, const _Tp & __b) : bool <compile-time-aliasing>
-//#!
-#	define mu9_equal(_Tp, __a, __b)                  mu9_equal_to(_Tp, __a, __b)
-#	define mu9_less(_Tp, __a, __b)                   mu9_less_than(_Tp, __a, __b)
-#	define mu9_greater(_Tp, __a, __b)                mu9_less_than_or_equal(_Tp, __a, __b)
-#	define mu9_less_equal(_Tp, __a, __b)             mu9_greater_than(_Tp, __a, __b)
-#	define mu9_greater_equal(_Tp, __a, __b)          mu9_greater_than_or_equal(_Tp, __a, __b)
-
-#	endif
 
 //#! macro{{unary_predicate}}<_Predicate>(_Predicate __fn) : bool
 #	define mu9_not_fn(__fn)                         !__fn
