@@ -55,10 +55,11 @@ MU0_BEGIN_CDECL
 //#! macro {{ binary_predicate  }} <convertible<_Tp, _Up>, _Tp, _Up, _Ret=_Bool>(const _Tp & __a, const _Up & __b) : _Ret
 //#!
 //#!
-//#! - A compare function must satisfy {{binary_predicate}} and evaluates to `​true` if the first argument is less than the second i.e weak ordering.
+//#! - A compare function must satisfy {{binary_predicate}} and evaluates to `​true` if the first argument is less than the second i.e weak ordering
+//#!   (weak numerical ordering of the two arguments).
 //#! macro {{ compare_function  }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b) : _Ret
 //#!
-//#! - A sort function must satisfy {{compare_function}} + a given third user-defined context/cookie bound argument: usually a pointer to inner array.
+//#! - A sort function must satisfy {{compare_function}} + a given third user-defined context/cookie bound argument: usually a pointer to inner data.
 //#! macro {{ sort_function     }} <_Tp, _Ret=_Bool>(const _Tp & __a, const _Tp & __b, <user-defined> __ctx) : _Ret
 //#!
 //#!
