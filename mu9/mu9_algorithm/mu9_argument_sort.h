@@ -31,7 +31,7 @@ MU0_BEGIN_CDECL
 //#!
 //#! macro{{sort_operation}}<_Uint>(const _Uint & __i1, const _Uint & __i2, __ctx) : void
 //#!
-#	define mu9_argument_sort_desc(_Uint, __i1, __i2, __ctx) mu9_less(mu0_infer(*__ctx), __ctx[__i2], __ctx[__i1])
+#	define mu9_argument_sort_desc(_Uint, __i1, __i2, __ctx) mu9_greater(mu0_infer(*__ctx), __ctx[__i1], __ctx[__i2])
 
 //#!
 //#! macro<_Tp, _Uint>(_Uint &* __first, _Uint &* __last, const _Uint & __start, _Tp &* __s_first) : void
